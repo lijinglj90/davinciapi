@@ -1,0 +1,3028 @@
+====================================进程启动=====================================
+2022-02-18 15:34:57	gcd	INFO	7101	pipe name:/home/sprixin/davinci/etc/IPC/7101a [U-17]
+2022-02-18 15:34:57	gcd	INFO	7101	Create rec pthread  success, the id is -1984321792 [U-17]
+2022-02-18 15:34:57	gcd	INFO	7101	 rxinit starting...:2022-02-18 15:34:57.408, root dir = /home/sprixin/davinci [U-17]
+2022-02-18 15:34:57	gcd	INFO	7101	Init PacketServicerMgr : 2022-02-18 15:34:57.411
+2022-02-18 15:34:57	gcd	INFO	7101	Init SysServicerMgr : 2022-02-18 15:34:57.427 [U-107]
+2022-02-18 15:34:57	gcd	INFO	7101	Begin init NetServicerMgr : 2022-02-18 15:34:57.433
+2022-02-18 15:34:57	gcd	INFO	7101	Finish init NetServicerMgr : 2022-02-18 15:34:57.433
+2022-02-18 15:34:57	gcd	INFO	7101	Begin startup system from local ... : 2022-02-18 15:34:57.433
+2022-02-18 15:34:57	gcd	INFO	7101	<<<<<<Load realtime database from text file.
+2022-02-18 15:34:57	gcd	INFO	7101	Realtime Database Manager System
+2022-02-18 15:34:57	gcd	WARNING	7101	have finished to init memory database. [U-17]
+2022-02-18 15:34:57	gcd	INFO	7101	Load RTDB Successful From SourceDB. [U-17]
+2022-02-18 15:34:57	gcd	WARNING	7101	CNetNode_MemTable():clear table netnodestatus [U-17]
+2022-02-18 15:34:57	gcd	WARNING	7101	LoadNetNodeToRTDB, clear table NETNODESTATUS [U-17]
+2022-02-18 15:34:57	gcd	WARNING	7101	LoadNetNodeToRTDB,after clear table NETNODESTATUS, add 1 recordes from local [U-17]
+2022-02-18 15:34:57	gcd	INFO	7101	NETNODE Registered OK! [U-17]
+2022-02-18 15:34:57	gcd	INFO	7101	local listener opened, port = 12009. [U-107]
+2022-02-18 15:34:57	gcd	ERROR	7101	cannot find or Static load function = make_STATUSOPER_Service.
+2022-02-18 15:34:57	gcd	ERROR	7101	cannot find or Static load function = make_BUSINESSCONTROL_Service.
+2022-02-18 15:34:57	gcd	INFO	7101	Load Extend Service Successful.
+2022-02-18 15:34:57	gcd	INFO	7101	******************************************************************
+2022-02-18 15:34:57	gcd	INFO	7101	<<<Startup Service = NETNODE Successful.
+2022-02-18 15:34:57	gcd	INFO	7101	<<<Startup Service = PROCESS Successful.
+2022-02-18 15:34:57	gcd	INFO	7101	<<<Startup Service = TIME Successful.
+2022-02-18 15:34:57	gcd	INFO	7101	<<<Startup Service = SYSPROC Successful.
+2022-02-18 15:34:57	gcd	INFO	7101	<<<Startup Service = RTDB Successful.
+2022-02-18 15:34:57	gcd	INFO	7101	<<<Startup Service = TRIGER Successful.
+2022-02-18 15:34:57	gcd	INFO	7101	<<<Startup Service = ALARM Successful.
+2022-02-18 15:34:57	gcd	INFO	7101	<<<Startup Service = CONTROL Successful.
+2022-02-18 15:34:57	gcd	INFO	7101	<<<Startup Service = DP Successful.
+2022-02-18 15:34:57	gcd	INFO	7101	<<<Startup Service = DPAgent Successful.
+2022-02-18 15:34:57	gcd	INFO	7101	<<<Startup Service = FEPINFO Successful.
+2022-02-18 15:34:57	gcd	INFO	7101	<<<Startup Service = CALC Successful.
+2022-02-18 15:34:57	gcd	INFO	7101	******************************************************************
+2022-02-18 15:34:57	gcd	INFO	7101	RXSERVER startup OK! (2022-02-18 15:34:57.961)
+2022-02-18 15:34:58	gcd	WARNING	7101	Get Record from /home/sprixin/davinci/usr/subfcst_project/dbfile/data/db1/block2/ACCUMULATORINPUT.dat file failed. [U-2]
+2022-02-18 15:34:58	gcd	WARNING	7101	Get Record from /home/sprixin/davinci/usr/subfcst_project/dbfile/data/db1/block2/ACCUMULATORSTATISTICS.dat file failed. [U-2]
+2022-02-18 15:34:58	gcd	WARNING	7101	Get Record from /home/sprixin/davinci/usr/subfcst_project/dbfile/data/db1/block2/ANALOGINPUT.dat file failed. [U-2]
+2022-02-18 15:34:58	gcd	WARNING	7101	Get Record from /home/sprixin/davinci/usr/subfcst_project/dbfile/data/db1/block2/STATUSINPUT.dat file failed. [U-2]
+2022-02-18 15:34:58	gcd	WARNING	7101	Get Record from /home/sprixin/davinci/usr/subfcst_project/dbfile/data/db1/block2/IEDCSSRPTITEM.dat file failed. [U-2]
+2022-02-18 15:34:58	gcd	WARNING	7101	Get Record from /home/sprixin/davinci/usr/subfcst_project/dbfile/data/db1/block6/RTDBFCSTDATA.dat file failed. [U-2]
+2022-02-18 15:34:58	gcd	WARNING	7101	Get Record from /home/sprixin/davinci/usr/subfcst_project/dbfile/data/db1/block6/RTDBNWPDATA.dat file failed. [U-2]
+2022-02-18 15:34:58	gcd	WARNING	7101	Get Record from /home/sprixin/davinci/usr/subfcst_project/dbfile/data/db1/block6/RTDBSFCSTDATA.dat file failed. [U-2]
+2022-02-18 15:34:58	gcd	WARNING	7101	Get Record from /home/sprixin/davinci/usr/subfcst_project/dbfile/data/db1/block6/RTDBTHEORYPDATA.dat file failed. [U-2]
+2022-02-18 15:34:58	gcd	WARNING	7101	Get Record from /home/sprixin/davinci/usr/subfcst_project/dbfile/data/db1/block6/FORECAST_CONTROL.dat file failed. [U-2]
+2022-02-18 15:34:58	gcd	WARNING	7101	Get Record from /home/sprixin/davinci/usr/subfcst_project/dbfile/data/db1/block6/LIMITPOWER.dat file failed. [U-2]
+2022-02-18 15:34:58	gcd	WARNING	7101	Get Record from /home/sprixin/davinci/usr/subfcst_project/dbfile/data/db1/block6/PLANCAP.dat file failed. [U-2]
+2022-02-18 15:34:58	gcd	WARNING	7101	Get Record from /home/sprixin/davinci/usr/subfcst_project/dbfile/data/db1/block6/LIMITSTATUS.dat file failed. [U-2]
+2022-02-18 15:34:58	gcd	WARNING	7101	Get Record from /home/sprixin/davinci/usr/subfcst_project/dbfile/data/db1/block2/UPLOADFILEINFO.dat file failed. [U-2]
+2022-02-18 15:34:58	gcd	INFO	7101	******************************************************************
+2022-02-18 15:34:58	gcd	INFO	7101	******************************************************************
+2022-02-18 15:34:58	gcd	INFO	7101	starting tasks ...... 
+
+2022-02-18 15:34:59	gcd	INFO	7108	Switch to Master...
+2022-02-18 15:35:00	gcd	INFO	7109	Switch to Master...
+2022-02-18 15:35:00	gcd	INFO	7105	add共有168个1分钟遥测统计结果
+
+2022-02-18 15:35:00	gcd	INFO	7105	共有168个5分钟遥测统计结果
+
+2022-02-18 15:35:01	gcd	INFO	7107	Switch to Master...
+2022-02-18 15:35:01	gcd	INFO	7107	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 15:35:01	gcd	INFO	7107	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 15:35:04	gcd	INFO	7107	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 15:35:04	gcd	INFO	7107	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 15:35:06	gcd	INFO	7101	OSIProcess find not a process = 23628, It's name  = "" [U-107]
+2022-02-18 15:35:06	gcd	INFO	7101	向进程代理发出<进程状态改变>消息，进程ID：1538，进程名称：rxautomation，节点ID：6 [U-107]
+2022-02-18 15:35:07	gcd	INFO	7107	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 15:35:07	gcd	INFO	7107	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 15:35:08	gcd	INFO	7101	CProcessRtdbMgr类中，删除一条进程记录。iProcessID = 1538 [U-2]
+2022-02-18 15:35:08	gcd	INFO	7101	向进程代理发出<进程退出>消息，进程ID：1538，进程名称：rxautomation，节点ID：6 [U-2]
+2022-02-18 15:35:10	gcd	INFO	7107	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 15:35:10	gcd	INFO	7107	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 15:35:12	gcd	INFO	7101	OSIProcess find not a process = 23629, It's name  = "" [U-2]
+2022-02-18 15:35:12	gcd	INFO	7101	向进程代理发出<进程状态改变>消息，进程ID：1539，进程名称：CalcTheoryP，节点ID：6 [U-2]
+2022-02-18 15:35:13	gcd	INFO	7107	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 15:35:13	gcd	INFO	7107	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 15:35:14	gcd	INFO	7101	CProcessRtdbMgr类中，删除一条进程记录。iProcessID = 1539 [U-2]
+2022-02-18 15:35:14	gcd	INFO	7101	向进程代理发出<进程退出>消息，进程ID：1539，进程名称：CalcTheoryP，节点ID：6 [U-2]
+2022-02-18 15:35:16	gcd	INFO	7107	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 15:35:16	gcd	INFO	7107	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 15:35:18	gcd	INFO	7101	OSIProcess find not a process = 23630, It's name  = "" [U-2]
+2022-02-18 15:35:18	gcd	INFO	7101	向进程代理发出<进程状态改变>消息，进程ID：1540，进程名称：hdr，节点ID：6 [U-2]
+2022-02-18 15:35:19	gcd	INFO	7107	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 15:35:19	gcd	INFO	7107	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 15:35:20	gcd	INFO	7101	CProcessRtdbMgr类中，删除一条进程记录。iProcessID = 1540 [U-2]
+2022-02-18 15:35:20	gcd	INFO	7101	向进程代理发出<进程退出>消息，进程ID：1540，进程名称：hdr，节点ID：6 [U-2]
+2022-02-18 15:35:22	gcd	INFO	7107	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 15:35:22	gcd	INFO	7107	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 15:35:25	gcd	INFO	7107	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 15:35:25	gcd	INFO	7107	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 15:35:28	gcd	INFO	7107	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 15:35:28	gcd	INFO	7107	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 15:35:31	gcd	INFO	7107	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 15:35:31	gcd	INFO	7107	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 15:35:34	gcd	INFO	7107	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 15:35:34	gcd	INFO	7107	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 15:35:37	gcd	INFO	7107	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 15:35:37	gcd	INFO	7107	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 15:35:41	gcd	INFO	7107	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 15:35:41	gcd	INFO	7107	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 15:35:44	gcd	INFO	7107	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 15:35:44	gcd	INFO	7107	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 15:35:47	gcd	INFO	7107	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 15:35:47	gcd	INFO	7107	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 15:35:50	gcd	INFO	7107	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 15:35:50	gcd	INFO	7107	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 15:35:53	gcd	INFO	7107	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 15:35:53	gcd	INFO	7107	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 15:35:56	gcd	INFO	7107	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 15:35:56	gcd	INFO	7107	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 15:35:59	gcd	INFO	7107	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 15:35:59	gcd	INFO	7107	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 15:36:00	gcd	INFO	7105	add共有168个1分钟遥测统计结果
+
+2022-02-18 15:36:02	gcd	INFO	7107	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 15:36:02	gcd	INFO	7107	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 15:36:05	gcd	INFO	7107	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 15:36:05	gcd	INFO	7107	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 15:36:08	gcd	INFO	7107	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 15:36:08	gcd	INFO	7107	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 15:36:11	gcd	INFO	7107	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 15:36:11	gcd	INFO	7107	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 15:36:14	gcd	INFO	7107	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 15:36:14	gcd	INFO	7107	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 15:36:17	gcd	INFO	7107	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 15:36:17	gcd	INFO	7107	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 15:36:20	gcd	INFO	7107	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 15:36:20	gcd	INFO	7107	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 15:36:23	gcd	INFO	7107	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 15:36:23	gcd	INFO	7107	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 15:36:26	gcd	INFO	7107	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 15:36:26	gcd	INFO	7107	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 15:36:30	gcd	INFO	7107	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 15:36:30	gcd	INFO	7107	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 15:36:33	gcd	INFO	7107	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 15:36:33	gcd	INFO	7107	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 15:36:36	gcd	INFO	7107	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 15:36:36	gcd	INFO	7107	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 15:36:39	gcd	INFO	7107	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 15:36:39	gcd	INFO	7107	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 15:36:42	gcd	INFO	7107	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 15:36:42	gcd	INFO	7107	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 15:36:45	gcd	INFO	7107	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 15:36:45	gcd	INFO	7107	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 15:36:48	gcd	INFO	7107	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 15:36:48	gcd	INFO	7107	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 15:36:51	gcd	INFO	7107	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 15:36:51	gcd	INFO	7107	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 15:36:54	gcd	INFO	7107	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 15:36:54	gcd	INFO	7107	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 15:36:57	gcd	INFO	7107	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 15:36:57	gcd	INFO	7107	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 15:37:00	gcd	INFO	7105	add共有168个1分钟遥测统计结果
+
+2022-02-18 15:37:00	gcd	INFO	7107	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 15:37:00	gcd	INFO	7107	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 15:37:03	gcd	INFO	7107	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 15:37:03	gcd	INFO	7107	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 15:37:06	gcd	INFO	7107	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 15:37:06	gcd	INFO	7107	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 15:37:09	gcd	INFO	7107	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 15:37:09	gcd	INFO	7107	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 15:37:12	gcd	INFO	7107	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 15:37:12	gcd	INFO	7107	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 15:37:16	gcd	INFO	7107	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 15:37:16	gcd	INFO	7107	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 15:37:19	gcd	INFO	7107	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 15:37:19	gcd	INFO	7107	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 15:37:22	gcd	INFO	7107	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 15:37:22	gcd	INFO	7107	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 15:37:25	gcd	INFO	7107	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 15:37:25	gcd	INFO	7107	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 15:37:28	gcd	INFO	7107	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 15:37:28	gcd	INFO	7107	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 15:37:31	gcd	INFO	7107	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 15:37:31	gcd	INFO	7107	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 15:37:34	gcd	INFO	7107	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 15:37:34	gcd	INFO	7107	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 15:37:37	gcd	INFO	7107	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 15:37:37	gcd	INFO	7107	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 15:37:40	gcd	INFO	7107	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 15:37:40	gcd	INFO	7107	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 15:37:43	gcd	INFO	7107	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 15:37:43	gcd	INFO	7107	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 15:37:46	gcd	INFO	7107	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 15:37:46	gcd	INFO	7107	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 15:37:49	gcd	INFO	7107	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 15:37:49	gcd	INFO	7107	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 15:37:52	gcd	INFO	7107	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 15:37:52	gcd	INFO	7107	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 15:37:55	gcd	INFO	7107	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 15:37:55	gcd	INFO	7107	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 15:37:58	gcd	INFO	7107	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 15:37:58	gcd	INFO	7107	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 15:38:00	gcd	INFO	7105	add共有168个1分钟遥测统计结果
+
+2022-02-18 15:38:01	gcd	INFO	7107	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 15:38:01	gcd	INFO	7107	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 15:38:05	gcd	INFO	7107	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 15:38:05	gcd	INFO	7107	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 15:38:08	gcd	INFO	7107	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 15:38:08	gcd	INFO	7107	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 15:38:11	gcd	INFO	7107	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 15:38:11	gcd	INFO	7107	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 15:38:14	gcd	INFO	7107	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 15:38:14	gcd	INFO	7107	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 15:38:17	gcd	INFO	7107	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 15:38:17	gcd	INFO	7107	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 15:38:20	gcd	INFO	7107	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 15:38:20	gcd	INFO	7107	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 15:38:23	gcd	INFO	7107	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 15:38:23	gcd	INFO	7107	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 15:38:26	gcd	INFO	7107	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 15:38:26	gcd	INFO	7107	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 15:38:29	gcd	INFO	7107	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 15:38:29	gcd	INFO	7107	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 15:38:32	gcd	INFO	7107	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 15:38:32	gcd	INFO	7107	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 15:38:35	gcd	INFO	7107	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 15:38:35	gcd	INFO	7107	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 15:38:38	gcd	INFO	7107	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 15:38:38	gcd	INFO	7107	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 15:38:41	gcd	INFO	7107	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 15:38:41	gcd	INFO	7107	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 15:38:44	gcd	INFO	7107	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 15:38:44	gcd	INFO	7107	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 15:38:47	gcd	INFO	7107	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 15:38:47	gcd	INFO	7107	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 15:38:50	gcd	INFO	7107	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 15:38:50	gcd	INFO	7107	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 15:38:54	gcd	INFO	7107	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 15:38:54	gcd	INFO	7107	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 15:38:57	gcd	INFO	7107	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 15:38:57	gcd	INFO	7107	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 15:39:00	gcd	INFO	7107	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 15:39:00	gcd	INFO	7107	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 15:39:00	gcd	INFO	7105	add共有168个1分钟遥测统计结果
+
+2022-02-18 15:39:03	gcd	INFO	7107	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 15:39:03	gcd	INFO	7107	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 15:39:06	gcd	INFO	7107	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 15:39:06	gcd	INFO	7107	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 15:39:09	gcd	INFO	7107	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 15:39:09	gcd	INFO	7107	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 15:39:12	gcd	INFO	7107	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 15:39:12	gcd	INFO	7107	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 15:39:15	gcd	INFO	7107	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 15:39:15	gcd	INFO	7107	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 15:39:18	gcd	INFO	7107	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 15:39:18	gcd	INFO	7107	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 15:39:21	gcd	INFO	7107	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 15:39:21	gcd	INFO	7107	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 15:39:24	gcd	INFO	7107	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 15:39:24	gcd	INFO	7107	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 15:39:27	gcd	INFO	7107	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 15:39:27	gcd	INFO	7107	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 15:39:30	gcd	INFO	7107	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 15:39:30	gcd	INFO	7107	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 15:39:33	gcd	INFO	7107	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 15:39:33	gcd	INFO	7107	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 15:39:36	gcd	INFO	7107	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 15:39:36	gcd	INFO	7107	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 15:39:39	gcd	INFO	7107	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 15:39:39	gcd	INFO	7107	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 15:39:43	gcd	INFO	7107	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 15:39:43	gcd	INFO	7107	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 15:39:46	gcd	INFO	7107	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 15:39:46	gcd	INFO	7107	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 15:39:49	gcd	INFO	7107	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 15:39:49	gcd	INFO	7107	cald FARMRMS plant(115020)  RMS(0.000)
+====================================进程启动=====================================
+2022-02-18 15:39:55	gcd	INFO	7602	pipe name:/home/sprixin/davinci/etc/IPC/7602a [U-2]
+2022-02-18 15:39:55	gcd	INFO	7602	Create rec pthread  success, the id is -837007616 [U-2]
+2022-02-18 15:39:55	gcd	INFO	7602	 rxinit starting...:2022-02-18 15:39:55.842, root dir = /home/sprixin/davinci
+2022-02-18 15:39:55	gcd	INFO	7602	Init PacketServicerMgr : 2022-02-18 15:39:55.844
+2022-02-18 15:39:55	gcd	INFO	7602	Init SysServicerMgr : 2022-02-18 15:39:55.849 [U-107]
+2022-02-18 15:39:55	gcd	INFO	7602	Begin init NetServicerMgr : 2022-02-18 15:39:55.851
+2022-02-18 15:39:55	gcd	INFO	7602	Finish init NetServicerMgr : 2022-02-18 15:39:55.852
+2022-02-18 15:39:55	gcd	INFO	7602	Begin startup system from local ... : 2022-02-18 15:39:55.852
+2022-02-18 15:39:55	gcd	INFO	7602	<<<<<<Load realtime database from text file.
+2022-02-18 15:39:55	gcd	INFO	7602	Realtime Database Manager System
+2022-02-18 15:39:57	gcd	INFO	7602	Load RTDB Successful From SourceDB.
+2022-02-18 15:39:57	gcd	WARNING	7602	CNetNode_MemTable():clear table netnodestatus
+2022-02-18 15:39:57	gcd	WARNING	7602	LoadNetNodeToRTDB, clear table NETNODESTATUS
+2022-02-18 15:39:57	gcd	WARNING	7602	LoadNetNodeToRTDB,after clear table NETNODESTATUS, add 1 recordes from local
+2022-02-18 15:39:57	gcd	INFO	7602	NETNODE Registered OK!
+2022-02-18 15:39:57	gcd	INFO	7602	local listener opened, port = 12009. [U-107]
+2022-02-18 15:39:57	gcd	ERROR	7602	cannot find or Static load function = make_STATUSOPER_Service.
+2022-02-18 15:39:57	gcd	ERROR	7602	cannot find or Static load function = make_BUSINESSCONTROL_Service.
+2022-02-18 15:39:57	gcd	INFO	7602	Load Extend Service Successful.
+2022-02-18 15:39:57	gcd	INFO	7602	******************************************************************
+2022-02-18 15:39:57	gcd	INFO	7602	<<<Startup Service = NETNODE Successful.
+2022-02-18 15:39:57	gcd	INFO	7602	<<<Startup Service = PROCESS Successful.
+2022-02-18 15:39:57	gcd	INFO	7602	<<<Startup Service = TIME Successful.
+2022-02-18 15:39:57	gcd	INFO	7602	<<<Startup Service = SYSPROC Successful.
+2022-02-18 15:39:57	gcd	INFO	7602	<<<Startup Service = RTDB Successful.
+2022-02-18 15:39:57	gcd	INFO	7602	<<<Startup Service = TRIGER Successful.
+2022-02-18 15:39:57	gcd	INFO	7602	<<<Startup Service = ALARM Successful.
+2022-02-18 15:39:57	gcd	INFO	7602	<<<Startup Service = CONTROL Successful.
+2022-02-18 15:39:57	gcd	INFO	7602	<<<Startup Service = DP Successful.
+2022-02-18 15:39:57	gcd	INFO	7602	<<<Startup Service = DPAgent Successful.
+2022-02-18 15:39:57	gcd	INFO	7602	<<<Startup Service = FEPINFO Successful.
+2022-02-18 15:39:57	gcd	INFO	7602	<<<Startup Service = CALC Successful.
+2022-02-18 15:39:57	gcd	INFO	7602	******************************************************************
+2022-02-18 15:39:57	gcd	INFO	7602	RXSERVER startup OK! (2022-02-18 15:39:57.725)
+2022-02-18 15:39:57	gcd	INFO	7602	******************************************************************
+2022-02-18 15:39:57	gcd	INFO	7602	******************************************************************
+2022-02-18 15:39:57	gcd	INFO	7602	starting tasks ...... 
+
+2022-02-18 15:39:58	gcd	INFO	7609	Switch to Master...
+2022-02-18 15:39:59	gcd	INFO	7610	Switch to Master...
+2022-02-18 15:40:00	gcd	INFO	7606	add共有168个1分钟遥测统计结果
+
+2022-02-18 15:40:00	gcd	INFO	7606	共有168个5分钟遥测统计结果
+
+2022-02-18 15:40:00	gcd	INFO	7608	Switch to Master...
+2022-02-18 15:40:00	gcd	INFO	7608	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 15:40:00	gcd	INFO	7608	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 15:40:03	gcd	INFO	7608	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 15:40:03	gcd	INFO	7608	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 15:40:06	gcd	INFO	7608	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 15:40:06	gcd	INFO	7608	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 15:40:10	gcd	INFO	7608	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 15:40:10	gcd	INFO	7608	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 15:40:13	gcd	INFO	7608	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 15:40:13	gcd	INFO	7608	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 15:40:16	gcd	INFO	7608	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 15:40:16	gcd	INFO	7608	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 15:40:19	gcd	INFO	7608	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 15:40:19	gcd	INFO	7608	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 15:40:22	gcd	INFO	7608	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 15:40:22	gcd	INFO	7608	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 15:40:25	gcd	INFO	7608	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 15:40:25	gcd	INFO	7608	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 15:40:28	gcd	INFO	7608	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 15:40:28	gcd	INFO	7608	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 15:40:31	gcd	INFO	7608	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 15:40:31	gcd	INFO	7608	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 15:40:34	gcd	INFO	7608	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 15:40:34	gcd	INFO	7608	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 15:40:37	gcd	INFO	7608	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 15:40:37	gcd	INFO	7608	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 15:40:40	gcd	INFO	7608	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 15:40:40	gcd	INFO	7608	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 15:40:43	gcd	INFO	7608	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 15:40:43	gcd	INFO	7608	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 15:40:46	gcd	INFO	7608	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 15:40:46	gcd	INFO	7608	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 15:40:49	gcd	INFO	7608	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 15:40:49	gcd	INFO	7608	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 15:40:52	gcd	INFO	7608	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 15:40:52	gcd	INFO	7608	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 15:40:55	gcd	INFO	7608	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 15:40:55	gcd	INFO	7608	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 15:40:59	gcd	INFO	7608	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 15:40:59	gcd	INFO	7608	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 15:41:00	gcd	INFO	7606	add共有168个1分钟遥测统计结果
+
+2022-02-18 15:41:02	gcd	INFO	7608	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 15:41:02	gcd	INFO	7608	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 15:41:05	gcd	INFO	7608	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 15:41:05	gcd	INFO	7608	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 15:41:08	gcd	INFO	7608	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 15:41:08	gcd	INFO	7608	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 15:41:11	gcd	INFO	7608	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 15:41:11	gcd	INFO	7608	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 15:41:14	gcd	INFO	7608	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 15:41:14	gcd	INFO	7608	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 15:41:17	gcd	INFO	7608	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 15:41:17	gcd	INFO	7608	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 15:41:20	gcd	INFO	7608	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 15:41:20	gcd	INFO	7608	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 15:41:22	gcd	ERROR	7602	<<<StopWatch Service = NETNODE Successful !! [U-4]
+2022-02-18 15:41:22	gcd	ERROR	7602	<<<StopWatch Service = PROCESS Successful !! [U-4]
+2022-02-18 15:41:22	gcd	ERROR	7602	<<<StopWatch Service = TIME Successful !! [U-4]
+2022-02-18 15:41:22	gcd	ERROR	7602	<<<StopWatch Service = SYSPROC Successful !! [U-4]
+2022-02-18 15:41:22	gcd	ERROR	7602	<<<StopWatch Service = RTDB Successful !! [U-4]
+2022-02-18 15:41:22	gcd	ERROR	7602	<<<StopWatch Service = TRIGER Successful !! [U-4]
+2022-02-18 15:41:22	gcd	ERROR	7602	<<<StopWatch Service = ALARM Successful !! [U-4]
+2022-02-18 15:41:22	gcd	ERROR	7602	<<<StopWatch Service = CONTROL Successful !! [U-4]
+2022-02-18 15:41:22	gcd	ERROR	7602	<<<StopWatch Service = DP Successful !! [U-4]
+2022-02-18 15:41:22	gcd	ERROR	7602	<<<StopWatch Service = DPAgent Successful !! [U-4]
+2022-02-18 15:41:22	gcd	ERROR	7602	<<<StopWatch Service = FEPINFO Successful !! [U-4]
+2022-02-18 15:41:22	gcd	ERROR	7602	<<<StopWatch Service = CALC Successful !! [U-4]
+2022-02-18 15:41:23	gcd	INFO	7602	tasks have been stopd.
+ [U-4]
+2022-02-18 15:41:23	gcd	INFO	7602	<<<<<<<<< process = 1  stoped
+2022-02-18 15:41:24	gcd	INFO	7602	tasks have been stopd.
+
+2022-02-18 15:41:24	gcd	INFO	7602	tasks have been stopd.
+
+2022-02-18 15:41:24	gcd	WARNING	7602	beging release memory database. [U-107]
+2022-02-18 15:41:24	gcd	WARNING	7602	Destroy ShmMem,m_pDBMgrMem [U-107]
+2022-02-18 15:41:24	gcd	WARNING	7602	Destroy ShmMem,m_pInitFlagMem [U-107]
+2022-02-18 15:41:24	gcd	WARNING	7602	close db connect. [U-107]
+2022-02-18 15:41:24	gcd	WARNING	7602	finish close db connect. [U-107]
+2022-02-18 15:41:24	gcd	WARNING	7602	end release memory database. [U-107]
+2022-02-18 15:41:24	gcd	INFO	7602	RxServer closed successful.
+ [U-107]
+====================================进程启动=====================================
+2022-02-18 15:41:47	gcd	INFO	7654	pipe name:/home/sprixin/davinci/etc/IPC/7654a [U-2]
+2022-02-18 15:41:47	gcd	INFO	7654	Create rec pthread  success, the id is 1479059200 [U-2]
+2022-02-18 15:41:47	gcd	INFO	7654	 rxinit starting...:2022-02-18 15:41:47.170, root dir = /home/sprixin/davinci
+2022-02-18 15:41:47	gcd	INFO	7654	Init PacketServicerMgr : 2022-02-18 15:41:47.170
+2022-02-18 15:41:47	gcd	INFO	7654	Init SysServicerMgr : 2022-02-18 15:41:47.172 [U-107]
+2022-02-18 15:41:47	gcd	INFO	7654	Begin init NetServicerMgr : 2022-02-18 15:41:47.173
+2022-02-18 15:41:47	gcd	INFO	7654	Finish init NetServicerMgr : 2022-02-18 15:41:47.173
+2022-02-18 15:41:47	gcd	INFO	7654	Begin startup system from local ... : 2022-02-18 15:41:47.173
+2022-02-18 15:41:47	gcd	INFO	7654	<<<<<<Load realtime database from text file.
+2022-02-18 15:41:47	gcd	INFO	7654	Realtime Database Manager System
+2022-02-18 15:41:48	gcd	INFO	7654	Load RTDB Successful From SourceDB.
+2022-02-18 15:41:48	gcd	WARNING	7654	CNetNode_MemTable():clear table netnodestatus
+2022-02-18 15:41:48	gcd	WARNING	7654	LoadNetNodeToRTDB, clear table NETNODESTATUS
+2022-02-18 15:41:48	gcd	WARNING	7654	LoadNetNodeToRTDB,after clear table NETNODESTATUS, add 1 recordes from local
+2022-02-18 15:41:48	gcd	INFO	7654	NETNODE Registered OK!
+2022-02-18 15:41:48	gcd	INFO	7654	local listener opened, port = 12009. [U-107]
+2022-02-18 15:41:48	gcd	ERROR	7654	cannot find or Static load function = make_STATUSOPER_Service.
+2022-02-18 15:41:48	gcd	ERROR	7654	cannot find or Static load function = make_BUSINESSCONTROL_Service.
+2022-02-18 15:41:48	gcd	INFO	7654	Load Extend Service Successful.
+2022-02-18 15:41:48	gcd	INFO	7654	******************************************************************
+2022-02-18 15:41:48	gcd	INFO	7654	<<<Startup Service = NETNODE Successful.
+2022-02-18 15:41:48	gcd	INFO	7654	<<<Startup Service = PROCESS Successful.
+2022-02-18 15:41:48	gcd	INFO	7654	<<<Startup Service = TIME Successful.
+2022-02-18 15:41:48	gcd	INFO	7654	<<<Startup Service = SYSPROC Successful.
+2022-02-18 15:41:48	gcd	INFO	7654	<<<Startup Service = RTDB Successful.
+2022-02-18 15:41:48	gcd	INFO	7654	<<<Startup Service = TRIGER Successful.
+2022-02-18 15:41:48	gcd	INFO	7654	<<<Startup Service = ALARM Successful.
+2022-02-18 15:41:48	gcd	INFO	7654	<<<Startup Service = CONTROL Successful.
+2022-02-18 15:41:48	gcd	INFO	7654	<<<Startup Service = DP Successful.
+2022-02-18 15:41:48	gcd	INFO	7654	<<<Startup Service = DPAgent Successful.
+2022-02-18 15:41:48	gcd	INFO	7654	<<<Startup Service = FEPINFO Successful.
+2022-02-18 15:41:48	gcd	INFO	7654	<<<Startup Service = CALC Successful.
+2022-02-18 15:41:48	gcd	INFO	7654	******************************************************************
+2022-02-18 15:41:48	gcd	INFO	7654	RXSERVER startup OK! (2022-02-18 15:41:48.511)
+2022-02-18 15:41:48	gcd	INFO	7654	******************************************************************
+2022-02-18 15:41:48	gcd	INFO	7654	******************************************************************
+2022-02-18 15:41:48	gcd	INFO	7654	starting tasks ...... 
+
+2022-02-18 15:41:49	gcd	INFO	7661	Switch to Master...
+2022-02-18 15:41:50	gcd	INFO	7662	Switch to Master...
+2022-02-18 15:41:51	gcd	INFO	7660	Switch to Master...
+2022-02-18 15:41:51	gcd	INFO	7660	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 15:41:51	gcd	INFO	7660	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 15:41:54	gcd	INFO	7660	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 15:41:54	gcd	INFO	7660	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 15:41:57	gcd	INFO	7660	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 15:41:57	gcd	INFO	7660	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 15:42:00	gcd	INFO	7658	add共有168个1分钟遥测统计结果
+
+2022-02-18 15:42:00	gcd	INFO	7660	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 15:42:00	gcd	INFO	7660	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 15:42:03	gcd	INFO	7660	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 15:42:03	gcd	INFO	7660	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 15:42:05	gcd	ERROR	7654	<<<StopWatch Service = NETNODE Successful !! [U-4]
+2022-02-18 15:42:05	gcd	ERROR	7654	<<<StopWatch Service = PROCESS Successful !! [U-4]
+2022-02-18 15:42:05	gcd	ERROR	7654	<<<StopWatch Service = TIME Successful !! [U-4]
+2022-02-18 15:42:05	gcd	ERROR	7654	<<<StopWatch Service = SYSPROC Successful !! [U-4]
+2022-02-18 15:42:05	gcd	ERROR	7654	<<<StopWatch Service = RTDB Successful !! [U-4]
+2022-02-18 15:42:05	gcd	ERROR	7654	<<<StopWatch Service = TRIGER Successful !! [U-4]
+2022-02-18 15:42:05	gcd	ERROR	7654	<<<StopWatch Service = ALARM Successful !! [U-4]
+2022-02-18 15:42:05	gcd	ERROR	7654	<<<StopWatch Service = CONTROL Successful !! [U-4]
+2022-02-18 15:42:05	gcd	ERROR	7654	<<<StopWatch Service = DP Successful !! [U-4]
+2022-02-18 15:42:05	gcd	ERROR	7654	<<<StopWatch Service = DPAgent Successful !! [U-4]
+2022-02-18 15:42:05	gcd	ERROR	7654	<<<StopWatch Service = FEPINFO Successful !! [U-4]
+2022-02-18 15:42:05	gcd	ERROR	7654	<<<StopWatch Service = CALC Successful !! [U-4]
+2022-02-18 15:42:06	gcd	INFO	7654	tasks have been stopd.
+ [U-4]
+2022-02-18 15:42:06	gcd	INFO	7654	<<<<<<<<< process = 1  stoped
+2022-02-18 15:42:07	gcd	INFO	7654	tasks have been stopd.
+
+2022-02-18 15:42:07	gcd	INFO	7654	tasks have been stopd.
+
+2022-02-18 15:42:07	gcd	WARNING	7654	beging release memory database. [U-107]
+2022-02-18 15:42:07	gcd	WARNING	7654	Destroy ShmMem,m_pDBMgrMem [U-107]
+2022-02-18 15:42:07	gcd	WARNING	7654	Destroy ShmMem,m_pInitFlagMem [U-107]
+2022-02-18 15:42:07	gcd	WARNING	7654	close db connect. [U-107]
+2022-02-18 15:42:07	gcd	WARNING	7654	finish close db connect. [U-107]
+2022-02-18 15:42:07	gcd	WARNING	7654	end release memory database. [U-107]
+2022-02-18 15:42:07	gcd	INFO	7654	RxServer closed successful.
+ [U-107]
+====================================进程启动=====================================
+2022-02-18 15:44:06	gcd	INFO	7679	pipe name:/home/sprixin/davinci/etc/IPC/7679a [U-2]
+2022-02-18 15:44:06	gcd	INFO	7679	Create rec pthread  success, the id is -1303296256 [U-2]
+2022-02-18 15:44:06	gcd	INFO	7679	 rxinit starting...:2022-02-18 15:44:06.506, root dir = /home/sprixin/davinci
+2022-02-18 15:44:06	gcd	INFO	7679	Init PacketServicerMgr : 2022-02-18 15:44:06.506
+2022-02-18 15:44:06	gcd	INFO	7679	Init SysServicerMgr : 2022-02-18 15:44:06.509 [U-107]
+2022-02-18 15:44:06	gcd	INFO	7679	Begin init NetServicerMgr : 2022-02-18 15:44:06.509
+2022-02-18 15:44:06	gcd	INFO	7679	Finish init NetServicerMgr : 2022-02-18 15:44:06.509
+2022-02-18 15:44:06	gcd	INFO	7679	Begin startup system from local ... : 2022-02-18 15:44:06.509
+2022-02-18 15:44:06	gcd	INFO	7679	<<<<<<Load realtime database from text file.
+2022-02-18 15:44:06	gcd	INFO	7679	Realtime Database Manager System
+2022-02-18 15:44:07	gcd	INFO	7679	Load RTDB Successful From SourceDB.
+2022-02-18 15:44:07	gcd	WARNING	7679	CNetNode_MemTable():clear table netnodestatus
+2022-02-18 15:44:07	gcd	WARNING	7679	LoadNetNodeToRTDB, clear table NETNODESTATUS
+2022-02-18 15:44:07	gcd	WARNING	7679	LoadNetNodeToRTDB,after clear table NETNODESTATUS, add 1 recordes from local
+2022-02-18 15:44:07	gcd	INFO	7679	NETNODE Registered OK!
+2022-02-18 15:44:07	gcd	INFO	7679	local listener opened, port = 12009. [U-107]
+2022-02-18 15:44:07	gcd	ERROR	7679	cannot find or Static load function = make_STATUSOPER_Service.
+2022-02-18 15:44:07	gcd	ERROR	7679	cannot find or Static load function = make_BUSINESSCONTROL_Service.
+2022-02-18 15:44:07	gcd	INFO	7679	Load Extend Service Successful.
+2022-02-18 15:44:07	gcd	INFO	7679	******************************************************************
+2022-02-18 15:44:07	gcd	INFO	7679	<<<Startup Service = NETNODE Successful.
+2022-02-18 15:44:07	gcd	INFO	7679	<<<Startup Service = PROCESS Successful.
+2022-02-18 15:44:07	gcd	INFO	7679	<<<Startup Service = TIME Successful.
+2022-02-18 15:44:07	gcd	INFO	7679	<<<Startup Service = SYSPROC Successful.
+2022-02-18 15:44:07	gcd	INFO	7679	<<<Startup Service = RTDB Successful.
+2022-02-18 15:44:07	gcd	INFO	7679	<<<Startup Service = TRIGER Successful.
+2022-02-18 15:44:07	gcd	INFO	7679	<<<Startup Service = ALARM Successful.
+2022-02-18 15:44:07	gcd	INFO	7679	<<<Startup Service = CONTROL Successful.
+2022-02-18 15:44:07	gcd	INFO	7679	<<<Startup Service = DP Successful.
+2022-02-18 15:44:07	gcd	INFO	7679	<<<Startup Service = DPAgent Successful.
+2022-02-18 15:44:07	gcd	INFO	7679	<<<Startup Service = FEPINFO Successful.
+2022-02-18 15:44:07	gcd	INFO	7679	<<<Startup Service = CALC Successful.
+2022-02-18 15:44:07	gcd	INFO	7679	******************************************************************
+2022-02-18 15:44:07	gcd	INFO	7679	RXSERVER startup OK! (2022-02-18 15:44:07.833)
+2022-02-18 15:44:07	gcd	INFO	7679	******************************************************************
+2022-02-18 15:44:07	gcd	INFO	7679	******************************************************************
+2022-02-18 15:44:07	gcd	INFO	7679	starting tasks ...... 
+
+2022-02-18 15:44:08	gcd	INFO	7686	Switch to Master...
+2022-02-18 15:44:09	gcd	INFO	7687	Switch to Master...
+2022-02-18 15:44:10	gcd	INFO	7685	Switch to Master...
+2022-02-18 15:44:10	gcd	INFO	7685	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 15:44:10	gcd	INFO	7685	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 15:44:14	gcd	INFO	7685	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 15:44:14	gcd	INFO	7685	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 15:44:17	gcd	INFO	7685	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 15:44:17	gcd	INFO	7685	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 15:44:20	gcd	INFO	7685	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 15:44:20	gcd	INFO	7685	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 15:44:23	gcd	INFO	7685	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 15:44:23	gcd	INFO	7685	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 15:44:26	gcd	INFO	7685	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 15:44:26	gcd	INFO	7685	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 15:44:29	gcd	INFO	7685	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 15:44:29	gcd	INFO	7685	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 15:44:32	gcd	INFO	7685	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 15:44:32	gcd	INFO	7685	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 15:44:35	gcd	INFO	7685	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 15:44:35	gcd	INFO	7685	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 15:44:38	gcd	INFO	7685	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 15:44:38	gcd	INFO	7685	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 15:44:41	gcd	INFO	7685	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 15:44:41	gcd	INFO	7685	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 15:44:44	gcd	INFO	7685	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 15:44:44	gcd	INFO	7685	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 15:44:47	gcd	INFO	7685	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 15:44:47	gcd	INFO	7685	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 15:44:50	gcd	INFO	7685	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 15:44:50	gcd	INFO	7685	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 15:44:53	gcd	INFO	7685	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 15:44:53	gcd	INFO	7685	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 15:44:56	gcd	INFO	7685	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 15:44:56	gcd	INFO	7685	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 15:44:59	gcd	INFO	7685	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 15:44:59	gcd	INFO	7685	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 15:45:00	gcd	INFO	7683	add共有168个1分钟遥测统计结果
+ [U-11]
+2022-02-18 15:45:00	gcd	INFO	7683	共有168个5分钟遥测统计结果
+ [U-11]
+2022-02-18 15:45:00	gcd	INFO	7683	共有168个15分钟遥测统计结果
+ [U-11]
+2022-02-18 15:45:03	gcd	INFO	7685	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 15:45:03	gcd	INFO	7685	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 15:45:06	gcd	INFO	7685	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 15:45:06	gcd	INFO	7685	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 15:45:09	gcd	INFO	7685	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 15:45:09	gcd	INFO	7685	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 15:45:12	gcd	INFO	7685	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 15:45:12	gcd	INFO	7685	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 15:45:15	gcd	INFO	7685	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 15:45:15	gcd	INFO	7685	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 15:45:18	gcd	INFO	7685	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 15:45:18	gcd	INFO	7685	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 15:45:21	gcd	INFO	7685	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 15:45:21	gcd	INFO	7685	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 15:45:24	gcd	INFO	7685	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 15:45:24	gcd	INFO	7685	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 15:45:27	gcd	INFO	7685	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 15:45:27	gcd	INFO	7685	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 15:45:30	gcd	INFO	7685	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 15:45:30	gcd	INFO	7685	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 15:45:33	gcd	INFO	7685	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 15:45:33	gcd	INFO	7685	cald FARMRMS plant(115020)  RMS(0.000)
+====================================进程启动=====================================
+2022-02-18 15:45:48	gcd	INFO	8009	pipe name:/home/sprixin/davinci/etc/IPC/8009a [U-2]
+2022-02-18 15:45:48	gcd	INFO	8009	Create rec pthread  success, the id is -1722870016 [U-2]
+2022-02-18 15:45:48	gcd	INFO	8009	 rxinit starting...:2022-02-18 15:45:48.571, root dir = /home/sprixin/davinci
+2022-02-18 15:45:48	gcd	INFO	8009	Init PacketServicerMgr : 2022-02-18 15:45:48.572
+2022-02-18 15:45:48	gcd	INFO	8009	Init SysServicerMgr : 2022-02-18 15:45:48.574 [U-107]
+2022-02-18 15:45:48	gcd	INFO	8009	Begin init NetServicerMgr : 2022-02-18 15:45:48.575
+2022-02-18 15:45:48	gcd	INFO	8009	Finish init NetServicerMgr : 2022-02-18 15:45:48.575
+2022-02-18 15:45:48	gcd	INFO	8009	Begin startup system from local ... : 2022-02-18 15:45:48.575
+2022-02-18 15:45:48	gcd	INFO	8009	<<<<<<Load realtime database from text file.
+2022-02-18 15:45:48	gcd	INFO	8009	Realtime Database Manager System
+2022-02-18 15:45:49	gcd	INFO	8009	Load RTDB Successful From SourceDB.
+2022-02-18 15:45:49	gcd	WARNING	8009	CNetNode_MemTable():clear table netnodestatus
+2022-02-18 15:45:49	gcd	WARNING	8009	LoadNetNodeToRTDB, clear table NETNODESTATUS
+2022-02-18 15:45:49	gcd	WARNING	8009	LoadNetNodeToRTDB,after clear table NETNODESTATUS, add 1 recordes from local
+2022-02-18 15:45:49	gcd	INFO	8009	NETNODE Registered OK!
+2022-02-18 15:45:49	gcd	INFO	8009	local listener opened, port = 12009. [U-107]
+2022-02-18 15:45:49	gcd	ERROR	8009	cannot find or Static load function = make_STATUSOPER_Service.
+2022-02-18 15:45:49	gcd	ERROR	8009	cannot find or Static load function = make_BUSINESSCONTROL_Service.
+2022-02-18 15:45:49	gcd	INFO	8009	Load Extend Service Successful.
+2022-02-18 15:45:49	gcd	INFO	8009	******************************************************************
+2022-02-18 15:45:49	gcd	INFO	8009	<<<Startup Service = NETNODE Successful.
+2022-02-18 15:45:49	gcd	INFO	8009	<<<Startup Service = PROCESS Successful.
+2022-02-18 15:45:49	gcd	INFO	8009	<<<Startup Service = TIME Successful.
+2022-02-18 15:45:49	gcd	INFO	8009	<<<Startup Service = SYSPROC Successful.
+2022-02-18 15:45:49	gcd	INFO	8009	<<<Startup Service = RTDB Successful.
+2022-02-18 15:45:49	gcd	INFO	8009	<<<Startup Service = TRIGER Successful.
+2022-02-18 15:45:49	gcd	INFO	8009	<<<Startup Service = ALARM Successful.
+2022-02-18 15:45:49	gcd	INFO	8009	<<<Startup Service = CONTROL Successful.
+2022-02-18 15:45:49	gcd	INFO	8009	<<<Startup Service = DP Successful.
+2022-02-18 15:45:49	gcd	INFO	8009	<<<Startup Service = DPAgent Successful.
+2022-02-18 15:45:49	gcd	INFO	8009	<<<Startup Service = FEPINFO Successful.
+2022-02-18 15:45:49	gcd	INFO	8009	<<<Startup Service = CALC Successful.
+2022-02-18 15:45:49	gcd	INFO	8009	******************************************************************
+2022-02-18 15:45:49	gcd	INFO	8009	RXSERVER startup OK! (2022-02-18 15:45:49.901)
+2022-02-18 15:45:49	gcd	INFO	8009	******************************************************************
+2022-02-18 15:45:49	gcd	INFO	8009	******************************************************************
+2022-02-18 15:45:49	gcd	INFO	8009	starting tasks ...... 
+
+2022-02-18 15:45:50	gcd	INFO	8016	Switch to Master...
+2022-02-18 15:45:52	gcd	INFO	8017	Switch to Master...
+2022-02-18 15:45:52	gcd	INFO	8015	Switch to Master...
+2022-02-18 15:45:53	gcd	INFO	8015	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 15:45:53	gcd	INFO	8015	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 15:45:56	gcd	INFO	8015	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 15:45:56	gcd	INFO	8015	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 15:45:59	gcd	INFO	8015	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 15:45:59	gcd	INFO	8015	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 15:46:00	gcd	INFO	8013	add共有168个1分钟遥测统计结果
+
+2022-02-18 15:46:02	gcd	INFO	8015	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 15:46:02	gcd	INFO	8015	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 15:46:05	gcd	INFO	8015	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 15:46:05	gcd	INFO	8015	cald FARMRMS plant(115020)  RMS(0.000)
+====================================进程启动=====================================
+2022-02-18 15:46:26	gcd	INFO	8325	pipe name:/home/sprixin/davinci/etc/IPC/8325a [U-2]
+2022-02-18 15:46:26	gcd	INFO	8325	Create rec pthread  success, the id is -1115887872 [U-2]
+2022-02-18 15:46:26	gcd	INFO	8325	 rxinit starting...:2022-02-18 15:46:26.690, root dir = /home/sprixin/davinci
+2022-02-18 15:46:26	gcd	INFO	8325	Init PacketServicerMgr : 2022-02-18 15:46:26.690
+2022-02-18 15:46:26	gcd	INFO	8325	Init SysServicerMgr : 2022-02-18 15:46:26.693 [U-107]
+2022-02-18 15:46:26	gcd	INFO	8325	Begin init NetServicerMgr : 2022-02-18 15:46:26.693
+2022-02-18 15:46:26	gcd	INFO	8325	Finish init NetServicerMgr : 2022-02-18 15:46:26.693
+2022-02-18 15:46:26	gcd	INFO	8325	Begin startup system from local ... : 2022-02-18 15:46:26.693
+2022-02-18 15:46:26	gcd	INFO	8325	<<<<<<Load realtime database from text file.
+2022-02-18 15:46:26	gcd	INFO	8325	Realtime Database Manager System
+2022-02-18 15:46:27	gcd	INFO	8325	Load RTDB Successful From SourceDB.
+2022-02-18 15:46:27	gcd	WARNING	8325	CNetNode_MemTable():clear table netnodestatus
+2022-02-18 15:46:27	gcd	WARNING	8325	LoadNetNodeToRTDB, clear table NETNODESTATUS
+2022-02-18 15:46:27	gcd	WARNING	8325	LoadNetNodeToRTDB,after clear table NETNODESTATUS, add 1 recordes from local
+2022-02-18 15:46:27	gcd	INFO	8325	NETNODE Registered OK!
+2022-02-18 15:46:27	gcd	INFO	8325	local listener opened, port = 12009. [U-107]
+2022-02-18 15:46:27	gcd	ERROR	8325	cannot find or Static load function = make_STATUSOPER_Service.
+2022-02-18 15:46:27	gcd	ERROR	8325	cannot find or Static load function = make_BUSINESSCONTROL_Service.
+2022-02-18 15:46:27	gcd	INFO	8325	Load Extend Service Successful.
+2022-02-18 15:46:27	gcd	INFO	8325	******************************************************************
+2022-02-18 15:46:27	gcd	INFO	8325	<<<Startup Service = NETNODE Successful.
+2022-02-18 15:46:27	gcd	INFO	8325	<<<Startup Service = PROCESS Successful.
+2022-02-18 15:46:27	gcd	INFO	8325	<<<Startup Service = TIME Successful.
+2022-02-18 15:46:27	gcd	INFO	8325	<<<Startup Service = SYSPROC Successful.
+2022-02-18 15:46:27	gcd	INFO	8325	<<<Startup Service = RTDB Successful.
+2022-02-18 15:46:27	gcd	INFO	8325	<<<Startup Service = TRIGER Successful.
+2022-02-18 15:46:27	gcd	INFO	8325	<<<Startup Service = ALARM Successful.
+2022-02-18 15:46:27	gcd	INFO	8325	<<<Startup Service = CONTROL Successful.
+2022-02-18 15:46:27	gcd	INFO	8325	<<<Startup Service = DP Successful.
+2022-02-18 15:46:27	gcd	INFO	8325	<<<Startup Service = DPAgent Successful.
+2022-02-18 15:46:27	gcd	INFO	8325	<<<Startup Service = FEPINFO Successful.
+2022-02-18 15:46:27	gcd	INFO	8325	<<<Startup Service = CALC Successful.
+2022-02-18 15:46:27	gcd	INFO	8325	******************************************************************
+2022-02-18 15:46:27	gcd	INFO	8325	RXSERVER startup OK! (2022-02-18 15:46:27.876)
+2022-02-18 15:46:27	gcd	INFO	8325	******************************************************************
+2022-02-18 15:46:27	gcd	INFO	8325	******************************************************************
+2022-02-18 15:46:27	gcd	INFO	8325	starting tasks ...... 
+
+2022-02-18 15:46:28	gcd	INFO	8332	Switch to Master...
+2022-02-18 15:46:29	gcd	INFO	8333	Switch to Master...
+2022-02-18 15:46:30	gcd	INFO	8331	Switch to Master...
+2022-02-18 15:46:30	gcd	INFO	8331	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 15:46:30	gcd	INFO	8331	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 15:46:34	gcd	INFO	8331	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 15:46:34	gcd	INFO	8331	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 15:46:37	gcd	INFO	8331	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 15:46:37	gcd	INFO	8331	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 15:46:40	gcd	INFO	8331	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 15:46:40	gcd	INFO	8331	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 15:46:43	gcd	INFO	8331	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 15:46:43	gcd	INFO	8331	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 15:46:46	gcd	INFO	8331	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 15:46:46	gcd	INFO	8331	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 15:46:49	gcd	INFO	8331	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 15:46:49	gcd	INFO	8331	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 15:46:52	gcd	INFO	8331	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 15:46:52	gcd	INFO	8331	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 15:46:55	gcd	INFO	8331	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 15:46:55	gcd	INFO	8331	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 15:46:58	gcd	INFO	8331	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 15:46:58	gcd	INFO	8331	cald FARMRMS plant(115020)  RMS(0.000)
+====================================进程启动=====================================
+2022-02-18 15:47:24	gcd	INFO	8641	pipe name:/home/sprixin/davinci/etc/IPC/8641a [U-2]
+2022-02-18 15:47:24	gcd	INFO	8641	Create rec pthread  success, the id is 1191253760 [U-2]
+2022-02-18 15:47:24	gcd	INFO	8641	 rxinit starting...:2022-02-18 15:47:24.903, root dir = /home/sprixin/davinci
+2022-02-18 15:47:24	gcd	INFO	8641	Init PacketServicerMgr : 2022-02-18 15:47:24.904
+2022-02-18 15:47:24	gcd	INFO	8641	Init SysServicerMgr : 2022-02-18 15:47:24.906 [U-107]
+2022-02-18 15:47:24	gcd	INFO	8641	Begin init NetServicerMgr : 2022-02-18 15:47:24.906
+2022-02-18 15:47:24	gcd	INFO	8641	Finish init NetServicerMgr : 2022-02-18 15:47:24.906
+2022-02-18 15:47:24	gcd	INFO	8641	Begin startup system from local ... : 2022-02-18 15:47:24.906
+2022-02-18 15:47:24	gcd	INFO	8641	<<<<<<Load realtime database from text file.
+2022-02-18 15:47:24	gcd	INFO	8641	Realtime Database Manager System
+2022-02-18 15:47:25	gcd	INFO	8641	Load RTDB Successful From SourceDB.
+2022-02-18 15:47:25	gcd	WARNING	8641	CNetNode_MemTable():clear table netnodestatus
+2022-02-18 15:47:25	gcd	WARNING	8641	LoadNetNodeToRTDB, clear table NETNODESTATUS
+2022-02-18 15:47:25	gcd	WARNING	8641	LoadNetNodeToRTDB,after clear table NETNODESTATUS, add 1 recordes from local
+2022-02-18 15:47:25	gcd	INFO	8641	NETNODE Registered OK!
+2022-02-18 15:47:25	gcd	INFO	8641	local listener opened, port = 12009. [U-107]
+2022-02-18 15:47:25	gcd	ERROR	8641	cannot find or Static load function = make_STATUSOPER_Service.
+2022-02-18 15:47:25	gcd	ERROR	8641	cannot find or Static load function = make_BUSINESSCONTROL_Service.
+2022-02-18 15:47:25	gcd	INFO	8641	Load Extend Service Successful.
+2022-02-18 15:47:25	gcd	INFO	8641	******************************************************************
+2022-02-18 15:47:25	gcd	INFO	8641	<<<Startup Service = NETNODE Successful.
+2022-02-18 15:47:25	gcd	INFO	8641	<<<Startup Service = PROCESS Successful.
+2022-02-18 15:47:25	gcd	INFO	8641	<<<Startup Service = TIME Successful.
+2022-02-18 15:47:25	gcd	INFO	8641	<<<Startup Service = SYSPROC Successful.
+2022-02-18 15:47:25	gcd	INFO	8641	<<<Startup Service = RTDB Successful.
+2022-02-18 15:47:25	gcd	INFO	8641	<<<Startup Service = TRIGER Successful.
+2022-02-18 15:47:25	gcd	INFO	8641	<<<Startup Service = ALARM Successful.
+2022-02-18 15:47:25	gcd	INFO	8641	<<<Startup Service = CONTROL Successful.
+2022-02-18 15:47:25	gcd	INFO	8641	<<<Startup Service = DP Successful.
+2022-02-18 15:47:25	gcd	INFO	8641	<<<Startup Service = DPAgent Successful.
+2022-02-18 15:47:25	gcd	INFO	8641	<<<Startup Service = FEPINFO Successful.
+2022-02-18 15:47:25	gcd	INFO	8641	<<<Startup Service = CALC Successful.
+2022-02-18 15:47:25	gcd	INFO	8641	******************************************************************
+2022-02-18 15:47:25	gcd	INFO	8641	RXSERVER startup OK! (2022-02-18 15:47:25.964)
+2022-02-18 15:47:26	gcd	INFO	8641	******************************************************************
+2022-02-18 15:47:26	gcd	INFO	8641	******************************************************************
+2022-02-18 15:47:26	gcd	INFO	8641	starting tasks ...... 
+
+2022-02-18 15:47:27	gcd	INFO	8648	Switch to Master...
+2022-02-18 15:47:28	gcd	INFO	8649	Switch to Master...
+2022-02-18 15:47:29	gcd	INFO	8647	Switch to Master...
+2022-02-18 15:47:29	gcd	INFO	8647	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 15:47:29	gcd	INFO	8647	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 15:47:32	gcd	INFO	8647	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 15:47:32	gcd	INFO	8647	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 15:47:35	gcd	INFO	8647	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 15:47:35	gcd	INFO	8647	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 15:47:38	gcd	INFO	8647	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 15:47:38	gcd	INFO	8647	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 15:47:41	gcd	INFO	8647	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 15:47:41	gcd	INFO	8647	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 15:47:44	gcd	INFO	8647	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 15:47:44	gcd	INFO	8647	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 15:47:47	gcd	INFO	8647	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 15:47:47	gcd	INFO	8647	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 15:47:50	gcd	INFO	8647	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 15:47:50	gcd	INFO	8647	cald FARMRMS plant(115020)  RMS(0.000)
+====================================进程启动=====================================
+2022-02-18 16:00:35	gcd	INFO	9124	pipe name:/home/sprixin/davinci/etc/IPC/9124a [U-2]
+2022-02-18 16:00:35	gcd	INFO	9124	Create rec pthread  success, the id is -1692870912 [U-2]
+2022-02-18 16:00:35	gcd	INFO	9124	 rxinit starting...:2022-02-18 16:00:35.985, root dir = /home/sprixin/davinci
+2022-02-18 16:00:35	gcd	INFO	9124	Init PacketServicerMgr : 2022-02-18 16:00:35.986
+2022-02-18 16:00:35	gcd	INFO	9124	Init SysServicerMgr : 2022-02-18 16:00:35.994 [U-107]
+2022-02-18 16:00:35	gcd	INFO	9124	Begin init NetServicerMgr : 2022-02-18 16:00:35.994
+2022-02-18 16:00:35	gcd	INFO	9124	Finish init NetServicerMgr : 2022-02-18 16:00:35.995
+2022-02-18 16:00:35	gcd	INFO	9124	Begin startup system from local ... : 2022-02-18 16:00:35.995
+2022-02-18 16:00:35	gcd	INFO	9124	<<<<<<Load realtime database from text file.
+2022-02-18 16:00:35	gcd	INFO	9124	Realtime Database Manager System
+2022-02-18 16:00:37	gcd	INFO	9124	Load RTDB Successful From SourceDB.
+2022-02-18 16:00:37	gcd	WARNING	9124	CNetNode_MemTable():clear table netnodestatus
+2022-02-18 16:00:37	gcd	WARNING	9124	LoadNetNodeToRTDB, clear table NETNODESTATUS
+2022-02-18 16:00:37	gcd	WARNING	9124	LoadNetNodeToRTDB,after clear table NETNODESTATUS, add 1 recordes from local
+2022-02-18 16:00:37	gcd	INFO	9124	NETNODE Registered OK!
+2022-02-18 16:00:37	gcd	INFO	9124	local listener opened, port = 12009. [U-107]
+2022-02-18 16:00:37	gcd	ERROR	9124	cannot find or Static load function = make_STATUSOPER_Service.
+2022-02-18 16:00:37	gcd	ERROR	9124	cannot find or Static load function = make_BUSINESSCONTROL_Service.
+2022-02-18 16:00:37	gcd	INFO	9124	Load Extend Service Successful.
+2022-02-18 16:00:37	gcd	INFO	9124	******************************************************************
+2022-02-18 16:00:37	gcd	INFO	9124	<<<Startup Service = NETNODE Successful.
+2022-02-18 16:00:37	gcd	INFO	9124	<<<Startup Service = PROCESS Successful.
+2022-02-18 16:00:37	gcd	INFO	9124	<<<Startup Service = TIME Successful.
+2022-02-18 16:00:37	gcd	INFO	9124	<<<Startup Service = SYSPROC Successful.
+2022-02-18 16:00:37	gcd	INFO	9124	<<<Startup Service = RTDB Successful.
+2022-02-18 16:00:37	gcd	INFO	9124	<<<Startup Service = TRIGER Successful.
+2022-02-18 16:00:37	gcd	INFO	9124	<<<Startup Service = ALARM Successful.
+2022-02-18 16:00:37	gcd	INFO	9124	<<<Startup Service = CONTROL Successful.
+2022-02-18 16:00:37	gcd	INFO	9124	<<<Startup Service = DP Successful.
+2022-02-18 16:00:37	gcd	INFO	9124	<<<Startup Service = DPAgent Successful.
+2022-02-18 16:00:37	gcd	INFO	9124	<<<Startup Service = FEPINFO Successful.
+2022-02-18 16:00:37	gcd	INFO	9124	<<<Startup Service = CALC Successful.
+2022-02-18 16:00:37	gcd	INFO	9124	******************************************************************
+2022-02-18 16:00:37	gcd	INFO	9124	RXSERVER startup OK! (2022-02-18 16:00:37.402)
+2022-02-18 16:00:37	gcd	INFO	9124	******************************************************************
+2022-02-18 16:00:37	gcd	INFO	9124	******************************************************************
+2022-02-18 16:00:37	gcd	INFO	9124	starting tasks ...... 
+
+2022-02-18 16:00:38	gcd	INFO	9131	Switch to Master...
+2022-02-18 16:00:39	gcd	INFO	9132	Switch to Master...
+2022-02-18 16:00:40	gcd	INFO	9130	Switch to Master...
+2022-02-18 16:00:40	gcd	INFO	9130	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:00:40	gcd	INFO	9130	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:00:43	gcd	INFO	9130	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:00:43	gcd	INFO	9130	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:00:43	gcd	ERROR	9124	<<<StopWatch Service = NETNODE Successful !! [U-4]
+2022-02-18 16:00:43	gcd	ERROR	9124	<<<StopWatch Service = PROCESS Successful !! [U-4]
+2022-02-18 16:00:43	gcd	ERROR	9124	<<<StopWatch Service = TIME Successful !! [U-4]
+2022-02-18 16:00:43	gcd	ERROR	9124	<<<StopWatch Service = SYSPROC Successful !! [U-4]
+2022-02-18 16:00:43	gcd	ERROR	9124	<<<StopWatch Service = RTDB Successful !! [U-4]
+2022-02-18 16:00:43	gcd	ERROR	9124	<<<StopWatch Service = TRIGER Successful !! [U-4]
+2022-02-18 16:00:43	gcd	ERROR	9124	<<<StopWatch Service = ALARM Successful !! [U-4]
+2022-02-18 16:00:43	gcd	ERROR	9124	<<<StopWatch Service = CONTROL Successful !! [U-4]
+2022-02-18 16:00:43	gcd	ERROR	9124	<<<StopWatch Service = DP Successful !! [U-4]
+2022-02-18 16:00:43	gcd	ERROR	9124	<<<StopWatch Service = DPAgent Successful !! [U-4]
+2022-02-18 16:00:43	gcd	ERROR	9124	<<<StopWatch Service = FEPINFO Successful !! [U-4]
+2022-02-18 16:00:43	gcd	ERROR	9124	<<<StopWatch Service = CALC Successful !! [U-4]
+2022-02-18 16:00:44	gcd	INFO	9124	tasks have been stopd.
+ [U-4]
+2022-02-18 16:00:44	gcd	INFO	9124	<<<<<<<<< process = 1  stoped
+2022-02-18 16:00:45	gcd	INFO	9124	tasks have been stopd.
+
+2022-02-18 16:00:45	gcd	INFO	9124	tasks have been stopd.
+
+2022-02-18 16:00:45	gcd	WARNING	9124	beging release memory database. [U-107]
+2022-02-18 16:00:45	gcd	WARNING	9124	Destroy ShmMem,m_pDBMgrMem [U-107]
+2022-02-18 16:00:45	gcd	WARNING	9124	Destroy ShmMem,m_pInitFlagMem [U-107]
+2022-02-18 16:00:45	gcd	WARNING	9124	close db connect. [U-107]
+2022-02-18 16:00:45	gcd	WARNING	9124	finish close db connect. [U-107]
+2022-02-18 16:00:45	gcd	WARNING	9124	end release memory database. [U-107]
+2022-02-18 16:00:45	gcd	INFO	9124	RxServer closed successful.
+ [U-107]
+====================================进程启动=====================================
+2022-02-18 16:01:05	gcd	INFO	9161	pipe name:/home/sprixin/davinci/etc/IPC/9161a [U-2]
+2022-02-18 16:01:05	gcd	INFO	9161	Create rec pthread  success, the id is 488404736 [U-2]
+2022-02-18 16:01:06	gcd	INFO	9161	 rxinit starting...:2022-02-18 16:01:06.001, root dir = /home/sprixin/davinci
+2022-02-18 16:01:06	gcd	INFO	9161	Init PacketServicerMgr : 2022-02-18 16:01:06.002
+2022-02-18 16:01:06	gcd	INFO	9161	Init SysServicerMgr : 2022-02-18 16:01:06.004 [U-107]
+2022-02-18 16:01:06	gcd	INFO	9161	Begin init NetServicerMgr : 2022-02-18 16:01:06.004
+2022-02-18 16:01:06	gcd	INFO	9161	Finish init NetServicerMgr : 2022-02-18 16:01:06.004
+2022-02-18 16:01:06	gcd	INFO	9161	Begin startup system from local ... : 2022-02-18 16:01:06.005
+2022-02-18 16:01:06	gcd	INFO	9161	<<<<<<Load realtime database from text file.
+2022-02-18 16:01:06	gcd	INFO	9161	Realtime Database Manager System
+2022-02-18 16:01:06	gcd	INFO	9161	Load RTDB Successful From SourceDB.
+2022-02-18 16:01:06	gcd	WARNING	9161	CNetNode_MemTable():clear table netnodestatus
+2022-02-18 16:01:06	gcd	WARNING	9161	LoadNetNodeToRTDB, clear table NETNODESTATUS
+2022-02-18 16:01:06	gcd	WARNING	9161	LoadNetNodeToRTDB,after clear table NETNODESTATUS, add 1 recordes from local
+2022-02-18 16:01:06	gcd	INFO	9161	NETNODE Registered OK!
+2022-02-18 16:01:06	gcd	INFO	9161	local listener opened, port = 12009. [U-107]
+2022-02-18 16:01:06	gcd	ERROR	9161	cannot find or Static load function = make_STATUSOPER_Service.
+2022-02-18 16:01:06	gcd	ERROR	9161	cannot find or Static load function = make_BUSINESSCONTROL_Service.
+2022-02-18 16:01:06	gcd	INFO	9161	Load Extend Service Successful.
+2022-02-18 16:01:06	gcd	INFO	9161	******************************************************************
+2022-02-18 16:01:06	gcd	INFO	9161	<<<Startup Service = NETNODE Successful.
+2022-02-18 16:01:06	gcd	INFO	9161	<<<Startup Service = PROCESS Successful.
+2022-02-18 16:01:06	gcd	INFO	9161	<<<Startup Service = TIME Successful.
+2022-02-18 16:01:06	gcd	INFO	9161	<<<Startup Service = SYSPROC Successful.
+2022-02-18 16:01:06	gcd	INFO	9161	<<<Startup Service = RTDB Successful.
+2022-02-18 16:01:06	gcd	INFO	9161	<<<Startup Service = TRIGER Successful.
+2022-02-18 16:01:06	gcd	INFO	9161	<<<Startup Service = ALARM Successful.
+2022-02-18 16:01:07	gcd	INFO	9161	<<<Startup Service = CONTROL Successful.
+2022-02-18 16:01:07	gcd	INFO	9161	<<<Startup Service = DP Successful.
+2022-02-18 16:01:07	gcd	INFO	9161	<<<Startup Service = DPAgent Successful.
+2022-02-18 16:01:07	gcd	INFO	9161	<<<Startup Service = FEPINFO Successful.
+2022-02-18 16:01:07	gcd	INFO	9161	<<<Startup Service = CALC Successful.
+2022-02-18 16:01:07	gcd	INFO	9161	******************************************************************
+2022-02-18 16:01:07	gcd	INFO	9161	RXSERVER startup OK! (2022-02-18 16:01:07.170)
+2022-02-18 16:01:07	gcd	INFO	9161	******************************************************************
+2022-02-18 16:01:07	gcd	INFO	9161	******************************************************************
+2022-02-18 16:01:07	gcd	INFO	9161	starting tasks ...... 
+
+2022-02-18 16:01:08	gcd	INFO	9168	Switch to Master...
+2022-02-18 16:01:09	gcd	INFO	9169	Switch to Master...
+2022-02-18 16:01:10	gcd	INFO	9167	Switch to Master...
+2022-02-18 16:01:10	gcd	INFO	9167	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:01:10	gcd	INFO	9167	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:01:13	gcd	INFO	9167	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:01:13	gcd	INFO	9167	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:01:16	gcd	INFO	9167	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:01:16	gcd	INFO	9167	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:01:17	gcd	ERROR	9161	<<<StopWatch Service = NETNODE Successful !! [U-4]
+2022-02-18 16:01:17	gcd	ERROR	9161	<<<StopWatch Service = PROCESS Successful !! [U-4]
+2022-02-18 16:01:17	gcd	ERROR	9161	<<<StopWatch Service = TIME Successful !! [U-4]
+2022-02-18 16:01:17	gcd	ERROR	9161	<<<StopWatch Service = SYSPROC Successful !! [U-4]
+2022-02-18 16:01:17	gcd	ERROR	9161	<<<StopWatch Service = RTDB Successful !! [U-4]
+2022-02-18 16:01:17	gcd	ERROR	9161	<<<StopWatch Service = TRIGER Successful !! [U-4]
+2022-02-18 16:01:17	gcd	ERROR	9161	<<<StopWatch Service = ALARM Successful !! [U-4]
+2022-02-18 16:01:17	gcd	ERROR	9161	<<<StopWatch Service = CONTROL Successful !! [U-4]
+2022-02-18 16:01:17	gcd	ERROR	9161	<<<StopWatch Service = DP Successful !! [U-4]
+2022-02-18 16:01:17	gcd	ERROR	9161	<<<StopWatch Service = DPAgent Successful !! [U-4]
+2022-02-18 16:01:17	gcd	ERROR	9161	<<<StopWatch Service = FEPINFO Successful !! [U-4]
+2022-02-18 16:01:17	gcd	ERROR	9161	<<<StopWatch Service = CALC Successful !! [U-4]
+2022-02-18 16:01:17	gcd	INFO	9161	tasks have been stopd.
+ [U-4]
+2022-02-18 16:01:17	gcd	INFO	9161	<<<<<<<<< process = 1  stoped
+2022-02-18 16:01:18	gcd	INFO	9161	tasks have been stopd.
+
+2022-02-18 16:01:18	gcd	INFO	9161	tasks have been stopd.
+
+2022-02-18 16:01:18	gcd	WARNING	9161	beging release memory database. [U-107]
+2022-02-18 16:01:18	gcd	WARNING	9161	Destroy ShmMem,m_pDBMgrMem [U-107]
+2022-02-18 16:01:18	gcd	WARNING	9161	Destroy ShmMem,m_pInitFlagMem [U-107]
+2022-02-18 16:01:18	gcd	WARNING	9161	close db connect. [U-107]
+2022-02-18 16:01:18	gcd	WARNING	9161	finish close db connect. [U-107]
+2022-02-18 16:01:18	gcd	WARNING	9161	end release memory database. [U-107]
+2022-02-18 16:01:18	gcd	INFO	9161	RxServer closed successful.
+ [U-107]
+====================================进程启动=====================================
+2022-02-18 16:01:36	gcd	INFO	9180	pipe name:/home/sprixin/davinci/etc/IPC/9180a [U-2]
+2022-02-18 16:01:36	gcd	INFO	9180	Create rec pthread  success, the id is -422398208 [U-2]
+2022-02-18 16:01:36	gcd	INFO	9180	 rxinit starting...:2022-02-18 16:01:36.269, root dir = /home/sprixin/davinci
+2022-02-18 16:01:36	gcd	INFO	9180	Init PacketServicerMgr : 2022-02-18 16:01:36.270
+2022-02-18 16:01:36	gcd	INFO	9180	Init SysServicerMgr : 2022-02-18 16:01:36.272 [U-107]
+2022-02-18 16:01:36	gcd	INFO	9180	Begin init NetServicerMgr : 2022-02-18 16:01:36.273
+2022-02-18 16:01:36	gcd	INFO	9180	Finish init NetServicerMgr : 2022-02-18 16:01:36.273
+2022-02-18 16:01:36	gcd	INFO	9180	Begin startup system from local ... : 2022-02-18 16:01:36.273
+2022-02-18 16:01:36	gcd	INFO	9180	<<<<<<Load realtime database from text file.
+2022-02-18 16:01:36	gcd	INFO	9180	Realtime Database Manager System
+2022-02-18 16:01:37	gcd	INFO	9180	Load RTDB Successful From SourceDB.
+2022-02-18 16:01:37	gcd	WARNING	9180	CNetNode_MemTable():clear table netnodestatus
+2022-02-18 16:01:37	gcd	WARNING	9180	LoadNetNodeToRTDB, clear table NETNODESTATUS
+2022-02-18 16:01:37	gcd	WARNING	9180	LoadNetNodeToRTDB,after clear table NETNODESTATUS, add 1 recordes from local
+2022-02-18 16:01:37	gcd	INFO	9180	NETNODE Registered OK!
+2022-02-18 16:01:37	gcd	INFO	9180	local listener opened, port = 12009. [U-107]
+2022-02-18 16:01:37	gcd	ERROR	9180	cannot find or Static load function = make_STATUSOPER_Service.
+2022-02-18 16:01:37	gcd	ERROR	9180	cannot find or Static load function = make_BUSINESSCONTROL_Service.
+2022-02-18 16:01:37	gcd	INFO	9180	Load Extend Service Successful.
+2022-02-18 16:01:37	gcd	INFO	9180	******************************************************************
+2022-02-18 16:01:37	gcd	INFO	9180	<<<Startup Service = NETNODE Successful.
+2022-02-18 16:01:37	gcd	INFO	9180	<<<Startup Service = PROCESS Successful.
+2022-02-18 16:01:37	gcd	INFO	9180	<<<Startup Service = TIME Successful.
+2022-02-18 16:01:37	gcd	INFO	9180	<<<Startup Service = SYSPROC Successful.
+2022-02-18 16:01:37	gcd	INFO	9180	<<<Startup Service = RTDB Successful.
+2022-02-18 16:01:37	gcd	INFO	9180	<<<Startup Service = TRIGER Successful.
+2022-02-18 16:01:37	gcd	INFO	9180	<<<Startup Service = ALARM Successful.
+2022-02-18 16:01:37	gcd	INFO	9180	<<<Startup Service = CONTROL Successful.
+2022-02-18 16:01:37	gcd	INFO	9180	<<<Startup Service = DP Successful.
+2022-02-18 16:01:37	gcd	INFO	9180	<<<Startup Service = DPAgent Successful.
+2022-02-18 16:01:37	gcd	INFO	9180	<<<Startup Service = FEPINFO Successful.
+2022-02-18 16:01:37	gcd	INFO	9180	<<<Startup Service = CALC Successful.
+2022-02-18 16:01:37	gcd	INFO	9180	******************************************************************
+2022-02-18 16:01:37	gcd	INFO	9180	RXSERVER startup OK! (2022-02-18 16:01:37.447)
+2022-02-18 16:01:37	gcd	INFO	9180	******************************************************************
+2022-02-18 16:01:37	gcd	INFO	9180	******************************************************************
+2022-02-18 16:01:37	gcd	INFO	9180	starting tasks ...... 
+
+2022-02-18 16:01:38	gcd	INFO	9187	Switch to Master...
+2022-02-18 16:01:39	gcd	INFO	9188	Switch to Master...
+2022-02-18 16:01:40	gcd	INFO	9186	Switch to Master...
+2022-02-18 16:01:40	gcd	INFO	9186	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:01:40	gcd	INFO	9186	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:01:43	gcd	INFO	9186	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:01:43	gcd	INFO	9186	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:01:46	gcd	INFO	9186	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:01:46	gcd	INFO	9186	cald FARMRMS plant(115020)  RMS(0.000)
+====================================进程启动=====================================
+2022-02-18 16:15:50	gcd	INFO	9653	pipe name:/home/sprixin/davinci/etc/IPC/9653a [U-2]
+2022-02-18 16:15:50	gcd	INFO	9653	Create rec pthread  success, the id is 1590470400 [U-2]
+2022-02-18 16:15:50	gcd	INFO	9653	 rxinit starting...:2022-02-18 16:15:50.547, root dir = /home/sprixin/davinci
+2022-02-18 16:15:50	gcd	INFO	9653	Init PacketServicerMgr : 2022-02-18 16:15:50.548
+2022-02-18 16:15:50	gcd	INFO	9653	Init SysServicerMgr : 2022-02-18 16:15:50.550 [U-107]
+2022-02-18 16:15:50	gcd	INFO	9653	Begin init NetServicerMgr : 2022-02-18 16:15:50.550
+2022-02-18 16:15:50	gcd	INFO	9653	Finish init NetServicerMgr : 2022-02-18 16:15:50.550
+2022-02-18 16:15:50	gcd	INFO	9653	Begin startup system from local ... : 2022-02-18 16:15:50.550
+2022-02-18 16:15:50	gcd	INFO	9653	<<<<<<Load realtime database from text file.
+2022-02-18 16:15:50	gcd	INFO	9653	Realtime Database Manager System
+2022-02-18 16:15:51	gcd	INFO	9653	Load RTDB Successful From SourceDB.
+2022-02-18 16:15:51	gcd	WARNING	9653	CNetNode_MemTable():clear table netnodestatus
+2022-02-18 16:15:51	gcd	WARNING	9653	LoadNetNodeToRTDB, clear table NETNODESTATUS
+2022-02-18 16:15:51	gcd	WARNING	9653	LoadNetNodeToRTDB,after clear table NETNODESTATUS, add 1 recordes from local
+2022-02-18 16:15:51	gcd	INFO	9653	NETNODE Registered OK!
+2022-02-18 16:15:51	gcd	INFO	9653	local listener opened, port = 12009. [U-107]
+2022-02-18 16:15:51	gcd	ERROR	9653	cannot find or Static load function = make_STATUSOPER_Service.
+2022-02-18 16:15:51	gcd	ERROR	9653	cannot find or Static load function = make_BUSINESSCONTROL_Service.
+2022-02-18 16:15:51	gcd	INFO	9653	Load Extend Service Successful.
+2022-02-18 16:15:51	gcd	INFO	9653	******************************************************************
+2022-02-18 16:15:51	gcd	INFO	9653	<<<Startup Service = NETNODE Successful.
+2022-02-18 16:15:51	gcd	INFO	9653	<<<Startup Service = PROCESS Successful.
+2022-02-18 16:15:51	gcd	INFO	9653	<<<Startup Service = TIME Successful.
+2022-02-18 16:15:51	gcd	INFO	9653	<<<Startup Service = SYSPROC Successful.
+2022-02-18 16:15:51	gcd	INFO	9653	<<<Startup Service = RTDB Successful.
+2022-02-18 16:15:51	gcd	INFO	9653	<<<Startup Service = TRIGER Successful.
+2022-02-18 16:15:51	gcd	INFO	9653	<<<Startup Service = ALARM Successful.
+2022-02-18 16:15:51	gcd	INFO	9653	<<<Startup Service = CONTROL Successful.
+2022-02-18 16:15:51	gcd	INFO	9653	<<<Startup Service = DP Successful.
+2022-02-18 16:15:51	gcd	INFO	9653	<<<Startup Service = DPAgent Successful.
+2022-02-18 16:15:51	gcd	INFO	9653	<<<Startup Service = FEPINFO Successful.
+2022-02-18 16:15:51	gcd	INFO	9653	<<<Startup Service = CALC Successful.
+2022-02-18 16:15:51	gcd	INFO	9653	******************************************************************
+2022-02-18 16:15:51	gcd	INFO	9653	RXSERVER startup OK! (2022-02-18 16:15:51.925)
+2022-02-18 16:15:51	gcd	INFO	9653	******************************************************************
+2022-02-18 16:15:51	gcd	INFO	9653	******************************************************************
+2022-02-18 16:15:52	gcd	INFO	9653	starting tasks ...... 
+
+2022-02-18 16:15:53	gcd	INFO	9664	Switch to Master...
+2022-02-18 16:15:54	gcd	INFO	9665	Switch to Master...
+2022-02-18 16:15:54	gcd	ERROR	9653	主机收到节点sprixin.Fcst,进程rxefilecreate的注册请求
+2022-02-18 16:15:54	gcd	ERROR	9653	ProcessApplyRegister,1
+2022-02-18 16:15:54	gcd	ERROR	9653	主机广播进程注册成功消息，节点=sprixin.Fcst,进程=rxefilecreate
+2022-02-18 16:15:54	gcd	INFO	9653	向进程代理发出<进程启动>消息，进程ID：1536，进程名称：rxefilecreate，节点ID：6
+2022-02-18 16:15:54	gcd	INFO	9653	CProcessRtdbMgr类中，增加一条进程记录。process.m_hostID = 6, process.m_PID = 9655
+2022-02-18 16:15:54	gcd	INFO	9653	添加进程记录id = 1536
+2022-02-18 16:15:54	gcd	INFO	9653	Accept Host = sprixin.Fcst Registing Process = 9655 OK!
+2022-02-18 16:15:55	gcd	INFO	9663	Switch to Master...
+2022-02-18 16:15:55	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:15:55	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:15:58	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:15:58	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:16:00	gcd	INFO	9661	add共有168个1分钟遥测统计结果
+
+2022-02-18 16:16:01	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:16:01	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:16:04	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:16:04	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:16:07	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:16:07	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:16:10	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:16:10	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:16:13	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:16:13	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:16:16	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:16:16	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:16:19	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:16:19	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:16:22	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:16:22	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:16:25	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:16:25	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:16:28	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:16:28	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:16:31	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:16:31	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:16:34	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:16:34	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:16:37	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:16:37	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:16:41	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:16:41	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:16:44	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:16:44	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:16:47	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:16:47	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:16:50	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:16:50	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:16:53	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:16:53	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:16:56	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:16:56	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:16:59	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:16:59	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:17:00	gcd	INFO	9661	add共有168个1分钟遥测统计结果
+
+2022-02-18 16:17:02	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:17:02	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:17:05	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:17:05	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:17:08	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:17:08	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:17:11	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:17:11	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:17:14	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:17:14	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:17:17	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:17:17	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:17:20	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:17:20	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:17:23	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:17:23	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+====================================进程启动=====================================
+2022-02-18 16:17:25	gcd	INFO	9688	pipe name:/home/sprixin/davinci/etc/IPC/9688a [U-17]
+2022-02-18 16:17:25	gcd	INFO	9688	Create rec pthread  success, the id is -769546496 [U-17]
+2022-02-18 16:17:25	gcd	INFO	9688	RxServer already has a instance.
+ [U-11]
+2022-02-18 16:17:26	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:17:26	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:17:30	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:17:30	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:17:33	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:17:33	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:17:36	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:17:36	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:17:39	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:17:39	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:17:42	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:17:42	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:17:45	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:17:45	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:17:48	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:17:48	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:17:51	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:17:51	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:17:54	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:17:54	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:17:57	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:17:57	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:18:00	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:18:00	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:18:00	gcd	INFO	9661	add共有168个1分钟遥测统计结果
+
+2022-02-18 16:18:03	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:18:03	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:18:06	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:18:06	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:18:09	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:18:09	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:18:12	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:18:12	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:18:15	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:18:15	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:18:19	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:18:19	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:18:22	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:18:22	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:18:25	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:18:25	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:18:28	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:18:28	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:18:31	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:18:31	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+====================================进程启动=====================================
+2022-02-18 16:18:34	gcd	INFO	9708	pipe name:/home/sprixin/davinci/etc/IPC/9708a [U-17]
+2022-02-18 16:18:34	gcd	INFO	9708	Create rec pthread  success, the id is 1335609088 [U-17]
+2022-02-18 16:18:34	gcd	INFO	9708	RxServer already has a instance.
+ [U-11]
+2022-02-18 16:18:34	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:18:34	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:18:37	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:18:37	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:18:40	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:18:40	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:18:43	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:18:43	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:18:46	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:18:46	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:18:49	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:18:49	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:18:52	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:18:52	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:18:55	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:18:55	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:18:58	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:18:58	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:19:00	gcd	INFO	9661	add共有168个1分钟遥测统计结果
+ [U-11]
+2022-02-18 16:19:01	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:19:01	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:19:04	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:19:05	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:19:08	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:19:08	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:19:11	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:19:11	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:19:14	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:19:14	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:19:17	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:19:17	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:19:20	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:19:20	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:19:23	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:19:23	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:19:26	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:19:26	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:19:29	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:19:29	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:19:32	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:19:32	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:19:35	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:19:35	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:19:38	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:19:38	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:19:41	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:19:41	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:19:44	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:19:44	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:19:47	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:19:47	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:19:50	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:19:50	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:19:53	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:19:53	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:19:57	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:19:57	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:20:00	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:20:00	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:20:00	gcd	INFO	9661	add共有168个1分钟遥测统计结果
+ [U-11]
+2022-02-18 16:20:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:20:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:20:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:20:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:20:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:20:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:20:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:20:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:20:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:20:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:20:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:20:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:20:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:20:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:20:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:20:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:20:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:20:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:20:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:20:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:20:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:20:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:20:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:20:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:20:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:20:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:20:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:20:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:20:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:20:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:20:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:20:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:20:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:20:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:20:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:20:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:20:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:20:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:20:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:20:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:20:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:20:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:20:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:20:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:20:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:20:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:20:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:20:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:20:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:20:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:20:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:20:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:20:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:20:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:20:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:20:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:20:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:20:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:20:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:20:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:20:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:20:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:20:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:20:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:20:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:20:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:20:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:20:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:20:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:20:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:20:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:20:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:20:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:20:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:20:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:20:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:20:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:20:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:20:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:20:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:20:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:20:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:20:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:20:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:20:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:20:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:20:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:20:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:20:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:20:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:20:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:20:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:20:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:20:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:20:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:20:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:20:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:20:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:20:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:20:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:20:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:20:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:20:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:20:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:20:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:20:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:20:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:20:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:20:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:20:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:20:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:20:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:20:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:20:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:20:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:20:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:20:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:20:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:20:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:20:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:20:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:20:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:20:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:20:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:20:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:20:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:20:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:20:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:20:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:20:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:20:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:20:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:20:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:20:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:20:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:20:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:20:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:20:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:20:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:20:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:20:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:20:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:20:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:20:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:20:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:20:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:20:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:20:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:20:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:20:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:20:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:20:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:20:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:20:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:20:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:20:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:20:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:20:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:20:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:20:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:20:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:20:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:20:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:20:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:20:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:20:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:20:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:20:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:20:00	gcd	INFO	9661	共有168个5分钟遥测统计结果
+ [U-11]
+2022-02-18 16:20:03	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:20:03	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:20:06	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:20:06	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:20:09	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:20:09	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:20:12	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:20:12	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:20:15	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:20:15	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:20:18	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:20:18	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:20:21	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:20:21	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:20:24	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:20:24	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:20:27	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:20:27	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:20:30	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:20:30	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:20:33	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:20:33	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:20:36	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:20:36	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:20:39	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:20:39	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:20:43	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:20:43	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:20:46	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:20:46	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:20:49	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:20:49	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:20:52	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:20:52	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:20:55	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:20:55	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:20:58	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:20:58	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:21:00	gcd	INFO	9661	add共有168个1分钟遥测统计结果
+ [U-11]
+2022-02-18 16:21:01	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:21:01	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:21:04	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:21:04	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:21:07	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:21:07	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+====================================进程启动=====================================
+2022-02-18 16:21:09	gcd	INFO	9758	pipe name:/home/sprixin/davinci/etc/IPC/9758a [U-17]
+2022-02-18 16:21:09	gcd	INFO	9758	Create rec pthread  success, the id is 1375061760 [U-17]
+2022-02-18 16:21:09	gcd	INFO	9758	RxServer already has a instance.
+ [U-11]
+2022-02-18 16:21:10	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:21:10	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:21:13	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:21:13	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:21:16	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:21:16	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:21:19	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:21:19	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:21:22	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:21:22	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:21:25	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:21:25	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:21:29	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:21:29	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:21:32	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:21:32	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:21:35	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:21:35	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:21:38	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:21:38	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:21:41	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:21:41	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:21:44	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:21:44	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:21:47	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:21:47	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:21:50	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:21:50	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:21:53	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:21:53	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:21:56	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:21:56	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:21:59	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:21:59	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:22:00	gcd	INFO	9661	add共有168个1分钟遥测统计结果
+ [U-11]
+2022-02-18 16:22:02	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:22:02	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:22:05	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:22:05	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:22:08	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:22:08	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:22:11	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:22:11	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:22:15	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:22:15	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:22:18	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:22:18	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:22:21	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:22:21	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:22:24	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:22:24	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:22:27	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:22:27	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:22:30	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:22:30	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:22:33	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:22:33	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:22:36	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:22:36	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:22:39	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:22:39	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:22:42	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:22:42	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:22:45	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:22:45	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:22:48	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:22:48	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:22:51	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:22:51	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:22:54	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:22:54	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:22:57	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:22:57	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:23:00	gcd	INFO	9661	add共有168个1分钟遥测统计结果
+ [U-11]
+2022-02-18 16:23:00	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:23:01	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:23:04	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:23:04	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:23:07	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:23:07	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:23:10	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:23:10	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:23:13	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:23:13	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:23:16	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:23:16	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:23:19	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:23:19	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:23:22	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:23:22	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:23:25	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:23:25	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:23:28	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:23:28	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:23:31	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:23:31	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:23:34	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:23:34	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:23:37	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:23:37	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:23:40	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:23:40	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:23:43	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:23:43	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:23:46	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:23:46	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:23:50	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:23:50	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:23:53	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:23:53	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:23:56	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:23:56	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:23:59	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:23:59	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:24:00	gcd	INFO	9661	add共有168个1分钟遥测统计结果
+ [U-11]
+2022-02-18 16:24:02	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:24:02	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:24:05	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:24:05	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:24:08	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:24:08	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:24:11	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:24:11	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:24:14	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:24:14	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:24:17	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:24:17	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:24:20	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:24:20	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:24:23	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:24:23	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:24:26	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:24:26	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:24:29	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:24:29	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:24:32	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:24:32	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:24:35	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:24:35	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:24:39	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:24:39	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:24:42	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:24:42	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:24:45	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:24:45	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:24:48	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:24:48	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:24:51	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:24:51	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:24:54	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:24:54	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:24:57	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:24:57	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:25:00	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:25:00	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:25:00	gcd	INFO	9661	add共有168个1分钟遥测统计结果
+ [U-11]
+2022-02-18 16:25:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:25:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:25:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:25:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:25:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:25:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:25:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:25:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:25:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:25:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:25:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:25:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:25:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:25:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:25:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:25:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:25:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:25:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:25:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:25:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:25:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:25:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:25:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:25:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:25:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:25:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:25:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:25:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:25:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:25:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:25:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:25:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:25:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:25:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:25:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:25:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:25:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:25:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:25:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:25:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:25:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:25:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:25:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:25:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:25:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:25:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:25:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:25:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:25:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:25:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:25:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:25:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:25:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:25:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:25:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:25:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:25:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:25:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:25:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:25:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:25:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:25:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:25:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:25:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:25:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:25:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:25:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:25:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:25:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:25:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:25:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:25:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:25:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:25:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:25:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:25:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:25:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:25:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:25:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:25:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:25:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:25:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:25:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:25:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:25:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:25:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:25:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:25:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:25:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:25:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:25:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:25:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:25:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:25:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:25:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:25:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:25:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:25:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:25:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:25:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:25:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:25:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:25:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:25:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:25:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:25:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:25:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:25:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:25:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:25:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:25:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:25:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:25:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:25:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:25:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:25:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:25:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:25:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:25:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:25:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:25:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:25:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:25:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:25:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:25:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:25:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:25:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:25:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:25:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:25:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:25:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:25:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:25:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:25:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:25:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:25:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:25:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:25:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:25:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:25:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:25:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:25:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:25:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:25:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:25:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:25:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:25:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:25:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:25:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:25:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:25:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:25:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:25:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:25:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:25:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:25:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:25:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:25:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:25:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:25:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:25:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:25:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:25:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:25:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:25:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:25:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:25:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:25:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:25:00	gcd	INFO	9661	共有168个5分钟遥测统计结果
+ [U-11]
+2022-02-18 16:25:03	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:25:03	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:25:06	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:25:06	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:25:09	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:25:09	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:25:12	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:25:12	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:25:15	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:25:15	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:25:18	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:25:18	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:25:21	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:25:21	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:25:24	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:25:24	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:25:28	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:25:28	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:25:31	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:25:31	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:25:34	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:25:34	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:25:37	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:25:37	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:25:40	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:25:40	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:25:43	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:25:43	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:25:46	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:25:46	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:25:49	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:25:49	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:25:52	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:25:52	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:25:55	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:25:55	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:25:58	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:25:58	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:26:00	gcd	INFO	9661	add共有168个1分钟遥测统计结果
+ [U-11]
+2022-02-18 16:26:01	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:26:01	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:26:04	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:26:04	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:26:07	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:26:07	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:26:10	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:26:10	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:26:13	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:26:13	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:26:17	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:26:17	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:26:20	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:26:20	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:26:23	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:26:23	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:26:26	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:26:26	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:26:29	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:26:29	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:26:32	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:26:32	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:26:35	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:26:35	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:26:38	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:26:38	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:26:41	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:26:41	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:26:44	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:26:44	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:26:47	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:26:47	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:26:50	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:26:50	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:26:53	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:26:53	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:26:56	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:26:56	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:26:59	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:26:59	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:27:00	gcd	INFO	9661	add共有168个1分钟遥测统计结果
+ [U-11]
+2022-02-18 16:27:02	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:27:02	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:27:06	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:27:06	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:27:09	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:27:09	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:27:12	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:27:12	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:27:15	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:27:15	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:27:18	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:27:18	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:27:21	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:27:21	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:27:24	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:27:24	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:27:27	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:27:27	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:27:30	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:27:30	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:27:33	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:27:33	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:27:36	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:27:36	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:27:39	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:27:39	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:27:42	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:27:42	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:27:45	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:27:45	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:27:48	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:27:48	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:27:51	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:27:51	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:27:55	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:27:55	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:27:58	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:27:58	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:28:00	gcd	INFO	9661	add共有168个1分钟遥测统计结果
+ [U-11]
+2022-02-18 16:28:01	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:28:01	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:28:04	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:28:04	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:28:07	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:28:07	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:28:10	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:28:10	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:28:13	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:28:13	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:28:16	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:28:16	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:28:19	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:28:19	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:28:22	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:28:22	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:28:25	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:28:25	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:28:28	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:28:28	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:28:31	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:28:31	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:28:34	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:28:34	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:28:37	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:28:37	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:28:40	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:28:40	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:28:44	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:28:44	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:28:47	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:28:47	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:28:50	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:28:50	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:28:53	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:28:53	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:28:56	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:28:56	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:28:59	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:28:59	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:29:00	gcd	INFO	9661	add共有168个1分钟遥测统计结果
+ [U-11]
+2022-02-18 16:29:02	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:29:02	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:29:05	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:29:05	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:29:08	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:29:08	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:29:11	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:29:11	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:29:14	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:29:14	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:29:17	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:29:17	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:29:20	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:29:20	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:29:23	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:29:23	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:29:26	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:29:26	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:29:30	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:29:30	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:29:33	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:29:33	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:29:36	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:29:36	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:29:39	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:29:39	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:29:42	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:29:42	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:29:45	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:29:45	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:29:48	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:29:48	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:29:51	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:29:51	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:29:54	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:29:54	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:29:57	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:29:57	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:30:00	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:30:00	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:30:00	gcd	INFO	9661	add共有168个1分钟遥测统计结果
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=5
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	共有168个5分钟遥测统计结果
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=15
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=15
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=15
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=15
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=15
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=15
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=15
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=15
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=15
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=15
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=15
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=15
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=15
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=15
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=15
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=15
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=15
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=15
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=15
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=15
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=15
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=15
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=15
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=15
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=15
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=15
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=15
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=15
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=15
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=15
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=15
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=15
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=15
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=15
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=15
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=15
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=15
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=15
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=15
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=15
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=15
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=15
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=15
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=15
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=15
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=15
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=15
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=15
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=15
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=15
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=15
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=15
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=15
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=15
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=15
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=15
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=15
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=15
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=15
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=15
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=15
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=15
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=15
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=15
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=15
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=15
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=15
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=15
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=15
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=15
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=15
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=15
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=15
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=15
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=15
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=15
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=15
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=15
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=15
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=15
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=15
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=15
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=15
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=15
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=15
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=15
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=15
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=15
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=15
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=15
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=15
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=15
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=15
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=15
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=15
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=15
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=15
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=15
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=15
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=15
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=15
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=15
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=15
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=15
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=15
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=15
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=15
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=15
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=15
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=15
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=15
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=15
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=15
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=15
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=15
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=15
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=15
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=15
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=15
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=15
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=15
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=15
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=15
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=15
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=15
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=15
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=15
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=15
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=15
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=15
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=15
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=15
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=15
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=15
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=15
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=15
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=15
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=15
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=15
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=15
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=15
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=15
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=15
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=15
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=15
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=15
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=15
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=15
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=15
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=15
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=15
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=15
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=15
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=15
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=15
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=15
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=15
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=15
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=15
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=15
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=15
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=15
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=15
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=15
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=15
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=15
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=15
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	add遥测本次和上次统计分钟心跳=15
+ [U-11]
+2022-02-18 16:30:00	gcd	INFO	9661	共有168个15分钟遥测统计结果
+ [U-11]
+2022-02-18 16:30:03	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:30:03	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:30:06	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:30:06	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:30:09	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:30:09	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:30:12	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:30:12	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:30:15	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:30:15	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:30:19	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:30:19	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:30:22	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:30:22	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:30:25	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:30:25	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:30:28	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:30:28	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:30:31	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:30:31	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:30:34	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:30:34	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:30:37	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:30:37	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:30:40	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:30:40	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:30:43	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:30:43	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:30:46	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:30:46	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:30:49	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:30:49	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:30:52	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:30:52	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:30:55	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:30:55	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:30:58	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:30:58	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:31:00	gcd	INFO	9661	add共有168个1分钟遥测统计结果
+ [U-11]
+2022-02-18 16:31:01	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:31:01	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:31:05	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:31:05	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:31:08	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:31:08	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:31:11	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:31:11	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:31:14	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:31:14	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:31:17	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:31:17	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:31:20	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:31:20	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:31:23	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:31:23	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:31:26	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:31:26	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:31:29	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:31:29	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:31:32	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:31:32	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:31:35	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:31:35	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:31:38	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:31:38	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:31:41	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:31:41	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:31:44	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:31:44	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:31:47	gcd	INFO	9663	cald FARMAVGR plant(115020) Vane(0.000) FARMAVGV(v=0.000)
+2022-02-18 16:31:47	gcd	INFO	9663	cald FARMRMS plant(115020)  RMS(0.000)
+2022-02-18 16:31:49	gcd	ERROR	9653	CQT_Socket_Stream (127.0.0.1): sn_read: Connection closed Because of read = 0 [U-2]

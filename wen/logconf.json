@@ -1,0 +1,10 @@
+{
+    "common": {
+        "_comment_1": "roll_file_size is M",
+        "roll_file_size": 200,
+        "_comment_2": "TRACE:0;DEBUG:1;INFO:2;WARN:3;ERROR:4;FATAL:5",
+        "log_level": 1,
+        "_comment_3": "0--->console; 1--->file;",
+        "log_to": 1
+    }
+}

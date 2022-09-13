@@ -1,0 +1,40 @@
+====================================进程启动=====================================
+2022-02-18 16:15:50	gcd	INFO	9655	pipe name:/home/sprixin/davinci/etc/IPC/9655a [U-17]
+2022-02-18 16:15:50	gcd	INFO	9655	Create rec pthread  success, the id is 470787840 [U-17]
+2022-02-18 16:15:50	gcd	INFO	9655	<<<<<<<<< process = rxefilecreate begin starting........
+2022-02-18 16:15:50	gcd	INFO	9655	begin trying to connect RXSERVER. Please Waiting... maxtimeout = 4000  [U-115]
+2022-02-18 16:15:54	gcd	INFO	9655	ApplicationTimerElapse: time arrived, beginning check whether or not exist connected channel. [U-107]
+2022-02-18 16:15:54	gcd	INFO	9655	beginning try to connect server. Please Waiting.... timeout = 2 [U-115]
+2022-02-18 16:15:54	gcd	INFO	9655	pid =9655 Recv A Node( 0 ) Running. [U-115]
+2022-02-18 16:15:54	gcd	INFO	9655	Realtime Database Manager System [U-115]
+2022-02-18 16:15:54	gcd	WARNING	9655	begin to init memory database. [U-17]
+2022-02-18 16:15:54	gcd	WARNING	9655	have finished to init memory database. [U-17]
+2022-02-18 16:15:54	gcd	INFO	9655	CComponentManager::OnReceivedSignalRunning,begin to StartupApplication [U-17]
+2022-02-18 16:15:54	gcd	INFO	9655	REGISTER Registered OK! [U-17]
+2022-02-18 16:15:54	gcd	INFO	9655	Begin Register Application = 38. Please Wait... [U-17]
+2022-02-18 16:15:54	gcd	WARNING	9655	<<<<< Apply To Register Process = rxefilecreate.... [U-17]
+2022-02-18 16:15:54	gcd	WARNING	9655	 >>>>>>process rxefilecreate  Register OK! [U-17]
+2022-02-18 16:15:54	gcd	INFO	9655	Register Process = 38 Success. [U-17]
+2022-02-18 16:15:54	gcd	INFO	9655	****************************************************************** [U-17]
+2022-02-18 16:15:54	gcd	INFO	9655	<<<Startup Service = REGISTER Successful. [U-17]
+2022-02-18 16:15:54	gcd	INFO	9655	<<<< RegisterObject StartUp ! [U-17]
+2022-02-18 16:15:54	gcd	INFO	9655	****************************************************************** [U-17]
+2022-02-18 16:15:54	gcd	INFO	9655	rxefilecreate startup OK! [U-17]
+2022-02-18 16:15:54	gcd	INFO	9655	start ok
+2022-02-18 16:15:54	gcd	INFO	9655	程序启动成功
+2022-02-18 16:15:54	gcd	ERROR	9655	数据文件路径设置失败, 文件不存在:/home/sprixin/davinci/usr/subfcst_project/fepcfg/ftpcfg [U-2]
+2022-02-18 16:15:54	gcd	INFO	9655	远程传输单元个数 = 0 [U-2]
+2022-02-18 16:15:54	gcd	INFO	9655	****************************************************************** [U-2]
+2022-02-18 16:15:54	gcd	INFO	9655	****************************************************************** [U-2]
+====================================进程启动=====================================
+2022-02-18 16:17:25	gcd	INFO	9690	pipe name:/home/sprixin/davinci/etc/IPC/9690a [U-17]
+2022-02-18 16:17:25	gcd	INFO	9690	Create rec pthread  success, the id is 820369152 [U-17]
+2022-02-18 16:17:25	gcd	ERROR	9690	already has a instance efilecreate exist [U-11]
+====================================进程启动=====================================
+2022-02-18 16:18:34	gcd	INFO	9710	pipe name:/home/sprixin/davinci/etc/IPC/9710a [U-17]
+2022-02-18 16:18:34	gcd	INFO	9710	Create rec pthread  success, the id is -654248192 [U-17]
+2022-02-18 16:18:34	gcd	ERROR	9710	already has a instance efilecreate exist [U-11]
+====================================进程启动=====================================
+2022-02-18 16:21:09	gcd	INFO	9760	pipe name:/home/sprixin/davinci/etc/IPC/9760a [U-17]
+2022-02-18 16:21:09	gcd	INFO	9760	Create rec pthread  success, the id is -1262532864 [U-17]
+2022-02-18 16:21:09	gcd	ERROR	9760	already has a instance efilecreate exist [U-11]

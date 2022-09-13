@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<test>
+    <suit id="001" name="短期预测页面" desc="">
+        <precondition>
+            <step order="1" desc="创建浏览器驱动" cmdtype="4001" cmdparas="chrome"/>
+            <step order="2" desc="登录" cmdtype="4003" cmdparas="http://10.8.8.21:8080/SPPP-web/login~id|username@@id|password@@id|submit~send_keys@wpfs@@send_keys@wpfs@@click~suitcondpara_1_1~"/>
+        </precondition>
+		<case id="001" name="曲线-风场设置_多个值_list" desc="预测功率,置信上限,置信下限" faulttype="0" mark="0">
+			<step order="1" desc="关系库表获取" cmdtype="5001" cmdparas="select  round(p,3) from hdrfcstdata_longtoufdc where fcst_time = '2022-04-01 00:00:00'  and daytype =2 and powertype =4
+~QMYSQL~10.8.8.21@_@_@_~4"/>
+			<judgestep order="2" desc="" cmdtype="2010" cmdparas="4~steppara_1_1~26.918"/>
+		</case>
+		<case id="002" name="曲线-风场设置_多个值_list" desc="预测功率,置信上限,置信下限" faulttype="0" mark="0">
+			<step order="1" desc="关系库表获取" cmdtype="5001" cmdparas="select  round(p,3),round(limit_upper,3),round(limit_lower,3) from hdrfcstdata_longtoufdc where fcst_time = '2022-04-01 00:00:00'  and daytype =2 and powertype =4
+~QMYSQL~_~3"/>
+			<judgestep order="2" desc="" cmdtype="2010" cmdparas="3~steppara_1_1~['26.918', '32.302', '21.535']"/>
+		</case>
+    </suit>
+</test>

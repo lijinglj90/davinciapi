@@ -1,0 +1,72 @@
+{
+    "hdr":[
+        {
+            "name":"analog_f",
+            "tabletype":1,
+            "extendname":"value, status, test1",
+            "extendtype":"4, 1, 2",
+            "extenddefault":"0.00, 0, 0"
+        },
+        {
+            "name":"analog_d",
+            "tabletype":1,
+            "extendname":"value, status",
+            "extendtype":"5, 1",
+            "extenddefault":"88.4, 9"
+        },
+        {
+            "name":"analog_d_5",
+            "tabletype":1,
+            "extendname":"maxvalue, maxtime, minvalue, mintime, average",
+            "extendtype":"5, 3, 5, 3, 5",
+            "extenddefault":"0.00, 0, 0.00, 0, 0.00"
+        },
+        {
+            "name":"status",
+            "tabletype":1,
+            "extendname":"value, status",
+            "extendtype":"2, 1",
+            "extenddefault":"0, 0"
+        }
+    ],
+    "hds":[
+        {
+            "src_hdr":"analog_d",
+            "target_hdr":"analog_d_5",
+            "src_fields":"value",
+            "target_fields":"maxvalue, maxtime | minvalue, mintime | average",
+            "algorithm":"1, 2, 3",
+            "target_period":2
+        },
+        {
+            "src_hdr":"analog_d",
+            "target_hdr":"analog_d_15",
+            "src_fields":"value",
+            "target_fields":"maxvalue, maxtime | minvalue, mintime | average",
+            "algorithm":"1, 2, 3",
+            "target_period":3
+        }
+    ],
+    "algorithm": [
+		{
+            "id":1,
+            "lib_name":"rxhdalgorithm",
+            "class_name":"RxMaxValue"
+        },
+		{
+            "id":2,
+            "lib_name":"rxhdalgorithm",
+            "class_name":"RxMinValue"
+        },
+		{
+            "id":3,
+            "lib_name":"rxhdalgorithm",
+            "class_name":"RxGeomeanValue"
+        }
+    ],
+    "comment":{
+        "tabletype-comment":"null不带日期-0, day日表-1, month月表-2, year年表-3",
+        "extendtype-comment":"byte-0, short-1, int-2, long-3, float-4, double-5",
+        "targetperiod-comment":"1分钟-1, 5分钟-2, 15分钟-3, 30分钟-4, 1小时-5, 12小时-6, 1天-7, 1个月-8, 1年-9"
+    }
+}

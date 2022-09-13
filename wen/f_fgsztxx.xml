@@ -1,0 +1,442 @@
+<?xml version="1.0" ?><emodel>
+	<calctm calctime="900" cycle="900" inter="900" offset="20" onefile="1" start0="" tmspan="">
+		<start day="0" hour="0" minute="0" month="0" second="0" year="0"/>
+	</calctm>
+	<system code="GB2312" dataversion="1.0" version="1.0"/>
+	<modelname name="f_fgsztxx.dat"/>
+	<filename>
+		<name file="FD_GD.%1_ZTXX-QXHJ_%2.dat"/>
+		<value datatype="1" order="1">
+			<time format="" isseq="" timetype=""/>
+			<string db="" endfield="" idfield="id" isname="1" isptid="1" keyidfield="id" measure="" ptable="plant" ptfield="name" rv="" rvfield="" rvptable="" stfield=""/>
+			<float db="" endfield="" idfield="" isptid="" measure="" ptable="" ptfield="" rv="null" rvfield="" rvptable="" stfield=""/>
+		</value>
+		<value datatype="0" order="2">
+			<time format="yyyyMMdd_hhmm00" isseq="" timetype="1"/>
+			<string db="" endfield="" idfield="" isname="" isptid="1" keyidfield="plant_id" measure="" ptable="" ptfield="" rv="null" rvfield="" rvptable="" stfield=""/>
+			<float db="" endfield="" idfield="" isptid="" keyidfield="plant_id" measure="" ptable="" ptfield="" rv="null" rvfield="" rvptable="" stfield=""/>
+		</value>
+	</filename>
+	<key name="date">
+		<control idfield="id" index="0" isrealtm="1" ptfield="id" table="plant" tmfirst=""/>
+		<value datatype="0" order="1">
+			<time format="ddMMyyyy" isseq="" timetype="1"/>
+			<string db="" endfield="" idfield="id" isname="1" isptid="" keyidfield="id" measure="" ptable="pv_endetector" ptfield="name" rv="null" rvfield="" rvptable="" stfield=""/>
+			<float db="" endfield="" idfield="" isptid="" isstatic="" keyidfield="" measure="" ptable="" ptfield="" rv="null" rvfield="" rvptable="" stfield="">
+				<static field="" ptable=""/>
+			</float>
+		</value>
+	</key>
+	<key name="time">
+		<control idfield="id" index="0" isrealtm="1" ptfield="id" table="plant" tmfirst=""/>
+		<value datatype="0" order="1">
+			<time format="hh-mm-00" isseq="" timetype="1"/>
+			<string db="" endfield="" idfield="" isname="1" isptid="" keyidfield="" measure="" ptable="" ptfield="" rv="null" rvfield="" rvptable="" stfield=""/>
+			<float db="" endfield="" idfield="" isptid="" isstatic="" keyidfield="" measure="" ptable="" ptfield="" rv="null" rvfield="" rvptable="" stfield="">
+				<static field="" ptable=""/>
+			</float>
+		</value>
+	</key>
+	<key name="name">
+		<control idfield="id" index="0" isrealtm="1" ptfield="id" table="plant" tmfirst=""/>
+		<value datatype="1" order="1">
+			<time format="" isseq="" timetype=""/>
+			<string db="" endfield="" idfield="id" isname="1" isptid="1" keyidfield="id" measure="" ptable="plant" ptfield="name" rv="null" rvfield="" rvptable="" stfield=""/>
+			<float db="" endfield="" idfield="" isptid="" measure="" ptable="" ptfield="" rv="null" rvfield="" rvptable="" stfield=""/>
+		</value>
+	</key>
+	<!--升压站经度-->
+	<key name="longitude">
+		<control idfield="id" index="0" isrealtm="1" ptfield="id" table="plant" tmfirst=""/>
+		<value datatype="1" order="1">
+			<time format="" isseq="" timetype=""/>
+			<string db="" endfield="" idfield="id" isname="1" isptid="1" keyidfield="id" measure="" precision="2" ptable="plant" ptfield="longitude" rv="null" rvfield="" rvptable="" stfield=""/>
+			<float db="" endfield="" idfield="" isptid="1" keyidfield="id" measure="3010" ptable="plant" ptfield="" rv="" rvfield="" rvptable="" stfield=""/>
+		</value>
+	</key>
+	<!--升压站纬度-->
+	<key name="latitude">
+		<control idfield="id" index="0" isrealtm="1" ptfield="id" table="plant" tmfirst=""/>
+		<value datatype="1" order="1">
+			<time format="" isseq="" timetype=""/>
+			<string db="" endfield="" idfield="id" isname="1" isptid="1" keyidfield="id" measure="" precision="2" ptable="plant" ptfield="latitude" rv="null" rvfield="" rvptable="" stfield=""/>
+			<float db="" endfield="" idfield="" isptid="" measure="" ptable="" ptfield="" rv="" rvfield="" rvptable="" stfield=""/>
+		</value>
+	</key>
+	<!--正常发电有功容量-->
+	<key name="run_cap_p">
+		<control idfield="id" index="0" isrealtm="1" ptfield="id" table="plant" tmfirst="1"/>
+		<value datatype="2" order="1">
+			<time format="" isseq="" timetype=""/>
+			<string db="" endfield="" idfield="id" isname="1" isptid="" istude="1" keyidfield="id" measure="" precision="2" ptable="PLANT" ptfield="" rv="" rvfield="" rvptable="" stfield=""/>
+			<float coefficient="1.0" db="" endfield="" idfield="" isptid="" keyidfield="id" measure="3346" precision="2" ptable="plant" ptfield="" rv="null" rvfield="" rvptable="" stfield=""/>
+		</value>
+	</key>
+	<!--正常发电无功容量-->
+	<key name="run_cap_q">
+		<control idfield="id" index="0" isrealtm="1" ptfield="id" table="plant" tmfirst="1"/>
+		<value datatype="2" order="1">
+			<time format="" isseq="" timetype=""/>
+			<string db="" endfield="" idfield="id" isname="1" isptid="" istude="1" keyidfield="id" measure="" precision="2" ptable="PLANT" ptfield="" rv="" rvfield="" rvptable="" stfield=""/>
+			<float coefficient="1.0" db="" endfield="" idfield="" isptid="" keyidfield="id" measure="3365" precision="2" ptable="plant" ptfield="" rv="null" rvfield="" rvptable="" stfield=""/>
+		</value>
+	</key>
+	<!--正常发电台数-->
+	<key name="run_num">
+		<control idfield="id" index="0" isrealtm="1" ptfield="id" table="plant" tmfirst="1"/>
+		<value datatype="2" order="1">
+			<time format="" isseq="" timetype=""/>
+			<string db="" endfield="" idfield="id" isname="1" isptid="" istude="1" keyidfield="id" measure="" precision="2" ptable="PLANT" ptfield="" rv="" rvfield="" rvptable="" stfield=""/>
+			<float coefficient="1.0" db="" endfield="" idfield="" isptid="" keyidfield="id" measure="3347" precision="0" ptable="plant" ptfield="" rv="null" rvfield="" rvptable="" stfield=""/>
+		</value>
+	</key>
+	<!--故障有功容量-->
+	<key name="gz_cap_p">
+		<control idfield="id" index="0" isrealtm="1" ptfield="id" table="plant" tmfirst="1"/>
+		<value datatype="2" order="1">
+			<time format="" isseq="" timetype=""/>
+			<string db="" endfield="" idfield="id" isname="1" isptid="" istude="1" keyidfield="id" measure="" precision="2" ptable="PLANT" ptfield="" rv="" rvfield="" rvptable="" stfield=""/>
+			<float coefficient="1.0" db="" endfield="" idfield="" isptid="" keyidfield="id" measure="3329" precision="2" ptable="plant" ptfield="" rv="null" rvfield="" rvptable="" stfield=""/>
+		</value>
+	</key>
+	<!--故障无功容量-->
+	<key name="gz_cap_q">
+		<control idfield="id" index="0" isrealtm="1" ptfield="id" table="plant" tmfirst="1"/>
+		<value datatype="2" order="1">
+			<time format="" isseq="" timetype=""/>
+			<string db="" endfield="" idfield="id" isname="1" isptid="" istude="1" keyidfield="id" measure="" precision="2" ptable="PLANT" ptfield="" rv="" rvfield="" rvptable="" stfield=""/>
+			<float coefficient="1.0" db="" endfield="" idfield="" isptid="" keyidfield="id" measure="3366" precision="2" ptable="plant" ptfield="" rv="null" rvfield="" rvptable="" stfield=""/>
+		</value>
+	</key>
+	<!--故障台数-->
+	<key name="gz_num">
+		<control idfield="id" index="0" isrealtm="1" ptfield="id" table="plant" tmfirst="1"/>
+		<value datatype="2" order="1">
+			<time format="" isseq="" timetype=""/>
+			<string db="" endfield="" idfield="id" isname="1" isptid="" istude="1" keyidfield="id" measure="" precision="2" ptable="PLANT" ptfield="" rv="" rvfield="" rvptable="" stfield=""/>
+			<float coefficient="1.0" db="" endfield="" idfield="" isptid="" keyidfield="id" measure="3330" precision="0" ptable="plant" ptfield="" rv="null" rvfield="" rvptable="" stfield=""/>
+		</value>
+	</key>
+	<!--限电有功容量-->
+	<key name="xd_cap_p">
+		<control idfield="id" index="0" isrealtm="1" ptfield="id" table="plant" tmfirst="1"/>
+		<value datatype="2" order="1">
+			<time format="" isseq="" timetype=""/>
+			<string db="" endfield="" idfield="id" isname="1" isptid="" istude="1" keyidfield="id" measure="" precision="2" ptable="PLANT" ptfield="" rv="" rvfield="" rvptable="" stfield=""/>
+			<float coefficient="1.0" db="" endfield="" idfield="" isptid="" keyidfield="id" measure="3331" precision="2" ptable="plant" ptfield="" rv="null" rvfield="" rvptable="" stfield=""/>
+		</value>
+	</key>
+	<!--限电无功容量-->
+	<key name="xd_cap_q">
+		<control idfield="id" index="0" isrealtm="1" ptfield="id" table="plant" tmfirst="1"/>
+		<value datatype="2" order="1">
+			<time format="" isseq="" timetype=""/>
+			<string db="" endfield="" idfield="id" isname="1" isptid="" istude="1" keyidfield="id" measure="" precision="2" ptable="PLANT" ptfield="" rv="" rvfield="" rvptable="" stfield=""/>
+			<float coefficient="1.0" db="" endfield="" idfield="" isptid="" keyidfield="id" measure="3367" precision="2" ptable="plant" ptfield="" rv="null" rvfield="" rvptable="" stfield=""/>
+		</value>
+	</key>
+	<!--限电台数-->
+	<key name="xd_num">
+		<control idfield="id" index="0" isrealtm="1" ptfield="id" table="plant" tmfirst="1"/>
+		<value datatype="2" order="1">
+			<time format="" isseq="" timetype=""/>
+			<string db="" endfield="" idfield="id" isname="1" isptid="" istude="1" keyidfield="id" measure="" precision="2" ptable="PLANT" ptfield="" rv="" rvfield="" rvptable="" stfield=""/>
+			<float coefficient="1.0" db="" endfield="" idfield="" isptid="" keyidfield="id" measure="3332 " precision="0" ptable="plant" ptfield="" rv="null" rvfield="" rvptable="" stfield=""/>
+		</value>
+	</key>
+	<!--待机有功容量-->
+	<key name="dj_cap_p">
+		<control idfield="id" index="0" isrealtm="1" ptfield="id" table="plant" tmfirst="1"/>
+		<value datatype="2" order="1">
+			<time format="" isseq="" timetype=""/>
+			<string db="" endfield="" idfield="id" isname="1" isptid="" istude="1" keyidfield="id" measure="" precision="2" ptable="PLANT" ptfield="" rv="" rvfield="" rvptable="" stfield=""/>
+			<float coefficient="1.0" db="" endfield="" idfield="" isptid="" keyidfield="id" measure="3368" precision="2" ptable="plant" ptfield="" rv="null" rvfield="" rvptable="" stfield=""/>
+		</value>
+	</key>
+	<!--待机无功容量-->
+	<key name="dj_cap_q">
+		<control idfield="id" index="0" isrealtm="1" ptfield="id" table="plant" tmfirst="1"/>
+		<value datatype="2" order="1">
+			<time format="" isseq="" timetype=""/>
+			<string db="" endfield="" idfield="id" isname="1" isptid="" istude="1" keyidfield="id" measure="" precision="2" ptable="PLANT" ptfield="" rv="" rvfield="" rvptable="" stfield=""/>
+			<float coefficient="1.0" db="" endfield="" idfield="" isptid="" keyidfield="id" measure="3369" precision="2" ptable="plant" ptfield="" rv="null" rvfield="" rvptable="" stfield=""/>
+		</value>
+	</key>
+	<!--待机台数-->
+	<key name="dj_num">
+		<control idfield="id" index="0" isrealtm="1" ptfield="id" table="plant" tmfirst="1"/>
+		<value datatype="2" order="1">
+			<time format="" isseq="" timetype=""/>
+			<string db="" endfield="" idfield="id" isname="1" isptid="" istude="1" keyidfield="id" measure="" precision="2" ptable="PLANT" ptfield="" rv="" rvfield="" rvptable="" stfield=""/>
+			<float coefficient="1.0" db="" endfield="" idfield="" isptid="" keyidfield="id" measure="3339" precision="0" ptable="plant" ptfield="" rv="null" rvfield="" rvptable="" stfield=""/>
+		</value>
+	</key>
+	<!--通讯中断有功容量-->
+	<key name="txzd_cap_p">
+		<control idfield="id" index="0" isrealtm="1" ptfield="id" table="plant" tmfirst="1"/>
+		<value datatype="2" order="1">
+			<time format="" isseq="" timetype=""/>
+			<string db="" endfield="" idfield="id" isname="1" isptid="" istude="1" keyidfield="id" measure="" precision="2" ptable="PLANT" ptfield="" rv="" rvfield="" rvptable="" stfield=""/>
+			<float coefficient="1.0" db="" endfield="" idfield="" isptid="" keyidfield="id" measure="3335" precision="2" ptable="plant" ptfield="" rv="null" rvfield="" rvptable="" stfield=""/>
+		</value>
+	</key>
+	<!--通讯中断无功容量-->
+	<key name="txzd_cap_q">
+		<control idfield="id" index="0" isrealtm="1" ptfield="id" table="plant" tmfirst="1"/>
+		<value datatype="2" order="1">
+			<time format="" isseq="" timetype=""/>
+			<string db="" endfield="" idfield="id" isname="1" isptid="" istude="1" keyidfield="id" measure="" precision="2" ptable="PLANT" ptfield="" rv="" rvfield="" rvptable="" stfield=""/>
+			<float coefficient="1.0" db="" endfield="" idfield="" isptid="" keyidfield="id" measure="3370" precision="2" ptable="plant" ptfield="" rv="null" rvfield="" rvptable="" stfield=""/>
+		</value>
+	</key>
+	<!--通讯中断台数-->
+	<key name="txzd_num">
+		<control idfield="id" index="0" isrealtm="1" ptfield="id" table="plant" tmfirst="1"/>
+		<value datatype="2" order="1">
+			<time format="" isseq="" timetype=""/>
+			<string db="" endfield="" idfield="id" isname="1" isptid="" istude="1" keyidfield="id" measure="" precision="2" ptable="PLANT" ptfield="" rv="" rvfield="" rvptable="" stfield=""/>
+			<float coefficient="1.0" db="" endfield="" idfield="" isptid="" keyidfield="id" measure="3336" precision="0" ptable="plant" ptfield="" rv="null" rvfield="" rvptable="" stfield=""/>
+		</value>
+	</key>
+	<!--停运总有功容量-->
+	<key name="ty_cap_p">
+		<control idfield="id" index="0" isrealtm="1" ptfield="id" table="plant" tmfirst="1"/>
+		<value datatype="2" order="1">
+			<time format="" isseq="" timetype=""/>
+			<string db="" endfield="" idfield="id" isname="1" isptid="" istude="1" keyidfield="id" measure="" precision="2" ptable="PLANT" ptfield="" rv="" rvfield="" rvptable="" stfield=""/>
+			<float coefficient="1.0" db="" endfield="" idfield="" isptid="" keyidfield="id" measure="3337" precision="2" ptable="plant" ptfield="" rv="null" rvfield="" rvptable="" stfield=""/>
+		</value>
+	</key>
+	<!--停运总无功容量-->
+	<key name="ty_cap_q">
+		<control idfield="id" index="0" isrealtm="1" ptfield="id" table="plant" tmfirst="1"/>
+		<value datatype="2" order="1">
+			<time format="" isseq="" timetype=""/>
+			<string db="" endfield="" idfield="id" isname="1" isptid="" istude="1" keyidfield="id" measure="" precision="2" ptable="PLANT" ptfield="" rv="" rvfield="" rvptable="" stfield=""/>
+			<float coefficient="1.0" db="" endfield="" idfield="" isptid="" keyidfield="id" measure="3371" precision="2" ptable="plant" ptfield="" rv="null" rvfield="" rvptable="" stfield=""/>
+		</value>
+	</key>
+	<!--停运总台数-->
+	<key name="ty_num">
+		<control idfield="id" index="0" isrealtm="1" ptfield="id" table="plant" tmfirst="1"/>
+		<value datatype="2" order="1">
+			<time format="" isseq="" timetype=""/>
+			<string db="" endfield="" idfield="id" isname="1" isptid="" istude="1" keyidfield="id" measure="" precision="2" ptable="PLANT" ptfield="" rv="" rvfield="" rvptable="" stfield=""/>
+			<float coefficient="1.0" db="" endfield="" idfield="" isptid="" keyidfield="id" measure="3338" precision="0" ptable="plant" ptfield="" rv="null" rvfield="" rvptable="" stfield=""/>
+		</value>
+	</key>
+	<!--无功补偿月可用率-->
+	<key name="wgbcykyl">
+		<control idfield="id" index="0" isrealtm="1" ptfield="id" table="plant" tmfirst="1"/>
+		<value datatype="2" order="1">
+			<time format="" isseq="" timetype=""/>
+			<string db="" endfield="" idfield="id" isname="1" isptid="" istude="1" keyidfield="id" measure="" precision="2" ptable="PLANT" ptfield="" rv="" rvfield="" rvptable="" stfield=""/>
+			<float coefficient="1.0" db="" endfield="" idfield="" isptid="" keyidfield="id" measure="3281" precision="2" ptable="plant" ptfield="" rv="null" rvfield="" rvptable="" stfield=""/>
+		</value>
+	</key>
+	<!--全厂事故总信号-->
+	<key name="qcsgzxh">
+		<control idfield="id" index="0" isrealtm="1" ptfield="id" table="plant" tmfirst="1"/>
+		<value datatype="2" order="1">
+			<time format="" isseq="" timetype=""/>
+			<string db="" endfield="" idfield="id" isname="1" isptid="" istude="1" keyidfield="id" measure="" precision="2" ptable="PLANT" ptfield="" rv="" rvfield="" rvptable="" stfield=""/>
+			<float coefficient="1.0" db="" endfield="" idfield="" isptid="" keyidfield="id" measure="3282" precision="0" ptable="plant" ptfield="" rv="null" rvfield="" rvptable="" stfield=""/>
+		</value>
+	</key>
+	<!--全厂断路器事件顺序记录-->
+	<key name="qcdlqsjsxjl">
+		<control idfield="id" index="0" isrealtm="1" ptfield="id" table="plant" tmfirst="1"/>
+		<value datatype="2" order="1">
+			<time format="" isseq="" timetype=""/>
+			<string db="" endfield="" idfield="id" isname="1" isptid="" istude="1" keyidfield="id" measure="" precision="2" ptable="PLANT" ptfield="" rv="" rvfield="" rvptable="" stfield=""/>
+			<float coefficient="1.0" db="" endfield="" idfield="" isptid="" keyidfield="id" measure="3283" precision="0" ptable="plant" ptfield="" rv="null" rvfield="" rvptable="" stfield=""/>
+		</value>
+	</key>
+	<!--安自装置动作-->
+	<key name="azzzdz">
+		<control idfield="id" index="0" isrealtm="1" ptfield="id" table="plant" tmfirst="1"/>
+		<value datatype="2" order="1">
+			<time format="" isseq="1" timetype="2"/>
+			<string db="" endfield="" idfield="" isname="" isptid="" keyidfield="" measure="" ptable="" ptfield="" rv="" rvfield="" rvptable="" stfield=""/>
+			<float coefficient="1.0" db="" endfield="" idfield="" isptid="" keyidfield="id" measure="3284" precision="0" ptable="plant" ptfield="" rv="null" rvfield="" rvptable="" stfield=""/>
+		</value>
+	</key>
+	<!--安自装置告警-->
+	<key name="azzzgj">
+		<control idfield="id" index="0" isrealtm="1" ptfield="id" table="plant" tmfirst="1"/>
+		<value datatype="2" order="1">
+			<time format="" isseq="1" timetype="2"/>
+			<string db="" endfield="" idfield="" isname="" isptid="" keyidfield="" measure="" ptable="" ptfield="" rv="" rvfield="" rvptable="" stfield=""/>
+			<float coefficient="1.0" db="" endfield="" idfield="" isptid="" keyidfield="id" measure="3285" precision="0" ptable="plant" ptfield="" rv="null" rvfield="" rvptable="" stfield=""/>
+		</value>
+	</key>
+	<key name="T10">
+		<control idfield="id" index="0" isrealtm="1" ptfield="plant_id" table="wind_metertower" tmfirst=""/>
+		<value datatype="3" order="1">
+			<time format="" isseq="" timetype=""/>
+			<string db="" endfield="" idfield="" isname="" isptid="" keyidfield="" measure="" ptable="" ptfield="" rv="null" rvfield="" rvptable="" stfield=""/>
+			<float coefficient="1.0" db="" endfield="" idfield="" isptid="" isstatic="0" keyidfield="id" measure="3117" precision="2" ptable="wind_metertower" ptfield="" rv="null" rvfield="" rvptable="" stfield="">
+				<static field="AVERAGE" ptable="ANALOGSTATISTICS5M"/>
+			</float>
+			<function coefficient="1.0" isstatic="1" layerheight="10" precision="2" ptfield="TEMPERATURE" rv="null" type="CftMeasureByLayerHeight">
+				<static field="AVERAGE" ptable="ANALOGSTATISTICS5M"/>
+			</function>
+		</value>
+	</key>
+	<key name="RH10">
+		<control idfield="id" index="0" isrealtm="1" ptfield="plant_id" table="wind_metertower" tmfirst=""/>
+		<value datatype="3" order="1">
+			<time format="" isseq="" timetype=""/>
+			<string db="" endfield="" idfield="" isname="" isptid="" keyidfield="" measure="" ptable="" ptfield="" rv="null" rvfield="" rvptable="" stfield=""/>
+			<float coefficient="1.0" db="" endfield="" idfield="" isptid="" isstatic="0" keyidfield="id" measure="3078" precision="2" ptable="wind_metertower" ptfield="" rv="null" rvfield="" rvptable="" stfield="">
+				<static field="AVERAGE" ptable="ANALOGSTATISTICS5M"/>
+			</float>
+			<function coefficient="1.0" isstatic="1" layerheight="10" precision="2" ptfield="HUMIDITY" rv="null" type="CftMeasureByLayerHeight">
+				<static field="AVERAGE" ptable="ANALOGSTATISTICS5M"/>
+			</function>
+		</value>
+	</key>
+	<key name="P10">
+		<control idfield="id" index="0" isrealtm="1" ptfield="plant_id" table="wind_metertower" tmfirst=""/>
+		<value datatype="3" order="1">
+			<time format="" isseq="" timetype=""/>
+			<string db="" endfield="" idfield="" isname="" isptid="" keyidfield="" measure="" ptable="" ptfield="" rv="null" rvfield="" rvptable="" stfield=""/>
+			<float coefficient="1.0" db="" endfield="" idfield="" isptid="" isstatic="0" keyidfield="id" measure="3079" precision="2" ptable="wind_metertower" ptfield="" rv="null" rvfield="" rvptable="" stfield="">
+				<static field="AVERAGE" ptable="ANALOGSTATISTICS5M"/>
+			</float>
+			<function coefficient="1.0" isstatic="1" layerheight="10" precision="2" ptfield="PRESSURE" rv="null" type="CftMeasureByLayerHeight">
+				<static field="AVERAGE" ptable="ANALOGSTATISTICS5M"/>
+			</function>
+		</value>
+	</key>
+	<key name="WS10">
+		<control idfield="id" index="0" isrealtm="1" ptfield="plant_id" table="wind_metertower" tmfirst=""/>
+		<value datatype="3" order="1">
+			<time format="" isseq="" timetype=""/>
+			<string db="" endfield="" idfield="" isname="" isptid="" keyidfield="" measure="" ptable="" ptfield="" rv="null" rvfield="" rvptable="" stfield=""/>
+			<float coefficient="1.0" db="" endfield="" idfield="" isptid="" isstatic="1" keyidfield="id" measure="3068" precision="2" ptable="wind_metertower" ptfield="" rv="null" rvfield="" rvptable="" stfield="">
+				<static field="AVERAGE" ptable="ANALOGSTATISTICS5M"/>
+			</float>
+			<function coefficient="1.0" isstatic="1" layerheight="10" precision="2" ptfield="UAVG" rv="null" type="CftMeasureByLayerHeight">
+				<static field="AVERAGE" ptable="ANALOGSTATISTICS5M"/>
+			</function>
+		</value>
+	</key>
+	<key name="WD10">
+		<control idfield="id" index="0" isrealtm="1" ptfield="plant_id" table="wind_metertower" tmfirst=""/>
+		<value datatype="3" order="1">
+			<time format="" isseq="" timetype=""/>
+			<string db="" endfield="" idfield="" isname="" isptid="" keyidfield="" measure="" ptable="" ptfield="" rv="null" rvfield="" rvptable="" stfield=""/>
+			<float coefficient="1.0" db="" endfield="" idfield="" isptid="" isstatic="1" keyidfield="id" measure="3069" precision="2" ptable="wind_metertower" ptfield="" rv="null" rvfield="" rvptable="" stfield="">
+				<static field="AVERAGE" ptable="ANALOGSTATISTICS5M"/>
+			</float>
+			<function coefficient="1.0" isstatic="1" layerheight="10" precision="2" ptfield="VAVG" rv="null" type="CftMeasureByLayerHeight">
+				<static field="AVERAGE" ptable="ANALOGSTATISTICS5M"/>
+			</function>
+		</value>
+	</key>
+	<key name="WS30">
+		<control idfield="id" index="0" isrealtm="1" ptfield="plant_id" table="wind_metertower" tmfirst=""/>
+		<value datatype="3" order="1">
+			<time format="" isseq="" timetype=""/>
+			<string db="" endfield="" idfield="" isname="" isptid="" keyidfield="" measure="" ptable="" ptfield="" rv="null" rvfield="" rvptable="" stfield=""/>
+			<float coefficient="1.0" db="" endfield="" idfield="" isptid="" isstatic="1" keyidfield="id" measure="3080" precision="2" ptable="wind_metertower" ptfield="" rv="null" rvfield="" rvptable="" stfield="">
+				<static field="AVERAGE" ptable="ANALOGSTATISTICS5M"/>
+			</float>
+			<function coefficient="1.0" isstatic="1" layerheight="30" precision="2" ptfield="UAVG" rv="null" type="CftMeasureByLayerHeight">
+				<static field="AVERAGE" ptable="ANALOGSTATISTICS5M"/>
+			</function>
+		</value>
+	</key>
+	<key name="WD30">
+		<control idfield="id" index="0" isrealtm="1" ptfield="plant_id" table="wind_metertower" tmfirst=""/>
+		<value datatype="3" order="1">
+			<time format="" isseq="" timetype=""/>
+			<string db="" endfield="" idfield="" isname="" isptid="" keyidfield="" measure="" ptable="" ptfield="" rv="null" rvfield="" rvptable="" stfield=""/>
+			<float coefficient="1.0" db="" endfield="" idfield="" isptid="" isstatic="1" keyidfield="id" measure="3081" precision="2" ptable="wind_metertower" ptfield="" rv="null" rvfield="" rvptable="" stfield="">
+				<static field="AVERAGE" ptable="ANALOGSTATISTICS5M"/>
+			</float>
+			<function coefficient="1.0" isstatic="1" layerheight="30" precision="2" ptfield="VAVG" rv="null" type="CftMeasureByLayerHeight">
+				<static field="AVERAGE" ptable="ANALOGSTATISTICS5M"/>
+			</function>
+		</value>
+	</key>
+	<key name="WS50">
+		<control idfield="id" index="0" isrealtm="1" ptfield="plant_id" table="wind_metertower" tmfirst=""/>
+		<value datatype="3" order="1">
+			<time format="" isseq="" timetype=""/>
+			<string db="" endfield="" idfield="" isname="" isptid="" keyidfield="" measure="" ptable="" ptfield="" rv="null" rvfield="" rvptable="" stfield=""/>
+			<float coefficient="1.0" db="" endfield="" idfield="" isptid="" isstatic="1" keyidfield="id" measure="3092" precision="2" ptable="wind_metertower" ptfield="" rv="null" rvfield="" rvptable="" stfield="">
+				<static field="AVERAGE" ptable="ANALOGSTATISTICS5M"/>
+			</float>
+			<function coefficient="1.0" isstatic="1" layerheight="50" precision="2" ptfield="UAVG" rv="null" type="CftMeasureByLayerHeight">
+				<static field="AVERAGE" ptable="ANALOGSTATISTICS5M"/>
+			</function>
+		</value>
+	</key>
+	<key name="WD50">
+		<control idfield="id" index="0" isrealtm="1" ptfield="plant_id" table="wind_metertower" tmfirst=""/>
+		<value datatype="3" order="1">
+			<time format="" isseq="" timetype=""/>
+			<string db="" endfield="" idfield="" isname="" isptid="" keyidfield="" measure="" ptable="" ptfield="" rv="null" rvfield="" rvptable="" stfield=""/>
+			<float coefficient="1.0" db="" endfield="" idfield="" isptid="" isstatic="1" keyidfield="id" measure="3093" precision="2" ptable="wind_metertower" ptfield="" rv="null" rvfield="" rvptable="" stfield="">
+				<static field="AVERAGE" ptable="ANALOGSTATISTICS5M"/>
+			</float>
+			<function coefficient="1.0" isstatic="1" layerheight="50" precision="2" ptfield="VAVG" rv="null" type="CftMeasureByLayerHeight">
+				<static field="AVERAGE" ptable="ANALOGSTATISTICS5M"/>
+			</function>
+		</value>
+	</key>
+	<key name="WS70">
+		<control idfield="id" index="0" isrealtm="1" ptfield="plant_id" table="wind_metertower" tmfirst=""/>
+		<value datatype="3" order="1">
+			<time format="" isseq="" timetype=""/>
+			<string db="" endfield="" idfield="" isname="" isptid="" keyidfield="" measure="" ptable="" ptfield="" rv="null" rvfield="" rvptable="" stfield=""/>
+			<float coefficient="1.0" db="" endfield="" idfield="" isptid="" isstatic="1" keyidfield="id" measure="3116" precision="2" ptable="wind_metertower" ptfield="" rv="null" rvfield="" rvptable="" stfield="">
+				<static field="AVERAGE" ptable="ANALOGSTATISTICS5M"/>
+			</float>
+			<function coefficient="1.0" isstatic="1" layerheight="70" precision="2" ptfield="UAVG" rv="null" type="CftMeasureByLayerHeight">
+				<static field="AVERAGE" ptable="ANALOGSTATISTICS5M"/>
+			</function>
+		</value>
+	</key>
+	<key name="WD70">
+		<control idfield="id" index="0" isrealtm="1" ptfield="plant_id" table="wind_metertower" tmfirst=""/>
+		<value datatype="3" order="1">
+			<time format="" isseq="" timetype=""/>
+			<string db="" endfield="" idfield="" isname="" isptid="" keyidfield="" measure="" ptable="" ptfield="" rv="null" rvfield="" rvptable="" stfield=""/>
+			<float coefficient="1.0" db="" endfield="" idfield="" isptid="" isstatic="1" keyidfield="id" measure="3117" precision="2" ptable="wind_metertower" ptfield="" rv="null" rvfield="" rvptable="" stfield="">
+				<static field="AVERAGE" ptable="ANALOGSTATISTICS5M"/>
+			</float>
+			<function coefficient="1.0" isstatic="1" layerheight="70" precision="2" ptfield="VAVG" rv="null" type="CftMeasureByLayerHeight">
+				<static field="AVERAGE" ptable="ANALOGSTATISTICS5M"/>
+			</function>
+		</value>
+	</key>
+	<key name="WS_HubHeight">
+		<control idfield="id" index="0" isrealtm="1" ptfield="plant_id" table="wind_metertower" tmfirst=""/>
+		<value datatype="3" order="1">
+			<time format="" isseq="" timetype=""/>
+			<string db="" endfield="" idfield="" isname="" isptid="" keyidfield="" measure="" ptable="" ptfield="" rv="null" rvfield="" rvptable="" stfield=""/>
+			<float coefficient="1.0" db="" endfield="" idfield="" isptid="" isstatic="1" keyidfield="id" measure="3104" precision="2" ptable="wind_metertower" ptfield="" rv="null" rvfield="" rvptable="" stfield="">
+				<static field="AVERAGE" ptable="ANALOGSTATISTICS5M"/>
+			</float>
+			<function coefficient="1.0" isstatic="1" layerheight="-1" precision="2" ptfield="UAVG" rv="null" type="CftMeasureByLayerHeight">
+				<static field="AVERAGE" ptable="ANALOGSTATISTICS5M"/>
+			</function>
+		</value>
+	</key>
+	<key name="WD_HubHeight">
+		<control idfield="id" index="0" isrealtm="1" ptfield="plant_id" table="wind_metertower" tmfirst=""/>
+		<value datatype="3" order="1">
+			<time format="" isseq="" timetype=""/>
+			<string db="" endfield="" idfield="" isname="" isptid="" keyidfield="" measure="" ptable="" ptfield="" rv="null" rvfield="" rvptable="" stfield=""/>
+			<float coefficient="1.0" db="" endfield="" idfield="" isptid="" isstatic="1" keyidfield="id" measure="3116" precision="2" ptable="wind_metertower" ptfield="" rv="null" rvfield="" rvptable="" stfield="">
+				<static field="AVERAGE" ptable="ANALOGSTATISTICS5M"/>
+			</float>
+			<function coefficient="1.0" isstatic="1" layerheight="-1" precision="2" ptfield="VAVG" rv="null" type="CftMeasureByLayerHeight">
+				<static field="AVERAGE" ptable="ANALOGSTATISTICS5M"/>
+			</function>
+		</value>
+	</key>
+</emodel>

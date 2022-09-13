@@ -1,0 +1,871 @@
+20220808 07:30:00.098719 T[  18165] INFO  [RxLogEnv] 
+20220808 07:30:00.098779 T[  18165] INFO  [RxLogEnv] <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+20220808 07:30:00.098794 T[  18165] INFO  [RxLogEnv] 进程/home/sprixin/davinci/bin/rxpforecast[18165]启动！
+20220808 07:30:00.099062 T[  18165] INFO  [addLog] 工程预测目录为:/home/sprixin/davinci/usr/subfcst_project/forecast
+20220808 07:30:00.099770 T[  18165] INFO  [addLog] pipe name:/home/sprixin/davinci/etc/IPC/18165a [-09999]
+20220808 07:30:00.099900 T[  18165] INFO  [addLog] Create rec pthread  success, the id is -1355860224 [-09999]
+20220808 07:30:00.100327 T[  18165] INFO  [addLog] 工作线程数为:8,python服务链接地址为:http://localhost:18000/calc [-09999]
+20220808 07:30:00.102416 T[  18165] INFO  [addTimeLog] 进程rxpforecast(18165)分配互斥锁/var/rxpforecast(205651973)。 [-09999]
+20220808 07:30:00.102433 T[  18165] INFO  [addLog] 向rxinit注册完毕 [-09999]
+20220808 07:30:00.102543 T[  18165] INFO  [addTimeLog] <<<<<<<<< process = rxpforecast begin starting........ [-09999]
+20220808 07:30:00.103479 T[  18165] INFO  [addLog] begin trying to connect RXSERVER. Please Waiting... maxtimeout = 4000  [-09999]
+20220808 07:30:04.107029 T[  18165] INFO  [addLog] ApplicationTimerElapse: time arrived, beginning check whether or not exist connected channel. [-00012]
+20220808 07:30:04.107757 T[  18165] INFO  [addLog] beginning try to connect server. Please Waiting.... timeout = 2 [-09999]
+20220808 07:30:04.107843 T[  18165] ERROR CSocketDevice::Connect(): connect to (127.0.0.1) successful! --- ../../../src/baseapk/commonlib/log/rxlogmanager.cpp:48 [-09999]
+20220808 07:30:04.109266 T[  18165] INFO  [addTimeLog] pid =18165 Recv A Node( 0 ) Running. [-09999]
+20220808 07:30:04.109396 T[  18165] WARN  begin to init memory database. --- ../../../src/baseapk/commonlib/log/rxlogmanager.cpp:20 [-09999]
+20220808 07:30:04.110509 T[  18165] WARN  have finished to init memory database. --- ../../../src/baseapk/commonlib/log/rxlogmanager.cpp:20 [-09999]
+20220808 07:30:04.110718 T[  18165] INFO  [addLog] CComponentManager::OnReceivedSignalRunning,begin to StartupApplication [-09999]
+20220808 07:30:04.110778 T[  18165] INFO  [addLog] REGISTER Registered OK! [-09999]
+20220808 07:30:04.110782 T[  18165] INFO  [addLog] Begin Register Application = 203. Please Wait... [-09999]
+20220808 07:30:04.111057 T[  18165] WARN  <<<<< Apply To Register Process = rxpforecast.... --- ../../../src/baseapk/commonlib/log/rxlogmanager.cpp:46 [-09999]
+20220808 07:30:04.152561 T[  18165] WARN   >>>>>>process rxpforecast  Register OK! --- ../../../src/baseapk/commonlib/log/rxlogmanager.cpp:46 [-09999]
+20220808 07:30:04.163351 T[  18165] INFO  [addLog] Register Process = 203 Success. [-09999]
+20220808 07:30:04.163900 T[  18165] INFO  [addLog] ****************************************************************** [-09999]
+20220808 07:30:04.163937 T[  18165] INFO  [addLog] <<<Startup Service = REGISTER Successful. [-09999]
+20220808 07:30:04.163944 T[  18165] INFO  [addLog] <<<< RegisterObject StartUp ! [-09999]
+20220808 07:30:04.164006 T[  18165] INFO  [addTimeLog] 服务REGISTER(3)启动。 [-09999]
+20220808 07:30:04.164022 T[  18165] INFO  [addLog] ****************************************************************** [-09999]
+20220808 07:30:04.164027 T[  18165] INFO  [addLog] rxpforecast startup OK! [-09999]
+20220808 07:30:04.164084 T[  18165] ERROR CConsoleApplication初始化成功 --- ../../../src/baseapk/commonlib/log/rxlogmanager.cpp:22 [-09999]
+20220808 07:30:04.390572 T[  18165] INFO  [addLog] 开始初始化sequence
+20220808 07:30:04.435395 T[  18165] INFO  [addLog] sequence初始化完成
+20220808 07:30:04.435758 T[  18165] INFO  [addLog] 开始加载气象站基础信息
+20220808 07:30:04.436000 T[  18165] INFO  [addLog] ID:115021,电厂ID:115020,编号:1,名称:PV_ENDETECTOR_1,别名:环境监测仪_1,是否虚拟:不是,是否主气象:是
+20220808 07:30:04.436071 T[  18165] INFO  [addLog] 一共1台气象站
+20220808 07:30:04.436075 T[  18165] INFO  [addLog] 加载气象站基础信息结束
+20220808 07:30:04.436077 T[  18165] INFO  [addLog] 开始光伏组件基础信息
+20220808 07:30:04.436148 T[  18165] INFO  [addLog] ID:115022,电厂ID:115020,编号:1,名称:PV_UNIT_1,别名:光伏组件_1,是否样板机:是,是否参与预测:是
+20220808 07:30:04.436170 T[  18165] INFO  [addLog] ID:115023,电厂ID:115020,编号:2,名称:PV_UNIT_2,别名:光伏组件_2,是否样板机:是,是否参与预测:是
+20220808 07:30:04.436196 T[  18165] INFO  [addLog] ID:115024,电厂ID:115020,编号:3,名称:PV_UNIT_3,别名:光伏组件_3,是否样板机:否,是否参与预测:是
+20220808 07:30:04.436206 T[  18165] INFO  [addLog] ID:115025,电厂ID:115020,编号:4,名称:PV_UNIT_4,别名:光伏组件_4,是否样板机:否,是否参与预测:是
+20220808 07:30:04.436215 T[  18165] INFO  [addLog] ID:115026,电厂ID:115020,编号:5,名称:PV_UNIT_5,别名:光伏组件_5,是否样板机:否,是否参与预测:是
+20220808 07:30:04.436228 T[  18165] INFO  [addLog] ID:115027,电厂ID:115020,编号:6,名称:PV_UNIT_6,别名:光伏组件_6,是否样板机:否,是否参与预测:是
+20220808 07:30:04.436239 T[  18165] INFO  [addLog] ID:115028,电厂ID:115020,编号:7,名称:PV_UNIT_7,别名:光伏组件_7,是否样板机:否,是否参与预测:是
+20220808 07:30:04.436263 T[  18165] INFO  [addLog] ID:115029,电厂ID:115020,编号:8,名称:PV_UNIT_8,别名:光伏组件_8,是否样板机:否,是否参与预测:是
+20220808 07:30:04.436272 T[  18165] INFO  [addLog] ID:115030,电厂ID:115020,编号:9,名称:PV_UNIT_9,别名:光伏组件_9,是否样板机:否,是否参与预测:是
+20220808 07:30:04.436281 T[  18165] INFO  [addLog] ID:115031,电厂ID:115020,编号:10,名称:PV_UNIT_10,别名:光伏组件_10,是否样板机:否,是否参与预测:是
+20220808 07:30:04.436318 T[  18165] INFO  [addLog] 一共10台光伏组件
+20220808 07:30:04.436321 T[  18165] INFO  [addLog] 加载光伏组件基础信息结束
+20220808 07:30:04.438428 T[  18165] INFO  [addLog] 历史数据库连接成功，DBType:1，ConnectString:10.64.14.126@DAVINCI，UserName:DAVINCI [-09999]
+20220808 07:30:04.441539 T[  18165] INFO  [addLog] 发现一个电厂(115020-LLGf-理论功率光伏电厂1),添加它准备进行预测! [-09999]
+20220808 07:30:04.441610 T[  18165] INFO  [addLog] 更新短期预测控制(115020-2),时间(27000)! [-09999]
+20220808 07:30:04.441658 T[  18165] INFO  [addLog] 启动预测计算线程池,线程数8 [-09999]
+20220808 07:30:04.442479 T[  18185] INFO  [addLog] Thread 0 startup!
+20220808 07:30:04.442527 T[  18186] INFO  [addLog] Thread 1 startup!
+20220808 07:30:04.442573 T[  18189] INFO  [addLog] Thread 4 startup!
+20220808 07:30:04.442576 T[  18188] INFO  [addLog] Thread 3 startup!
+20220808 07:30:04.442693 T[  18190] INFO  [addLog] Thread 5 startup!
+20220808 07:30:04.442740 T[  18187] INFO  [addLog] Thread 2 startup! [-00001]
+20220808 07:30:04.442809 T[  18191] INFO  [addLog] Thread 6 startup!
+20220808 07:30:04.442818 T[  18192] INFO  [addLog] Thread 7 startup!
+20220808 07:30:04.442975 T[  18165] INFO  [addLog] 加载系数线程发现一个电厂(115020-LLGf-理论功率光伏电厂1) [-09999]
+20220808 07:30:04.443154 T[  18193] INFO  [addLog] 加载系数线程启动
+20220808 07:30:04.443637 T[  18165] WARN  未找到wpd文件,当前时刻(2022-08-08 07:30:04.000),处于开始预测时间(2022-08-08 07:30:00.000)和预测结束时间(2022-08-08 08:30:00.000)之间,开启告警,上次预测时间(20220807000000),电厂(115020) --- ../../../src/baseapk/commonlib/log/rxlogmanager.cpp:20 [-09999]
+20220808 07:30:04.443757 T[  18165] INFO  [addLog] ****************************************************************** [-09999]
+20220808 07:30:04.443777 T[  18165] INFO  [addLog] ****************************************************************** [-09999]
+20220808 07:30:04.446067 T[  18193] INFO  [addLog] 历史数据库连接成功，ConnectString:10.64.14.126@DAVINCI，UserName:DAVINCI
+20220808 07:30:04.477409 T[  18193] INFO  [addLog] 电场(115020)未加载到本次超短期系数
+20220808 07:30:25.445113 T[  18165] INFO  [addLog] 电厂(115020)开始加载supradio配置 [-09999]
+20220808 07:30:25.445462 T[  18165] INFO  [addLog] 电厂(115020)没有发现新配置文件/home/sprixin/davinci/usr/subfcst_project/forecast/LLGf/supradio.xml,使用配置文件备份/home/sprixin/davinci/usr/subfcst_project/forecast/LLGf/bak/supradio.xml [-09999]
+20220808 07:30:25.448645 T[  18165] INFO  [addLog] 电厂(115020)开始加载光伏超短期python配置信息 [-09999]
+20220808 07:30:25.448742 T[  18165] ERROR 电厂(115020)没有发现新配置文件/home/sprixin/davinci/usr/subfcst_project/forecast/LLGf/forecast_super.xml,也没有配置文件备份/home/sprixin/davinci/usr/subfcst_project/forecast/LLGf/bak/forecast_super.xml,请检查配置 --- ../../../src/baseapk/commonlib/log/rxlogmanager.cpp:22 [-09999]
+20220808 07:30:25.448834 T[  18165] ERROR 电厂(115020)光伏python配置文件/home/sprixin/davinci/usr/subfcst_project/forecast/LLGf/forecast_super.xml打开失败 --- ../../../src/baseapk/commonlib/log/rxlogmanager.cpp:22 [-09999]
+20220808 07:30:25.449597 T[  18186] INFO  [addTimeLog] [super:115020-1]thread 1 start a new task)!
+20220808 07:30:25.449605 T[  18185] INFO  [addTimeLog] [super:115020-0]thread 0 start a new task)!
+20220808 07:30:25.449728 T[  18189] INFO  [addTimeLog] [super:115020-2]thread 4 start a new task)!
+20220808 07:30:25.449970 T[  18185] INFO  [addTimeLog] [super:115020-0]初始化光伏超短期算法
+20220808 07:30:25.449972 T[  18189] INFO  [addTimeLog] [super:115020-2]初始化光伏超短期算法
+20220808 07:30:25.449976 T[  18186] INFO  [addTimeLog] [super:115020-1]初始化光伏超短期算法
+20220808 07:30:25.450159 T[  18185] INFO  [addTimeLog] [super:115020-0]装机容量是20
+20220808 07:30:25.450159 T[  18189] INFO  [addTimeLog] [super:115020-2]装机容量是20
+20220808 07:30:25.450159 T[  18186] INFO  [addTimeLog] [super:115020-1]装机容量是20
+20220808 07:30:25.450328 T[  18189] INFO  [addTimeLog] [super:115020-2]读取功率类型为(备用):2
+20220808 07:30:25.450333 T[  18186] INFO  [addTimeLog] [super:115020-1]读取功率类型为(备用):1
+20220808 07:30:25.450334 T[  18185] INFO  [addTimeLog] [super:115020-0]读取功率类型为(备用):0
+20220808 07:30:25.450354 T[  18185] INFO  [addTimeLog] [super:115020-0]实发数据采用15分钟平均值数据表数据
+20220808 07:30:25.450363 T[  18189] INFO  [addTimeLog] [super:115020-2]实发数据采用15分钟平均值数据表数据
+20220808 07:30:25.450356 T[  18186] INFO  [addTimeLog] [super:115020-1]实发数据采用15分钟平均值数据表数据
+20220808 07:30:25.451333 T[  18185] INFO  [addTimeLog] [super:115020-0]实发功率的类型是:并网功率
+20220808 07:30:25.451477 T[  18189] INFO  [addTimeLog] [super:115020-2]实发功率的类型是:默认可用功率
+20220808 07:30:25.451487 T[  18186] INFO  [addTimeLog] [super:115020-1]实发功率的类型是:默认理论功率
+20220808 07:30:25.451615 T[  18189] INFO  [addTimeLog] [super:115020-2]非风电气象数据高度为1
+20220808 07:30:25.451616 T[  18186] INFO  [addTimeLog] [super:115020-1]非风电气象数据高度为1
+20220808 07:30:25.453997 T[  18185] INFO  [addTimeLog] [super:115020-0]并网功率的量测ID是(2)
+20220808 07:30:25.454014 T[  18189] INFO  [addTimeLog] [super:115020-2]辐照度的量测ID是(44)
+20220808 07:30:25.454015 T[  18186] INFO  [addTimeLog] [super:115020-1]辐照度的量测ID是(44)
+20220808 07:30:25.454068 T[  18185] INFO  [addTimeLog] [super:115020-0]非风电气象数据高度为1
+20220808 07:30:25.454158 T[  18186] INFO  [addTimeLog] [super:115020-1]直辐射的量测ID是(45)
+20220808 07:30:25.454158 T[  18189] INFO  [addTimeLog] [super:115020-2]直辐射的量测ID是(45)
+20220808 07:30:25.454285 T[  18185] INFO  [addTimeLog] [super:115020-0]辐照度的量测ID是(44)
+20220808 07:30:25.454332 T[  18189] INFO  [addTimeLog] [super:115020-2]散辐射的量测ID是(46)
+20220808 07:30:25.454333 T[  18186] INFO  [addTimeLog] [super:115020-1]散辐射的量测ID是(46)
+20220808 07:30:25.454435 T[  18185] INFO  [addTimeLog] [super:115020-0]直辐射的量测ID是(45)
+20220808 07:30:25.454482 T[  18186] INFO  [addTimeLog] [super:115020-1]第1层平均风速的量测ID是(47)
+20220808 07:30:25.454492 T[  18189] INFO  [addTimeLog] [super:115020-2]第1层平均风速的量测ID是(47)
+20220808 07:30:25.454533 T[  18185] INFO  [addTimeLog] [super:115020-0]散辐射的量测ID是(46)
+20220808 07:30:25.454585 T[  18186] INFO  [addTimeLog] [super:115020-1]第1层平均风向的量测ID是(48)
+20220808 07:30:25.454607 T[  18189] INFO  [addTimeLog] [super:115020-2]第1层平均风向的量测ID是(48)
+20220808 07:30:25.454650 T[  18185] INFO  [addTimeLog] [super:115020-0]第1层平均风速的量测ID是(47)
+20220808 07:30:25.454707 T[  18189] INFO  [addTimeLog] [super:115020-2]第1层温度的量测ID是(49)
+20220808 07:30:25.454710 T[  18186] INFO  [addTimeLog] [super:115020-1]第1层温度的量测ID是(49)
+20220808 07:30:25.454772 T[  18185] INFO  [addTimeLog] [super:115020-0]第1层平均风向的量测ID是(48)
+20220808 07:30:25.454810 T[  18186] INFO  [addTimeLog] [super:115020-1]第1层湿度的量测ID是(50)
+20220808 07:30:25.454810 T[  18189] INFO  [addTimeLog] [super:115020-2]第1层湿度的量测ID是(50)
+20220808 07:30:25.454941 T[  18185] INFO  [addTimeLog] [super:115020-0]第1层温度的量测ID是(49)
+20220808 07:30:25.454977 T[  18189] INFO  [addTimeLog] [super:115020-2]第1层压力的量测ID是(51)
+20220808 07:30:25.454977 T[  18186] INFO  [addTimeLog] [super:115020-1]第1层压力的量测ID是(51)
+20220808 07:30:25.455019 T[  18189] INFO  [addTimeLog] [super:115020-2]实发功率的类型是:并网功率
+20220808 07:30:25.455024 T[  18186] INFO  [addTimeLog] [super:115020-1]实发功率的类型是:并网功率
+20220808 07:30:25.455034 T[  18185] INFO  [addTimeLog] [super:115020-0]第1层湿度的量测ID是(50)
+20220808 07:30:25.455135 T[  18186] INFO  [addTimeLog] [super:115020-1]并网功率的量测ID是(2)
+20220808 07:30:25.455152 T[  18185] INFO  [addTimeLog] [super:115020-0]第1层压力的量测ID是(51)
+20220808 07:30:25.455160 T[  18189] INFO  [addTimeLog] [super:115020-2]并网功率的量测ID是(2)
+20220808 07:30:25.455160 T[  18185] INFO  [addTimeLog] [super:115020-0]实发功率的类型是:并网功率
+20220808 07:30:25.455236 T[  18185] INFO  [addTimeLog] [super:115020-0]并网功率的量测ID是(2)
+20220808 07:30:25.460453 T[  18189] INFO  [addTimeLog] [super:115020-2]历史数据库连接成功，ConnectString:10.64.14.126@DAVINCI，UserName:DAVINCI
+20220808 07:30:25.460475 T[  18186] INFO  [addTimeLog] [super:115020-1]历史数据库连接成功，ConnectString:10.64.14.126@DAVINCI，UserName:DAVINCI
+20220808 07:30:25.461038 T[  18185] INFO  [addTimeLog] [super:115020-0]历史数据库连接成功，ConnectString:10.64.14.126@DAVINCI，UserName:DAVINCI
+20220808 07:30:25.468088 T[  18189] INFO  [addTimeLog] [super:115020-2]光伏超短期组合预测算法开始执行
+20220808 07:30:25.468103 T[  18185] INFO  [addTimeLog] [super:115020-0]光伏超短期组合预测算法开始执行
+20220808 07:30:25.468069 T[  18186] INFO  [addTimeLog] [super:115020-1]光伏超短期组合预测算法开始执行
+20220808 07:30:25.468136 T[  18185] INFO  [addTimeLog] [super:115020-0]开始读取历史数据,组建综合表,综合表1/2/3/4的天数分别为6/8/8/8,备用天数3
+20220808 07:30:25.468136 T[  18189] INFO  [addTimeLog] [super:115020-2]开始读取历史数据,组建综合表,综合表1/2/3/4的天数分别为6/8/8/8,备用天数3
+20220808 07:30:25.468153 T[  18186] INFO  [addTimeLog] [super:115020-1]开始读取历史数据,组建综合表,综合表1/2/3/4的天数分别为6/8/8/8,备用天数3
+20220808 07:30:25.502986 T[  18186] ERROR [super:115020-1]获取2022-07-29 00:00:00-2022-08-09 00:00:00理论功率(默认理论功率)时失败! --- ../../../src/baseapk/commonlib/log/rxlogmanager.cpp:48
+20220808 07:30:25.503105 T[  18186] ERROR [super:115020-1]获取2022年07月29日 - 2022年08月09日完整数据时,获取以默认理论功率作为功率的结果校验,获取失败! --- ../../../src/baseapk/commonlib/log/rxlogmanager.cpp:48
+20220808 07:30:25.503695 T[  18189] ERROR [super:115020-2]获取2022-07-29 00:00:00-2022-08-09 00:00:00理论功率(默认可用功率)时失败! --- ../../../src/baseapk/commonlib/log/rxlogmanager.cpp:48
+20220808 07:30:25.504184 T[  18189] ERROR [super:115020-2]获取2022年07月29日 - 2022年08月09日完整数据时,获取以默认可用功率作为功率的结果校验,获取失败! --- ../../../src/baseapk/commonlib/log/rxlogmanager.cpp:48
+20220808 07:30:25.506136 T[  18186] ERROR [super:115020-1]样本获取失败,只获取到0条数据(目标584条) --- ../../../src/baseapk/commonlib/log/rxlogmanager.cpp:48
+20220808 07:30:25.507107 T[  18185] ERROR [super:115020-0]样本获取失败,只获取到6条数据(目标584条) --- ../../../src/baseapk/commonlib/log/rxlogmanager.cpp:48
+20220808 07:30:25.533992 T[  18186] INFO  [addTimeLog] [super:115020-1]当前时刻07:30,下标30,预测生效下标[3,87],白天范围进行预测
+20220808 07:30:25.534010 T[  18186] ERROR [super:115020-1]光伏超短期计算失败,用短期代替 --- ../../../src/baseapk/commonlib/log/rxlogmanager.cpp:48
+20220808 07:30:25.538584 T[  18185] INFO  [addTimeLog] [super:115020-0]当前时刻07:30,下标30,预测生效下标[3,87],白天范围进行预测
+20220808 07:30:25.538597 T[  18185] ERROR [super:115020-0]光伏超短期计算失败,用短期代替 --- ../../../src/baseapk/commonlib/log/rxlogmanager.cpp:48
+20220808 07:30:25.538910 T[  18189] INFO  [addTimeLog] [super:115020-2]当前时刻07:30,下标30,预测生效下标[3,87],白天范围进行预测
+20220808 07:30:25.538949 T[  18189] ERROR [super:115020-2]光伏超短期计算失败,用短期代替 --- ../../../src/baseapk/commonlib/log/rxlogmanager.cpp:48
+20220808 07:30:25.543435 T[  18186] INFO  [addTimeLog] [super:115020-1]开始计算第一个点的值
+20220808 07:30:25.548015 T[  18186] ERROR [super:115020-1]获取2022-08-08 07:00:00-2022-08-08 07:45:00理论功率(默认理论功率)时失败! --- ../../../src/baseapk/commonlib/log/rxlogmanager.cpp:48
+20220808 07:30:25.548284 T[  18186] INFO  [addTimeLog] [super:115020-1]没有取到当前时刻30分钟内的实发功率,第一个点使用短期预测代替
+20220808 07:30:25.548856 T[  18185] INFO  [addTimeLog] [super:115020-0]开始计算第一个点的值
+20220808 07:30:25.549704 T[  18189] INFO  [addTimeLog] [super:115020-2]开始计算第一个点的值
+20220808 07:30:25.551379 T[  18185] INFO  [addTimeLog] [super:115020-0]取到当前时刻前0分钟的实发数据(9.32942)
+20220808 07:30:25.553263 T[  18189] ERROR [super:115020-2]获取2022-08-08 07:00:00-2022-08-08 07:45:00理论功率(默认可用功率)时失败! --- ../../../src/baseapk/commonlib/log/rxlogmanager.cpp:48
+20220808 07:30:25.553336 T[  18189] INFO  [addTimeLog] [super:115020-2]没有取到当前时刻30分钟内的实发功率,第一个点使用短期预测代替
+20220808 07:30:25.560589 T[  18185] INFO  [addTimeLog] [super:115020-0]第一个预测点时刻07:45,下标30,预测结果不为0下标[22,86]
+20220808 07:30:25.560630 T[  18185] INFO  [addTimeLog] [super:115020-0]第一个预测点重新计算后结果为9.79589
+20220808 07:30:25.560695 T[  18185] INFO  [addTimeLog] [super:115020-0]光伏超短期结果：9.79589, 1.98339, 2.69251, 3.4486, 4.21968, 4.97332, 5.6774, 6.29991, 6.82904, 7.36538, 7.91945, 8.48187, 9.04372, 9.59562, 10.1285, 10.6331, 11.1002, 11.5207, 11.8852, 12.185, 12.4103, 12.5523, 12.6015, 12.5871, 
+20220808 07:30:25.560775 T[  18185] INFO  [addLog] 开始限制装机/计划开机
+20220808 07:30:25.560833 T[  18185] INFO  [addLog] 限制后的结果：9.79589, 1.98339, 2.69251, 3.4486, 4.21968, 4.97332, 5.6774, 6.29991, 6.82904, 7.36538, 7.91945, 8.48187, 9.04372, 9.59562, 10.1285, 10.6331, 11.1002, 11.5207, 11.8852, 12.185, 12.4103, 12.5523, 12.6015, 12.5871
+20220808 07:30:25.562762 T[  18185] INFO  [addTimeLog] [super:115020-0]结果写入实时库成功
+20220808 07:30:25.563166 T[  18185] INFO  [RxLogInfo] 从sequence实时库中读取ID2000个(hdrsfcstrecord)
+20220808 07:30:25.563325 T[  18185] INFO  [RxLogInfo] (hdrsfcstrecord表)sequence缓存没有值,从sequence实时库中加载起始ID 218001
+20220808 07:30:25.563560 T[  18185] INFO  [RxLogInfo] 更新sequence的hdrsfcstrecord表最大ID成功，用时10毫秒
+20220808 07:30:25.565492 T[  18185] INFO  [RxLogInfo] 从sequence实时库中读取ID2000个(hdrsfcstdata_llgf) [-09999]
+20220808 07:30:25.565553 T[  18185] INFO  [RxLogInfo] (hdrsfcstdata_llgf表)sequence缓存没有值,从sequence实时库中加载起始ID 248001 [-09999]
+20220808 07:30:25.565660 T[  18185] INFO  [RxLogInfo] 更新sequence的hdrsfcstdata_llgf表最大ID成功，用时10毫秒 [-09999]
+20220808 07:30:25.566115 T[  18185] INFO  [addTimeLog] [super:115020-0]发送超短期预测结果24条到历史库成功 [-09999]
+20220808 07:30:25.566261 T[  18185] INFO  [addTimeLog] [super:115020-0]结果发送到hasave成功 [-09999]
+20220808 07:30:25.572288 T[  18185] INFO  [addTimeLog] [super:115020-0][告警]超短期任务预测成功! [-09999]
+20220808 07:30:25.573539 T[  18165] ERROR [super:115020-0]Table 'davinci.hdranastat15m202207' doesn't exist --- ../../../src/baseapk/commonlib/log/rxlogmanager.cpp:48 [-09999]
+20220808 07:30:25.574474 T[  18165] ERROR [super:115020-0]Table 'davinci.hdranastat15m_jm_202207' doesn't exist --- ../../../src/baseapk/commonlib/log/rxlogmanager.cpp:48 [-09999]
+20220808 07:30:25.577671 T[  18186] INFO  [addTimeLog] [super:115020-1]第一个预测点时刻07:45,下标30,预测结果不为0下标[22,86]
+20220808 07:30:25.577689 T[  18186] INFO  [addTimeLog] [super:115020-1]第一个预测点重新计算后结果为1.35368
+20220808 07:30:25.577727 T[  18186] INFO  [addTimeLog] [super:115020-1]光伏超短期结果：1.35368, 1.98339, 2.69251, 3.4486, 4.21968, 4.97332, 5.6774, 6.29991, 6.82904, 7.36538, 7.91945, 8.48187, 9.04372, 9.59562, 10.1285, 10.6331, 11.1002, 11.5207, 11.8852, 12.185, 12.4103, 12.5523, 12.6015, 12.5871, 
+20220808 07:30:25.577741 T[  18186] INFO  [addLog] 开始限制装机/计划开机
+20220808 07:30:25.577777 T[  18186] INFO  [addLog] 限制后的结果：1.35368, 1.98339, 2.69251, 3.4486, 4.21968, 4.97332, 5.6774, 6.29991, 6.82904, 7.36538, 7.91945, 8.48187, 9.04372, 9.59562, 10.1285, 10.6331, 11.1002, 11.5207, 11.8852, 12.185, 12.4103, 12.5523, 12.6015, 12.5871
+20220808 07:30:25.578867 T[  18186] INFO  [addTimeLog] [super:115020-1]结果写入实时库成功
+20220808 07:30:25.579084 T[  18186] INFO  [addTimeLog] [super:115020-1]发送超短期预测结果24条到历史库成功
+20220808 07:30:25.579113 T[  18186] INFO  [addTimeLog] [super:115020-1]结果发送到hasave成功
+20220808 07:30:25.579134 T[  18186] INFO  [addTimeLog] [super:115020-1][告警]超短期任务预测成功!
+20220808 07:30:25.589396 T[  18189] INFO  [addTimeLog] [super:115020-2]第一个预测点时刻07:45,下标30,预测结果不为0下标[22,86]
+20220808 07:30:25.589429 T[  18189] INFO  [addTimeLog] [super:115020-2]第一个预测点重新计算后结果为1.35368
+20220808 07:30:25.589491 T[  18189] INFO  [addTimeLog] [super:115020-2]光伏超短期结果：1.35368, 1.98339, 2.69251, 3.4486, 4.21968, 4.97332, 5.6774, 6.29991, 6.82904, 7.36538, 7.91945, 8.48187, 9.04372, 9.59562, 10.1285, 10.6331, 11.1002, 11.5207, 11.8852, 12.185, 12.4103, 12.5523, 12.6015, 12.5871, 
+20220808 07:30:25.589511 T[  18189] INFO  [addLog] 开始限制装机/计划开机
+20220808 07:30:25.589556 T[  18189] INFO  [addLog] 限制后的结果：1.35368, 1.98339, 2.69251, 3.4486, 4.21968, 4.97332, 5.6774, 6.29991, 6.82904, 7.36538, 7.91945, 8.48187, 9.04372, 9.59562, 10.1285, 10.6331, 11.1002, 11.5207, 11.8852, 12.185, 12.4103, 12.5523, 12.6015, 12.5871
+20220808 07:30:25.590617 T[  18189] INFO  [addTimeLog] [super:115020-2]结果写入实时库成功
+20220808 07:30:25.590785 T[  18189] INFO  [addTimeLog] [super:115020-2]发送超短期预测结果24条到历史库成功
+20220808 07:30:25.590813 T[  18189] INFO  [addTimeLog] [super:115020-2]结果发送到hasave成功
+20220808 07:30:25.590842 T[  18189] INFO  [addTimeLog] [super:115020-2][告警]超短期任务预测成功!
+20220808 07:31:04.444740 T[  18165] WARN  未找到wpd文件,当前时刻(2022-08-08 07:31:04.000),处于开始预测时间(2022-08-08 07:30:00.000)和预测结束时间(2022-08-08 08:30:00.000)之间,开启告警,上次预测时间(20220807000000),电厂(115020) --- ../../../src/baseapk/commonlib/log/rxlogmanager.cpp:20 [-09999]
+20220808 07:31:10.939382 T[  18165] ERROR CQT_Socket_Stream (127.0.0.1): sn_read: Connection closed Because of read = 0 --- ../../../src/baseapk/commonlib/log/rxlogmanager.cpp:22 [-09999]
+20220808 11:58:00.114553 T[  18622] INFO  [RxLogEnv] 
+20220808 11:58:00.114616 T[  18622] INFO  [RxLogEnv] <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+20220808 11:58:00.114626 T[  18622] INFO  [RxLogEnv] 进程/home/sprixin/davinci/bin/rxpforecast[18622]启动！
+20220808 11:58:00.114928 T[  18622] INFO  [addLog] 工程预测目录为:/home/sprixin/davinci/usr/subfcst_project/forecast
+20220808 11:58:00.115538 T[  18622] INFO  [addLog] pipe name:/home/sprixin/davinci/etc/IPC/18622a [-09999]
+20220808 11:58:00.115664 T[  18622] INFO  [addLog] Create rec pthread  success, the id is -605309184 [-09999]
+20220808 11:58:00.116193 T[  18622] INFO  [addLog] 工作线程数为:8,python服务链接地址为:http://localhost:18000/calc [-09999]
+20220808 11:58:00.118331 T[  18622] INFO  [addTimeLog] 进程rxpforecast(18622)分配互斥锁/var/rxpforecast(206766085)。 [-09999]
+20220808 11:58:00.118363 T[  18622] INFO  [addLog] 向rxinit注册完毕 [-09999]
+20220808 11:58:00.118508 T[  18622] INFO  [addTimeLog] <<<<<<<<< process = rxpforecast begin starting........ [-09999]
+20220808 11:58:00.119346 T[  18622] INFO  [addLog] begin trying to connect RXSERVER. Please Waiting... maxtimeout = 4000  [-09999]
+20220808 11:58:04.122186 T[  18622] INFO  [addLog] ApplicationTimerElapse: time arrived, beginning check whether or not exist connected channel. [-00012]
+20220808 11:58:04.122667 T[  18622] INFO  [addLog] beginning try to connect server. Please Waiting.... timeout = 2 [-09999]
+20220808 11:58:04.122700 T[  18622] ERROR CSocketDevice::Connect(): connect to (127.0.0.1) successful! --- ../../../src/baseapk/commonlib/log/rxlogmanager.cpp:48 [-09999]
+20220808 11:58:04.123999 T[  18622] INFO  [addTimeLog] pid =18622 Recv A Node( 0 ) Running. [-09999]
+20220808 11:58:04.124145 T[  18622] WARN  begin to init memory database. --- ../../../src/baseapk/commonlib/log/rxlogmanager.cpp:20 [-09999]
+20220808 11:58:04.125155 T[  18622] WARN  have finished to init memory database. --- ../../../src/baseapk/commonlib/log/rxlogmanager.cpp:20 [-09999]
+20220808 11:58:04.125370 T[  18622] INFO  [addLog] CComponentManager::OnReceivedSignalRunning,begin to StartupApplication [-09999]
+20220808 11:58:04.125425 T[  18622] INFO  [addLog] REGISTER Registered OK! [-09999]
+20220808 11:58:04.125429 T[  18622] INFO  [addLog] Begin Register Application = 203. Please Wait... [-09999]
+20220808 11:58:04.125650 T[  18622] WARN  <<<<< Apply To Register Process = rxpforecast.... --- ../../../src/baseapk/commonlib/log/rxlogmanager.cpp:46 [-09999]
+20220808 11:58:04.166828 T[  18622] WARN   >>>>>>process rxpforecast  Register OK! --- ../../../src/baseapk/commonlib/log/rxlogmanager.cpp:46 [-09999]
+20220808 11:58:04.177202 T[  18622] INFO  [addLog] Register Process = 203 Success. [-09999]
+20220808 11:58:04.177429 T[  18622] INFO  [addLog] ****************************************************************** [-09999]
+20220808 11:58:04.177441 T[  18622] INFO  [addLog] <<<Startup Service = REGISTER Successful. [-09999]
+20220808 11:58:04.177463 T[  18622] INFO  [addLog] <<<< RegisterObject StartUp ! [-09999]
+20220808 11:58:04.177497 T[  18622] INFO  [addTimeLog] 服务REGISTER(3)启动。 [-09999]
+20220808 11:58:04.177505 T[  18622] INFO  [addLog] ****************************************************************** [-09999]
+20220808 11:58:04.177508 T[  18622] INFO  [addLog] rxpforecast startup OK! [-09999]
+20220808 11:58:04.177546 T[  18622] ERROR CConsoleApplication初始化成功 --- ../../../src/baseapk/commonlib/log/rxlogmanager.cpp:22 [-09999]
+20220808 11:58:04.418936 T[  18622] INFO  [addLog] 开始初始化sequence
+20220808 11:58:04.439060 T[  18632] ERROR [CProcessCom::thr_rev] open pipe(O_RDONLY) /home/sprixin/davinci/etc/IPC/18622a error! --- ../../../src/baseapk/commonlib/log/rxlogmanager.cpp:22 [-09999]
+20220808 11:58:04.439163 T[  18632] ERROR [CProcessCom::thr_rev] can't create pipe /home/sprixin/davinci/etc/IPC/18622a count=[0] --- ../../../src/baseapk/commonlib/log/rxlogmanager.cpp:22 [-09999]
+20220808 11:58:04.449263 T[  18632] ERROR [CProcessCom::thr_rev] can't create pipe /home/sprixin/davinci/etc/IPC/18622a count=[1] --- ../../../src/baseapk/commonlib/log/rxlogmanager.cpp:22 [-09999]
+20220808 11:58:04.450711 T[  18622] INFO  [addLog] sequence初始化完成
+20220808 11:58:04.451110 T[  18622] INFO  [addLog] 开始加载气象站基础信息
+20220808 11:58:04.451267 T[  18622] INFO  [addLog] ID:115021,电厂ID:115020,编号:1,名称:PV_ENDETECTOR_1,别名:环境监测仪_1,是否虚拟:不是,是否主气象:是
+20220808 11:58:04.451325 T[  18622] INFO  [addLog] 一共1台气象站
+20220808 11:58:04.451329 T[  18622] INFO  [addLog] 加载气象站基础信息结束
+20220808 11:58:04.451331 T[  18622] INFO  [addLog] 开始光伏组件基础信息
+20220808 11:58:04.451469 T[  18622] INFO  [addLog] ID:115022,电厂ID:115020,编号:1,名称:PV_UNIT_1,别名:光伏组件_1,是否样板机:是,是否参与预测:是
+20220808 11:58:04.451487 T[  18622] INFO  [addLog] ID:115023,电厂ID:115020,编号:2,名称:PV_UNIT_2,别名:光伏组件_2,是否样板机:是,是否参与预测:是
+20220808 11:58:04.451497 T[  18622] INFO  [addLog] ID:115024,电厂ID:115020,编号:3,名称:PV_UNIT_3,别名:光伏组件_3,是否样板机:否,是否参与预测:是
+20220808 11:58:04.451506 T[  18622] INFO  [addLog] ID:115025,电厂ID:115020,编号:4,名称:PV_UNIT_4,别名:光伏组件_4,是否样板机:否,是否参与预测:是
+20220808 11:58:04.451520 T[  18622] INFO  [addLog] ID:115026,电厂ID:115020,编号:5,名称:PV_UNIT_5,别名:光伏组件_5,是否样板机:否,是否参与预测:是
+20220808 11:58:04.451541 T[  18622] INFO  [addLog] ID:115027,电厂ID:115020,编号:6,名称:PV_UNIT_6,别名:光伏组件_6,是否样板机:否,是否参与预测:是
+20220808 11:58:04.451550 T[  18622] INFO  [addLog] ID:115028,电厂ID:115020,编号:7,名称:PV_UNIT_7,别名:光伏组件_7,是否样板机:否,是否参与预测:是
+20220808 11:58:04.451558 T[  18622] INFO  [addLog] ID:115029,电厂ID:115020,编号:8,名称:PV_UNIT_8,别名:光伏组件_8,是否样板机:否,是否参与预测:是
+20220808 11:58:04.451566 T[  18622] INFO  [addLog] ID:115030,电厂ID:115020,编号:9,名称:PV_UNIT_9,别名:光伏组件_9,是否样板机:否,是否参与预测:是
+20220808 11:58:04.451575 T[  18622] INFO  [addLog] ID:115031,电厂ID:115020,编号:10,名称:PV_UNIT_10,别名:光伏组件_10,是否样板机:否,是否参与预测:是
+20220808 11:58:04.451626 T[  18622] INFO  [addLog] 一共10台光伏组件
+20220808 11:58:04.451629 T[  18622] INFO  [addLog] 加载光伏组件基础信息结束
+20220808 11:58:04.453444 T[  18622] INFO  [addLog] 历史数据库连接成功，DBType:1，ConnectString:10.64.14.126@DAVINCI，UserName:DAVINCI [-09999]
+20220808 11:58:04.455097 T[  18622] INFO  [addLog] 发现一个电厂(115020-LLGf-理论功率光伏电厂1),添加它准备进行预测! [-09999]
+20220808 11:58:04.455187 T[  18622] INFO  [addLog] 更新短期预测控制(115020-2),时间(27000)! [-09999]
+20220808 11:58:04.455253 T[  18622] INFO  [addLog] 启动预测计算线程池,线程数8 [-09999]
+20220808 11:58:04.455759 T[  18643] INFO  [addLog] Thread 1 startup!
+20220808 11:58:04.455921 T[  18644] INFO  [addLog] Thread 2 startup!
+20220808 11:58:04.455968 T[  18642] INFO  [addLog] Thread 0 startup!
+20220808 11:58:04.456023 T[  18645] INFO  [addLog] Thread 3 startup!
+20220808 11:58:04.456087 T[  18646] INFO  [addLog] Thread 4 startup!
+20220808 11:58:04.456137 T[  18647] INFO  [addLog] Thread 5 startup!
+20220808 11:58:04.456184 T[  18648] INFO  [addLog] Thread 6 startup!
+20220808 11:58:04.456288 T[  18649] INFO  [addLog] Thread 7 startup!
+20220808 11:58:04.456318 T[  18622] INFO  [addLog] 加载系数线程发现一个电厂(115020-LLGf-理论功率光伏电厂1) [-09999]
+20220808 11:58:04.456502 T[  18650] INFO  [addLog] 加载系数线程启动
+20220808 11:58:04.456920 T[  18622] INFO  [addLog] 未找到wpd文件,当前时刻(2022-08-08 11:58:04.000),处于主预测结束时间(2022-08-08 08:30:00.000)之后,但是今日还没有主预测,需要开启循环主预测,上次主预测时间(20000101000000),电厂(115020) [-09999]
+20220808 11:58:04.457053 T[  18622] WARN  未找到wpd文件,当前时刻(2022-08-08 11:58:04.000),处于预测结束时间(2022-08-08 08:30:00.000)之后,但是今日还没有预测,需要开启预测,开启告警,上次预测时间(20220807000000),电厂(115020) --- ../../../src/baseapk/commonlib/log/rxlogmanager.cpp:20 [-09999]
+20220808 11:58:04.457918 T[  18622] INFO  [addLog] 电厂(115020)开始加载supradio配置 [-09999]
+20220808 11:58:04.457991 T[  18622] INFO  [addLog] 电厂(115020)没有发现新配置文件/home/sprixin/davinci/usr/subfcst_project/forecast/LLGf/supradio.xml,使用配置文件备份/home/sprixin/davinci/usr/subfcst_project/forecast/LLGf/bak/supradio.xml [-09999]
+20220808 11:58:04.459483 T[  18632] ERROR [CProcessCom::thr_rev] can't create pipe /home/sprixin/davinci/etc/IPC/18622a count=[2] --- ../../../src/baseapk/commonlib/log/rxlogmanager.cpp:22 [-09999]
+20220808 11:58:04.459769 T[  18622] INFO  [addLog] 电厂(115020)开始加载光伏短期python配置信息 [-09999]
+20220808 11:58:04.459836 T[  18622] ERROR 电厂(115020)没有发现新配置文件/home/sprixin/davinci/usr/subfcst_project/forecast/LLGf/forecast.xml,也没有配置文件备份/home/sprixin/davinci/usr/subfcst_project/forecast/LLGf/bak/forecast.xml,请检查配置 --- ../../../src/baseapk/commonlib/log/rxlogmanager.cpp:22 [-09999]
+20220808 11:58:04.459866 T[  18622] ERROR 电厂(115020)光伏python配置文件/home/sprixin/davinci/usr/subfcst_project/forecast/LLGf/forecast.xml打开失败 --- ../../../src/baseapk/commonlib/log/rxlogmanager.cpp:22 [-09999]
+20220808 11:58:04.460105 T[  18650] INFO  [addLog] 历史数据库连接成功，ConnectString:10.64.14.126@DAVINCI，UserName:DAVINCI
+20220808 11:58:04.460187 T[  18622] INFO  [addLog] ****************************************************************** [-09999]
+20220808 11:58:04.460200 T[  18622] INFO  [addLog] ****************************************************************** [-09999]
+20220808 11:58:04.460194 T[  18643] INFO  [addTimeLog] [short:115020-3]thread 1 start a new task)!
+20220808 11:58:04.460418 T[  18643] INFO  [addTimeLog] [short:115020-3]读取功率类型为(备用):3
+20220808 11:58:04.460458 T[  18643] INFO  [addTimeLog] [short:115020-3]实发数据采用15分钟平均值数据表数据
+20220808 11:58:04.460611 T[  18643] INFO  [addTimeLog] [short:115020-3]装机容量是20
+20220808 11:58:04.460732 T[  18643] INFO  [addTimeLog] [short:115020-3]非风电气象数据高度为1
+20220808 11:58:04.465281 T[  18643] WARN  [short:115020-3]更新旧预测数据的时间! --- ../../../src/baseapk/commonlib/log/rxlogmanager.cpp:46
+20220808 11:58:04.469612 T[  18632] ERROR [CProcessCom::thr_rev] can't create pipe /home/sprixin/davinci/etc/IPC/18622a count=[3] --- ../../../src/baseapk/commonlib/log/rxlogmanager.cpp:22 [-09999]
+20220808 11:58:04.479732 T[  18632] ERROR [CProcessCom::thr_rev] can't create pipe /home/sprixin/davinci/etc/IPC/18622a count=[4] --- ../../../src/baseapk/commonlib/log/rxlogmanager.cpp:22 [-09999]
+20220808 11:58:04.489828 T[  18632] ERROR [CProcessCom::thr_rev] can't create pipe /home/sprixin/davinci/etc/IPC/18622a count=[5] --- ../../../src/baseapk/commonlib/log/rxlogmanager.cpp:22 [-09999]
+20220808 11:58:04.492228 T[  18650] INFO  [addLog] 电场(115020)未加载到本次超短期系数
+20220808 11:58:04.499930 T[  18632] ERROR [CProcessCom::thr_rev] can't create pipe /home/sprixin/davinci/etc/IPC/18622a count=[6] --- ../../../src/baseapk/commonlib/log/rxlogmanager.cpp:22 [-09999]
+20220808 11:58:04.510032 T[  18632] ERROR [CProcessCom::thr_rev] can't create pipe /home/sprixin/davinci/etc/IPC/18622a count=[7] --- ../../../src/baseapk/commonlib/log/rxlogmanager.cpp:22 [-09999]
+20220808 11:58:04.510297 T[  18643] INFO  [RxLogInfo] 从sequence实时库中读取ID2000个(hdrfcstrecord)
+20220808 11:58:04.510454 T[  18643] INFO  [RxLogInfo] (hdrfcstrecord表)sequence缓存没有值,从sequence实时库中加载起始ID 172001
+20220808 11:58:04.510628 T[  18643] INFO  [RxLogInfo] 更新sequence的hdrfcstrecord表最大ID成功，用时10毫秒
+20220808 11:58:04.511769 T[  18643] INFO  [RxLogInfo] 从sequence实时库中读取ID2000个(hdrfcstdata_llgf) [-09999]
+20220808 11:58:04.511820 T[  18643] INFO  [RxLogInfo] (hdrfcstdata_llgf表)sequence缓存没有值,从sequence实时库中加载起始ID 440001 [-09999]
+20220808 11:58:04.511930 T[  18643] INFO  [RxLogInfo] 更新sequence的hdrfcstdata_llgf表最大ID成功，用时10毫秒 [-09999]
+20220808 11:58:04.512907 T[  18643] INFO  [addTimeLog] [short:115020-3]取到一组ID[440001-441056] [-09999]
+20220808 11:58:04.513126 T[  18643] INFO  [addTimeLog] [short:115020-3]准备发送一组短期数据包(200个)ID[440001-440200] [-09999]
+20220808 11:58:04.513426 T[  18643] INFO  [addTimeLog] [short:115020-3]准备发送一组短期数据包(200个)ID[440201-440400] [-09999]
+20220808 11:58:04.513560 T[  18643] INFO  [addTimeLog] [short:115020-3]准备发送一组短期数据包(200个)ID[440401-440600] [-09999]
+20220808 11:58:04.513733 T[  18643] INFO  [addTimeLog] [short:115020-3]准备发送一组短期数据包(200个)ID[440601-440800] [-09999]
+20220808 11:58:04.513925 T[  18643] INFO  [addTimeLog] [short:115020-3]准备发送一组短期数据包(200个)ID[440801-441000] [-09999]
+20220808 11:58:04.514027 T[  18643] INFO  [addTimeLog] [short:115020-3]准备发送一组短期数据包(56个)ID[441001-441056] [-09999]
+20220808 11:58:04.514048 T[  18643] INFO  [addTimeLog] [short:115020-3]发送短期预测结果1056条到历史库成功 [-09999]
+20220808 11:58:04.520179 T[  18632] ERROR [CProcessCom::thr_rev] can't create pipe /home/sprixin/davinci/etc/IPC/18622a count=[8] --- ../../../src/baseapk/commonlib/log/rxlogmanager.cpp:22 [-09999]
+20220808 11:58:04.530281 T[  18632] ERROR [CProcessCom::thr_rev] can't create pipe /home/sprixin/davinci/etc/IPC/18622a count=[9] --- ../../../src/baseapk/commonlib/log/rxlogmanager.cpp:22 [-09999]
+20220808 11:58:04.540395 T[  18632] ERROR [CProcessCom::thr_rev] can't create pipe /home/sprixin/davinci/etc/IPC/18622a count=[10] --- ../../../src/baseapk/commonlib/log/rxlogmanager.cpp:22 [-09999]
+20220808 11:58:04.550499 T[  18632] ERROR [CProcessCom::thr_rev] can't create pipe /home/sprixin/davinci/etc/IPC/18622a count=[11] --- ../../../src/baseapk/commonlib/log/rxlogmanager.cpp:22 [-09999]
+20220808 11:58:04.560653 T[  18632] ERROR [CProcessCom::thr_rev] can't create pipe /home/sprixin/davinci/etc/IPC/18622a count=[12] --- ../../../src/baseapk/commonlib/log/rxlogmanager.cpp:22 [-09999]
+20220808 11:58:04.570877 T[  18632] ERROR [CProcessCom::thr_rev] can't create pipe /home/sprixin/davinci/etc/IPC/18622a count=[13] --- ../../../src/baseapk/commonlib/log/rxlogmanager.cpp:22 [-09999]
+20220808 11:58:04.581037 T[  18632] ERROR [CProcessCom::thr_rev] can't create pipe /home/sprixin/davinci/etc/IPC/18622a count=[14] --- ../../../src/baseapk/commonlib/log/rxlogmanager.cpp:22 [-09999]
+20220808 11:58:04.591165 T[  18632] ERROR [CProcessCom::thr_rev] can't create pipe /home/sprixin/davinci/etc/IPC/18622a count=[15] --- ../../../src/baseapk/commonlib/log/rxlogmanager.cpp:22 [-09999]
+20220808 11:58:04.601325 T[  18632] ERROR [CProcessCom::thr_rev] can't create pipe /home/sprixin/davinci/etc/IPC/18622a count=[16] --- ../../../src/baseapk/commonlib/log/rxlogmanager.cpp:22 [-09999]
+20220808 11:58:04.611502 T[  18632] ERROR [CProcessCom::thr_rev] can't create pipe /home/sprixin/davinci/etc/IPC/18622a count=[17] --- ../../../src/baseapk/commonlib/log/rxlogmanager.cpp:22 [-09999]
+20220808 11:58:04.621673 T[  18632] ERROR [CProcessCom::thr_rev] can't create pipe /home/sprixin/davinci/etc/IPC/18622a count=[18] --- ../../../src/baseapk/commonlib/log/rxlogmanager.cpp:22 [-09999]
+20220808 11:58:04.631837 T[  18632] ERROR [CProcessCom::thr_rev] can't create pipe /home/sprixin/davinci/etc/IPC/18622a count=[19] --- ../../../src/baseapk/commonlib/log/rxlogmanager.cpp:22 [-09999]
+20220808 11:58:04.641952 T[  18632] ERROR [CProcessCom::thr_rev] can't create pipe /home/sprixin/davinci/etc/IPC/18622a count=[20] --- ../../../src/baseapk/commonlib/log/rxlogmanager.cpp:22 [-09999]
+20220808 11:58:04.652070 T[  18632] ERROR [CProcessCom::thr_rev] can't create pipe /home/sprixin/davinci/etc/IPC/18622a count=[21] --- ../../../src/baseapk/commonlib/log/rxlogmanager.cpp:22 [-09999]
+20220808 11:58:04.662179 T[  18632] ERROR [CProcessCom::thr_rev] can't create pipe /home/sprixin/davinci/etc/IPC/18622a count=[22] --- ../../../src/baseapk/commonlib/log/rxlogmanager.cpp:22 [-09999]
+20220808 11:58:04.672316 T[  18632] ERROR [CProcessCom::thr_rev] can't create pipe /home/sprixin/davinci/etc/IPC/18622a count=[23] --- ../../../src/baseapk/commonlib/log/rxlogmanager.cpp:22 [-09999]
+20220808 11:58:04.682449 T[  18632] ERROR [CProcessCom::thr_rev] can't create pipe /home/sprixin/davinci/etc/IPC/18622a count=[24] --- ../../../src/baseapk/commonlib/log/rxlogmanager.cpp:22 [-09999]
+20220808 11:58:04.692655 T[  18632] ERROR [CProcessCom::thr_rev] can't create pipe /home/sprixin/davinci/etc/IPC/18622a count=[25] --- ../../../src/baseapk/commonlib/log/rxlogmanager.cpp:22 [-09999]
+20220808 11:58:04.702800 T[  18632] ERROR [CProcessCom::thr_rev] can't create pipe /home/sprixin/davinci/etc/IPC/18622a count=[26] --- ../../../src/baseapk/commonlib/log/rxlogmanager.cpp:22 [-09999]
+20220808 11:58:04.712948 T[  18632] ERROR [CProcessCom::thr_rev] can't create pipe /home/sprixin/davinci/etc/IPC/18622a count=[27] --- ../../../src/baseapk/commonlib/log/rxlogmanager.cpp:22 [-09999]
+20220808 11:58:04.723062 T[  18632] ERROR [CProcessCom::thr_rev] can't create pipe /home/sprixin/davinci/etc/IPC/18622a count=[28] --- ../../../src/baseapk/commonlib/log/rxlogmanager.cpp:22 [-09999]
+20220808 11:58:04.733267 T[  18632] ERROR [CProcessCom::thr_rev] can't create pipe /home/sprixin/davinci/etc/IPC/18622a count=[29] --- ../../../src/baseapk/commonlib/log/rxlogmanager.cpp:22 [-09999]
+20220808 11:58:04.743382 T[  18632] ERROR [CProcessCom::thr_rev] can't create pipe /home/sprixin/davinci/etc/IPC/18622a count=[30] --- ../../../src/baseapk/commonlib/log/rxlogmanager.cpp:22 [-09999]
+20220808 11:58:04.753485 T[  18632] ERROR [CProcessCom::thr_rev] can't create pipe /home/sprixin/davinci/etc/IPC/18622a count=[31] --- ../../../src/baseapk/commonlib/log/rxlogmanager.cpp:22 [-09999]
+20220808 11:58:04.763622 T[  18632] ERROR [CProcessCom::thr_rev] can't create pipe /home/sprixin/davinci/etc/IPC/18622a count=[32] --- ../../../src/baseapk/commonlib/log/rxlogmanager.cpp:22 [-09999]
+20220808 11:58:04.773742 T[  18632] ERROR [CProcessCom::thr_rev] can't create pipe /home/sprixin/davinci/etc/IPC/18622a count=[33] --- ../../../src/baseapk/commonlib/log/rxlogmanager.cpp:22 [-09999]
+20220808 11:58:04.783963 T[  18632] ERROR [CProcessCom::thr_rev] can't create pipe /home/sprixin/davinci/etc/IPC/18622a count=[34] --- ../../../src/baseapk/commonlib/log/rxlogmanager.cpp:22 [-09999]
+20220808 11:58:04.795271 T[  18632] ERROR [CProcessCom::thr_rev] can't create pipe /home/sprixin/davinci/etc/IPC/18622a count=[35] --- ../../../src/baseapk/commonlib/log/rxlogmanager.cpp:22 [-09999]
+20220808 11:58:04.805445 T[  18632] ERROR [CProcessCom::thr_rev] can't create pipe /home/sprixin/davinci/etc/IPC/18622a count=[36] --- ../../../src/baseapk/commonlib/log/rxlogmanager.cpp:22 [-09999]
+20220808 11:58:04.815583 T[  18632] ERROR [CProcessCom::thr_rev] can't create pipe /home/sprixin/davinci/etc/IPC/18622a count=[37] --- ../../../src/baseapk/commonlib/log/rxlogmanager.cpp:22 [-09999]
+20220808 11:58:04.825694 T[  18632] ERROR [CProcessCom::thr_rev] can't create pipe /home/sprixin/davinci/etc/IPC/18622a count=[38] --- ../../../src/baseapk/commonlib/log/rxlogmanager.cpp:22 [-09999]
+20220808 11:58:04.835851 T[  18632] ERROR [CProcessCom::thr_rev] can't create pipe /home/sprixin/davinci/etc/IPC/18622a count=[39] --- ../../../src/baseapk/commonlib/log/rxlogmanager.cpp:22 [-09999]
+20220808 11:58:04.846047 T[  18632] ERROR [CProcessCom::thr_rev] can't create pipe /home/sprixin/davinci/etc/IPC/18622a count=[40] --- ../../../src/baseapk/commonlib/log/rxlogmanager.cpp:22 [-09999]
+20220808 11:58:04.856228 T[  18632] ERROR [CProcessCom::thr_rev] can't create pipe /home/sprixin/davinci/etc/IPC/18622a count=[41] --- ../../../src/baseapk/commonlib/log/rxlogmanager.cpp:22 [-09999]
+20220808 11:58:04.866400 T[  18632] ERROR [CProcessCom::thr_rev] can't create pipe /home/sprixin/davinci/etc/IPC/18622a count=[42] --- ../../../src/baseapk/commonlib/log/rxlogmanager.cpp:22 [-09999]
+20220808 11:58:04.876589 T[  18632] ERROR [CProcessCom::thr_rev] can't create pipe /home/sprixin/davinci/etc/IPC/18622a count=[43] --- ../../../src/baseapk/commonlib/log/rxlogmanager.cpp:22 [-09999]
+20220808 11:58:04.886751 T[  18632] ERROR [CProcessCom::thr_rev] can't create pipe /home/sprixin/davinci/etc/IPC/18622a count=[44] --- ../../../src/baseapk/commonlib/log/rxlogmanager.cpp:22 [-09999]
+20220808 11:58:04.896869 T[  18632] ERROR [CProcessCom::thr_rev] can't create pipe /home/sprixin/davinci/etc/IPC/18622a count=[45] --- ../../../src/baseapk/commonlib/log/rxlogmanager.cpp:22 [-09999]
+20220808 11:58:04.907103 T[  18632] ERROR [CProcessCom::thr_rev] can't create pipe /home/sprixin/davinci/etc/IPC/18622a count=[46] --- ../../../src/baseapk/commonlib/log/rxlogmanager.cpp:22 [-09999]
+20220808 11:58:04.917325 T[  18632] ERROR [CProcessCom::thr_rev] can't create pipe /home/sprixin/davinci/etc/IPC/18622a count=[47] --- ../../../src/baseapk/commonlib/log/rxlogmanager.cpp:22 [-09999]
+20220808 11:58:04.927490 T[  18632] ERROR [CProcessCom::thr_rev] can't create pipe /home/sprixin/davinci/etc/IPC/18622a count=[48] --- ../../../src/baseapk/commonlib/log/rxlogmanager.cpp:22 [-09999]
+20220808 11:58:04.937672 T[  18632] ERROR [CProcessCom::thr_rev] can't create pipe /home/sprixin/davinci/etc/IPC/18622a count=[49] --- ../../../src/baseapk/commonlib/log/rxlogmanager.cpp:22 [-09999]
+20220808 11:58:04.947877 T[  18632] ERROR [CProcessCom::thr_rev] can't create pipe /home/sprixin/davinci/etc/IPC/18622a count=[50] --- ../../../src/baseapk/commonlib/log/rxlogmanager.cpp:22 [-09999]
+20220808 11:58:04.958072 T[  18632] ERROR [CProcessCom::thr_rev] can't create pipe /home/sprixin/davinci/etc/IPC/18622a count=[51] --- ../../../src/baseapk/commonlib/log/rxlogmanager.cpp:22 [-09999]
+20220808 11:58:04.968229 T[  18632] ERROR [CProcessCom::thr_rev] can't create pipe /home/sprixin/davinci/etc/IPC/18622a count=[52] --- ../../../src/baseapk/commonlib/log/rxlogmanager.cpp:22 [-09999]
+20220808 11:58:04.978343 T[  18632] ERROR [CProcessCom::thr_rev] can't create pipe /home/sprixin/davinci/etc/IPC/18622a count=[53] --- ../../../src/baseapk/commonlib/log/rxlogmanager.cpp:22 [-09999]
+20220808 11:58:04.988520 T[  18632] ERROR [CProcessCom::thr_rev] can't create pipe /home/sprixin/davinci/etc/IPC/18622a count=[54] --- ../../../src/baseapk/commonlib/log/rxlogmanager.cpp:22 [-09999]
+20220808 11:58:04.998667 T[  18632] ERROR [CProcessCom::thr_rev] can't create pipe /home/sprixin/davinci/etc/IPC/18622a count=[55] --- ../../../src/baseapk/commonlib/log/rxlogmanager.cpp:22 [-09999]
+20220808 11:58:05.008835 T[  18632] ERROR [CProcessCom::thr_rev] can't create pipe /home/sprixin/davinci/etc/IPC/18622a count=[56] --- ../../../src/baseapk/commonlib/log/rxlogmanager.cpp:22 [-09999]
+20220808 11:58:05.019003 T[  18632] ERROR [CProcessCom::thr_rev] can't create pipe /home/sprixin/davinci/etc/IPC/18622a count=[57] --- ../../../src/baseapk/commonlib/log/rxlogmanager.cpp:22 [-09999]
+20220808 11:58:05.029287 T[  18632] ERROR [CProcessCom::thr_rev] can't create pipe /home/sprixin/davinci/etc/IPC/18622a count=[58] --- ../../../src/baseapk/commonlib/log/rxlogmanager.cpp:22 [-09999]
+20220808 11:58:05.039607 T[  18632] ERROR [CProcessCom::thr_rev] can't create pipe /home/sprixin/davinci/etc/IPC/18622a count=[59] --- ../../../src/baseapk/commonlib/log/rxlogmanager.cpp:22 [-09999]
+20220808 11:58:05.049806 T[  18632] ERROR [CProcessCom::thr_rev] can't create pipe /home/sprixin/davinci/etc/IPC/18622a count=[60] --- ../../../src/baseapk/commonlib/log/rxlogmanager.cpp:22 [-09999]
+20220808 11:58:05.059970 T[  18632] ERROR [CProcessCom::thr_rev] can't create pipe /home/sprixin/davinci/etc/IPC/18622a count=[61] --- ../../../src/baseapk/commonlib/log/rxlogmanager.cpp:22 [-09999]
+20220808 11:58:05.070092 T[  18632] ERROR [CProcessCom::thr_rev] can't create pipe /home/sprixin/davinci/etc/IPC/18622a count=[62] --- ../../../src/baseapk/commonlib/log/rxlogmanager.cpp:22 [-09999]
+20220808 11:58:05.080262 T[  18632] ERROR [CProcessCom::thr_rev] can't create pipe /home/sprixin/davinci/etc/IPC/18622a count=[63] --- ../../../src/baseapk/commonlib/log/rxlogmanager.cpp:22 [-09999]
+20220808 11:58:05.090434 T[  18632] ERROR [CProcessCom::thr_rev] can't create pipe /home/sprixin/davinci/etc/IPC/18622a count=[64] --- ../../../src/baseapk/commonlib/log/rxlogmanager.cpp:22 [-09999]
+20220808 11:58:05.100582 T[  18632] ERROR [CProcessCom::thr_rev] can't create pipe /home/sprixin/davinci/etc/IPC/18622a count=[65] --- ../../../src/baseapk/commonlib/log/rxlogmanager.cpp:22 [-09999]
+20220808 11:58:05.110706 T[  18632] ERROR [CProcessCom::thr_rev] can't create pipe /home/sprixin/davinci/etc/IPC/18622a count=[66] --- ../../../src/baseapk/commonlib/log/rxlogmanager.cpp:22 [-09999]
+20220808 11:58:05.120846 T[  18632] ERROR [CProcessCom::thr_rev] can't create pipe /home/sprixin/davinci/etc/IPC/18622a count=[67] --- ../../../src/baseapk/commonlib/log/rxlogmanager.cpp:22 [-09999]
+20220808 11:58:05.130962 T[  18632] ERROR [CProcessCom::thr_rev] can't create pipe /home/sprixin/davinci/etc/IPC/18622a count=[68] --- ../../../src/baseapk/commonlib/log/rxlogmanager.cpp:22 [-09999]
+20220808 11:58:05.141154 T[  18632] ERROR [CProcessCom::thr_rev] can't create pipe /home/sprixin/davinci/etc/IPC/18622a count=[69] --- ../../../src/baseapk/commonlib/log/rxlogmanager.cpp:22 [-09999]
+20220808 11:58:05.151333 T[  18632] ERROR [CProcessCom::thr_rev] can't create pipe /home/sprixin/davinci/etc/IPC/18622a count=[70] --- ../../../src/baseapk/commonlib/log/rxlogmanager.cpp:22 [-09999]
+20220808 11:58:05.161449 T[  18632] ERROR [CProcessCom::thr_rev] can't create pipe /home/sprixin/davinci/etc/IPC/18622a count=[71] --- ../../../src/baseapk/commonlib/log/rxlogmanager.cpp:22 [-09999]
+20220808 11:58:05.171549 T[  18632] ERROR [CProcessCom::thr_rev] can't create pipe /home/sprixin/davinci/etc/IPC/18622a count=[72] --- ../../../src/baseapk/commonlib/log/rxlogmanager.cpp:22 [-09999]
+20220808 11:58:05.181656 T[  18632] ERROR [CProcessCom::thr_rev] can't create pipe /home/sprixin/davinci/etc/IPC/18622a count=[73] --- ../../../src/baseapk/commonlib/log/rxlogmanager.cpp:22 [-09999]
+20220808 11:58:05.191797 T[  18632] ERROR [CProcessCom::thr_rev] can't create pipe /home/sprixin/davinci/etc/IPC/18622a count=[74] --- ../../../src/baseapk/commonlib/log/rxlogmanager.cpp:22 [-09999]
+20220808 11:58:05.201980 T[  18632] ERROR [CProcessCom::thr_rev] can't create pipe /home/sprixin/davinci/etc/IPC/18622a count=[75] --- ../../../src/baseapk/commonlib/log/rxlogmanager.cpp:22 [-09999]
+20220808 11:58:05.212111 T[  18632] ERROR [CProcessCom::thr_rev] can't create pipe /home/sprixin/davinci/etc/IPC/18622a count=[76] --- ../../../src/baseapk/commonlib/log/rxlogmanager.cpp:22 [-09999]
+20220808 11:58:05.222264 T[  18632] ERROR [CProcessCom::thr_rev] can't create pipe /home/sprixin/davinci/etc/IPC/18622a count=[77] --- ../../../src/baseapk/commonlib/log/rxlogmanager.cpp:22 [-09999]
+20220808 11:58:05.232393 T[  18632] ERROR [CProcessCom::thr_rev] can't create pipe /home/sprixin/davinci/etc/IPC/18622a count=[78] --- ../../../src/baseapk/commonlib/log/rxlogmanager.cpp:22 [-09999]
+20220808 11:58:05.242528 T[  18632] ERROR [CProcessCom::thr_rev] can't create pipe /home/sprixin/davinci/etc/IPC/18622a count=[79] --- ../../../src/baseapk/commonlib/log/rxlogmanager.cpp:22 [-09999]
+20220808 11:58:05.252646 T[  18632] ERROR [CProcessCom::thr_rev] can't create pipe /home/sprixin/davinci/etc/IPC/18622a count=[80] --- ../../../src/baseapk/commonlib/log/rxlogmanager.cpp:22 [-09999]
+20220808 11:58:05.262812 T[  18632] ERROR [CProcessCom::thr_rev] can't create pipe /home/sprixin/davinci/etc/IPC/18622a count=[81] --- ../../../src/baseapk/commonlib/log/rxlogmanager.cpp:22 [-09999]
+20220808 11:58:05.272930 T[  18632] ERROR [CProcessCom::thr_rev] can't create pipe /home/sprixin/davinci/etc/IPC/18622a count=[82] --- ../../../src/baseapk/commonlib/log/rxlogmanager.cpp:22 [-09999]
+20220808 11:58:05.283095 T[  18632] ERROR [CProcessCom::thr_rev] can't create pipe /home/sprixin/davinci/etc/IPC/18622a count=[83] --- ../../../src/baseapk/commonlib/log/rxlogmanager.cpp:22 [-09999]
+20220808 11:58:05.293260 T[  18632] ERROR [CProcessCom::thr_rev] can't create pipe /home/sprixin/davinci/etc/IPC/18622a count=[84] --- ../../../src/baseapk/commonlib/log/rxlogmanager.cpp:22 [-09999]
+20220808 11:58:05.303419 T[  18632] ERROR [CProcessCom::thr_rev] can't create pipe /home/sprixin/davinci/etc/IPC/18622a count=[85] --- ../../../src/baseapk/commonlib/log/rxlogmanager.cpp:22 [-09999]
+20220808 11:58:05.313556 T[  18632] ERROR [CProcessCom::thr_rev] can't create pipe /home/sprixin/davinci/etc/IPC/18622a count=[86] --- ../../../src/baseapk/commonlib/log/rxlogmanager.cpp:22 [-09999]
+20220808 11:58:05.323654 T[  18632] ERROR [CProcessCom::thr_rev] can't create pipe /home/sprixin/davinci/etc/IPC/18622a count=[87] --- ../../../src/baseapk/commonlib/log/rxlogmanager.cpp:22 [-09999]
+20220808 11:58:05.333778 T[  18632] ERROR [CProcessCom::thr_rev] can't create pipe /home/sprixin/davinci/etc/IPC/18622a count=[88] --- ../../../src/baseapk/commonlib/log/rxlogmanager.cpp:22 [-09999]
+20220808 11:58:05.343913 T[  18632] ERROR [CProcessCom::thr_rev] can't create pipe /home/sprixin/davinci/etc/IPC/18622a count=[89] --- ../../../src/baseapk/commonlib/log/rxlogmanager.cpp:22 [-09999]
+20220808 11:58:05.354046 T[  18632] ERROR [CProcessCom::thr_rev] can't create pipe /home/sprixin/davinci/etc/IPC/18622a count=[90] --- ../../../src/baseapk/commonlib/log/rxlogmanager.cpp:22 [-09999]
+20220808 11:58:05.364204 T[  18632] ERROR [CProcessCom::thr_rev] can't create pipe /home/sprixin/davinci/etc/IPC/18622a count=[91] --- ../../../src/baseapk/commonlib/log/rxlogmanager.cpp:22 [-09999]
+20220808 11:58:05.374431 T[  18632] ERROR [CProcessCom::thr_rev] can't create pipe /home/sprixin/davinci/etc/IPC/18622a count=[92] --- ../../../src/baseapk/commonlib/log/rxlogmanager.cpp:22 [-09999]
+20220808 11:58:05.384593 T[  18632] ERROR [CProcessCom::thr_rev] can't create pipe /home/sprixin/davinci/etc/IPC/18622a count=[93] --- ../../../src/baseapk/commonlib/log/rxlogmanager.cpp:22 [-09999]
+20220808 11:58:05.394750 T[  18632] ERROR [CProcessCom::thr_rev] can't create pipe /home/sprixin/davinci/etc/IPC/18622a count=[94] --- ../../../src/baseapk/commonlib/log/rxlogmanager.cpp:22 [-09999]
+20220808 11:58:05.404909 T[  18632] ERROR [CProcessCom::thr_rev] can't create pipe /home/sprixin/davinci/etc/IPC/18622a count=[95] --- ../../../src/baseapk/commonlib/log/rxlogmanager.cpp:22 [-09999]
+20220808 11:58:05.415129 T[  18632] ERROR [CProcessCom::thr_rev] can't create pipe /home/sprixin/davinci/etc/IPC/18622a count=[96] --- ../../../src/baseapk/commonlib/log/rxlogmanager.cpp:22 [-09999]
+20220808 11:58:05.425315 T[  18632] ERROR [CProcessCom::thr_rev] can't create pipe /home/sprixin/davinci/etc/IPC/18622a count=[97] --- ../../../src/baseapk/commonlib/log/rxlogmanager.cpp:22 [-09999]
+20220808 11:58:05.435529 T[  18632] ERROR [CProcessCom::thr_rev] can't create pipe /home/sprixin/davinci/etc/IPC/18622a count=[98] --- ../../../src/baseapk/commonlib/log/rxlogmanager.cpp:22 [-09999]
+20220808 11:58:05.445778 T[  18632] ERROR [CProcessCom::thr_rev] can't create pipe /home/sprixin/davinci/etc/IPC/18622a count=[99] --- ../../../src/baseapk/commonlib/log/rxlogmanager.cpp:22 [-09999]
+20220808 11:58:05.455958 T[  18632] ERROR [CProcessCom::thr_rev] can't create pipe /home/sprixin/davinci/etc/IPC/18622a count=[100] --- ../../../src/baseapk/commonlib/log/rxlogmanager.cpp:22 [-09999]
+20220808 11:58:05.456011 T[  18632] ERROR [CProcessCom::thr_rev] create pipe /home/sprixin/davinci/etc/IPC/18622a failed count=[101] --- ../../../src/baseapk/commonlib/log/rxlogmanager.cpp:22 [-09999]
+20220808 11:58:05.460414 T[  18622] INFO  [addLog] 电厂(115020)开始加载supradio配置 [-09999]
+20220808 11:58:05.460534 T[  18622] INFO  [addLog] 电厂(115020)没有发现新配置文件/home/sprixin/davinci/usr/subfcst_project/forecast/LLGf/supradio.xml,使用配置文件备份/home/sprixin/davinci/usr/subfcst_project/forecast/LLGf/bak/supradio.xml [-09999]
+20220808 11:58:05.463119 T[  18622] INFO  [addLog] 电厂(115020)开始加载光伏超短期python配置信息 [-09999]
+20220808 11:58:05.463230 T[  18622] ERROR 电厂(115020)没有发现新配置文件/home/sprixin/davinci/usr/subfcst_project/forecast/LLGf/forecast_super.xml,也没有配置文件备份/home/sprixin/davinci/usr/subfcst_project/forecast/LLGf/bak/forecast_super.xml,请检查配置 --- ../../../src/baseapk/commonlib/log/rxlogmanager.cpp:22 [-09999]
+20220808 11:58:05.463311 T[  18622] ERROR 电厂(115020)光伏python配置文件/home/sprixin/davinci/usr/subfcst_project/forecast/LLGf/forecast_super.xml打开失败 --- ../../../src/baseapk/commonlib/log/rxlogmanager.cpp:22 [-09999]
+20220808 11:58:05.463671 T[  18644] INFO  [addTimeLog] [super:115020-0]thread 2 start a new task)!
+20220808 11:58:05.463766 T[  18644] INFO  [addTimeLog] [super:115020-0]初始化光伏超短期算法
+20220808 11:58:05.463815 T[  18644] INFO  [addTimeLog] [super:115020-0]装机容量是20
+20220808 11:58:05.463905 T[  18644] INFO  [addTimeLog] [super:115020-0]读取功率类型为(备用):0
+20220808 11:58:05.463916 T[  18644] INFO  [addTimeLog] [super:115020-0]实发数据采用15分钟平均值数据表数据
+20220808 11:58:05.464814 T[  18644] INFO  [addTimeLog] [super:115020-0]实发功率的类型是:并网功率
+20220808 11:58:05.467286 T[  18642] INFO  [addTimeLog] [super:115020-1]thread 0 start a new task)!
+20220808 11:58:05.467328 T[  18645] INFO  [addTimeLog] [super:115020-2]thread 3 start a new task)!
+20220808 11:58:05.467361 T[  18642] INFO  [addTimeLog] [super:115020-1]初始化光伏超短期算法
+20220808 11:58:05.467367 T[  18645] INFO  [addTimeLog] [super:115020-2]初始化光伏超短期算法
+20220808 11:58:05.467381 T[  18645] INFO  [addTimeLog] [super:115020-2]装机容量是20
+20220808 11:58:05.467381 T[  18642] INFO  [addTimeLog] [super:115020-1]装机容量是20
+20220808 11:58:05.467404 T[  18642] INFO  [addTimeLog] [super:115020-1]读取功率类型为(备用):1
+20220808 11:58:05.467414 T[  18642] INFO  [addTimeLog] [super:115020-1]实发数据采用15分钟平均值数据表数据
+20220808 11:58:05.467406 T[  18645] INFO  [addTimeLog] [super:115020-2]读取功率类型为(备用):2
+20220808 11:58:05.467478 T[  18645] INFO  [addTimeLog] [super:115020-2]实发数据采用15分钟平均值数据表数据
+20220808 11:58:05.467750 T[  18645] INFO  [addTimeLog] [super:115020-2]实发功率的类型是:默认可用功率
+20220808 11:58:05.467758 T[  18642] INFO  [addTimeLog] [super:115020-1]实发功率的类型是:默认理论功率
+20220808 11:58:05.467794 T[  18645] INFO  [addTimeLog] [super:115020-2]非风电气象数据高度为1
+20220808 11:58:05.467794 T[  18642] INFO  [addTimeLog] [super:115020-1]非风电气象数据高度为1
+20220808 11:58:05.468182 T[  18644] INFO  [addTimeLog] [super:115020-0]并网功率的量测ID是(2)
+20220808 11:58:05.468242 T[  18644] INFO  [addTimeLog] [super:115020-0]非风电气象数据高度为1
+20220808 11:58:05.468256 T[  18645] INFO  [addTimeLog] [super:115020-2]辐照度的量测ID是(44)
+20220808 11:58:05.468261 T[  18642] INFO  [addTimeLog] [super:115020-1]辐照度的量测ID是(44)
+20220808 11:58:05.468372 T[  18645] INFO  [addTimeLog] [super:115020-2]直辐射的量测ID是(45)
+20220808 11:58:05.468439 T[  18642] INFO  [addTimeLog] [super:115020-1]直辐射的量测ID是(45)
+20220808 11:58:05.468463 T[  18644] INFO  [addTimeLog] [super:115020-0]辐照度的量测ID是(44)
+20220808 11:58:05.468542 T[  18645] INFO  [addTimeLog] [super:115020-2]散辐射的量测ID是(46)
+20220808 11:58:05.468595 T[  18642] INFO  [addTimeLog] [super:115020-1]散辐射的量测ID是(46)
+20220808 11:58:05.468656 T[  18644] INFO  [addTimeLog] [super:115020-0]直辐射的量测ID是(45)
+20220808 11:58:05.468669 T[  18645] INFO  [addTimeLog] [super:115020-2]第1层平均风速的量测ID是(47)
+20220808 11:58:05.468765 T[  18642] INFO  [addTimeLog] [super:115020-1]第1层平均风速的量测ID是(47)
+20220808 11:58:05.468816 T[  18645] INFO  [addTimeLog] [super:115020-2]第1层平均风向的量测ID是(48)
+20220808 11:58:05.468867 T[  18644] INFO  [addTimeLog] [super:115020-0]散辐射的量测ID是(46)
+20220808 11:58:05.468912 T[  18642] INFO  [addTimeLog] [super:115020-1]第1层平均风向的量测ID是(48)
+20220808 11:58:05.468922 T[  18645] INFO  [addTimeLog] [super:115020-2]第1层温度的量测ID是(49)
+20220808 11:58:05.469099 T[  18645] INFO  [addTimeLog] [super:115020-2]第1层湿度的量测ID是(50)
+20220808 11:58:05.469122 T[  18644] INFO  [addTimeLog] [super:115020-0]第1层平均风速的量测ID是(47)
+20220808 11:58:05.469129 T[  18642] INFO  [addTimeLog] [super:115020-1]第1层温度的量测ID是(49)
+20220808 11:58:05.469265 T[  18645] INFO  [addTimeLog] [super:115020-2]第1层压力的量测ID是(51)
+20220808 11:58:05.469281 T[  18645] INFO  [addTimeLog] [super:115020-2]实发功率的类型是:并网功率
+20220808 11:58:05.469325 T[  18644] INFO  [addTimeLog] [super:115020-0]第1层平均风向的量测ID是(48)
+20220808 11:58:05.469381 T[  18642] INFO  [addTimeLog] [super:115020-1]第1层湿度的量测ID是(50)
+20220808 11:58:05.469385 T[  18645] INFO  [addTimeLog] [super:115020-2]并网功率的量测ID是(2)
+20220808 11:58:05.469506 T[  18644] INFO  [addTimeLog] [super:115020-0]第1层温度的量测ID是(49)
+20220808 11:58:05.469616 T[  18642] INFO  [addTimeLog] [super:115020-1]第1层压力的量测ID是(51)
+20220808 11:58:05.469629 T[  18642] INFO  [addTimeLog] [super:115020-1]实发功率的类型是:并网功率
+20220808 11:58:05.469676 T[  18644] INFO  [addTimeLog] [super:115020-0]第1层湿度的量测ID是(50)
+20220808 11:58:05.469769 T[  18642] INFO  [addTimeLog] [super:115020-1]并网功率的量测ID是(2)
+20220808 11:58:05.469829 T[  18644] INFO  [addTimeLog] [super:115020-0]第1层压力的量测ID是(51)
+20220808 11:58:05.469877 T[  18644] INFO  [addTimeLog] [super:115020-0]实发功率的类型是:并网功率
+20220808 11:58:05.469964 T[  18644] INFO  [addTimeLog] [super:115020-0]并网功率的量测ID是(2)
+20220808 11:58:05.473817 T[  18642] INFO  [addTimeLog] [super:115020-1]历史数据库连接成功，ConnectString:10.64.14.126@DAVINCI，UserName:DAVINCI
+20220808 11:58:05.474111 T[  18644] INFO  [addTimeLog] [super:115020-0]历史数据库连接成功，ConnectString:10.64.14.126@DAVINCI，UserName:DAVINCI
+20220808 11:58:05.475613 T[  18645] INFO  [addTimeLog] [super:115020-2]历史数据库连接成功，ConnectString:10.64.14.126@DAVINCI，UserName:DAVINCI
+20220808 11:58:05.476181 T[  18644] INFO  [addTimeLog] [super:115020-0]光伏超短期组合预测算法开始执行
+20220808 11:58:05.476261 T[  18644] INFO  [addTimeLog] [super:115020-0]开始读取历史数据,组建综合表,综合表1/2/3/4的天数分别为6/8/8/8,备用天数3
+20220808 11:58:05.476497 T[  18642] INFO  [addTimeLog] [super:115020-1]光伏超短期组合预测算法开始执行
+20220808 11:58:05.476525 T[  18642] INFO  [addTimeLog] [super:115020-1]开始读取历史数据,组建综合表,综合表1/2/3/4的天数分别为6/8/8/8,备用天数3
+20220808 11:58:05.478459 T[  18645] INFO  [addTimeLog] [super:115020-2]光伏超短期组合预测算法开始执行
+20220808 11:58:05.478491 T[  18645] INFO  [addTimeLog] [super:115020-2]开始读取历史数据,组建综合表,综合表1/2/3/4的天数分别为6/8/8/8,备用天数3
+20220808 11:58:05.515925 T[  18642] ERROR [super:115020-1]获取2022-07-29 00:00:00-2022-08-09 00:00:00理论功率(默认理论功率)时失败! --- ../../../src/baseapk/commonlib/log/rxlogmanager.cpp:48
+20220808 11:58:05.516224 T[  18642] ERROR [super:115020-1]获取2022年07月29日 - 2022年08月09日完整数据时,获取以默认理论功率作为功率的结果校验,获取失败! --- ../../../src/baseapk/commonlib/log/rxlogmanager.cpp:48
+20220808 11:58:05.517776 T[  18645] ERROR [super:115020-2]获取2022-07-29 00:00:00-2022-08-09 00:00:00理论功率(默认可用功率)时失败! --- ../../../src/baseapk/commonlib/log/rxlogmanager.cpp:48
+20220808 11:58:05.518397 T[  18642] ERROR [super:115020-1]样本获取失败,只获取到0条数据(目标584条) --- ../../../src/baseapk/commonlib/log/rxlogmanager.cpp:48
+20220808 11:58:05.518415 T[  18645] ERROR [super:115020-2]获取2022年07月29日 - 2022年08月09日完整数据时,获取以默认可用功率作为功率的结果校验,获取失败! --- ../../../src/baseapk/commonlib/log/rxlogmanager.cpp:48
+20220808 11:58:05.519756 T[  18645] ERROR [super:115020-2]样本获取失败,只获取到0条数据(目标584条) --- ../../../src/baseapk/commonlib/log/rxlogmanager.cpp:48
+20220808 11:58:05.521262 T[  18644] ERROR [super:115020-0]样本获取失败,只获取到14条数据(目标584条) --- ../../../src/baseapk/commonlib/log/rxlogmanager.cpp:48
+20220808 11:58:05.552496 T[  18644] INFO  [addTimeLog] [super:115020-0]当前时刻11:45,下标47,预测生效下标[3,87],白天范围进行预测
+20220808 11:58:05.552530 T[  18644] ERROR [super:115020-0]光伏超短期计算失败,用短期代替 --- ../../../src/baseapk/commonlib/log/rxlogmanager.cpp:48
+20220808 11:58:05.555288 T[  18642] INFO  [addTimeLog] [super:115020-1]当前时刻11:45,下标47,预测生效下标[3,87],白天范围进行预测
+20220808 11:58:05.555311 T[  18642] ERROR [super:115020-1]光伏超短期计算失败,用短期代替 --- ../../../src/baseapk/commonlib/log/rxlogmanager.cpp:48
+20220808 11:58:05.555401 T[  18645] INFO  [addTimeLog] [super:115020-2]当前时刻11:45,下标47,预测生效下标[3,87],白天范围进行预测
+20220808 11:58:05.555423 T[  18645] ERROR [super:115020-2]光伏超短期计算失败,用短期代替 --- ../../../src/baseapk/commonlib/log/rxlogmanager.cpp:48
+20220808 11:58:05.560468 T[  18644] INFO  [addTimeLog] [super:115020-0]开始计算第一个点的值
+20220808 11:58:05.564029 T[  18644] INFO  [addTimeLog] [super:115020-0]取到当前时刻前0分钟的实发数据(9.32942)
+20220808 11:58:05.566087 T[  18642] INFO  [addTimeLog] [super:115020-1]开始计算第一个点的值
+20220808 11:58:05.566307 T[  18645] INFO  [addTimeLog] [super:115020-2]开始计算第一个点的值
+20220808 11:58:05.569300 T[  18642] ERROR [super:115020-1]获取2022-08-08 11:15:00-2022-08-08 12:00:00理论功率(默认理论功率)时失败! --- ../../../src/baseapk/commonlib/log/rxlogmanager.cpp:48
+20220808 11:58:05.569392 T[  18642] INFO  [addTimeLog] [super:115020-1]没有取到当前时刻30分钟内的实发功率,第一个点使用短期预测代替
+20220808 11:58:05.569430 T[  18645] ERROR [super:115020-2]获取2022-08-08 11:15:00-2022-08-08 12:00:00理论功率(默认可用功率)时失败! --- ../../../src/baseapk/commonlib/log/rxlogmanager.cpp:48
+20220808 11:58:05.569524 T[  18645] INFO  [addTimeLog] [super:115020-2]没有取到当前时刻30分钟内的实发功率,第一个点使用短期预测代替
+20220808 11:58:05.573371 T[  18644] INFO  [addTimeLog] [super:115020-0]第一个预测点时刻12:00,下标47,预测结果不为0下标[22,86]
+20220808 11:58:05.573399 T[  18644] INFO  [addTimeLog] [super:115020-0]第一个预测点重新计算后结果为9.79589
+20220808 11:58:05.573449 T[  18644] INFO  [addTimeLog] [super:115020-0]光伏超短期结果：9.79589, 11.8852, 12.185, 12.4103, 12.5523, 12.6015, 12.5871, 12.5451, 12.4779, 12.3877, 12.2767, 12.1473, 12.0017, 11.8421, 11.6709, 11.3863, 10.9105, 10.2812, 9.53639, 8.71373, 7.85114, 6.9864, 6.15754, 5.40216, 
+20220808 11:58:05.573474 T[  18644] INFO  [addLog] 开始限制装机/计划开机
+20220808 11:58:05.573560 T[  18644] INFO  [addLog] 限制后的结果：9.79589, 11.8852, 12.185, 12.4103, 12.5523, 12.6015, 12.5871, 12.5451, 12.4779, 12.3877, 12.2767, 12.1473, 12.0017, 11.8421, 11.6709, 11.3863, 10.9105, 10.2812, 9.53639, 8.71373, 7.85114, 6.9864, 6.15754, 5.40216
+20220808 11:58:05.574988 T[  18644] INFO  [addTimeLog] [super:115020-0]结果写入实时库成功
+20220808 11:58:05.575066 T[  18644] INFO  [RxLogInfo] 从sequence实时库中读取ID2000个(hdrsfcstrecord)
+20220808 11:58:05.575156 T[  18644] INFO  [RxLogInfo] (hdrsfcstrecord表)sequence缓存没有值,从sequence实时库中加载起始ID 220001
+20220808 11:58:05.575287 T[  18644] INFO  [RxLogInfo] 更新sequence的hdrsfcstrecord表最大ID成功，用时10毫秒
+20220808 11:58:05.575987 T[  18644] INFO  [RxLogInfo] 从sequence实时库中读取ID2000个(hdrsfcstdata_llgf) [-09999]
+20220808 11:58:05.576049 T[  18644] INFO  [RxLogInfo] (hdrsfcstdata_llgf表)sequence缓存没有值,从sequence实时库中加载起始ID 250001 [-09999]
+20220808 11:58:05.576200 T[  18644] INFO  [RxLogInfo] 更新sequence的hdrsfcstdata_llgf表最大ID成功，用时10毫秒 [-09999]
+20220808 11:58:05.576589 T[  18644] INFO  [addTimeLog] [super:115020-0]发送超短期预测结果24条到历史库成功 [-09999]
+20220808 11:58:05.576639 T[  18644] INFO  [addTimeLog] [super:115020-0]结果发送到hasave成功 [-09999]
+20220808 11:58:05.582119 T[  18644] INFO  [addTimeLog] [super:115020-0][告警]超短期任务预测成功! [-09999]
+20220808 11:58:05.582675 T[  18644] ERROR [super:115020-0]Table 'davinci.hdranastat15m202207' doesn't exist --- ../../../src/baseapk/commonlib/log/rxlogmanager.cpp:48 [-09999]
+20220808 11:58:05.582728 T[  18644] ERROR [super:115020-0]Table 'davinci.hdranastat15m_jm_202207' doesn't exist --- ../../../src/baseapk/commonlib/log/rxlogmanager.cpp:48 [-09999]
+20220808 11:58:05.610705 T[  18642] INFO  [addTimeLog] [super:115020-1]第一个预测点时刻12:00,下标47,预测结果不为0下标[22,86]
+20220808 11:58:05.610712 T[  18645] INFO  [addTimeLog] [super:115020-2]第一个预测点时刻12:00,下标47,预测结果不为0下标[22,86]
+20220808 11:58:05.610732 T[  18642] INFO  [addTimeLog] [super:115020-1]第一个预测点重新计算后结果为11.5207
+20220808 11:58:05.610748 T[  18645] INFO  [addTimeLog] [super:115020-2]第一个预测点重新计算后结果为11.5207
+20220808 11:58:05.610779 T[  18642] INFO  [addTimeLog] [super:115020-1]光伏超短期结果：11.5207, 11.8852, 12.185, 12.4103, 12.5523, 12.6015, 12.5871, 12.5451, 12.4779, 12.3877, 12.2767, 12.1473, 12.0017, 11.8421, 11.6709, 11.3863, 10.9105, 10.2812, 9.53639, 8.71373, 7.85114, 6.9864, 6.15754, 5.40216, 
+20220808 11:58:05.610795 T[  18642] INFO  [addLog] 开始限制装机/计划开机
+20220808 11:58:05.610798 T[  18645] INFO  [addTimeLog] [super:115020-2]光伏超短期结果：11.5207, 11.8852, 12.185, 12.4103, 12.5523, 12.6015, 12.5871, 12.5451, 12.4779, 12.3877, 12.2767, 12.1473, 12.0017, 11.8421, 11.6709, 11.3863, 10.9105, 10.2812, 9.53639, 8.71373, 7.85114, 6.9864, 6.15754, 5.40216, 
+20220808 11:58:05.610816 T[  18645] INFO  [addLog] 开始限制装机/计划开机
+20220808 11:58:05.610875 T[  18642] INFO  [addLog] 限制后的结果：11.5207, 11.8852, 12.185, 12.4103, 12.5523, 12.6015, 12.5871, 12.5451, 12.4779, 12.3877, 12.2767, 12.1473, 12.0017, 11.8421, 11.6709, 11.3863, 10.9105, 10.2812, 9.53639, 8.71373, 7.85114, 6.9864, 6.15754, 5.40216
+20220808 11:58:05.610895 T[  18645] INFO  [addLog] 限制后的结果：11.5207, 11.8852, 12.185, 12.4103, 12.5523, 12.6015, 12.5871, 12.5451, 12.4779, 12.3877, 12.2767, 12.1473, 12.0017, 11.8421, 11.6709, 11.3863, 10.9105, 10.2812, 9.53639, 8.71373, 7.85114, 6.9864, 6.15754, 5.40216
+20220808 11:58:05.611786 T[  18642] INFO  [addTimeLog] [super:115020-1]结果写入实时库成功
+20220808 11:58:05.611954 T[  18642] INFO  [addTimeLog] [super:115020-1]发送超短期预测结果24条到历史库成功
+20220808 11:58:05.611981 T[  18642] INFO  [addTimeLog] [super:115020-1]结果发送到hasave成功
+20220808 11:58:05.612033 T[  18642] INFO  [addTimeLog] [super:115020-1][告警]超短期任务预测成功!
+20220808 11:58:05.612926 T[  18645] INFO  [addTimeLog] [super:115020-2]结果写入实时库成功
+20220808 11:58:05.613115 T[  18645] INFO  [addTimeLog] [super:115020-2]发送超短期预测结果24条到历史库成功
+20220808 11:58:05.613141 T[  18645] INFO  [addTimeLog] [super:115020-2]结果发送到hasave成功
+20220808 11:58:05.613185 T[  18645] INFO  [addTimeLog] [super:115020-2][告警]超短期任务预测成功!
+20220808 11:58:08.650930 T[  18643] INFO  [RxLogInfo] 从sequence实时库中读取ID2000个(hdrnwprecord) [-09999]
+20220808 11:58:08.651102 T[  18643] INFO  [RxLogInfo] (hdrnwprecord表)sequence缓存没有值,从sequence实时库中加载起始ID 172001 [-09999]
+20220808 11:58:08.651197 T[  18643] INFO  [RxLogInfo] 更新sequence的hdrnwprecord表最大ID成功，用时10毫秒 [-09999]
+20220808 11:58:08.652007 T[  18643] INFO  [RxLogInfo] 从sequence实时库中读取ID2000个(hdrnwpdata_llgf) [-09999]
+20220808 11:58:08.652071 T[  18643] INFO  [RxLogInfo] (hdrnwpdata_llgf表)sequence缓存没有值,从sequence实时库中加载起始ID 188001 [-09999]
+20220808 11:58:08.652153 T[  18643] INFO  [RxLogInfo] 更新sequence的hdrnwpdata_llgf表最大ID成功，用时10毫秒 [-09999]
+20220808 11:58:08.655701 T[  18643] INFO  [addTimeLog] [short:115020-3]发送气象预测结果1056条到历史库成功 [-09999]
+20220808 11:58:08.655798 T[  18643] INFO  [addTimeLog] [short:115020-3][告警]短期任务预测成功 [-09999]
+20220808 11:58:08.656673 T[  18622] INFO  [addLog] 电厂(115020)开始加载supradio配置 [-09999]
+20220808 11:58:08.656736 T[  18622] INFO  [addLog] 电厂(115020)没有发现新配置文件/home/sprixin/davinci/usr/subfcst_project/forecast/LLGf/supradio.xml,使用配置文件备份/home/sprixin/davinci/usr/subfcst_project/forecast/LLGf/bak/supradio.xml [-09999]
+20220808 11:58:08.658667 T[  18622] INFO  [addLog] 电厂(115020)开始加载光伏短期python配置信息 [-09999]
+20220808 11:58:08.658730 T[  18622] ERROR 电厂(115020)没有发现新配置文件/home/sprixin/davinci/usr/subfcst_project/forecast/LLGf/forecast.xml,也没有配置文件备份/home/sprixin/davinci/usr/subfcst_project/forecast/LLGf/bak/forecast.xml,请检查配置 --- ../../../src/baseapk/commonlib/log/rxlogmanager.cpp:22 [-09999]
+20220808 11:58:08.658778 T[  18622] ERROR 电厂(115020)光伏python配置文件/home/sprixin/davinci/usr/subfcst_project/forecast/LLGf/forecast.xml打开失败 --- ../../../src/baseapk/commonlib/log/rxlogmanager.cpp:22 [-09999]
+20220808 11:58:34.460529 T[  18646] INFO  [addTimeLog] [short:115020-0]thread 4 start a new task)!
+20220808 11:58:34.460808 T[  18646] INFO  [addTimeLog] [short:115020-0]初始化光伏短期python预测
+20220808 11:58:34.460934 T[  18646] INFO  [addTimeLog] [short:115020-0]读取功率类型为(备用):3
+20220808 11:58:34.460961 T[  18646] INFO  [addTimeLog] [short:115020-0]实发数据采用15分钟平均值数据表数据
+20220808 11:58:34.460974 T[  18647] INFO  [addTimeLog] [short:115020-1]thread 5 start a new task)!
+20220808 11:58:34.461083 T[  18647] INFO  [addTimeLog] [short:115020-1]初始化光伏短期python预测
+20220808 11:58:34.461139 T[  18647] INFO  [addTimeLog] [short:115020-1]读取功率类型为(备用):3
+20220808 11:58:34.461155 T[  18647] INFO  [addTimeLog] [short:115020-1]实发数据采用15分钟平均值数据表数据
+20220808 11:58:34.461270 T[  18648] INFO  [addTimeLog] [short:115020-2]thread 6 start a new task)!
+20220808 11:58:34.461316 T[  18648] INFO  [addTimeLog] [short:115020-2]初始化光伏短期python预测
+20220808 11:58:34.461365 T[  18648] INFO  [addTimeLog] [short:115020-2]读取功率类型为(备用):3
+20220808 11:58:34.461379 T[  18648] INFO  [addTimeLog] [short:115020-2]实发数据采用15分钟平均值数据表数据
+20220808 11:58:34.463991 T[  18648] INFO  [addTimeLog] [short:115020-2]实发功率的类型是:默认可用功率
+20220808 11:58:34.463991 T[  18647] INFO  [addTimeLog] [short:115020-1]实发功率的类型是:默认理论功率
+20220808 11:58:34.464135 T[  18647] INFO  [addTimeLog] [short:115020-1]非风电气象数据高度为1
+20220808 11:58:34.464135 T[  18648] INFO  [addTimeLog] [short:115020-2]非风电气象数据高度为1
+20220808 11:58:34.464704 T[  18648] INFO  [addTimeLog] [short:115020-2]辐照度的量测ID是(44)
+20220808 11:58:34.464708 T[  18647] INFO  [addTimeLog] [short:115020-1]辐照度的量测ID是(44)
+20220808 11:58:34.464810 T[  18648] INFO  [addTimeLog] [short:115020-2]直辐射的量测ID是(45)
+20220808 11:58:34.464866 T[  18647] INFO  [addTimeLog] [short:115020-1]直辐射的量测ID是(45)
+20220808 11:58:34.464894 T[  18648] INFO  [addTimeLog] [short:115020-2]散辐射的量测ID是(46)
+20220808 11:58:34.464995 T[  18648] INFO  [addTimeLog] [short:115020-2]第1层平均风速的量测ID是(47)
+20220808 11:58:34.465043 T[  18647] INFO  [addTimeLog] [short:115020-1]散辐射的量测ID是(46)
+20220808 11:58:34.465107 T[  18648] INFO  [addTimeLog] [short:115020-2]第1层平均风向的量测ID是(48)
+20220808 11:58:34.465179 T[  18647] INFO  [addTimeLog] [short:115020-1]第1层平均风速的量测ID是(47)
+20220808 11:58:34.465183 T[  18648] INFO  [addTimeLog] [short:115020-2]第1层温度的量测ID是(49)
+20220808 11:58:34.465310 T[  18647] INFO  [addTimeLog] [short:115020-1]第1层平均风向的量测ID是(48)
+20220808 11:58:34.465427 T[  18647] INFO  [addTimeLog] [short:115020-1]第1层温度的量测ID是(49)
+20220808 11:58:34.465612 T[  18647] INFO  [addTimeLog] [short:115020-1]第1层湿度的量测ID是(50)
+20220808 11:58:34.465810 T[  18647] INFO  [addTimeLog] [short:115020-1]第1层压力的量测ID是(51)
+20220808 11:58:34.465841 T[  18647] INFO  [addTimeLog] [short:115020-1]实发功率的类型是:并网功率
+20220808 11:58:34.465880 T[  18648] INFO  [addTimeLog] [short:115020-2]第1层湿度的量测ID是(50)
+20220808 11:58:34.465985 T[  18647] INFO  [addTimeLog] [short:115020-1]并网功率的量测ID是(2)
+20220808 11:58:34.466000 T[  18648] INFO  [addTimeLog] [short:115020-2]第1层压力的量测ID是(51)
+20220808 11:58:34.466010 T[  18648] INFO  [addTimeLog] [short:115020-2]实发功率的类型是:并网功率
+20220808 11:58:34.466092 T[  18648] INFO  [addTimeLog] [short:115020-2]并网功率的量测ID是(2)
+20220808 11:58:34.466238 T[  18648] INFO  [addTimeLog] [short:115020-2]python预测已经被配置为关闭状态!
+20220808 11:58:34.466280 T[  18648] WARN  [short:115020-2]使用文件结果作为最终短期预测结果! --- ../../../src/baseapk/commonlib/log/rxlogmanager.cpp:46
+20220808 11:58:34.466329 T[  18647] INFO  [addTimeLog] [short:115020-1]python预测已经被配置为关闭状态!
+20220808 11:58:34.466343 T[  18647] WARN  [short:115020-1]使用文件结果作为最终短期预测结果! --- ../../../src/baseapk/commonlib/log/rxlogmanager.cpp:46
+20220808 11:58:34.467248 T[  18646] INFO  [addTimeLog] [short:115020-0]实发功率的类型是:并网功率 [-09999]
+20220808 11:58:34.467377 T[  18646] INFO  [addTimeLog] [short:115020-0]并网功率的量测ID是(2) [-09999]
+20220808 11:58:34.467402 T[  18646] INFO  [addTimeLog] [short:115020-0]非风电气象数据高度为1 [-09999]
+20220808 11:58:34.467499 T[  18646] INFO  [addTimeLog] [short:115020-0]辐照度的量测ID是(44) [-09999]
+20220808 11:58:34.467596 T[  18646] INFO  [addTimeLog] [short:115020-0]直辐射的量测ID是(45) [-09999]
+20220808 11:58:34.467658 T[  18646] INFO  [addTimeLog] [short:115020-0]散辐射的量测ID是(46) [-09999]
+20220808 11:58:34.467761 T[  18646] INFO  [addTimeLog] [short:115020-0]第1层平均风速的量测ID是(47) [-09999]
+20220808 11:58:34.467841 T[  18646] INFO  [addTimeLog] [short:115020-0]第1层平均风向的量测ID是(48) [-09999]
+20220808 11:58:34.467920 T[  18646] INFO  [addTimeLog] [short:115020-0]第1层温度的量测ID是(49) [-09999]
+20220808 11:58:34.468032 T[  18646] INFO  [addTimeLog] [short:115020-0]第1层湿度的量测ID是(50) [-09999]
+20220808 11:58:34.468165 T[  18646] INFO  [addTimeLog] [short:115020-0]第1层压力的量测ID是(51) [-09999]
+20220808 11:58:34.468190 T[  18646] INFO  [addTimeLog] [short:115020-0]实发功率的类型是:并网功率 [-09999]
+20220808 11:58:34.468244 T[  18646] INFO  [addTimeLog] [short:115020-0]并网功率的量测ID是(2) [-09999]
+20220808 11:58:34.468307 T[  18646] INFO  [addTimeLog] [short:115020-0]python预测已经被配置为关闭状态! [-09999]
+20220808 11:58:34.468314 T[  18646] WARN  [short:115020-0]使用文件结果作为最终短期预测结果! --- ../../../src/baseapk/commonlib/log/rxlogmanager.cpp:46 [-09999]
+20220808 11:58:34.470190 T[  18648] INFO  [addLog] 开始限制装机/计划开机/短期修正系数
+20220808 11:58:34.470504 T[  18647] INFO  [addLog] 开始限制装机/计划开机/短期修正系数
+20220808 11:58:34.470522 T[  18648] INFO  [addLog] 限制后的结果：0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1.14066, 1.99411, 2.99253, 4.09945, 5.9732, 8.78793, 12.3385, 16.4188
+20220808 11:58:34.470567 T[  18648] INFO  [addLog] 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20
+20220808 11:58:34.470601 T[  18648] INFO  [addLog] 20, 20, 20, 20, 20, 18.1913, 14.6727, 11.8406, 9.01679, 6.26133, 3.77668, 1.7698, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+20220808 11:58:34.470633 T[  18648] INFO  [addLog] 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1.87635, 3.23515, 4.73659, 6.25175, 8.06318, 10.2797, 12.819, 15.5988
+20220808 11:58:34.470670 T[  18648] INFO  [addLog] 18.5376, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20
+20220808 11:58:34.470709 T[  18648] INFO  [addLog] 20, 20, 20, 20, 17.4724, 13.8038, 10.8247, 8.5789, 6.42366, 4.36992, 2.55941, 1.13477, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+20220808 11:58:34.470741 T[  18647] INFO  [addLog] 限制后的结果：0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1.14066, 1.99411, 2.99253, 4.09945, 5.9732, 8.78793, 12.3385, 16.4188
+20220808 11:58:34.470756 T[  18648] INFO  [addLog] 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2.05133, 3.57722, 5.30668, 7.13243, 9.77247, 13.4047, 17.765, 20
+20220808 11:58:34.470792 T[  18647] INFO  [addLog] 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20
+20220808 11:58:34.470805 T[  18648] INFO  [addLog] 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20
+20220808 11:58:34.470834 T[  18647] INFO  [addLog] 20, 20, 20, 20, 20, 18.1913, 14.6727, 11.8406, 9.01679, 6.26133, 3.77668, 1.7698, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+20220808 11:58:34.470848 T[  18648] INFO  [addLog] 20, 20, 19.2377, 16.1502, 13.3075, 10.7812, 8.64364, 6.89309, 5.1728, 3.52495, 2.06784, 0.918834, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+20220808 11:58:34.470891 T[  18647] INFO  [addLog] 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1.87635, 3.23515, 4.73659, 6.25175, 8.06318, 10.2797, 12.819, 15.5988
+20220808 11:58:34.470906 T[  18648] INFO  [addLog] 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1.73988, 2.97215, 4.30005, 5.59117, 7.02666, 8.69298, 10.5395, 12.5167
+20220808 11:58:34.470935 T[  18647] INFO  [addLog] 18.5376, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20
+20220808 11:58:34.470962 T[  18648] INFO  [addLog] 14.5747, 16.6632, 18.7332, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20
+20220808 11:58:34.470972 T[  18647] INFO  [addLog] 20, 20, 20, 20, 17.4724, 13.8038, 10.8247, 8.5789, 6.42366, 4.36992, 2.55941, 1.13477, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+20220808 11:58:34.471012 T[  18647] INFO  [addLog] 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2.05133, 3.57722, 5.30668, 7.13243, 9.77247, 13.4047, 17.765, 20
+20220808 11:58:34.471039 T[  18648] INFO  [addLog] 20, 20, 20, 19.7944, 15.1182, 11.1391, 8.16881, 6.32501, 4.68536, 3.15883, 1.83644, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+20220808 11:58:34.471081 T[  18647] INFO  [addLog] 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20
+20220808 11:58:34.471112 T[  18648] INFO  [addLog] 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1.02744, 1.77174, 2.59259, 3.41804, 4.32374, 5.36317, 6.53542, 7.83586
+20220808 11:58:34.471135 T[  18647] INFO  [addLog] 20, 20, 19.2377, 16.1502, 13.3075, 10.7812, 8.64364, 6.89309, 5.1728, 3.52495, 2.06784, 0.918834, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+20220808 11:58:34.471188 T[  18647] INFO  [addLog] 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1.73988, 2.97215, 4.30005, 5.59117, 7.02666, 8.69298, 10.5395, 12.5167
+20220808 11:58:34.471205 T[  18648] INFO  [addLog] 9.26174, 10.8103, 12.4787, 14.2634, 16.1615, 18.2763, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20
+20220808 11:58:34.471243 T[  18647] INFO  [addLog] 14.5747, 16.6632, 18.7332, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20
+20220808 11:58:34.471255 T[  18648] INFO  [addLog] 20, 20, 20, 20, 20, 17.2572, 14.0282, 11.3351, 8.60137, 5.91563, 3.49644, 1.56238, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+20220808 11:58:34.471288 T[  18647] INFO  [addLog] 20, 20, 20, 19.7944, 15.1182, 11.1391, 8.16881, 6.32501, 4.68536, 3.15883, 1.83644, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+20220808 11:58:34.471296 T[  18648] INFO  [addLog] 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.938976, 2.23227, 3.89745, 5.78835, 7.79119, 10.6803, 14.6536, 19.4364, 20
+20220808 11:58:34.471335 T[  18647] INFO  [addLog] 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1.02744, 1.77174, 2.59259, 3.41804, 4.32374, 5.36317, 6.53542, 7.83586
+20220808 11:58:34.471345 T[  18648] INFO  [addLog] 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20
+20220808 11:58:34.471385 T[  18647] INFO  [addLog] 9.26174, 10.8103, 12.4787, 14.2634, 16.1615, 18.2763, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20
+20220808 11:58:34.471387 T[  18648] INFO  [addLog] 20, 20, 20, 20, 20, 17.1921, 13.7322, 10.9819, 8.27224, 5.65514, 3.32574, 1.48016, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+20220808 11:58:34.471419 T[  18648] INFO  [addLog] 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1.54681, 2.27428, 3.01939, 3.97605, 5.20459, 6.64284, 8.23047
+20220808 11:58:34.471457 T[  18648] INFO  [addLog] 9.90348, 11.6006, 13.2606, 14.8195, 16.2169, 17.4436, 18.7714, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20
+20220808 11:58:34.471491 T[  18648] INFO  [addLog] 19.8682, 17.4176, 14.9197, 12.4738, 10.1846, 8.1516, 6.4786, 5.18882, 3.91759, 2.68442, 1.58114, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+20220808 11:58:34.471539 T[  18648] INFO  [addLog] 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.980027, 1.69667, 2.49521, 3.31236, 4.36126, 5.70891, 7.28738, 9.02872
+20220808 11:58:34.471575 T[  18648] INFO  [addLog] 10.8641, 12.7264, 14.5468, 16.2575, 17.7903, 19.1361, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20
+20220808 11:58:34.471607 T[  18648] INFO  [addLog] 20, 19.1082, 16.3673, 13.6841, 11.1721, 8.94217, 7.10683, 5.69216, 4.29797, 2.94474, 1.73482, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+20220808 11:58:34.471638 T[  18648] INFO  [addLog] 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.664701, 1.69233, 2.48271, 3.28513, 4.24511, 5.42172, 6.77899, 8.27996
+20220808 11:58:34.471683 T[  18648] INFO  [addLog] 9.887, 11.5638, 13.2738, 14.9791, 16.6435, 18.309, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20
+20220808 11:58:34.471717 T[  18648] INFO  [addLog] 20, 20, 20, 18.5924, 15.399, 12.5268, 10.0983, 8.13337, 6.16055, 4.2312, 2.49779, 0.71176, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+20220808 11:58:34.471772 T[  18648] INFO  [addLog] 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.38026, 1.33462, 2.59206, 3.83276, 5.12764, 6.89407, 9.24948, 12.0532, 15.1623
+20220808 11:58:34.471811 T[  18648] INFO  [addLog] 18.4353, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20
+20220808 11:58:34.471844 T[  18648] INFO  [addLog] 20, 20, 20, 20, 16.8071, 13.5715, 10.8639, 8.71039, 6.57568, 4.50385, 2.65273, 0.849314, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+20220808 11:58:34.471876 T[  18648] INFO  [addLog] 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.152591, 1.69944, 3.0508, 4.48732, 5.96392, 7.9243, 10.4968, 13.5282, 16.8651
+20220808 11:58:34.471874 T[  18646] INFO  [addLog] 结果限制工具不存在!不需要限制装机/计划开机/短期修正系数 [-09999]
+20220808 11:58:34.471914 T[  18648] INFO  [addLog] 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20
+20220808 11:58:34.471962 T[  18648] INFO  [addLog] 20, 20, 20, 19.2301, 15.4691, 12.1745, 9.52042, 7.55298, 5.66496, 3.85912, 2.26305, 0.623257, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+20220808 11:58:34.473731 T[  18647] INFO  [addLog] 20, 20, 20, 20, 20, 17.2572, 14.0282, 11.3351, 8.60137, 5.91563, 3.49644, 1.56238, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+20220808 11:58:34.473771 T[  18647] INFO  [addLog] 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.938976, 2.23227, 3.89745, 5.78835, 7.79119, 10.6803, 14.6536, 19.4364, 20
+20220808 11:58:34.473810 T[  18647] INFO  [addLog] 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20
+20220808 11:58:34.473843 T[  18647] INFO  [addLog] 20, 20, 20, 20, 20, 17.1921, 13.7322, 10.9819, 8.27224, 5.65514, 3.32574, 1.48016, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+20220808 11:58:34.473874 T[  18647] INFO  [addLog] 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1.54681, 2.27428, 3.01939, 3.97605, 5.20459, 6.64284, 8.23047
+20220808 11:58:34.473912 T[  18647] INFO  [addLog] 9.90348, 11.6006, 13.2606, 14.8195, 16.2169, 17.4436, 18.7714, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20
+20220808 11:58:34.473944 T[  18647] INFO  [addLog] 19.8682, 17.4176, 14.9197, 12.4738, 10.1846, 8.1516, 6.4786, 5.18882, 3.91759, 2.68442, 1.58114, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+20220808 11:58:34.473975 T[  18647] INFO  [addLog] 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.980027, 1.69667, 2.49521, 3.31236, 4.36126, 5.70891, 7.28738, 9.02872
+20220808 11:58:34.474013 T[  18647] INFO  [addLog] 10.8641, 12.7264, 14.5468, 16.2575, 17.7903, 19.1361, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20
+20220808 11:58:34.474057 T[  18647] INFO  [addLog] 20, 19.1082, 16.3673, 13.6841, 11.1721, 8.94217, 7.10682, 5.69216, 4.29797, 2.94474, 1.73483, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+20220808 11:58:34.474090 T[  18647] INFO  [addLog] 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.664701, 1.69233, 2.48271, 3.28513, 4.24511, 5.42172, 6.77899, 8.27996
+20220808 11:58:34.474128 T[  18647] INFO  [addLog] 9.887, 11.5638, 13.2738, 14.9791, 16.6435, 18.309, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20
+20220808 11:58:34.474165 T[  18647] INFO  [addLog] 20, 20, 20, 18.5924, 15.399, 12.5268, 10.0983, 8.13337, 6.16055, 4.2312, 2.49779, 0.71176, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+20220808 11:58:34.474197 T[  18647] INFO  [addLog] 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.38026, 1.33462, 2.59206, 3.83276, 5.12764, 6.89407, 9.24948, 12.0532, 15.1623
+20220808 11:58:34.474250 T[  18647] INFO  [addLog] 18.4353, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20
+20220808 11:58:34.474282 T[  18647] INFO  [addLog] 20, 20, 20, 20, 16.8071, 13.5715, 10.8639, 8.71039, 6.57568, 4.50385, 2.65273, 0.849314, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+20220808 11:58:34.474313 T[  18647] INFO  [addLog] 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.152591, 1.69944, 3.0508, 4.48732, 5.96392, 7.9243, 10.4968, 13.5282, 16.8651
+20220808 11:58:34.474349 T[  18647] INFO  [addLog] 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20
+20220808 11:58:34.474379 T[  18647] INFO  [addLog] 20, 20, 20, 19.2301, 15.4691, 12.1745, 9.52042, 7.55298, 5.66496, 3.85912, 2.26305, 0.623257, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+20220808 11:58:34.519178 T[  18646] INFO  [RxLogInfo] 从sequence实时库中读取ID2000个(hdrfcstdata_llgf) [-09999]
+20220808 11:58:34.519434 T[  18646] INFO  [RxLogInfo] 更新sequence的hdrfcstdata_llgf表最大ID成功，用时10毫秒 [-09999]
+20220808 11:58:34.520691 T[  18646] INFO  [addTimeLog] [short:115020-0]取到一组ID[441057-442112] [-09999]
+20220808 11:58:34.520862 T[  18646] INFO  [addTimeLog] [short:115020-0]准备发送一组短期数据包(200个)ID[441057-441256] [-09999]
+20220808 11:58:34.521038 T[  18646] INFO  [addTimeLog] [short:115020-0]准备发送一组短期数据包(200个)ID[441257-441456] [-09999]
+20220808 11:58:34.521251 T[  18646] INFO  [addTimeLog] [short:115020-0]准备发送一组短期数据包(200个)ID[441457-441656] [-09999]
+20220808 11:58:34.521993 T[  18646] INFO  [addTimeLog] [short:115020-0]准备发送一组短期数据包(200个)ID[441657-441856] [-09999]
+20220808 11:58:34.522177 T[  18646] INFO  [addTimeLog] [short:115020-0]准备发送一组短期数据包(200个)ID[441857-442056] [-09999]
+20220808 11:58:34.522244 T[  18646] INFO  [addTimeLog] [short:115020-0]准备发送一组短期数据包(56个)ID[442057-442112] [-09999]
+20220808 11:58:34.522270 T[  18646] INFO  [addTimeLog] [short:115020-0]发送短期预测结果1056条到历史库成功 [-09999]
+20220808 11:58:34.592160 T[  18648] INFO  [addTimeLog] [short:115020-2]取到一组ID[442113-443168]
+20220808 11:58:34.592437 T[  18648] INFO  [addTimeLog] [short:115020-2]准备发送一组短期数据包(200个)ID[442113-442312]
+20220808 11:58:34.592679 T[  18648] INFO  [addTimeLog] [short:115020-2]准备发送一组短期数据包(200个)ID[442313-442512]
+20220808 11:58:34.592935 T[  18648] INFO  [addTimeLog] [short:115020-2]准备发送一组短期数据包(200个)ID[442513-442712]
+20220808 11:58:34.593186 T[  18648] INFO  [addTimeLog] [short:115020-2]准备发送一组短期数据包(200个)ID[442713-442912]
+20220808 11:58:34.593419 T[  18648] INFO  [addTimeLog] [short:115020-2]准备发送一组短期数据包(200个)ID[442913-443112]
+20220808 11:58:34.593532 T[  18648] INFO  [addTimeLog] [short:115020-2]准备发送一组短期数据包(56个)ID[443113-443168]
+20220808 11:58:34.593559 T[  18648] INFO  [addTimeLog] [short:115020-2]发送短期预测结果1056条到历史库成功
+20220808 11:58:34.640921 T[  18647] INFO  [RxLogInfo] 从sequence实时库中读取ID2000个(hdrfcstdata_llgf)
+20220808 11:58:34.641152 T[  18647] INFO  [RxLogInfo] 更新sequence的hdrfcstdata_llgf表最大ID成功，用时10毫秒
+20220808 11:58:34.641632 T[  18647] INFO  [addTimeLog] [short:115020-1]取到一组ID[443169-444224] [-09999]
+20220808 11:58:34.641822 T[  18647] INFO  [addTimeLog] [short:115020-1]准备发送一组短期数据包(200个)ID[443169-443368] [-09999]
+20220808 11:58:34.641945 T[  18647] INFO  [addTimeLog] [short:115020-1]准备发送一组短期数据包(200个)ID[443369-443568] [-09999]
+20220808 11:58:34.642094 T[  18647] INFO  [addTimeLog] [short:115020-1]准备发送一组短期数据包(200个)ID[443569-443768] [-09999]
+20220808 11:58:34.642194 T[  18647] INFO  [addTimeLog] [short:115020-1]准备发送一组短期数据包(200个)ID[443769-443968] [-09999]
+20220808 11:58:34.642296 T[  18647] INFO  [addTimeLog] [short:115020-1]准备发送一组短期数据包(200个)ID[443969-444168] [-09999]
+20220808 11:58:34.642355 T[  18647] INFO  [addTimeLog] [short:115020-1]准备发送一组短期数据包(56个)ID[444169-444224] [-09999]
+20220808 11:58:34.642368 T[  18647] INFO  [addTimeLog] [short:115020-1]发送短期预测结果1056条到历史库成功 [-09999]
+20220808 11:58:38.522606 T[  18646] INFO  [addTimeLog] [short:115020-0][告警]短期任务预测成功 [-09999]
+20220808 11:58:38.523221 T[  18622] INFO  [addLog] 电厂(115020)开始加载supradio配置 [-09999]
+20220808 11:58:38.523347 T[  18622] INFO  [addLog] 电厂(115020)没有发现新配置文件/home/sprixin/davinci/usr/subfcst_project/forecast/LLGf/supradio.xml,使用配置文件备份/home/sprixin/davinci/usr/subfcst_project/forecast/LLGf/bak/supradio.xml [-09999]
+20220808 11:58:38.525371 T[  18622] INFO  [addLog] 电厂(115020)开始加载光伏短期python配置信息 [-09999]
+20220808 11:58:38.525471 T[  18622] ERROR 电厂(115020)没有发现新配置文件/home/sprixin/davinci/usr/subfcst_project/forecast/LLGf/forecast.xml,也没有配置文件备份/home/sprixin/davinci/usr/subfcst_project/forecast/LLGf/bak/forecast.xml,请检查配置 --- ../../../src/baseapk/commonlib/log/rxlogmanager.cpp:22 [-09999]
+20220808 11:58:38.525536 T[  18622] ERROR 电厂(115020)光伏python配置文件/home/sprixin/davinci/usr/subfcst_project/forecast/LLGf/forecast.xml打开失败 --- ../../../src/baseapk/commonlib/log/rxlogmanager.cpp:22 [-09999]
+20220808 11:58:38.593805 T[  18648] INFO  [addTimeLog] [short:115020-2][告警]短期任务预测成功
+20220808 11:58:38.642549 T[  18647] INFO  [addTimeLog] [short:115020-1][告警]短期任务预测成功 [-09999]
+20220808 11:59:04.463235 T[  18622] WARN  未找到wpd文件,当前时刻(2022-08-08 11:59:04.000),处于预测结束时间(2022-08-08 08:30:00.000)之后,但是今日还没有预测,需要开启预测,开启告警,上次预测时间(20220807000000),电厂(115020) --- ../../../src/baseapk/commonlib/log/rxlogmanager.cpp:20 [-09999]
+20220808 11:59:34.460786 T[  18649] INFO  [addTimeLog] [short:115020-4]thread 7 start a new task)!
+20220808 11:59:34.461140 T[  18649] INFO  [addTimeLog] [short:115020-4]读取功率类型为(备用):0
+20220808 11:59:34.461168 T[  18649] INFO  [addTimeLog] [short:115020-4]实发数据采用15分钟平均值数据表数据
+20220808 11:59:34.461328 T[  18649] INFO  [addTimeLog] [short:115020-4]实发功率的类型是:并网功率
+20220808 11:59:34.461666 T[  18649] INFO  [addTimeLog] [short:115020-4]并网功率的量测ID是(2)
+20220808 11:59:34.461804 T[  18649] INFO  [addTimeLog] [short:115020-4]非风电气象数据高度为1
+20220808 11:59:34.461922 T[  18649] INFO  [addTimeLog] [short:115020-4]辐照度的量测ID是(44)
+20220808 11:59:34.461996 T[  18649] INFO  [addTimeLog] [short:115020-4]直辐射的量测ID是(45)
+20220808 11:59:34.462089 T[  18649] INFO  [addTimeLog] [short:115020-4]散辐射的量测ID是(46)
+20220808 11:59:34.462168 T[  18649] INFO  [addTimeLog] [short:115020-4]第1层平均风速的量测ID是(47)
+20220808 11:59:34.462228 T[  18649] INFO  [addTimeLog] [short:115020-4]第1层平均风向的量测ID是(48)
+20220808 11:59:34.462289 T[  18649] INFO  [addTimeLog] [short:115020-4]第1层温度的量测ID是(49)
+20220808 11:59:34.462351 T[  18649] INFO  [addTimeLog] [short:115020-4]第1层湿度的量测ID是(50)
+20220808 11:59:34.462413 T[  18649] INFO  [addTimeLog] [short:115020-4]第1层压力的量测ID是(51)
+20220808 11:59:34.462426 T[  18649] INFO  [addTimeLog] [short:115020-4]实发功率的类型是:并网功率
+20220808 11:59:34.462512 T[  18649] INFO  [addTimeLog] [short:115020-4]并网功率的量测ID是(2)
+20220808 11:59:34.463082 T[  18649] INFO  [addTimeLog] [short:115020-4]装机容量是20
+20220808 11:59:34.464634 T[  18649] INFO  [addTimeLog] [short:115020-4]加载原短期计算结果完毕!
+20220808 11:59:34.469389 T[  18649] INFO  [addTimeLog] [short:115020-4]历史数据库连接成功，ConnectString:10.64.14.126@DAVINCI，UserName:DAVINCI
+20220808 11:59:34.471916 T[  18649] INFO  [addLog] 开始限制装机/计划开机/短期修正系数
+20220808 11:59:34.472628 T[  18649] INFO  [addLog] 限制后的结果：0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1.14066, 1.99411, 2.99253, 4.09945, 5.9732, 8.78793, 12.3385, 16.4188
+20220808 11:59:34.472683 T[  18649] INFO  [addLog] 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20
+20220808 11:59:34.472733 T[  18649] INFO  [addLog] 20, 20, 20, 20, 20, 18.1913, 14.6727, 11.8406, 9.01679, 6.26133, 3.77668, 1.7698, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+20220808 11:59:34.472775 T[  18649] INFO  [addLog] 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1.87635, 3.23515, 4.73659, 6.25175, 8.06318, 10.2797, 12.819, 15.5988
+20220808 11:59:34.472824 T[  18649] INFO  [addLog] 18.5376, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20
+20220808 11:59:34.472866 T[  18649] INFO  [addLog] 20, 20, 20, 20, 17.4724, 13.8038, 10.8247, 8.5789, 6.42366, 4.36992, 2.55941, 1.13477, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+20220808 11:59:34.472906 T[  18649] INFO  [addLog] 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2.05133, 3.57722, 5.30668, 7.13243, 9.77247, 13.4047, 17.765, 20
+20220808 11:59:34.472954 T[  18649] INFO  [addLog] 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20
+20220808 11:59:34.472996 T[  18649] INFO  [addLog] 20, 20, 19.2377, 16.1502, 13.3075, 10.7812, 8.64364, 6.89309, 5.1728, 3.52495, 2.06784, 0.918834, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+20220808 11:59:34.473045 T[  18649] INFO  [addLog] 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1.73988, 2.97215, 4.30005, 5.59117, 7.02666, 8.69298, 10.5395, 12.5167
+20220808 11:59:34.473094 T[  18649] INFO  [addLog] 14.5747, 16.6632, 18.7332, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20
+20220808 11:59:34.473134 T[  18649] INFO  [addLog] 20, 20, 20, 19.7944, 15.1182, 11.1391, 8.16881, 6.32501, 4.68536, 3.15883, 1.83644, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+20220808 11:59:34.473174 T[  18649] INFO  [addLog] 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1.02744, 1.77174, 2.59259, 3.41804, 4.32374, 5.36317, 6.53542, 7.83586
+20220808 11:59:34.473223 T[  18649] INFO  [addLog] 9.26174, 10.8103, 12.4787, 14.2634, 16.1615, 18.2763, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20
+20220808 11:59:34.473264 T[  18649] INFO  [addLog] 20, 20, 20, 20, 20, 17.2572, 14.0282, 11.3351, 8.60137, 5.91563, 3.49644, 1.56238, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+20220808 11:59:34.473305 T[  18649] INFO  [addLog] 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.938976, 2.23227, 3.89745, 5.78835, 7.79119, 10.6803, 14.6536, 19.4364, 20
+20220808 11:59:34.473353 T[  18649] INFO  [addLog] 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20
+20220808 11:59:34.473394 T[  18649] INFO  [addLog] 20, 20, 20, 20, 20, 17.1921, 13.7322, 10.9819, 8.27224, 5.65514, 3.32574, 1.48016, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+20220808 11:59:34.473437 T[  18649] INFO  [addLog] 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1.54681, 2.27428, 3.01939, 3.97605, 5.20459, 6.64284, 8.23047
+20220808 11:59:34.473487 T[  18649] INFO  [addLog] 9.90348, 11.6006, 13.2606, 14.8195, 16.2169, 17.4436, 18.7714, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20
+20220808 11:59:34.473528 T[  18649] INFO  [addLog] 19.8682, 17.4176, 14.9197, 12.4738, 10.1846, 8.1516, 6.4786, 5.18882, 3.91759, 2.68442, 1.58114, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+20220808 11:59:34.473568 T[  18649] INFO  [addLog] 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.980027, 1.69667, 2.49521, 3.31236, 4.36126, 5.70891, 7.28738, 9.02872
+20220808 11:59:34.473617 T[  18649] INFO  [addLog] 10.8641, 12.7264, 14.5468, 16.2575, 17.7903, 19.1361, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20
+20220808 11:59:34.473658 T[  18649] INFO  [addLog] 20, 19.1082, 16.3673, 13.6841, 11.1721, 8.94217, 7.10683, 5.69216, 4.29797, 2.94474, 1.73482, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+20220808 11:59:34.473698 T[  18649] INFO  [addLog] 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.664701, 1.69233, 2.48271, 3.28513, 4.24511, 5.42172, 6.77899, 8.27996
+20220808 11:59:34.473751 T[  18649] INFO  [addLog] 9.887, 11.5638, 13.2738, 14.9791, 16.6435, 18.309, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20
+20220808 11:59:34.473793 T[  18649] INFO  [addLog] 20, 20, 20, 18.5924, 15.399, 12.5268, 10.0983, 8.13337, 6.16055, 4.2312, 2.49779, 0.71176, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+20220808 11:59:34.473834 T[  18649] INFO  [addLog] 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.38026, 1.33462, 2.59206, 3.83276, 5.12764, 6.89407, 9.24948, 12.0532, 15.1623
+20220808 11:59:34.473882 T[  18649] INFO  [addLog] 18.4353, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20
+20220808 11:59:34.473924 T[  18649] INFO  [addLog] 20, 20, 20, 20, 16.8071, 13.5715, 10.8639, 8.71039, 6.57568, 4.50385, 2.65273, 0.849314, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+20220808 11:59:34.473965 T[  18649] INFO  [addLog] 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.152591, 1.69944, 3.0508, 4.48732, 5.96392, 7.9243, 10.4968, 13.5282, 16.8651
+20220808 11:59:34.474013 T[  18649] INFO  [addLog] 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20
+20220808 11:59:34.474075 T[  18649] INFO  [addLog] 20, 20, 20, 19.2301, 15.4691, 12.1745, 9.52042, 7.55298, 5.66496, 3.85912, 2.26305, 0.623257, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+20220808 11:59:34.544288 T[  18649] INFO  [addTimeLog] [short:115020-4]取到一组ID[444225-445280]
+20220808 11:59:34.544477 T[  18649] INFO  [addTimeLog] [short:115020-4]准备发送一组短期数据包(200个)ID[444225-444424]
+20220808 11:59:34.544766 T[  18649] INFO  [addTimeLog] [short:115020-4]准备发送一组短期数据包(200个)ID[444425-444624]
+20220808 11:59:34.544913 T[  18649] INFO  [addTimeLog] [short:115020-4]准备发送一组短期数据包(200个)ID[444625-444824]
+20220808 11:59:34.545096 T[  18649] INFO  [addTimeLog] [short:115020-4]准备发送一组短期数据包(200个)ID[444825-445024]
+20220808 11:59:34.545274 T[  18649] INFO  [addTimeLog] [short:115020-4]准备发送一组短期数据包(200个)ID[445025-445224]
+20220808 11:59:34.545322 T[  18649] INFO  [addTimeLog] [short:115020-4]准备发送一组短期数据包(56个)ID[445225-445280]
+20220808 11:59:34.545337 T[  18649] INFO  [addTimeLog] [short:115020-4]发送短期预测结果1056条到历史库成功
+20220808 11:59:38.545903 T[  18649] INFO  [addTimeLog] [short:115020-4][告警]发电量预测成功
+20220808 12:00:04.461292 T[  18622] WARN  未找到wpd文件,当前时刻(2022-08-08 12:00:04.000),处于预测结束时间(2022-08-08 08:30:00.000)之后,但是今日还没有预测,需要开启预测,开启告警,上次预测时间(20220807000000),电厂(115020) --- ../../../src/baseapk/commonlib/log/rxlogmanager.cpp:20 [-09999]
+20220808 12:00:25.460954 T[  18622] INFO  [addLog] 电厂(115020)开始加载supradio配置 [-09999]
+20220808 12:00:25.461282 T[  18622] INFO  [addLog] 电厂(115020)没有发现新配置文件/home/sprixin/davinci/usr/subfcst_project/forecast/LLGf/supradio.xml,使用配置文件备份/home/sprixin/davinci/usr/subfcst_project/forecast/LLGf/bak/supradio.xml [-09999]
+20220808 12:00:25.463184 T[  18622] INFO  [addLog] 电厂(115020)开始加载光伏超短期python配置信息 [-09999]
+20220808 12:00:25.463266 T[  18622] ERROR 电厂(115020)没有发现新配置文件/home/sprixin/davinci/usr/subfcst_project/forecast/LLGf/forecast_super.xml,也没有配置文件备份/home/sprixin/davinci/usr/subfcst_project/forecast/LLGf/bak/forecast_super.xml,请检查配置 --- ../../../src/baseapk/commonlib/log/rxlogmanager.cpp:22 [-09999]
+20220808 12:00:25.463311 T[  18622] ERROR 电厂(115020)光伏python配置文件/home/sprixin/davinci/usr/subfcst_project/forecast/LLGf/forecast_super.xml打开失败 --- ../../../src/baseapk/commonlib/log/rxlogmanager.cpp:22 [-09999]
+20220808 12:00:25.463787 T[  18644] INFO  [addTimeLog] [super:115020-0]thread 2 start a new task)! [-09999]
+20220808 12:00:25.463882 T[  18644] INFO  [addTimeLog] [super:115020-0]初始化光伏超短期算法 [-09999]
+20220808 12:00:25.463949 T[  18644] INFO  [addTimeLog] [super:115020-0]装机容量是20 [-09999]
+20220808 12:00:25.464059 T[  18644] INFO  [addTimeLog] [super:115020-0]读取功率类型为(备用):0 [-09999]
+20220808 12:00:25.464076 T[  18644] INFO  [addTimeLog] [super:115020-0]实发数据采用15分钟平均值数据表数据 [-09999]
+20220808 12:00:25.464281 T[  18642] INFO  [addTimeLog] [super:115020-1]thread 0 start a new task)!
+20220808 12:00:25.464360 T[  18642] INFO  [addTimeLog] [super:115020-1]初始化光伏超短期算法
+20220808 12:00:25.464378 T[  18642] INFO  [addTimeLog] [super:115020-1]装机容量是20
+20220808 12:00:25.464395 T[  18642] INFO  [addTimeLog] [super:115020-1]读取功率类型为(备用):1
+20220808 12:00:25.464403 T[  18642] INFO  [addTimeLog] [super:115020-1]实发数据采用15分钟平均值数据表数据
+20220808 12:00:25.464686 T[  18644] INFO  [addTimeLog] [super:115020-0]实发功率的类型是:并网功率 [-09999]
+20220808 12:00:25.464750 T[  18642] INFO  [addTimeLog] [super:115020-1]实发功率的类型是:默认理论功率
+20220808 12:00:25.464814 T[  18642] INFO  [addTimeLog] [super:115020-1]非风电气象数据高度为1
+20220808 12:00:25.464933 T[  18644] INFO  [addTimeLog] [super:115020-0]并网功率的量测ID是(2) [-09999]
+20220808 12:00:25.464973 T[  18644] INFO  [addTimeLog] [super:115020-0]非风电气象数据高度为1 [-09999]
+20220808 12:00:25.464985 T[  18642] INFO  [addTimeLog] [super:115020-1]辐照度的量测ID是(44)
+20220808 12:00:25.465101 T[  18644] INFO  [addTimeLog] [super:115020-0]辐照度的量测ID是(44) [-09999]
+20220808 12:00:25.465117 T[  18642] INFO  [addTimeLog] [super:115020-1]直辐射的量测ID是(45)
+20220808 12:00:25.465274 T[  18644] INFO  [addTimeLog] [super:115020-0]直辐射的量测ID是(45) [-09999]
+20220808 12:00:25.465338 T[  18642] INFO  [addTimeLog] [super:115020-1]散辐射的量测ID是(46)
+20220808 12:00:25.465391 T[  18644] INFO  [addTimeLog] [super:115020-0]散辐射的量测ID是(46) [-09999]
+20220808 12:00:25.465456 T[  18642] INFO  [addTimeLog] [super:115020-1]第1层平均风速的量测ID是(47)
+20220808 12:00:25.465509 T[  18644] INFO  [addTimeLog] [super:115020-0]第1层平均风速的量测ID是(47) [-09999]
+20220808 12:00:25.465641 T[  18642] INFO  [addTimeLog] [super:115020-1]第1层平均风向的量测ID是(48)
+20220808 12:00:25.465693 T[  18644] INFO  [addTimeLog] [super:115020-0]第1层平均风向的量测ID是(48) [-09999]
+20220808 12:00:25.465776 T[  18642] INFO  [addTimeLog] [super:115020-1]第1层温度的量测ID是(49)
+20220808 12:00:25.465853 T[  18644] INFO  [addTimeLog] [super:115020-0]第1层温度的量测ID是(49) [-09999]
+20220808 12:00:25.465892 T[  18642] INFO  [addTimeLog] [super:115020-1]第1层湿度的量测ID是(50)
+20220808 12:00:25.465980 T[  18644] INFO  [addTimeLog] [super:115020-0]第1层湿度的量测ID是(50) [-09999]
+20220808 12:00:25.466039 T[  18642] INFO  [addTimeLog] [super:115020-1]第1层压力的量测ID是(51)
+20220808 12:00:25.466053 T[  18642] INFO  [addTimeLog] [super:115020-1]实发功率的类型是:并网功率
+20220808 12:00:25.466156 T[  18644] INFO  [addTimeLog] [super:115020-0]第1层压力的量测ID是(51) [-09999]
+20220808 12:00:25.466166 T[  18644] INFO  [addTimeLog] [super:115020-0]实发功率的类型是:并网功率 [-09999]
+20220808 12:00:25.466192 T[  18642] INFO  [addTimeLog] [super:115020-1]并网功率的量测ID是(2)
+20220808 12:00:25.466269 T[  18644] INFO  [addTimeLog] [super:115020-0]并网功率的量测ID是(2) [-09999]
+20220808 12:00:25.469531 T[  18645] INFO  [addTimeLog] [super:115020-2]thread 3 start a new task)!
+20220808 12:00:25.469567 T[  18645] INFO  [addTimeLog] [super:115020-2]初始化光伏超短期算法
+20220808 12:00:25.469605 T[  18645] INFO  [addTimeLog] [super:115020-2]装机容量是20
+20220808 12:00:25.469622 T[  18645] INFO  [addTimeLog] [super:115020-2]读取功率类型为(备用):2
+20220808 12:00:25.469628 T[  18645] INFO  [addTimeLog] [super:115020-2]实发数据采用15分钟平均值数据表数据
+20220808 12:00:25.469951 T[  18645] INFO  [addTimeLog] [super:115020-2]实发功率的类型是:默认可用功率
+20220808 12:00:25.469987 T[  18645] INFO  [addTimeLog] [super:115020-2]非风电气象数据高度为1
+20220808 12:00:25.470097 T[  18645] INFO  [addTimeLog] [super:115020-2]辐照度的量测ID是(44)
+20220808 12:00:25.470159 T[  18645] INFO  [addTimeLog] [super:115020-2]直辐射的量测ID是(45)
+20220808 12:00:25.470239 T[  18645] INFO  [addTimeLog] [super:115020-2]散辐射的量测ID是(46)
+20220808 12:00:25.470298 T[  18645] INFO  [addTimeLog] [super:115020-2]第1层平均风速的量测ID是(47)
+20220808 12:00:25.470355 T[  18645] INFO  [addTimeLog] [super:115020-2]第1层平均风向的量测ID是(48)
+20220808 12:00:25.470436 T[  18645] INFO  [addTimeLog] [super:115020-2]第1层温度的量测ID是(49)
+20220808 12:00:25.470514 T[  18645] INFO  [addTimeLog] [super:115020-2]第1层湿度的量测ID是(50)
+20220808 12:00:25.470625 T[  18645] INFO  [addTimeLog] [super:115020-2]第1层压力的量测ID是(51)
+20220808 12:00:25.470632 T[  18645] INFO  [addTimeLog] [super:115020-2]实发功率的类型是:并网功率
+20220808 12:00:25.470719 T[  18645] INFO  [addTimeLog] [super:115020-2]并网功率的量测ID是(2)
+20220808 12:00:25.472922 T[  18645] INFO  [addTimeLog] [super:115020-2]历史数据库连接成功，ConnectString:10.64.14.126@DAVINCI，UserName:DAVINCI
+20220808 12:00:25.472924 T[  18642] INFO  [addTimeLog] [super:115020-1]历史数据库连接成功，ConnectString:10.64.14.126@DAVINCI，UserName:DAVINCI
+20220808 12:00:25.472923 T[  18644] INFO  [addTimeLog] [super:115020-0]历史数据库连接成功，ConnectString:10.64.14.126@DAVINCI，UserName:DAVINCI [-09999]
+20220808 12:00:25.475077 T[  18645] INFO  [addTimeLog] [super:115020-2]光伏超短期组合预测算法开始执行
+20220808 12:00:25.475105 T[  18645] INFO  [addTimeLog] [super:115020-2]开始读取历史数据,组建综合表,综合表1/2/3/4的天数分别为6/8/8/8,备用天数3
+20220808 12:00:25.475102 T[  18644] INFO  [addTimeLog] [super:115020-0]光伏超短期组合预测算法开始执行 [-09999]
+20220808 12:00:25.475124 T[  18644] INFO  [addTimeLog] [super:115020-0]开始读取历史数据,组建综合表,综合表1/2/3/4的天数分别为6/8/8/8,备用天数3 [-09999]
+20220808 12:00:25.475311 T[  18642] INFO  [addTimeLog] [super:115020-1]光伏超短期组合预测算法开始执行
+20220808 12:00:25.475338 T[  18642] INFO  [addTimeLog] [super:115020-1]开始读取历史数据,组建综合表,综合表1/2/3/4的天数分别为6/8/8/8,备用天数3
+20220808 12:00:25.505541 T[  18645] ERROR [super:115020-2]获取2022-07-29 00:00:00-2022-08-09 00:00:00理论功率(默认可用功率)时失败! --- ../../../src/baseapk/commonlib/log/rxlogmanager.cpp:48
+20220808 12:00:25.506130 T[  18645] ERROR [super:115020-2]获取2022年07月29日 - 2022年08月09日完整数据时,获取以默认可用功率作为功率的结果校验,获取失败! --- ../../../src/baseapk/commonlib/log/rxlogmanager.cpp:48
+20220808 12:00:25.506379 T[  18642] ERROR [super:115020-1]获取2022-07-29 00:00:00-2022-08-09 00:00:00理论功率(默认理论功率)时失败! --- ../../../src/baseapk/commonlib/log/rxlogmanager.cpp:48
+20220808 12:00:25.506940 T[  18642] ERROR [super:115020-1]获取2022年07月29日 - 2022年08月09日完整数据时,获取以默认理论功率作为功率的结果校验,获取失败! --- ../../../src/baseapk/commonlib/log/rxlogmanager.cpp:48
+20220808 12:00:25.508029 T[  18644] ERROR [super:115020-0]样本获取失败,只获取到14条数据(目标584条) --- ../../../src/baseapk/commonlib/log/rxlogmanager.cpp:48 [-09999]
+20220808 12:00:25.509136 T[  18645] ERROR [super:115020-2]样本获取失败,只获取到0条数据(目标584条) --- ../../../src/baseapk/commonlib/log/rxlogmanager.cpp:48
+20220808 12:00:25.510418 T[  18642] ERROR [super:115020-1]样本获取失败,只获取到0条数据(目标584条) --- ../../../src/baseapk/commonlib/log/rxlogmanager.cpp:48
+20220808 12:00:25.530302 T[  18644] INFO  [addTimeLog] [super:115020-0]当前时刻12:00,下标48,预测生效下标[3,87],白天范围进行预测 [-09999]
+20220808 12:00:25.530314 T[  18644] ERROR [super:115020-0]光伏超短期计算失败,用短期代替 --- ../../../src/baseapk/commonlib/log/rxlogmanager.cpp:48 [-09999]
+20220808 12:00:25.535219 T[  18645] INFO  [addTimeLog] [super:115020-2]当前时刻12:00,下标48,预测生效下标[3,87],白天范围进行预测
+20220808 12:00:25.535238 T[  18645] ERROR [super:115020-2]光伏超短期计算失败,用短期代替 --- ../../../src/baseapk/commonlib/log/rxlogmanager.cpp:48
+20220808 12:00:25.538620 T[  18642] INFO  [addTimeLog] [super:115020-1]当前时刻12:00,下标48,预测生效下标[3,87],白天范围进行预测
+20220808 12:00:25.538662 T[  18642] ERROR [super:115020-1]光伏超短期计算失败,用短期代替 --- ../../../src/baseapk/commonlib/log/rxlogmanager.cpp:48
+20220808 12:00:25.540112 T[  18644] INFO  [addTimeLog] [super:115020-0]开始计算第一个点的值 [-09999]
+20220808 12:00:25.542874 T[  18644] INFO  [addTimeLog] [super:115020-0]取到当前时刻前0分钟的实发数据(9.32942) [-09999]
+20220808 12:00:25.544381 T[  18645] INFO  [addTimeLog] [super:115020-2]开始计算第一个点的值
+20220808 12:00:25.546615 T[  18642] INFO  [addTimeLog] [super:115020-1]开始计算第一个点的值
+20220808 12:00:25.546920 T[  18645] ERROR [super:115020-2]获取2022-08-08 11:30:00-2022-08-08 12:15:00理论功率(默认可用功率)时失败! --- ../../../src/baseapk/commonlib/log/rxlogmanager.cpp:48
+20220808 12:00:25.546984 T[  18645] INFO  [addTimeLog] [super:115020-2]没有取到当前时刻30分钟内的实发功率,第一个点使用短期预测代替
+20220808 12:00:25.549741 T[  18642] ERROR [super:115020-1]获取2022-08-08 11:30:00-2022-08-08 12:15:00理论功率(默认理论功率)时失败! --- ../../../src/baseapk/commonlib/log/rxlogmanager.cpp:48
+20220808 12:00:25.549807 T[  18642] INFO  [addTimeLog] [super:115020-1]没有取到当前时刻30分钟内的实发功率,第一个点使用短期预测代替
+20220808 12:00:25.552152 T[  18644] INFO  [addTimeLog] [super:115020-0]第一个预测点时刻12:15,下标48,预测结果不为0下标[22,86] [-09999]
+20220808 12:00:25.552223 T[  18644] INFO  [addTimeLog] [super:115020-0]第一个预测点重新计算后结果为9.79589 [-09999]
+20220808 12:00:25.552299 T[  18644] INFO  [addTimeLog] [super:115020-0]光伏超短期结果：9.79589, 12.185, 12.4103, 12.5523, 12.6015, 12.5871, 12.5451, 12.4779, 12.3877, 12.2767, 12.1473, 12.0017, 11.8421, 11.6709, 11.3863, 10.9105, 10.2812, 9.53639, 8.71373, 7.85114, 6.9864, 6.15754, 5.40216, 4.75818,  [-09999]
+20220808 12:00:25.552365 T[  18644] INFO  [addLog] 开始限制装机/计划开机 [-09999]
+20220808 12:00:25.552419 T[  18644] INFO  [addLog] 限制后的结果：5.14284, 6.3971, 6.51542, 12.5523, 0, 0, 0, 0, 12.3877, 12.2767, 12.1473, 12.0017, 11.8421, 11.6709, 11.3863, 10.9105, 10.2812, 9.53639, 8.71373, 7.85114, 6.9864, 6.15754, 5.40216, 4.75818 [-09999]
+20220808 12:00:25.553504 T[  18644] INFO  [addTimeLog] [super:115020-0]结果写入实时库成功 [-09999]
+20220808 12:00:25.553722 T[  18644] INFO  [addTimeLog] [super:115020-0]发送超短期预测结果24条到历史库成功 [-09999]
+20220808 12:00:25.553759 T[  18644] INFO  [addTimeLog] [super:115020-0]结果发送到hasave成功 [-09999]
+20220808 12:00:25.553840 T[  18644] INFO  [addTimeLog] [super:115020-0][告警]超短期任务预测成功! [-09999]
+20220808 12:00:25.554757 T[  18644] ERROR [super:115020-0]Table 'davinci.hdranastat15m202207' doesn't exist --- ../../../src/baseapk/commonlib/log/rxlogmanager.cpp:48 [-09999]
+20220808 12:00:25.554785 T[  18644] ERROR [super:115020-0]Table 'davinci.hdranastat15m_jm_202207' doesn't exist --- ../../../src/baseapk/commonlib/log/rxlogmanager.cpp:48 [-09999]
+20220808 12:00:25.572517 T[  18645] INFO  [addTimeLog] [super:115020-2]第一个预测点时刻12:15,下标48,预测结果不为0下标[22,86]
+20220808 12:00:25.572536 T[  18645] INFO  [addTimeLog] [super:115020-2]第一个预测点重新计算后结果为11.8852
+20220808 12:00:25.572581 T[  18645] INFO  [addTimeLog] [super:115020-2]光伏超短期结果：11.8852, 12.185, 12.4103, 12.5523, 12.6015, 12.5871, 12.5451, 12.4779, 12.3877, 12.2767, 12.1473, 12.0017, 11.8421, 11.6709, 11.3863, 10.9105, 10.2812, 9.53639, 8.71373, 7.85114, 6.9864, 6.15754, 5.40216, 4.75818, 
+20220808 12:00:25.572596 T[  18645] INFO  [addLog] 开始限制装机/计划开机
+20220808 12:00:25.572645 T[  18645] INFO  [addLog] 限制后的结果：6.23974, 6.3971, 6.51542, 12.5523, 0, 0, 0, 0, 12.3877, 12.2767, 12.1473, 12.0017, 11.8421, 11.6709, 11.3863, 10.9105, 10.2812, 9.53639, 8.71373, 7.85114, 6.9864, 6.15754, 5.40216, 4.75818
+20220808 12:00:25.573665 T[  18642] INFO  [addTimeLog] [super:115020-1]第一个预测点时刻12:15,下标48,预测结果不为0下标[22,86]
+20220808 12:00:25.573679 T[  18642] INFO  [addTimeLog] [super:115020-1]第一个预测点重新计算后结果为11.8852
+20220808 12:00:25.573703 T[  18645] INFO  [addTimeLog] [super:115020-2]结果写入实时库成功
+20220808 12:00:25.573717 T[  18642] INFO  [addTimeLog] [super:115020-1]光伏超短期结果：11.8852, 12.185, 12.4103, 12.5523, 12.6015, 12.5871, 12.5451, 12.4779, 12.3877, 12.2767, 12.1473, 12.0017, 11.8421, 11.6709, 11.3863, 10.9105, 10.2812, 9.53639, 8.71373, 7.85114, 6.9864, 6.15754, 5.40216, 4.75818, 
+20220808 12:00:25.573754 T[  18642] INFO  [addLog] 开始限制装机/计划开机
+20220808 12:00:25.573795 T[  18642] INFO  [addLog] 限制后的结果：11.8852, 12.185, 12.4103, 12.5523, 0, 0, 0, 0, 12.3877, 12.2767, 12.1473, 12.0017, 11.8421, 11.6709, 11.3863, 10.9105, 10.2812, 9.53639, 8.71373, 7.85114, 6.9864, 6.15754, 5.40216, 4.75818
+20220808 12:00:25.573865 T[  18645] INFO  [addTimeLog] [super:115020-2]发送超短期预测结果24条到历史库成功
+20220808 12:00:25.573895 T[  18645] INFO  [addTimeLog] [super:115020-2]结果发送到hasave成功
+20220808 12:00:25.573955 T[  18645] INFO  [addTimeLog] [super:115020-2][告警]超短期任务预测成功!
+20220808 12:00:25.574734 T[  18642] INFO  [addTimeLog] [super:115020-1]结果写入实时库成功
+20220808 12:00:25.574902 T[  18642] INFO  [addTimeLog] [super:115020-1]发送超短期预测结果24条到历史库成功
+20220808 12:00:25.574932 T[  18642] INFO  [addTimeLog] [super:115020-1]结果发送到hasave成功
+20220808 12:00:25.574964 T[  18642] INFO  [addTimeLog] [super:115020-1][告警]超短期任务预测成功!
+20220808 12:01:04.460897 T[  18622] WARN  未找到wpd文件,当前时刻(2022-08-08 12:01:04.000),处于预测结束时间(2022-08-08 08:30:00.000)之后,但是今日还没有预测,需要开启预测,开启告警,上次预测时间(20220807000000),电厂(115020) --- ../../../src/baseapk/commonlib/log/rxlogmanager.cpp:20 [-09999]
+20220808 12:02:04.461627 T[  18622] WARN  未找到wpd文件,当前时刻(2022-08-08 12:02:04.000),处于预测结束时间(2022-08-08 08:30:00.000)之后,但是今日还没有预测,需要开启预测,开启告警,上次预测时间(20220807000000),电厂(115020) --- ../../../src/baseapk/commonlib/log/rxlogmanager.cpp:20 [-09999]
+20220808 12:03:04.461224 T[  18622] WARN  未找到wpd文件,当前时刻(2022-08-08 12:03:04.000),处于预测结束时间(2022-08-08 08:30:00.000)之后,但是今日还没有预测,需要开启预测,开启告警,上次预测时间(20220807000000),电厂(115020) --- ../../../src/baseapk/commonlib/log/rxlogmanager.cpp:20 [-09999]
+20220808 12:04:04.461430 T[  18622] WARN  未找到wpd文件,当前时刻(2022-08-08 12:04:04.000),处于预测结束时间(2022-08-08 08:30:00.000)之后,但是今日还没有预测,需要开启预测,开启告警,上次预测时间(20220807000000),电厂(115020) --- ../../../src/baseapk/commonlib/log/rxlogmanager.cpp:20 [-09999]
+20220808 12:05:04.460621 T[  18622] INFO  [addLog] 更新短期预测控制(115020-2),时间(27000)! [-09999]
+20220808 12:05:04.461372 T[  18622] WARN  未找到wpd文件,当前时刻(2022-08-08 12:05:04.000),处于预测结束时间(2022-08-08 08:30:00.000)之后,但是今日还没有预测,需要开启预测,开启告警,上次预测时间(20220807000000),电厂(115020) --- ../../../src/baseapk/commonlib/log/rxlogmanager.cpp:20 [-09999]
+20220808 12:06:04.461012 T[  18622] WARN  未找到wpd文件,当前时刻(2022-08-08 12:06:04.000),处于预测结束时间(2022-08-08 08:30:00.000)之后,但是今日还没有预测,需要开启预测,开启告警,上次预测时间(20220807000000),电厂(115020) --- ../../../src/baseapk/commonlib/log/rxlogmanager.cpp:20 [-09999]
+20220808 12:06:25.405252 T[  18622] ERROR CQT_Socket_Stream (127.0.0.1): sn_read: Connection closed Because of read = 0 --- ../../../src/baseapk/commonlib/log/rxlogmanager.cpp:22 [-09999]
