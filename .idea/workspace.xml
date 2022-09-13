@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="599ead8f-e21f-48e2-88bb-f9578f0703ad" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GithubDefaultAccount">
+    <option name="defaultAccountId" value="1671db9d-fac2-460d-a01a-6025bc12a578" />
+  </component>
+  <component name="ProjectId" id="2EWjz87WfkysgSknsHz5yYQkxPl" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="settings.editor.selected.configurable" value="org.jetbrains.plugins.github.ui.GithubSettingsConfigurable" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="599ead8f-e21f-48e2-88bb-f9578f0703ad" name="Default Changelist" comment="" />
+      <created>1662718493566</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1662718493566</updated>
+      <workItem from="1662718495004" duration="6000" />
+      <workItem from="1662718513557" duration="1102000" />
+      <workItem from="1663031901615" duration="22000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="904" y="302" key="Github.ShareDialog" timestamp="1663031807101">
+      <screen x="0" y="0" width="1680" height="1010" />
+    </state>
+    <state x="904" y="302" key="Github.ShareDialog/0.0.1680.1010@0.0.1680.1010" timestamp="1663031807101" />
+    <state x="806" y="109" key="Github.UntrackedFilesDialog" timestamp="1662718595902">
+      <screen x="0" y="0" width="1680" height="1010" />
+    </state>
+    <state x="806" y="109" key="Github.UntrackedFilesDialog/0.0.1680.1010@0.0.1680.1010" timestamp="1662718595902" />
+    <state x="393" y="223" key="SettingsEditor" timestamp="1663031923040">
+      <screen x="0" y="0" width="1680" height="1010" />
+    </state>
+    <state x="393" y="223" key="SettingsEditor/0.0.1680.1010@0.0.1680.1010" timestamp="1663031923040" />
+  </component>
+</project>
