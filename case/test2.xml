@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<test>
+    <suit id="002" name="文件类操作" desc="">
+        <precondition/>
+        <case id="001" name="基本操作" desc="" faulttype="0" mark="0">
+            <!--<step order="1" desc="csv文件修改" cmdtype="1011" cmdparas="D:\davinciapi\wen\aa\RTDBTHEORYPDATA.csv~OBJ_TABLEID@1071#AND#OBJ_ID@115020~ID~345"/>
+            <step order="2" desc="csv文件查询" cmdtype="1012" cmdparas="D:\davinciapi\wen\RTDBTHEORYPDATA.csv~ID@2#AND#FCST_NODETYPE@1~OBJ_ID~"/>
+			<step order="3" desc="ini读取" cmdtype="1002" cmdparas="D:\davinciapi\wen\nrfmEfileToSim.ini~EFILE@@ceshi~"/>
+            <step order="4" desc="ini更改" cmdtype="1001" cmdparas="D:\davinciapi\wen\nrfmEfileToSim.ini~EFILE@@ceshi~1234"/>-->
+			<step order="5" desc="json读取" cmdtype="1022" cmdparas="D:\davinciapi\wen\aa\a.json~results@@index~index|AttrCon@title@chuan~AttrCon@tipt~"/>
+            <judgestep order="2" desc="" cmdtype="2010" cmdparas="4~steppara_3_1~steppara_5_1"/>
+        </case>
+    </suit>
+</test>

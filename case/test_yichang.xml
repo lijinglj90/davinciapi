@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<test>
+    <suit id="001" name="计划开机容量设置页面" desc="">
+        <precondition>
+            <step order="1" desc="创建浏览器驱动" cmdtype="4001" cmdparas="chrome"/>
+			<step order="2" desc="登录" cmdtype="4003" cmdparas="http://10.64.14.70:18080/SPPP-web/login~id|username@@id|password@@id|submit~send_keys@wpfs@@send_keys@wpfs@@click~suitcondpara_1_1"/>
+        </precondition>
+        <!--<case id="001" name="ini读取-通过" desc="" faulttype="0" mark="0">
+            <step order="1" desc="ini读取" cmdtype="1002" cmdparas="D:\davinciapi\wen\nrfmEfileToSim.ini~EFILE@@ceshi"/>
+            <judgestep order="2" desc="" cmdtype="2010" cmdparas="1~steppara_1_1~1234"/>
+		</case>
+		<case id="002" name="ini读取-异常" desc="" faulttype="0" mark="0">
+            <step order="1" desc="ini读取" cmdtype="1002" cmdparas="D:\davinciapi\wen\nrfmEfileToSim.ini~EFILE~qqqq"/>
+            <judgestep order="2" desc="" cmdtype="2010" cmdparas="1~steppara_1_1~1234"/>
+        </case>
+		<case id="003" name="ini读取-不通过" desc="" faulttype="0" mark="0">
+            <step order="1" desc="ini读取" cmdtype="1002" cmdparas="D:\davinciapi\wen\nrfmEfileToSim.ini~EFILE@@ceshi"/>
+            <judgestep order="2" desc="" cmdtype="2010" cmdparas="1~steppara_1_1~33"/>
+        </case>
+		<case id="004" name="ini修改-异常" desc="" faulttype="0" mark="0">
+            <step order="1" desc="ini修改" cmdtype="1001" cmdparas="D:\davinciapi\wen\nrfmEfileToSim.ini~EFILE@@randmin是是是"/>
+            <judgestep order="2" desc="" cmdtype="2010" cmdparas="1~1234~1234"/>
+        </case>
+        <case id="005" name="导出" desc="" faulttype="0" mark="0">
+            <step order="1" desc="随笔" cmdtype="1011" cmdparas="D:\davinciapi\wen\20220624.csv~~~"/>
+            <judgestep order="2" desc="" cmdtype="2010" cmdparas="1~1234~1234"/>
+        </case>-->
+		<case id="17263" name="机头风速法" desc="机头风速法" faulttype="0" mark="0">
+            <step order="1" desc="机头风速法-页面数据获取" cmdtype="4003" cmdparas="http://10.64.14.70:18080/SPPP-web/theoretical/outWindObstructed~id|plantId@@id|time@@id|type@@id|queryBtn@@id|oTable~do_select@0@index@@set_datetime@$RTPARA_TODAY_2@@do_select@0@index@@click@@get_tubiao_data@时间,可用(MW),实发(MW),偏差(%)@时间=01:00@3~suitcondpara_1_1"/>
+            <step order="2" desc="数据库查询" cmdtype="5001" cmdparas="select substring(a.datatime,12,5) as time,a.ava,b.ave,((select round(a.ava,3))-(select round(b.ave,3)))*100/(select round(b.ave,3)) as pc from (select datatime, availableturbine ava from hdrtheorypdata$RTPARA_TODAY_1  where datatime ='$RTPARA_TODAY_2 01:00:00')a left join (select HDTIME,AVERAGE ave FROM hdranastat$RTPARA_TODAY_1 h WHERE h.ID = (SELECT a.ID FROM analoginput a left join plant p on a.EQUIPMENTCONTAINER_ID = p.id WHERE p.ALIASNAME='测试风电厂' and a.TYPE = (SELECT m.ID FROM measurementtype m WHERE m.`NAME` = 'p')  AND a.EQUIPMENTCONTAINER_TABLEID = 1071))b on b.HDTIME =a.datatime group by a.datatime~QMYSQL~10.64.14.70@3306@DAVINCI@_@_~3"/>
+            <judgestep order="1" desc="" cmdtype="2010" cmdparas="3~steppara_1_1~steppara_2_1"/>
+        </case>
+		<!--<case id="17264" name="机头风速法-导出" desc="机头风速法导出" faulttype="0" mark="0">
+			<step order="1" desc="数据库查询" cmdtype="5001" cmdparas="select substring(a.datatime,12,5) as time,a.ava,b.ave,((select round(a.ava,3))-(select round(b.ave,3)))*100/(select round(b.ave,3)) as pc from (select datatime, availableturbine ava from hdrtheorypdata$RTPARA_TODAY_1  where datatime ='$RTPARA_TODAY_2 01:00:00')a left join (select HDTIME,AVERAGE ave FROM hdranastat$RTPARA_TODAY_1 h WHERE h.ID = (SELECT a.ID FROM analoginput a left join plant p on a.EQUIPMENTCONTAINER_ID = p.id WHERE p.ALIASNAME='测试风电厂' and a.TYPE = (SELECT m.ID FROM measurementtype m WHERE m.`NAME` = 'p')  AND a.EQUIPMENTCONTAINER_TABLEID = 1071))b on b.HDTIME =a.datatime group by a.datatime~QMYSQL~10.64.14.70@3306@DAVINCI@_@_~3"/>
+			<judgestep order="1" desc="" cmdtype="2010" cmdparas="3~steppara_1_1~['3.4']"/>
+        </case>
+		<case id="004" name="ini修改-异常" desc="" faulttype="0" mark="0">
+            <step order="1" desc="ini修改" cmdtype="1001" cmdparas="D:\davinciapi\wen\nrfmEfileToSim.ini~EFILE@@randmin是是是"/>
+            <judgestep order="2" desc="" cmdtype="2010" cmdparas="1~1234~1234"/>
+        </case>
+        <case id="003" name="导出查询后的结果" desc="" faulttype="0" mark="0">
+            <step order="1" desc="导出查询后的结果" cmdtype="4003" cmdparas="http://10.8.8.21:8080/SPPP-web/dayReport/dayReport~id|farmid@@id|starttime@@id|endtime@@id|search@@id|export~do_select@龙头风电厂@text@@set_datetime@2022-02-03@@set_datetime@2022-02-07@@click@@click~suitcondpara_1_1"/>
+            <judgestep order="1" desc="" cmdtype="9001" cmdparas="C:\Users\Administrator\Downloads\龙头风电场_短期预测日报2022-02-03到2022-02-07.xls"/>
+        </case>
+        <case id="004" name="基本查询" desc="" faulttype="0" mark="0">
+            <step order="1" desc="修改条件并查询" cmdtype="4003" cmdparas="http://10.8.8.21:8080/SPPP-web/monReport/monReport~id|oTable~get_tubiao_data@_@日期=2022-02~suitcondpara_1_1"/>
+            <step order="2" desc="关系库表获取" cmdtype="1042" cmdparas="D:\davinciapi\wen\江苏协鑫鑫日光伏电站_短期预测月报2021-06到2022-04.xlsx~_~时间=2022-02"/>
+            <judgestep order="2" desc="" cmdtype="2010" cmdparas="3~steppara_1_1~steppara_2_1"/>
+        </case>-->
+    </suit>
+</test>

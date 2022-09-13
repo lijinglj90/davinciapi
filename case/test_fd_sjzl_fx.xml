@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<test>
+    <suit id="case2" name="风电_数据治理_风向数据核对" desc="">
+        <precondition>
+            <step order="1" desc="创建浏览器驱动" cmdtype="4001" cmdparas="chrome"/>
+            <step order="2" desc="登录风电界面" cmdtype="4003" cmdparas="http://10.64.14.57:18080/SPPP-web/login~id|username@@id|password@@id|submit~send_keys@wpfs@@send_keys@wpfs@@click~suitcondpara_1_1~chrome"/>
+        </precondition>
+        <!--<case id="test1" name="5min优化测风塔风向数据详表核对" desc="" faulttype="0" mark="0">
+            <step order="1" desc="查询5min优化测风塔数据详表" cmdtype="4003" cmdparas="http://10.64.14.57:18080/SPPP-web/datagovern/weatherOptimize/windDirection~id|plantId@@id|floor@@xpath|/html/body/section/div[1]/div/div[2]/input[2]@@id|starttime@@id|endtime@@id|search@@id|optimizeTable~do_select@0@index@@do_select@轮毂高度@@click@@set_datetime@2022-05-19@@set_datetime@2022-05-20@@click@@get_tubiao_data@优化测风塔风向@日期=2022-05-19#AND#时间=00:15@4~suitcondpara_1_1~chrome"/>
+            <step order="2" desc="查询数据库" cmdtype="5001" cmdparas="SELECT AVERAGE FROM hdrmodifydata WHERE ID in(SELECT ID FROM analoginput WHERE NAME='VAVG4_cft1' and EQUIPMENTCONTAINER_ID=115073) and HDTIME ='2022-05-19 00:15:00'~QMYSQL~10.64.14.57@3306@DAVINCI@sa@cast1234~4"/>
+            <judgestep order="2" desc="" cmdtype="2010" cmdparas="2~steppara_1_1~steppara_2_1"/>
+        </case>-->
+        <case id="test2" name="5min实际测风塔风向数据详表核对" desc="" faulttype="0" mark="0">
+            <step order="1" desc="查询5min实际测风塔数据详表" cmdtype="4003" cmdparas="http://10.64.14.57:18080/SPPP-web/datagovern/weatherOptimize/windDirection~id|plantId@@id|floor@@xpath|/html/body/section/div[1]/div/div[2]/input[2]@@id|starttime@@id|endtime@@id|search@@id|optimizeTable~do_select@0@index@@do_select@0@index@@click@@set_datetime@2022-05-19@@set_datetime@2022-05-20@@click@@get_tubiao_data@实际测风塔风向@日期=2022-05-19#AND#时间=00:15@4~suitcondpara_1_1~chrome"/>
+            <step order="2" desc="查询数据库" cmdtype="5001" cmdparas="SELECT AVERAGE FROM hdranastat5m$RTPARA_TODAY_1 h WHERE h.ID = (SELECT a.ID FROM analoginput a WHERE a.TYPE =( SELECT m.ID FROM measurementtype m WHERE m.`NAME` = 'UAVG4') AND a.EQUIPMENTCONTAINER_ID = 115073 AND a.EQUIPMENTCONTAINER_TABLEID = 1072) AND h.HDTIME='$RTPARA_TODAY_2 00:15:00' ORDER BY h.HDTIME~QMYSQL~10.64.14.57@3306@DAVINCI@sa@cast1234~4"/>
+            <judgestep order="2" desc="" cmdtype="2010" cmdparas="2~steppara_1_1~steppara_2_1"/>
+        </case>
+		<!--<case id="test3" name="5min实际测风塔风向数据详表核对-1层" desc="" faulttype="0" mark="0">
+            <step order="1" desc="查询5min实际测风塔数据详表" cmdtype="4003" cmdparas="http://10.64.14.57:18080/SPPP-web/datagovern/weatherOptimize/windDirection~id|plantId@@id|floor@@xpath|/html/body/section/div[1]/div/div[2]/input[2]@@id|starttime@@id|endtime@@id|search@@id|optimizeTable~do_select@0@index@@do_select@1@index@@click@@set_datetime@$RTPARA_TODAY_2@@set_datetime@$RTPARA_TOMORROW_2@@click@@get_tubiao_data@实际测风塔风向@_@3~suitcondpara_1_1~chrome"/>
+            <step order="2" desc="查询数据库" cmdtype="5001" cmdparas="SELECT AVERAGE FROM hdranastat5m$RTPARA_TODAY_1 WHERE ID in (SELECT ID FROM analoginput WHERE NAME='VAVG1_cft1' and EQUIPMENTCONTAINER_ID=115032) and HDTIME &gt;='$RTPARA_TODAY_2 00:00:00' and HDTIME &lt;='$RTPARA_TODAY_2 00:45:00'~QMYSQL~10.64.14.57@3306@DAVINCI@sa@cast1234~4"/>
+            <judgestep order="2" desc="" cmdtype="2010" cmdparas="2~steppara_1_1~steppara_2_1"/>
+        </case>
+       <case id="test3" name="5min导出" desc="导出功能测试" faulttype="0" mark="0">
+            <step order="1" desc=" 导出" cmdtype="4003" cmdparas="http://10.64.14.57:18080/SPPP-web/datagovern/weatherOptimize/windDirection~id|plantId@@id|starttime@@id|endtime@@id|export~do_select@0@index@@set_datetime@2022-01-10@@set_datetime@2022-01-11@@click~suitcondpara_1_1"/>
+            <judgestep order="2" desc="" cmdtype="9001" cmdparas="C:\Users\sprixin\Downloads\电厂1_测风塔_1_轮毂高度_5min_风向优化_20220110.xls"/>
+        </case>
+        <case id="test4" name="1min优化测风塔风向数据详表核对" desc="" faulttype="0" mark="0">
+            <step order="1" desc="查询1min优化测风塔数据详表" cmdtype="4003" cmdparas="http://10.64.14.57:18080/SPPP-web/datagovern/weatherOptimize/windDirection~id|plantId@@id|floor@@xpath|//input[@value='1']@@id|starttime@@id|endtime@@id|search@@id|optimizeTable~do_select@0@index@@do_select@轮毂高度@@click@@set_datetime@$RTPARA_TODAY_2@@set_datetime@$RTPARA_TOMORROW_2@@click@@get_quxian_data@优化测风塔风向@时间=00:05@4~suitcondpara_1_1~chrome"/>
+            <step order="2" desc="查询数据库" cmdtype="5001" cmdparas="SELECT AVERAGE FROM hdrmodifydata WHERE ID in (SELECT ID FROM analoginput WHERE NAME='VAVG4_cft1' and EQUIPMENTCONTAINER_ID=115032) and HDTIME ='2022-01-10 00:05:00'~QMYSQL~10.64.14.57@3306@DAVINCI@sa@cast1234~4"/>
+            <judgestep order="2" desc="" cmdtype="2010" cmdparas="2~steppara_1_1~steppara_2_1"/>
+        </case>
+        <case id="test5" name="1min实际测风塔风向数据详表核对" desc="" faulttype="0" mark="0">
+            <step order="1" desc="查询1min实际测风塔数据详表" cmdtype="4003" cmdparas="http://10.64.14.57:18080/SPPP-web/datagovern/weatherOptimize/windDirection~id|plantId@@id|floor@@xpath|//input[@value='1']@@id|starttime@@id|endtime@@id|search@@id|optimizeTable~do_select@0@index@@do_select@轮毂高度@@click@@set_datetime@$RTPARA_TODAY_2@@set_datetime@$RTPARA_TOMORROW_2@@click@@get_tubiao_data@实际测风塔风向@_@5~suitcondpara_1_1~chrome"/>
+            <step order="2" desc="查询数据库" cmdtype="5001" cmdparas="SELECT AVERAGE FROM hdranastat20220114 WHERE ID in (SELECT ID FROM analoginput WHERE NAME='VAVG4_cft1' and EQUIPMENTCONTAINER_ID=115032) and HDTIME &gt;='2022-01-14 00:00:00' and HDTIME &lt;='2022-01-14 00:09:00'~QMYSQL~10.64.14.57@3306@DAVINCI@sa@cast1234~5"/>
+            <judgestep order="2" desc="" cmdtype="2010" cmdparas="2~steppara_1_1~steppara_2_1"/>            
+        </case>
+        <case id="test6" name="1min导出" desc="导出功能测试" faulttype="0" mark="0">
+            <step order="1" desc=" 导出" cmdtype="4003" cmdparas="http://10.64.14.57:18080/SPPP-web/datagovern/weatherOptimize/windDirection~id|plantId@@xpath|//input[@value='1']@@id|starttime@@id|endtime@@id|export~do_select@0@index@@click@@set_datetime@2022-01-10@@set_datetime@2022-01-11@@click~suitcondpara_1_1"/>
+            <step order="3" desc="关闭驱动" cmdtype="4002" cmdparas="suitcondpara_2_1"/>
+            <judgestep order="2" desc="" cmdtype="9001" cmdparas="C:\Users\sprixin\Downloads\电厂1_测风塔_1_轮毂高度_1min_风向优化_20220110.xls"/>
+        </case>-->
+    </suit>
+</test>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<test>
+    <suit id="1" name="机组信息套件" desc="前置条件">
+        <precondition>
+            <step order="1" desc="创建驱动" cmdtype="4001" cmdparas="chrome"/>
+            <step order="2" desc="登录" cmdtype="4003" cmdparas="http://10.64.14.70:18080/SPPP-web/login~id|username@@id|password@@id|submit~send_keys@wpfs@@send_keys@wpfs@@click~suitcondpara_1_1"/>
+        </precondition>
+		<!--多个列表无法进行对比-->
+		<case id="001" name="机组信息" desc="" faulttype="0" mark="0">
+			<step order="1" desc="机组信息" cmdtype="4003" cmdparas="http://10.64.14.70:18080/SPPP-web/windturbine/turnjsp~id|plantId@@id|windturbine_wrapper~do_select@0@index@@get_tubiao_data@编号,设备名称,设备型号,电厂名称,经度,纬度,海拔(m),是否样板机,是否参与预测,并网时间@_@3~suitcondpara_1_1~chrome"/>
+			<step order="2" desc="数据库查询" cmdtype="5001" cmdparas="select W.NUMBER,w.ALIASNAME,p.ALIASNAME,wind_turbine_type.type_code,w.LONGITUDE,w.LATITUDE,w.ALTITUDE,w.is_typical,w.is_forecast,w.runtime from  plant p LEFT JOIN wind_turbine w on w.PLANT_ID=p.ID LEFT JOIN  wind_turbine_type ON wind_turbine_type.ID=w.equiptype_id~QMYSQL~10.64.14.70@3306@DAVINCI@sa@cast1234~3"/>
+			<!--<step order="2" desc="数据库查询" cmdtype="5001" cmdparas="select W.NUMBER,w.ALIASNAME,p.ALIASNAME,wind_turbine_type.type_code,w.LONGITUDE,w.LATITUDE,w.ALTITUDE,w.is_typical,w.is_forecast,w.runtime from  plant p ,wind_turbine w ,wind_turbine_type where w.PLANT_ID=p.ID and wind_turbine_type.ID=w.equiptype_id~QMYSQL~10.64.14.70@3306@DAVINCI@sa@cast1234~3"/>-->
+			<judgestep order="1" desc="" cmdtype="2010" cmdparas="3~steppara_1_1~steppara_2_1"/>
+        </case> 
+		<!--无法获取到input标签数据
+		<case id="002" name="查看详情" desc="" faulttype="0" mark="0">
+			<step order="1" desc="查看详情" cmdtype="4003" cmdparas="http://10.64.14.70:18080/SPPP-web/windturbine/turnjsp~id|plantId@@xpath|//*[@id='windturbine']/tbody/tr[1]/td[11]@@id|windturbineForm@@xpath|//*[@id='mymodal']/div/div/div[3]/button[1]~do_select@0@index@@click@@get_tubiao_data@_@_@3@@click~suitcondpara_1_1~chrome"/>
+			<step order="2" desc="数据库查询" cmdtype="5001" cmdparas="select W.NUMBER,w.ALIASNAME,p.ALIASNAME,wind_turbine_type.type_code,w.LONGITUDE,w.LATITUDE,w.ALTITUDE,w.is_typical,w.is_forecast,w.runtime from  plant p LEFT JOIN wind_turbine w on w.PLANT_ID=p.ID LEFT JOIN  wind_turbine_type ON wind_turbine_type.ID=w.equiptype_id where w.ALIASNAME='风机_1'~QMYSQL~10.64.14.70@3306@DAVINCI@sa@cast1234~3"/>
+			<judgestep order="1" desc="" cmdtype="2010" cmdparas="3~steppara_1_1~steppara_2_1"/>
+        </case> 
+		-->
+    </suit>
+</test>

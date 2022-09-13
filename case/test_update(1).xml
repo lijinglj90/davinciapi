@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<test>
+	<suit id="001" name="短期预测维护页面">
+		<precondition>
+			<step order="1" desc="创建浏览器驱动" cmdtype="4001" cmdparas="chrome" />
+			<step order="2" desc="登录" cmdtype="4003" cmdparas="http://10.64.14.182:18080/SPPP-web/login~id|username@@id|password@@id|submit~send_keys@cpfs@@send_keys@cpfs@@click~suitcondpara_1_1" />
+		</precondition>
+		<case id="001" name="检查第一个预测点数据" faulttype="0" mark="0">
+			<step order="1" desc="数据" cmdtype="4003" cmdparas="http://10.64.14.182:18080/SPPP-web/fcstcastmodify/fcstcastModifyJump~xpath|/html/body/section/div[2]/div/table/tbody/tr[1]/td[5]/a@@id|backup_old1~click@@text~suitcondpara_1_1" />
+			<judgestep order="2" cmdtype="2010" cmdparas="2~steppara_1_1~49.71" />
+		</case>
+		<case id="002" name="检查第二个预测点数据" faulttype="0" mark="0">
+			<step order="1" desc="数据" cmdtype="4003" cmdparas="http://10.64.14.182:18080/SPPP-web/fcstcastmodify/fcstcastModifyJump~xpath|/html/body/section/div[2]/div/table/tbody/tr[1]/td[5]/a@@id|backup_old2~click@@text~suitcondpara_1_1" />
+			<judgestep order="2" cmdtype="2010" cmdparas="2~steppara_1_1~49.16" />
+		</case>
+	</suit>
+</test>
+                               
+<!--      
+注释内容（无其他注释符）
+<test：根标签，固定不变>
+	<suit：子标签-套件，固定不变 id="套件id" name="套件名称" desc="套件描述信息">
+        <precondition：子标签-前置条件，固定不变>
+            <step：子标签-步骤(可以有多个) order="步骤序号" desc="前置步骤描述信息" cmdtype="功能类型编号" cmdparas="值"/>
+            <step order="2" desc="登录" cmdtype="4003" cmdparas="http://10.8.8.21:8080/SPPP-web/login~id|username@@id|password@@id|submit~send_keys@wpfs@@send_keys@wpfs@@click~suitcondpara_1_1~"/>
+        </precondition>
+        <case：子标签-用例(可以有多个) id="用例编号" name="用例名称" desc="用例描述信息" faulttype="失败处理类型，0继续，1中断" mark="用例级别">
+            <step：子标签-步骤(可以有多个) order="用例步骤序号" desc="用例步骤描述信息" cmdtype="功能类型编号" cmdparas="值"/>
+            <judgestep：子标签-判别步骤 order="判别步骤序号" desc="判别步骤描述" cmdtype="判别步骤类型编号" cmdparas="判别步骤参数设置"/>
+        </case>
+    </suit>
+</test>
+
+cmdtype：
+    set_para_ini = "1001"
+    get_para_ini = "1002"
+    set_para_csv = "1011"
+    get_para_csv = "1012"
+    set_para_json = "1021"
+    get_para_json = "1022"
+    set_para_xml = "1031"
+    get_para_xml = "1032"
+
+    #实时库操作类
+    set_para_rtdb = "1101"
+    get_para_rtdb = "1102"
+    del_para_rtdb = "1103"
+
+
+    #数据比较类型
+    cmp_file_eq = "2001"
+    cmp_data_eq = "2010"
+    cmp_data_gr = "2011"
+    cmp_data_ge = "2012"
+    cmp_data_ne = "2013"
+
+    #执行命令类型
+    exec_cmd = "3001"
+
+    #web测试功能
+    web_driver_create = "4001"
+    web_driver_quet = "4002"
+    web_element_action = "4003"
+
+    #关系库操作
+    mysql_read = "5001"
+    mysql_write = "5002"
+
+    #杂项操作类型
+    file_exists = "9001" 
+    wait_to_time = "9002"
+    wait_timespan = "9003"
+	
+cmdparas：
+    #数据比较类型
+    cmp_file_eq = "2001"   cmdparas="(def cmp_file(file1:str,file2:str)传入两个全路径)"  文件对比
+    cmp_data_eq = "2010"   cmdparas="(1-整数，2-浮点数，3-列表，4-字符串)~(steppara_1_1或者具体值)~(steppara_1_1或者115093)" 相等
+    cmp_data_gr = "2011"   cmdparas="(1-整数，2-浮点数)~(steppara_1_1或者具体值)~(steppara_1_1或者115093)"  大于比较 str1>str2
+    cmp_data_ge = "2012"   cmdparas="(1-整数，2-浮点数)~(steppara_1_1或者具体值)~(steppara_1_1或者115093)"  大于等于
+    cmp_data_ne = "2013"   cmdparas="(1-整数，2-浮点数)~(steppara_1_1或者具体值)~(steppara_1_1或者115093)"  不等于
+
+	
+    #web测试功能
+    web_driver_create = "4001" 
+    web_driver_quet = "4002"
+    web_element_action = "4003"
+	
+	视情况而定，一般：
+	定位类型与定位参数之间用|           比如：id|farmid
+	操作类型与操作参数之间用@           比如：send_keys@wpfs
+	多个定位/操作之间用@@               比如：id|farmid@@id|day
+	定位类型与操作类型之间用~           比如：id|farmid~send_keys@wpfs
+	需要获取多个值之间用，              比如：预测功率,置信上限,置信下限
+	多个检索条件之前用#AND#             比如：日期=2022-03-12 00:45:00#AND#预测功率=32.114
+	可以加变量                          比如：$RTPARA_TODAY_2
+
+    #关系库操作
+    mysql_read = "5001"   cmdparas="(sql语句)~(数据库类型)~(数据库信息)~(返回值类型)"
+						  数据库类型：数据库类型：QMYSQL/QKSQL/QDSQL/QPSQL
+						  数据库信息：case1：10.8.8.22@3306@DAVINCI@sa@cast1234  case2：10.8.8.22@_@DAVINCI@_@_
+						  返回值类型：3-列表,4-字符串,5-列表嵌套字典,6-[[表头],[值1]，[值2]]
+						  整体示例："SELECT LONGITUDE,RUNTIME from wind_turbine where ALIASNAME = '风机_1'~QMYSQL~10.8.8.22@3306@DAVINCI@sa@cast1234~3
+    mysql_write = "5002"  cmdparas="(sql语句)~(数据库类型)~(数据库信息)~(返回值类型)"
+						  数据库类型：数据库类型：QMYSQL/QKSQL/QDSQL/QPSQL
+						  数据库信息：case1：10.8.8.22@3306@DAVINCI@sa@cast1234  case2：10.8.8.22@_@DAVINCI@_@_
+						  整体示例："SELECT LONGITUDE,RUNTIME from wind_turbine where ALIASNAME = '风机_1'~QMYSQL~_
+						  
+	#其他：
+	get_tubiao_data       返回值类型：3-列表,4-字符串,5-列表嵌套字典,6-[[表头],[值1]，[值2]]，不写默认列表
+						  case1-获取全部数据-列表格式： get_tubiao_data@_@_    
+						  case2-根据条件获取一行值-列表格式： get_tubiao_data@_@日期=2022-03-31 00:15:00@3 
+						  case3-根据目标参数获取一列值-列表嵌套字典格式： get_tubiao_data@置信下限@_@5 		
+						  case4-根据目标参数和条件获取一个值-字符串格式： get_tubiao_data@置信下限@日期=2022-03-31 00:15:00@4		
+						  case4-根据目标参数和条件获取多个值-列表格式： get_tubiao_data@预测功率,置信上限,置信下限@日期=2022-03-31 00:15:00@3						  
+-->

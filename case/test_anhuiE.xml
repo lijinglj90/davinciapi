@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<test>
+    <!--<suit id="001" name="短期文件核对" desc="">
+        <precondition>
+            <step order="1" desc="启动前置程序" cmdtype="3001" cmdparas="nohup rxinit >/dev/null 2>&amp;1 &amp;"/>
+			<step order="2" desc="启动E文件程序" cmdtype="3001" cmdparas="nohup rxefilecreate >/dev/null 2>&amp;1 &amp;"/>
+            <step order="2" desc="启动E文件程序" cmdtype="3001" cmdparas="nohup rxefilecreate >/dev/null 2>&1 &"/>
+        </precondition>
+        <case id="case001" name="模板文件与生成文件核对" desc="" faulttype="0" mark="0">
+            <judgestep order="2" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinci/usr/subfcst_project/fepcfg/ftpcfg/model.ini~/home/sprixin/davinci/usr/subfcst_project/fepcfg/ftpcfg/model.ini"/>
+        </case>
+    </suit>-->
+    <suit id="002" name="超短期文件核对" desc="">
+        <case id="case001" name="模板文件与生成文件核对" desc="" faulttype="0" mark="0">
+            <judgestep order="2" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinciapi/data/efile/4/cdq/安徽.电厂1_4Cwind_202207101815.rb~/home/sprixin/davinci/usr/subfcst_project/fepcfg/ftpcfg/4/cdq/安徽.电厂1_4Cwind_202207101815.rb~gb2312"/>
+        </case>
+    </suit>
+    <suit id="003" name="24时天气预报文件核对" desc="">
+        <case id="case001" name="模板文件与生成文件核对" desc="" faulttype="0" mark="0">
+            <judgestep order="2" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinciapi/data/efile/6/cdq/farm1_20220710_1615_CDQ.WPD~/home/sprixin/davinci/usr/subfcst_project/fepcfg/ftpcfg/6/cdq/farm1_20220710_1615_CDQ.WPD"/>
+        </case>
+    </suit>
+    <!--<suit id="004" name="72时天气预报文件核对" desc="">
+        <case id="case001" name="模板文件与生成文件核对" desc="" faulttype="0" mark="0">
+            <judgestep order="2" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinciapi/data/efile/5/nwp72/安徽.电厂1_72nwp_20220711.rb~/home/sprixin/davinci/usr/subfcst_project/fepcfg/ftpcfg/4/nwp72/安徽.电厂1_72nwp_20220711.rb"/>
+        </case>
+    </suit>
+    <suit id="005" name="昨日开机容量文件核对" desc="">
+        <case id="case001" name="模板文件与生成文件核对" desc="" faulttype="0" mark="0">
+            <judgestep order="2" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinciapi/data/efile/5/gridp/安徽.电厂1_24Bwind_20220709.rb~/home/sprixin/davinci/usr/subfcst_project/fepcfg/ftpcfg/4/gridp/安徽.电厂1_24Bwind_20220709.rb"/>
+        </case>
+    </suit>
+    <suit id="006" name="气象站数据文件核对" desc="">
+        <case id="case001" name="模板文件与生成文件核对" desc="" faulttype="0" mark="0">
+            <judgestep order="2" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinciapi/data/efile/5/qxz/安徽.电厂1_qx_202207101500.rb~/home/sprixin/davinci/usr/subfcst_project/fepcfg/ftpcfg/4/qxz/安徽.电厂1_qx_202207101500.rb"/>
+        </case>
+    </suit>
+    <suit id="007" name="光伏单机文件核对" desc="">
+        <case id="case001" name="模板文件与生成文件核对" desc="" faulttype="0" mark="0">
+            <judgestep order="2" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinciapi/data/efile/5/dj/安徽.电厂1_dj_202207101500.rb~/home/sprixin/davinci/usr/subfcst_project/fepcfg/ftpcfg/4/dj/安徽.电厂1_dj_202207101500.rb"/>
+        </case>
+    </suit>-->
+</test>

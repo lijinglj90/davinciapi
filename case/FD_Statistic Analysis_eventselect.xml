@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<test>
+    <suit id="1" name="风电_统计分析_事件数据核对" desc="">
+        <precondition>
+            <step order="1" desc="创建浏览器驱动" cmdtype="4001" cmdparas="chrome"/>
+            <step order="2" desc="登录风电界面" cmdtype="4003" cmdparas="http://10.64.14.57:18080/SPPP-web/login~id|username@@id|password@@id|submit~send_keys@wpfs@@send_keys@wpfs@@click~suitcondpara_1_1~chrome"/>
+        </precondition>
+        <case id="1" name="事件数据查询" desc="" faulttype="0" mark="0">
+            <step order="1" desc="时间选择" cmdtype="4003" cmdparas="http://10.64.14.57:18080/SPPP-web/dataAlarm/AlarmJump~id|queryDate@@id|category@@name|oTable_length@@id|queryBtn@@~set_datetime@2022-04-06@click@@do_select@11@index@@click@@do_select@100@index@click@@set_tubiao_data@告警类别@告警日期=2022-04-06 12:00:26@4~suitcondpara_1_1~chrome"/>
+            <step order="2" desc="数据比较" cmdtype="5001" cmdparas="SELECT m.priorityName, n.SETTHETIME confirmTime, n.CONFIRMPEOPLE confirmPerson FROM ( SELECT a.ALARMID, DATE_FORMAT( a.DTTIMESTAMP, '%Y-%m-%d %H:%i:%s' ) DTTIMESTAMP,a.ALARMSTRING, ( SELECT c.`NAME` FROM alarmpriority c WHERE c.id = a.ALARMPRIORITY ) AS priorityName, ( SELECT d.ALIAS FROM alarmtype d WHERE d.TYPE = a.ALARMTYPE ) AS alarmTypeName FROM&#9;hdralarmbase20220402 a WHERE&#9;a.ALARMOREVENT = 1 ORDER BY&#9;a.DTTIMESTAMP DESC &#9;LIMIT 0,1) m LEFT JOIN hdralarmconfirm n ON m.ALARMID = n.ALARMID~QMSQL~4"/>
+            <judgestep order="2" desc="" cmdtype="2010" cmdparas="4~steppara_1_1~steppara_2_1"/>
+        </case>
+    </suit>
+</test>

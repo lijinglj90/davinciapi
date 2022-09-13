@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<test>
+    <suit id="1" name="风电_气象资源_风向数据核对" desc="">
+        <precondition>
+            <step order="1" desc="创建浏览器驱动" cmdtype="4001" cmdparas="chrome"/>
+            <step order="2" desc="登录风电界面" cmdtype="4003" cmdparas="http://10.64.14.70:18080/SPPP-web/login~id|username@@id|password@@id|submit~send_keys@wpfs@@send_keys@wpfs@@click~suitcondpara_1_1~chrome"/>
+        </precondition>
+		<!-- <case id="test1" name="轮毂层气象预测风向数据核对" desc="" faulttype="0" mark="0">
+            <step order="1" desc="查询界面轮毂层气象预测风向数据" cmdtype="4003" cmdparas="http://10.64.14.70:18080/SPPP-web/weather/windDirection~id|plantId@@id|equipmentID@@id|floor@@id|starttime@@id|endtime@@id|search@@id|panelbody1~do_select@0@index@@do_select@0@index@@do_select@0@index@@set_datetime@$RTPARA_TODAY_2@@set_datetime@$RTPARA_TOMORROW_2@@click@@get_tubiao_data@气象预测风向@时间=$RTPARA_TODAY_2 09:15:00@4~suitcondpara_1_1~chrome"/>
+            <step order="2" desc="查询数据库轮毂层数据" cmdtype="5001" cmdparas="SELECT vavg7 FROM hdrnwpdata_farm1 WHERE fcst_nodetype = 1 AND fcst_time ='$RTPARA_TODAY_2 09:15:00' AND daytype = 2 AND is_main = 1 ORDER BY fcst_time~QMYSQL~10.64.14.70@_@DAVINCI@_@_~4"/>
+            <judgestep order="2" desc="" cmdtype="2010" cmdparas="2~steppara_1_1~steppara_2_1"/>
+        </case>
+        <case id="test2" name="轮毂层实测风向数据核对" desc="" faulttype="0" mark="0">
+            <step order="1" desc="查询轮毂层实测风向数据" cmdtype="4003" cmdparas="http://10.64.14.70:18080/SPPP-web/weather/windDirection~id|plantId@@id|equipmentID@@id|floor@@id|starttime@@id|endtime@@id|search@@id|panelbody1~do_select@0@index@@do_select@0@index@@do_select@0@index@@set_datetime@$RTPARA_TODAY_2@@set_datetime@$RTPARA_TOMORROW_2@@click@@get_tubiao_data@实测风向@时间=$RTPARA_TODAY_2 09:15:00@4~suitcondpara_1_1~chrome"/>
+            <step order="2" desc="查询数据库轮毂层数据" cmdtype="5001" cmdparas="SELECT AVERAGE FROM hdranastat15m$RTPARA_YEARMONTH_1 h WHERE h.ID = ( SELECT a.ID FROM analoginput a WHERE a.TYPE = ( SELECT m.ID FROM measurementtype m WHERE m.`NAME` = 'VAVG7' )) AND HDTIME = '$RTPARA_TODAY_2 09:15:00'~QMYSQL~10.64.14.70@_@DAVINCI@_@_~4"/>
+            <judgestep order="2" desc="" cmdtype="2010" cmdparas="2~steppara_1_1~steppara_2_1"/>
+        </case>
+		<case id="test18" name="轮毂层风向偏差值" desc="" faulttype="0" mark="0">
+            <step order="1" desc="轮毂层风向偏差值" cmdtype="4003" cmdparas="http://10.64.14.70:18080/SPPP-web/weather/windDirection~id|plantId@@id|equipmentID@@id|floor@@id|starttime@@id|endtime@@id|search@@id|panelbody1~do_select@0@index@@do_select@0@index@@do_select@0@index@@set_datetime@$RTPARA_TODAY_2@@set_datetime@$RTPARA_TOMORROW_2@@click@@get_tubiao_data@风向偏差值@时间=$RTPARA_TODAY_2 09:15:00@4~suitcondpara_1_1~chrome"/>
+            <step order="2" desc="查询数据库轮毂层数据" cmdtype="5001" cmdparas="select abs(a.vavg7-b.AVERAGE) from(SELECT vavg7,fcst_time FROM hdrnwpdata_farm1 WHERE fcst_nodetype = 1 AND fcst_time ='$RTPARA_TODAY_2 09:15:00' AND daytype = 2 AND is_main = 1 ORDER BY fcst_time)a,(SELECT AVERAGE,HDTIME FROM hdranastat15m$RTPARA_YEARMONTH_1 h WHERE h.ID = ( SELECT a.ID FROM analoginput a WHERE a.TYPE = ( SELECT m.ID FROM measurementtype m WHERE m.`NAME` = 'VAVG7' )) AND HDTIME = '$RTPARA_TODAY_2 09:15:00')b where a.fcst_time=b.HDTIME~QMYSQL~10.64.14.70@_@DAVINCI@_@_~4"/>
+            <judgestep order="2" desc="" cmdtype="2010" cmdparas="2~steppara_1_1~steppara_2_1"/>
+        </case>
+        <case id="test3" name="第1层气象预测风向数据核对" desc="" faulttype="0" mark="0">
+            <step order="1" desc="查询第1层气象预测风向数据" cmdtype="4003" cmdparas="http://10.64.14.70:18080/SPPP-web/weather/windDirection~id|plantId@@id|equipmentID@@id|floor@@id|starttime@@id|endtime@@id|search@@id|panelbody1~do_select@0@index@@do_select@index@@do_select@1@index@@set_datetime@$RTPARA_TODAY_2@@set_datetime@$RTPARA_TOMORROW_2@@click@@get_tubiao_data@气象预测风向@时间=$RTPARA_TODAY_2 09:15:00@4~suitcondpara_1_1~chrome"/>
+            <step order="2" desc="查询数据库第1层气象预测风向数据" cmdtype="5001" cmdparas="SELECT VAVG1 FROM hdrnwpdata_farm1 WHERE fcst_nodetype = 1 AND fcst_time ='$RTPARA_TODAY_2 09:15:00' AND daytype = 2 AND is_main = 1 ORDER BY fcst_time~QMYSQL~10.64.14.70@_@DAVINCI@_@_~4"/>
+            <judgestep order="2" desc="" cmdtype="2010" cmdparas="2~steppara_1_1~steppara_2_1"/>
+        </case>
+        <case id="test4" name="第1层实际风向数据核对" desc="" faulttype="0" mark="0">
+            <step order="1" desc="查询第1层实际风向数据" cmdtype="4003" cmdparas="http://10.64.14.70:18080/SPPP-web/weather/windDirection~id|plantId@@id|equipmentID@@id|floor@@id|starttime@@id|endtime@@id|search@@id|panelbody1~do_select@0@index@@do_select@0@index@@do_select@1@index@@set_datetime@$RTPARA_TODAY_2@@set_datetime@$RTPARA_TOMORROW_2@@click@@get_tubiao_data@实测风向@时间=$RTPARA_TODAY_2 09:15:00@4~suitcondpara_1_1~chrome"/>
+            <step order="2" desc="查询数据库第1层实际风向数据" cmdtype="5001" cmdparas="SELECT AVERAGE FROM hdranastat15m$RTPARA_YEARMONTH_1 h WHERE h.ID = ( SELECT a.ID FROM analoginput a WHERE a.TYPE = ( SELECT m.ID FROM measurementtype m WHERE m.`NAME` = 'VAVG1' )) AND HDTIME = '$RTPARA_TODAY_2 09:15:00'~QMYSQL~10.64.14.70@_@DAVINCI@_@_~4"/>
+            <judgestep order="2" desc="" cmdtype="2010" cmdparas="2~steppara_1_1~steppara_2_1"/>
+        </case>
+        <case id="test5" name="第2层气象预测风向数据核对" desc="" faulttype="0" mark="0">
+            <step order="1" desc="查询第2层气象预测风向数据" cmdtype="4003" cmdparas="http://10.64.14.70:18080/SPPP-web/weather/windDirection~id|plantId@@id|equipmentID@@id|floor@@id|starttime@@id|endtime@@id|search@@id|panelbody1~do_select@0@index@@do_select@0@index@@do_select@2@index@@set_datetime@$RTPARA_TODAY_2@@set_datetime@$RTPARA_TOMORROW_2@@click@@get_tubiao_data@气象预测风向@时间=$RTPARA_TODAY_2 09:15:00@4~suitcondpara_1_1~chrome"/>
+            <step order="2" desc="查询数据库第2层气象预测风向数据" cmdtype="5001" cmdparas="SELECT VAVG2 FROM hdrnwpdata_farm1 WHERE fcst_nodetype = 1 AND fcst_time ='$RTPARA_TODAY_2 09:15:00' AND daytype = 2 AND is_main = 1 ORDER BY fcst_time~QMYSQL~10.64.14.70@_@DAVINCI@_@_~4"/>
+            <judgestep order="2" desc="" cmdtype="2010" cmdparas="2~steppara_1_1~steppara_2_1"/>
+        </case>
+        <case id="test6" name="第2层实际风向数据核对" desc="" faulttype="0" mark="0">
+            <step order="1" desc="查询第2层实际风向数据" cmdtype="4003" cmdparas="http://10.64.14.70:18080/SPPP-web/weather/windDirection~id|plantId@@id|equipmentID@@id|floor@@id|starttime@@id|endtime@@id|search@@id|panelbody1~do_select@0@index@@do_select@0@index@@do_select@2@index@@set_datetime@$RTPARA_TODAY_2@@set_datetime@$RTPARA_TOMORROW_2@@click@@get_tubiao_data@实测风向@时间=$RTPARA_TODAY_2 09:15:00@4~suitcondpara_1_1~chrome"/>
+            <step order="2" desc="查询数据库第2层实际风向数据" cmdtype="5001" cmdparas="SELECT AVERAGE FROM hdranastat15m$RTPARA_YEARMONTH_1 h WHERE h.ID = ( SELECT a.ID FROM analoginput a WHERE a.TYPE = ( SELECT m.ID FROM measurementtype m WHERE m.`NAME` = 'VAVG2' )) AND HDTIME = '$RTPARA_TODAY_2 09:15:00'~QMYSQL~10.64.14.70@_@DAVINCI@_@_~4"/>
+            <judgestep order="2" desc="" cmdtype="2010" cmdparas="2~steppara_1_1~steppara_2_1"/>
+        </case>
+        <case id="test7" name="第3层气象预测风向数据核对" desc="" faulttype="0" mark="0">
+            <step order="1" desc="查询第3层气象预测风向数据" cmdtype="4003" cmdparas="http://10.64.14.70:18080/SPPP-web/weather/windDirection~id|plantId@@id|equipmentID@@id|floor@@id|starttime@@id|endtime@@id|search@@id|panelbody1~do_select@0@index@@do_select@0@index@@do_select@3@index@@set_datetime@$RTPARA_TODAY_2@@set_datetime@$RTPARA_TOMORROW_2@@click@@get_tubiao_data@气象预测风向@时间=$RTPARA_TODAY_2 09:15:00@4~suitcondpara_1_1~chrome"/>
+            <step order="2" desc="查询数据库" cmdtype="5001" cmdparas="SELECT VAVG3 FROM hdrnwpdata_farm1 WHERE fcst_nodetype = 1 AND fcst_time ='$RTPARA_TODAY_2 09:15:00' AND daytype = 2 AND is_main = 1 ORDER BY fcst_time~QMYSQL~10.64.14.70@_@DAVINCI@_@_~4"/>
+            <judgestep order="2" desc="" cmdtype="2010" cmdparas="2~steppara_1_1~steppara_2_1"/>
+        </case>
+        <case id="test8" name="第3层实际风向数据核对" desc="" faulttype="0" mark="0">
+            <step order="1" desc="查询第3层实际风向数据" cmdtype="4003" cmdparas="http://10.64.14.70:18080/SPPP-web/weather/windDirection~id|plantId@@id|equipmentID@@id|floor@@id|starttime@@id|endtime@@id|search@@id|panelbody1~do_select@0@index@@do_select@0@index@@do_select@3@index@@set_datetime@$RTPARA_TODAY_2@@set_datetime@$RTPARA_TOMORROW_2@@click@@get_tubiao_data@实测风向@时间=$RTPARA_TODAY_2 09:15:00@4~suitcondpara_1_1~chrome"/>
+            <step order="2" desc="查询数据库" cmdtype="5001" cmdparas="SELECT AVERAGE FROM hdranastat15m$RTPARA_YEARMONTH_1 h WHERE h.ID = ( SELECT a.ID FROM analoginput a WHERE a.TYPE = ( SELECT m.ID FROM measurementtype m WHERE m.`NAME` = 'VAVG3' )) AND HDTIME = '$RTPARA_TODAY_2 09:15:00'~QMYSQL~10.64.14.70@_@DAVINCI@_@_~4"/>
+            <judgestep order="2" desc="" cmdtype="2010" cmdparas="2~steppara_1_1~steppara_2_1"/>
+        </case>
+        <case id="test9" name="第4层气象预测风向数据核对" desc="" faulttype="0" mark="0">
+            <step order="1" desc="查询第4层气象预测风向数据" cmdtype="4003" cmdparas="http://10.64.14.70:18080/SPPP-web/weather/windDirection~id|plantId@@id|equipmentID@@id|floor@@id|starttime@@id|endtime@@id|search@@id|panelbody1~do_select@0@index@@do_select@0@index@@do_select@4@index@@set_datetime@$RTPARA_TODAY_2@@set_datetime@$RTPARA_TOMORROW_2@@click@@get_tubiao_data@气象预测风向@时间=$RTPARA_TODAY_2 09:15:00@4~suitcondpara_1_1~chrome"/>
+            <step order="2" desc="查询数据库" cmdtype="5001" cmdparas="SELECT VAVG4 FROM hdrnwpdata_farm1 WHERE fcst_nodetype = 1 AND fcst_time ='$RTPARA_TODAY_2 09:15:00' AND daytype = 2 AND is_main = 1 ORDER BY fcst_time~QMYSQL~10.64.14.70@_@DAVINCI@_@_~4"/>
+            <judgestep order="2" desc="" cmdtype="2010" cmdparas="2~steppara_1_1~steppara_2_1"/>
+        </case>
+        <case id="test10" name="第4层实际风向数据核对" desc="" faulttype="0" mark="0">
+            <step order="1" desc="查询第4层实际风向数据" cmdtype="4003" cmdparas="http://10.64.14.70:18080/SPPP-web/weather/windDirection~id|plantId@@id|equipmentID@@id|floor@@id|starttime@@id|endtime@@id|search@@id|panelbody1~do_select@0@index@@do_select@0@index@@do_select@4@index@@set_datetime@$RTPARA_TODAY_2@@set_datetime@$RTPARA_TOMORROW_2@@click@@get_tubiao_data@实测风向@时间=$RTPARA_TODAY_2 09:15:00@4~suitcondpara_1_1~chrome"/>
+            <step order="2" desc="查询数据库" cmdtype="5001" cmdparas="SELECT AVERAGE FROM hdranastat15m$RTPARA_YEARMONTH_1 h WHERE h.ID = ( SELECT a.ID FROM analoginput a WHERE a.TYPE = ( SELECT m.ID FROM measurementtype m WHERE m.`NAME` = 'VAVG4' )) AND HDTIME = '$RTPARA_TODAY_2 09:15:00'~QMYSQL~10.64.14.70@_@DAVINCI@_@_~4"/>
+            <judgestep order="2" desc="" cmdtype="2010" cmdparas="2~steppara_1_1~steppara_2_1"/>
+        </case>
+        <case id="test11" name="第5层气象预测风向数据核对" desc="" faulttype="0" mark="0">
+            <step order="1" desc="查询第5层气象预测风向数据" cmdtype="4003" cmdparas="http://10.64.14.70:18080/SPPP-web/weather/windDirection~id|plantId@@id|equipmentID@@id|floor@@id|starttime@@id|endtime@@id|search@@id|panelbody1~do_select@0@index@@do_select@0@index@@do_select@5@index@@set_datetime@$RTPARA_TODAY_2@@set_datetime@$RTPARA_TOMORROW_2@@click@@get_tubiao_data@气象预测风向@时间=$RTPARA_TODAY_2 09:15:00@4~suitcondpara_1_1~chrome"/>
+            <step order="2" desc="查询数据库" cmdtype="5001" cmdparas="SELECT VAVG5 FROM hdrnwpdata_farm1 WHERE fcst_nodetype = 1 AND fcst_time ='$RTPARA_TODAY_2 09:15:00' AND daytype = 2 AND is_main = 1 ORDER BY fcst_time~QMYSQL~10.64.14.70@_@DAVINCI@_@_~4"/>
+            <judgestep order="2" desc="" cmdtype="2010" cmdparas="2~steppara_1_1~steppara_2_1"/>
+        </case>
+        <case id="test12" name="第5层实际风向数据核对" desc="" faulttype="0" mark="0">
+            <step order="1" desc="查询第5层实际风向数据" cmdtype="4003" cmdparas="http://10.64.14.70:18080/SPPP-web/weather/windDirection~id|plantId@@id|equipmentID@@id|floor@@id|starttime@@id|endtime@@id|search@@id|panelbody1~do_select@0@index@@do_select@0@index@@do_select@5@index@@set_datetime@$RTPARA_TODAY_2@@set_datetime@$RTPARA_TOMORROW_2@@click@@get_tubiao_data@实测风向@时间=$RTPARA_TODAY_2 09:15:00@4~suitcondpara_1_1~chrome"/>
+            <step order="2" desc="查询数据库" cmdtype="5001" cmdparas="SELECT AVERAGE FROM hdranastat15m$RTPARA_YEARMONTH_1 h WHERE h.ID = ( SELECT a.ID FROM analoginput a WHERE a.TYPE = ( SELECT m.ID FROM measurementtype m WHERE m.`NAME` = 'VAVG5' )) AND HDTIME = '$RTPARA_TODAY_2 09:15:00'~QMYSQL~10.64.14.70@_@DAVINCI@_@_~4"/>
+            <judgestep order="2" desc="" cmdtype="2010" cmdparas="2~steppara_1_1~steppara_2_1"/>
+        </case>
+        <case id="test13" name="第6层气象预测风向数据核对" desc="" faulttype="0" mark="0">
+            <step order="1" desc="查询第6层气象预测风向数据" cmdtype="4003" cmdparas="http://10.64.14.70:18080/SPPP-web/weather/windDirection~id|plantId@@id|equipmentID@@id|floor@@id|starttime@@id|endtime@@id|search@@id|panelbody1~do_select@0@index@@do_select@0@index@@do_select@6@index@@set_datetime@$RTPARA_TODAY_2@@set_datetime@$RTPARA_TOMORROW_2@@click@@get_tubiao_data@气象预测风向@时间=$RTPARA_TODAY_2 09:15:00@4~suitcondpara_1_1~chrome"/>
+            <step order="2" desc="查询数据库" cmdtype="5001" cmdparas="SELECT VAVG6 FROM hdrnwpdata_farm1 WHERE fcst_nodetype = 1 AND fcst_time ='$RTPARA_TODAY_2 09:15:00' AND daytype = 2 AND is_main = 1 ORDER BY fcst_time~QMYSQL~10.64.14.70@_@DAVINCI@_@_~4"/>
+            <judgestep order="2" desc="" cmdtype="2010" cmdparas="2~steppara_1_1~steppara_2_1"/>
+        </case>
+        <case id="test14" name="第6层实际风向数据核对" desc="" faulttype="0" mark="0">
+            <step order="1" desc="查询第6层实际风向数据" cmdtype="4003" cmdparas="http://10.64.14.70:18080/SPPP-web/weather/windDirection~id|plantId@@id|equipmentID@@id|floor@@id|starttime@@id|endtime@@id|search@@id|panelbody1~do_select@0@index@@do_select@0@index@@do_select@6@index@@set_datetime@$RTPARA_TODAY_2@@set_datetime@$RTPARA_TOMORROW_2@@click@@get_tubiao_data@实测风向@时间=$RTPARA_TODAY_2 09:15:00@4~suitcondpara_1_1~chrome"/>
+            <step order="2" desc="查询数据库" cmdtype="5001" cmdparas="SELECT AVERAGE FROM hdranastat15m$RTPARA_YEARMONTH_1 h WHERE h.ID = ( SELECT a.ID FROM analoginput a WHERE a.TYPE = ( SELECT m.ID FROM measurementtype m WHERE m.`NAME` = 'VAVG6' )) AND HDTIME = '$RTPARA_TODAY_2 09:15:00'~QMYSQL~10.64.14.70@_@DAVINCI@_@_~4"/>
+            <judgestep order="2" desc="" cmdtype="2010" cmdparas="2~steppara_1_1~steppara_2_1"/>
+        </case>
+        <case id="test15" name="第7层气象预测风向数据核对" desc="" faulttype="0" mark="0">
+            <step order="1" desc="查询第7层气象预测风向数据" cmdtype="4003" cmdparas="http://10.64.14.70:18080/SPPP-web/weather/windDirection~id|plantId@@id|equipmentID@@id|floor@@id|starttime@@id|endtime@@id|search@@id|panelbody1~do_select@0@index@@do_select@0@index@@do_select@7@index@@set_datetime@$RTPARA_TODAY_2@@set_datetime@$RTPARA_TOMORROW_2@@click@@get_tubiao_data@气象预测风向@时间=$RTPARA_TODAY_2 09:15:00@4~suitcondpara_1_1~chrome"/>
+            <step order="2" desc="查询数据库" cmdtype="5001" cmdparas="SELECT VAVG7 FROM hdrnwpdata_farm1 WHERE fcst_nodetype = 1 AND fcst_time ='$RTPARA_TODAY_2 09:15:00' AND daytype = 2 AND is_main = 1 ORDER BY fcst_time~QMYSQL~10.64.14.70@_@DAVINCI@_@_~4"/>
+            <judgestep order="2" desc="" cmdtype="2010" cmdparas="2~steppara_1_1~steppara_2_1"/>
+        </case>
+        <case id="test16" name="第7层实际风向数据核对" desc="" faulttype="0" mark="0">
+            <step order="1" desc="查询第7层实际风向数据" cmdtype="4003" cmdparas="http://10.64.14.70:18080/SPPP-web/weather/windDirection~id|plantId@@id|equipmentID@@id|floor@@id|starttime@@id|endtime@@id|search@@id|panelbody1~do_select@0@index@@do_select@0@index@@do_select@7@index@@set_datetime@$RTPARA_TODAY_2@@set_datetime@$RTPARA_TOMORROW_2@@click@@get_tubiao_data@实测风向@时间=$RTPARA_TODAY_2 09:15:00@4~suitcondpara_1_1~chrome"/>
+            <step order="2" desc="查询数据库" cmdtype="5001" cmdparas="SELECT AVERAGE FROM hdranastat15m$RTPARA_YEARMONTH_1 h WHERE h.ID = ( SELECT a.ID FROM analoginput a WHERE a.TYPE = ( SELECT m.ID FROM measurementtype m WHERE m.`NAME` = 'VAVG7' )) AND HDTIME = '$RTPARA_TODAY_2 09:15:00'~QMYSQL~10.64.14.70@_@DAVINCI@_@_~4"/>
+            <judgestep order="2" desc="" cmdtype="2010" cmdparas="2~steppara_1_1~steppara_2_1"/>
+        </case>
+        <case id="test17" name="风电_气象资源_风向数据导出" desc="" faulttype="0" mark="0">
+			<step order="3" desc="" cmdtype="9004" cmdparas="C:\Users\Administrator\Downloads\测试风电厂_风电场风向$RTPARA_TODAY_2到$RTPARA_TOMORROW_2.xls"/>
+            <step order="1" desc="导出风电_气象资源_风向数据" cmdtype="4003" cmdparas="http://10.64.14.70:18080/SPPP-web/weather/windDirection~id|plantId@@id|equipmentID@@id|floor@@id|starttime@@id|endtime@@id|search@@id|export~do_select@0@index@@do_select@0@index@@do_select@0@index@@set_datetime@$RTPARA_TODAY_2@@set_datetime@$RTPARA_TOMORROW_2@@click@@click~suitcondpara_1_1~chrome"/>
+            <step order="2" desc="等待时间" cmdtype="9003" cmdparas="5"/>
+            <judgestep order="1" desc="" cmdtype="9001" cmdparas="C:\Users\Administrator\Downloads\测试风电厂_风电场风向$RTPARA_TODAY_2到$RTPARA_TOMORROW_2.xls"/>
+        </case>
+		<case id="test19" name="数据详表气象预测风向" desc="" faulttype="0" mark="0">
+            <step order="1" desc="数据详表气象预测风向" cmdtype="4003" cmdparas="http://10.64.14.70:18080/SPPP-web/weather/windDirection~id|plantId@@id|equipmentID@@id|floor@@id|starttime@@id|endtime@@id|search@@id|panelbody~do_select@0@index@@do_select@0@index@@do_select@7@index@@set_datetime@$RTPARA_TODAY_2@@set_datetime@$RTPARA_TOMORROW_2@@click@@get_tubiao_data@最大值,最小值,平均值@名称=气象预测风向@3~suitcondpara_1_1~chrome"/>
+            <step order="2" desc="查询数据库" cmdtype="5001" cmdparas="SELECT max(VAVG7),min(VAVG7),avg(VAVG7) FROM hdrnwpdata_farm1 WHERE fcst_nodetype = 1 AND fcst_time &gt;='$RTPARA_TODAY_2 00:00:00' AND fcst_time &lt;'$RTPARA_TOMORROW_2 00:00:00' AND daytype = 2 AND is_main = 1 ORDER BY fcst_time~QMYSQL~10.64.14.70@_@DAVINCI@_@_~3"/>
+            <judgestep order="2" desc="" cmdtype="2010" cmdparas="3~steppara_1_1~steppara_2_1"/>
+        </case>
+        <case id="test20" name="数据详表实际风向数据" desc="" faulttype="0" mark="0">
+            <step order="1" desc="数据详表实际风向数据" cmdtype="4003" cmdparas="http://10.64.14.70:18080/SPPP-web/weather/windDirection~id|plantId@@id|equipmentID@@id|floor@@id|starttime@@id|endtime@@id|search@@id|panelbody~do_select@0@index@@do_select@0@index@@do_select@7@index@@set_datetime@$RTPARA_TODAY_2@@set_datetime@$RTPARA_TOMORROW_2@@click@@get_tubiao_data@最大值,最小值,平均值@名称=实际风向@3~suitcondpara_1_1~chrome"/>
+            <step order="2" desc="查询数据库" cmdtype="5001" cmdparas="SELECT max(AVERAGE),min(AVERAGE),avg(AVERAGE) FROM hdranastat15m$RTPARA_YEARMONTH_1 h WHERE h.ID = ( SELECT a.ID FROM analoginput a WHERE a.TYPE = ( SELECT m.ID FROM measurementtype m WHERE m.`NAME` = 'VAVG7' )) AND HDTIME  &gt;='$RTPARA_TODAY_2 00:00:00' and HDTIME &lt;'$RTPARA_TOMORROW_2 00:00:00' ~QMYSQL~10.64.14.70@_@DAVINCI@_@_~3"/>
+            <judgestep order="2" desc="" cmdtype="2010" cmdparas="3~steppara_1_1~steppara_2_1"/>
+        </case> -->
+		<case id="test21" name="风电_气象资源_风向导出数据核对" desc="" faulttype="0" mark="0">
+			<step order="1" desc="" cmdtype="9004" cmdparas="C:\Users\Administrator\Downloads\测试风电厂_风电场风向$RTPARA_TODAY_2到$RTPARA_TOMORROW_2.xls"/>
+            <step order="2" desc="导出风电_气象资源_风向数据" cmdtype="4003" cmdparas="http://10.64.14.70:18080/SPPP-web/weather/windDirection~id|plantId@@id|equipmentID@@id|floor@@id|starttime@@id|endtime@@id|search@@id|export~do_select@0@index@@do_select@0@index@@do_select@0@index@@set_datetime@$RTPARA_TODAY_2@@set_datetime@$RTPARA_TOMORROW_2@@click@@click~suitcondpara_1_1~chrome"/>
+			<step order="3" desc="" cmdtype="1042" cmdparas="C:\Users\Administrator\Downloads\测试风电厂_风电场风向$RTPARA_TODAY_2到$RTPARA_TOMORROW_2.xls~最大值,最小值,平均值~名称=气象预测风向~3"/>
+			<step order="4" desc="查询数据库" cmdtype="5001" cmdparas="SELECT max(VAVG7),min(VAVG7),avg(VAVG7) FROM hdrnwpdata_farm1 WHERE fcst_nodetype = 1 AND fcst_time &gt;='$RTPARA_TODAY_2 00:00:00' AND fcst_time &lt;'$RTPARA_TOMORROW_2 00:00:00' AND daytype = 2 AND is_main = 1 ORDER BY fcst_time~QMYSQL~10.64.14.70@_@DAVINCI@_@_~3"/>
+            <judgestep order="2" desc="" cmdtype="2010" cmdparas="3~steppara_3_1~steppara_4_1"/>
+        </case>
+		<case id="test22" name="风电_气象资源_风向导出数据_实际风向最大值最小值平均值核对" desc="" faulttype="0" mark="0">
+			<step order="1" desc="" cmdtype="9004" cmdparas="C:\Users\Administrator\Downloads\测试风电厂_风电场风向$RTPARA_TODAY_2到$RTPARA_TOMORROW_2.xls"/>
+            <step order="2" desc="导出风电_气象资源_风向数据" cmdtype="4003" cmdparas="http://10.64.14.70:18080/SPPP-web/weather/windDirection~id|plantId@@id|equipmentID@@id|floor@@id|starttime@@id|endtime@@id|search@@id|export~do_select@0@index@@do_select@0@index@@do_select@0@index@@set_datetime@$RTPARA_TODAY_2@@set_datetime@$RTPARA_TOMORROW_2@@click@@click~suitcondpara_1_1~chrome"/>
+			<step order="3" desc="" cmdtype="1042" cmdparas="C:\Users\Administrator\Downloads\测试风电厂_风电场风向$RTPARA_TODAY_2到$RTPARA_TOMORROW_2.xls~最大值,最小值,平均值~名称=实际风向~3"/>
+			<step order="4" desc="查询数据库" cmdtype="5001" cmdparas="SELECT max(AVERAGE),min(AVERAGE),avg(AVERAGE) FROM hdranastat15m$RTPARA_YEARMONTH_1 h WHERE h.ID = ( SELECT a.ID FROM analoginput a WHERE a.TYPE = ( SELECT m.ID FROM measurementtype m WHERE m.`NAME` = 'VAVG7' )) AND HDTIME  &gt;='$RTPARA_TODAY_2 00:00:00' and HDTIME &lt;'$RTPARA_TOMORROW_2 00:00:00'~QMYSQL~10.64.14.70@_@DAVINCI@_@_~3"/>
+            <judgestep order="2" desc="" cmdtype="2010" cmdparas="3~steppara_3_1~steppara_4_1"/>
+        </case>
+		<case id="test23" name="风电_气象资源_风向导出数据_气象预报风向,实际风向,风向偏差值核对" desc="" faulttype="0" mark="0">
+			<step order="1" desc="" cmdtype="9004" cmdparas="C:\Users\Administrator\Downloads\测试风电厂_风电场风向$RTPARA_TODAY_2到$RTPARA_TOMORROW_2.xls"/>
+            <step order="2" desc="导出风电_气象资源_风向数据" cmdtype="4003" cmdparas="http://10.64.14.70:18080/SPPP-web/weather/windDirection~id|plantId@@id|equipmentID@@id|floor@@id|starttime@@id|endtime@@id|search@@id|export~do_select@0@index@@do_select@0@index@@do_select@0@index@@set_datetime@$RTPARA_TODAY_2@@set_datetime@$RTPARA_TOMORROW_2@@click@@click~suitcondpara_1_1~chrome"/>
+			<step order="3" desc="" cmdtype="1042" cmdparas="C:\Users\Administrator\Downloads\测试风电厂_风电场风向$RTPARA_TODAY_2到$RTPARA_TOMORROW_2.xls~气象预报风向,实际风向,风向偏差值~当前时间=$RTPARA_TODAY_2 09:15:00~3"/>
+			<step order="4" desc="查询数据库" cmdtype="5001" cmdparas="select a.vavg7,b.AVERAGE,abs(a.vavg7-b.AVERAGE) from(SELECT vavg7,fcst_time FROM hdrnwpdata_farm1 WHERE fcst_nodetype = 1 AND fcst_time ='$RTPARA_TODAY_2 09:15:00' AND daytype = 2 AND is_main = 1 ORDER BY fcst_time)a,(SELECT AVERAGE,HDTIME FROM hdranastat15m$RTPARA_YEARMONTH_1 h WHERE h.ID = ( SELECT a.ID FROM analoginput a WHERE a.TYPE = ( SELECT m.ID FROM measurementtype m WHERE m.`NAME` = 'VAVG7' )) AND HDTIME = '$RTPARA_TODAY_2 09:15:00')b where a.fcst_time=b.HDTIME~QMYSQL~10.64.14.70@_@DAVINCI@_@_~3"/>
+            <judgestep order="2" desc="" cmdtype="2010" cmdparas="3~steppara_3_1~steppara_4_1"/>
+        </case>
+    </suit>
+</test>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<test>
+	<suit id="001" name="功率预测-短期预测页面">
+		<precondition>
+			<step order="1" desc="创建浏览器驱动" cmdtype="4001" cmdparas="chrome" />
+			<step order="2" desc="登录" cmdtype="4003" cmdparas="http://10.64.14.70:18080/SPPP-web/login~id|username@@id|password@@id|submit~send_keys@wpfs@@send_keys@wpfs@@click~suitcondpara_1_1" />
+		</precondition>
+		<case id="001-001" name="基本查询" faulttype="0" mark="0">
+			<step order="1" desc="修改条件并查询" cmdtype="4003" cmdparas="http://10.64.14.70:18080/SPPP-web/windturbine/windturbineState~id|states~getdata_fanstatus@有功:,风速: @_@3~suitcondpara_1_1~chrome"/>
+			<step order="2" desc="数据库查询" cmdtype="5001" cmdparas="SELECT hd.VALUE FROM hdr_analoginput20220617 hd, (SELECT a.id,a.equipmentcontainer_id cid,b.NAME FROM analoginput a, (SELECT m.id, m.NAME  FROM measurementtype m WHERE m. NAME in ('p','WINDSPEED')) b WHERE a.type = b.id AND a.equipmentcontainer_tableid = 1073 ) c ,(select id, ALIASNAME from wind_turbine where plant_id=115020 )d WHERE hd.id = c.id AND c.cid=d.id and hd.hdtime = ( select max(hdtime) from hdr_analoginput20220617 where hdtime &lt;=(select now()))~QMYSQL~10.64.14.70@3306@DAVINCI@sa@cast1234~3"/>
+			<judgestep order="1" cmdtype="2010" cmdparas="3~steppara_1_1~steppara_2_1" />
+		</case>
+		
+	</suit>
+</test>

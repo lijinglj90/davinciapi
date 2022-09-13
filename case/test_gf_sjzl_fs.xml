@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<test>
+    <suit id="case1" name="光伏_数据治理_风速数据核对" desc="">
+        <precondition>
+            <step order="1" desc="创建浏览器驱动" cmdtype="4001" cmdparas="chrome"/>
+            <step order="2" desc="登录光伏界面" cmdtype="4003" cmdparas="http://10.64.14.170:18080/SPPP-web/login~id|username@@id|password@@id|submit~send_keys@spfs@@send_keys@spfs@@click~suitcondpara_1_1~chrome"/>
+        </precondition>
+        <case id="test1" name="优化气象站风速数据详表核对" desc="" faulttype="0" mark="0">
+            <step order="1" desc="查询优化气象站数据详表" cmdtype="4003" cmdparas="http://10.64.14.170:18080/SPPP-web/spfsdatagovern/weatherOptimize/windSpeed~id|plantId@@id|starttime@@id|search@@id|optimizeTable~do_select@浪漫电厂@@set_datetime@2022-04-01@@click@@get_quxian_data@优化气象站风速@时间=00:15@3~suitcondpara_1_1~chrome"/>
+            <step order="2" desc="查询数据库" cmdtype="5001" cmdparas="SELECT AVERAGE FROM hdranastat5m20220401_modify WHERE ID in (SELECT ID FROM analoginput WHERE type=3068 and EQUIPMENTCONTAINER_ID=115021) and HDTIME ='2022-04-01 00:15:00'~QMYSQL~10.64.14.170@3306@DAVINCI@sa@cast1234~3"/>
+            <judgestep order="2" desc="" cmdtype="2010" cmdparas="3~steppara_1_1~steppara_2_1"/>
+        </case>
+    </suit>
+</test>

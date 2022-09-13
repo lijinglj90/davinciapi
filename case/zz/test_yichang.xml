@@ -1,0 +1,599 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<test>
+    <suit id="001" name="计划开机容量设置页面" desc="">
+        <precondition>
+            <!--<step order="1" desc="创建浏览器驱动" cmdtype="4001" cmdparas="chrome"/>
+            <step order="2" desc="登录异常" cmdtype="4003" cmdparas="http://10.64.14.70:18080/SPPP-web/login~id|username@@id|password@@id|submit~send_keys@wpfs@@send_keys@wpfs@@click~suitcondpara_1_1"/>
+			<step order="3" desc="登录" cmdtype="4003" cmdparas="http://10.8.8.21:8080/SPPP-web/login~id|username@@id|password@@id|submit~send_keys@wpfs@@send_keys@wpfs@@click~suitcondpara_1_1"/>-->
+        </precondition>
+        <!--<case id="001" name="ini读取-通过" desc="" faulttype="0" mark="0">
+            <step order="1" desc="ini读取" cmdtype="1002" cmdparas="D:\davinciapi\wen\nrfmEfileToSim.ini~EFILE@@ceshi"/>
+            <judgestep order="2" desc="" cmdtype="2010" cmdparas="1~steppara_1_1~1234"/>
+		</case>
+		<case id="002" name="ini读取-异常" desc="" faulttype="0" mark="0">
+            <step order="1" desc="ini读取" cmdtype="1002" cmdparas="D:\davinciapi\wen\nrfmEfileToSim.ini~EFILE~qqqq"/>
+            <judgestep order="2" desc="" cmdtype="2010" cmdparas="1~steppara_1_1~1234"/>
+        </case>
+		<case id="003" name="ini读取-不通过" desc="" faulttype="0" mark="0">
+            <step order="1" desc="ini读取" cmdtype="1002" cmdparas="D:\davinciapi\wen\nrfmEfileToSim.ini~EFILE@@ceshi"/>
+            <judgestep order="2" desc="" cmdtype="2010" cmdparas="1~steppara_1_1~33"/>
+        </case>
+		<case id="004" name="ini修改-异常" desc="" faulttype="0" mark="0">
+            <step order="1" desc="ini修改" cmdtype="1001" cmdparas="D:\davinciapi\wen\nrfmEfileToSim.ini~EFILE@@randmin是是是"/>
+            <judgestep order="2" desc="" cmdtype="2010" cmdparas="1~1234~1234"/>
+        </case>
+        <case id="005" name="csv更改数据-异常" desc="" faulttype="0" mark="0">
+            <step order="1" desc="csv更改数据" cmdtype="1011" cmdparas="D:\davinciapi\wen\20220624.csv~~~"/>
+            <judgestep order="2" desc="" cmdtype="2010" cmdparas="1~1234~1234"/>
+        </case>
+		<case id="006" name="csv更改数据" desc="" faulttype="0" mark="0">
+			<step order="1" desc="csv更改数据" cmdtype="1011" cmdparas="D:\davinciapi\wen\20220624.csv~时间@07:00~测试光伏电厂~0.3333"/>
+            <judgestep order="2" desc="" cmdtype="2010" cmdparas="1~1234~1234"/>
+		</case>
+		<case id="007" name="csv查询数据-异常" desc="" faulttype="0" mark="0">
+            <step order="1" desc="csv查询数据" cmdtype="1012" cmdparas="D:\davinciapi\wen\20220624.csv~~~"/>
+            <judgestep order="2" desc="" cmdtype="2010" cmdparas="1~1234~1234"/>
+        </case>
+		<case id="008" name="csv查询数据" desc="" faulttype="0" mark="0">
+			<step order="1" desc="csv查询数据" cmdtype="1012" cmdparas="D:\davinciapi\wen\20220623.csv~时间@07:15~测试风电厂~"/>
+            <judgestep order="2" desc="" cmdtype="2010" cmdparas="1~1234~1234"/>
+		</case>
+		<case id="009" name="json查询数据" desc="" faulttype="0" mark="0">
+			<step order="2" desc="json查询" cmdtype="1022" cmdparas="D:\davinciapi\wen\hdrconf.json~hds~hds|AttrCon@src_hdr@analog_d#AND#AttrCon@target_hdr@analog_d_15~AttrCon@target_fields~"/>
+			<judgestep order="2" desc="" cmdtype="2010" cmdparas="1~1234~1234"/>
+		</case>
+		<case id="010" name="json查询数据-异常" desc="" faulttype="0" mark="0">
+			<step order="2" desc="json查询" cmdtype="1022" cmdparas="D:\davinciapi\wen\hdrconf.json~hds~11~2~"/>
+			<judgestep order="2" desc="" cmdtype="2010" cmdparas="1~1234~1234"/>
+		</case>-->
+		<!--节点定位异常,id="011" name="json数据修改"-->
+		
+		<!--<case id="011" name="json数据修改" desc="" faulttype="0" mark="0">
+			<step order="2" desc="json修改" cmdtype="1021" cmdparas="D:\davinciapi\wen\hdrconf.json~hds~hds|AttrCon@src_hdr@analog_d#AND#AttrCon@target_hdr@analog_d_15~AttrCon@target_period~4"/>
+			<judgestep order="2" desc="" cmdtype="2010" cmdparas="1~1234~1234"/>
+		</case>
+		<case id="012" name="json数据修改-异常" desc="" faulttype="0" mark="0">
+			<step order="2" desc="json修改" cmdtype="1021" cmdparas="D:\davinciapi\wen\hdrconf.json~hds~11~2~"/>
+			<judgestep order="2" desc="" cmdtype="2010" cmdparas="1~1234~1234"/>
+		</case>
+		<case id="013" name="数据库查询" desc="" faulttype="0" mark="0">
+			<step order="1" desc="数据库查询" cmdtype="5001" cmdparas="select substring(a.datatime,12,5) as time,a.ava,b.ave,((select round(a.ava,3))-(select round(b.ave,3)))*100/(select round(b.ave,3)) as pc from (select datatime, availableturbine ava from hdrtheorypdata$RTPARA_TODAY_1  where datatime ='$RTPARA_TODAY_2 01:00:00')a left join (select HDTIME,AVERAGE ave FROM hdranastat$RTPARA_TODAY_1 h WHERE h.ID = (SELECT a.ID FROM analoginput a left join plant p on a.EQUIPMENTCONTAINER_ID = p.id WHERE p.ALIASNAME='测试风电厂' and a.TYPE = (SELECT m.ID FROM measurementtype m WHERE m.`NAME` = 'p')  AND a.EQUIPMENTCONTAINER_TABLEID = 1071))b on b.HDTIME =a.datatime group by a.datatime~QMYSQL~10.64.14.70@3306@DAVINCI@_@_~3"/>
+			<judgestep order="1" desc="" cmdtype="2010" cmdparas="3~steppara_1_1~['3.4']"/>
+		</case>
+		<case id="014" name="数据库查询-异常" desc="" faulttype="0" mark="0">
+			<step order="1" desc="数据库查询" cmdtype="5001" cmdparas="select substring(a.datatime,12,5) as time,a.ava,b.ave,((select round(a.ava,3))-(select round(b.ave,3)))*100/(select round(b.ave,3)) as pc from (select datatime, availableturbine ava from hdrtheorypdata$RTPARA_TODAY_1  where datatime ='$RTPARA_TODAY_2 01:00:00')a left join (select HDTIME,AVERAGE ave FROM hdranastat$RTPARA_TODAY_1 h WHERE h.ID = (SELECT a.ID FROM analoginput a left join plant p on a.EQUIPMENTCONTAINER_ID = p.id WHERE p.ALIASNAME='测试风电厂' and a.TYPE = (SELECT m.ID FROM measurementtype m WHERE m.`NAME` = 'p')  AND a.EQUIPMENTCONTAINER_TABLEID = 1071))b on b.HDTIME =a.datatime group by a.datatime~QMYSQL~3306@DAVINCI@_@_~3"/>
+			<judgestep order="1" desc="" cmdtype="2010" cmdparas="3~steppara_1_1~['3.4']"/>
+		</case>
+		<case id="015" name="数据库修改" desc="" faulttype="0" mark="0">
+			<step order="1" desc="数据库修改" cmdtype="5002" cmdparas="update user SET age = 2 WHERE loginname = 'wpfs'~QMYSQL~10.64.14.70@3306@DAVINCI@_@_"/>
+			<judgestep order="1" desc="" cmdtype="2010" cmdparas="3~['3.4']~['3.4']"/>
+		</case>
+		<case id="016" name="数据库修改-异常" desc="" faulttype="0" mark="0">
+			<step order="1" desc="数据库修改" cmdtype="5002" cmdparas="update user SET age = 1 WHERE loginname = 'wpfs'~QMYSQL~@3306@DAVINCI@_@_"/>
+			<judgestep order="1" desc="" cmdtype="2010" cmdparas="3~['3.4']~['3.4']"/>
+		</case>
+		<case id="018" name="等待制定周期" desc="" faulttype="0" mark="0">
+            <step order="1" desc="等待制定周期-5秒" cmdtype="9003" cmdparas="5"/>
+            <judgestep order="5" desc="" cmdtype="2010" cmdparas="1~1~1"/>
+        </case>
+		<case id="019" name="等待制定周期-异常" desc="" faulttype="0" mark="0">
+            <step order="1" desc="等待制定周期-输入非数字" cmdtype="9003" cmdparas="hh"/>
+            <judgestep order="5" desc="" cmdtype="2010" cmdparas="1~1~1"/>
+        </case>
+		<case id="017" name="根据数据库返回数据等待时间" desc="" faulttype="0" mark="0">
+			<step order="1" desc="等待数据库有返回数据" cmdtype="9007" cmdparas="SELECT id FROM command~QMYSQL~10.64.14.70@3306@DAVINCI@_@_~3"/>
+			<step order="2" desc="ini读取" cmdtype="1002" cmdparas="D:\davinciapi\wen\nrfmEfileToSim.ini~EFILE@@ceshi"/>
+            <judgestep order="2" desc="" cmdtype="2010" cmdparas="1~steppara_2_1~12345"/>
+		</case>
+		<case id="020" name="测试用例-书写异常，缺少judgestep" desc="" faulttype="0" mark="0">
+            <step order="1" desc="ini修改" cmdtype="1002" cmdparas="D:\davinciapi\wen\nrfmEfileToSim.ini~EFILE@@ceshi"/>
+        </case>
+		<case id="021" name="xml读取" desc="" faulttype="0" mark="0">
+			<step order="1" desc="xml" cmdtype="1032" cmdparas="D:\davinciapi\wen\f_fgsztxx.xml~key@@value@@time~key|AttrCon@name@date@@value|AttrCon@order@1@@time|AttrCon@timetype@1~AttrCon@format~aaa"/>
+			<judgestep order="1" desc="" cmdtype="2010" cmdparas="4~steppara_1_1~yyyy-MM-dd"/>
+		</case>
+		<case id="022" name="xml读取-异常-目标值不存在" desc="" faulttype="0" mark="0">
+			<step order="1" desc="xml" cmdtype="1032" cmdparas="D:\davinciapi\wen\f_fgsztxx.xml~key@@value@@time~key|AttrCon@name@date@@value|AttrCon@order@1@@time|AttrCon@timetype@1~AttrCon@format111~aaa"/>
+			<judgestep order="1" desc="" cmdtype="2010" cmdparas="4~steppara_1_1~yyyy-MM-dd"/>
+		</case>
+		<case id="023" name="xml读取-异常-条件不存在" desc="" faulttype="0" mark="0">
+			<step order="1" desc="xml" cmdtype="1032" cmdparas="D:\davinciapi\wen\f_fgsztxx.xml~key@@value@@time~key|AttrCon@name@date@@value|AttrCon@order@1@@time|AttrCon@timetype11@1~AttrCon@format~aaa"/>
+			<judgestep order="1" desc="" cmdtype="2010" cmdparas="4~steppara_1_1~yyyy-MM-dd"/>
+		</case>
+		<case id="024" name="xml修改" desc="" faulttype="0" mark="0">
+			<step order="1" desc="xml修改" cmdtype="1031" cmdparas="D:\davinciapi\wen\f_fgsztxx.xml~key@@value@@time~key|AttrCon@name@date@@value|AttrCon@order@1@@time|AttrCon@timetype@1~AttrCon@format~ddMMyyyy"/>
+			<judgestep order="2" desc="" cmdtype="2010" cmdparas="1~1234~1234"/>
+        </case>
+		<case id="024-1" name="xml修改-linux环境" desc="" faulttype="0" mark="0">
+			<step order="1" desc="xml修改" cmdtype="1031" cmdparas="/home/sprixin/davinciapi/wen/f_fgsztxx.xml~key@@value@@time~key|AttrCon@name@date@@value|AttrCon@order@1@@time|AttrCon@timetype@1~AttrCon@format~ddllljjj"/>
+			<judgestep order="2" desc="" cmdtype="2010" cmdparas="1~1234~1234"/>
+        </case>
+		<case id="025" name="xml修改-异常-目标值不存在" desc="" faulttype="0" mark="0">
+			<step order="1" desc="xml修改" cmdtype="1031" cmdparas="D:\davinciapi\wen\f_fgsztxx.xml~key@@value@@time~key|AttrCon@name@date@@value|AttrCon@order@1@@time|AttrCon@timetype@1~AttrCon@isseq1111111~1"/>
+			<judgestep order="2" desc="" cmdtype="2010" cmdparas="1~1234~1234"/>
+        </case>
+		<case id="026" name="xml修改-异常-条件不存在" desc="" faulttype="0" mark="0">
+			<step order="1" desc="xml修改" cmdtype="1031" cmdparas="D:\davinciapi\wen\f_fgsztxx.xml~key@@value@@time~key|AttrCon@name@date@@value|AttrCon@order@1@@time|AttrCon@timetype11@1~AttrCon@isseq~1"/>
+			<judgestep order="2" desc="" cmdtype="2010" cmdparas="1~1234~1234"/>
+        </case>
+		<case id="027" name="xml修改-异常-文件不存在" desc="" faulttype="0" mark="0">
+			<step order="1" desc="xml修改" cmdtype="1031" cmdparas="D:\davinciapi\wen\f_fgsztxx111.xml~key@@value@@time~key|AttrCon@name@date@@value|AttrCon@order@1@@time|AttrCon@timetype@1~AttrCon@isseq~1"/>
+			<judgestep order="2" desc="" cmdtype="2010" cmdparas="1~1234~1234"/>
+        </case>
+		<case id="027" name="文件一致性对比" desc="" faulttype="0" mark="0">
+			<judgestep order="2" desc="" cmdtype="2001" cmdparas="D:\davinciapi\wen\a.txt~D:\davinciapi\wen\a.txt"/>
+        </case>
+		<case id="028" name="文件一致性对比-异常-文件不存在" desc="" faulttype="0" mark="0">
+			<judgestep order="2" desc="" cmdtype="2001" cmdparas="D:\davinciapi\wen\a11111.txt~D:\davinciapi\wen\a.txt"/>
+        </case>
+		<case id="029" name="数据比较相等" desc="" faulttype="0" mark="0">
+			<step order="1" desc="数据比较" cmdtype="2010" cmdparas="1~1~1"/>
+			<judgestep order="2" desc="" cmdtype="2010" cmdparas="1~1~1"/>
+        </case>
+		<case id="030" name="数据比较相等-异常步骤" desc="" faulttype="0" mark="0">
+			<step order="1" desc="数据比较" cmdtype="2010" cmdparas="1~a~b"/>
+			<judgestep order="2" desc="" cmdtype="2010" cmdparas="1~1~1"/>
+        </case>
+		<case id="031" name="数据比较相等-异常校验-未通过" desc="" faulttype="0" mark="0">
+			<step order="1" desc="数据比较" cmdtype="2010" cmdparas="1~1~1"/>
+			<judgestep order="2" desc="" cmdtype="2010" cmdparas="1~a~b"/>
+        </case>
+		<case id="032" name="数据比较大于" desc="" faulttype="0" mark="0">
+			<step order="1" desc="数据比较" cmdtype="2011" cmdparas="1~3~1"/>
+			<judgestep order="2" desc="" cmdtype="2011" cmdparas="1~3~1"/>
+        </case>
+		<case id="033" name="数据比较大于-异常步骤" desc="" faulttype="0" mark="0">
+			<step order="1" desc="数据比较" cmdtype="2011" cmdparas="1~a~b"/>
+			<judgestep order="2" desc="" cmdtype="2011" cmdparas="1~3~1"/>
+        </case>
+		<case id="034" name="数据比较大于-异常校验-未通过" desc="" faulttype="0" mark="0">
+			<step order="1" desc="数据比较" cmdtype="2011" cmdparas="1~3~1"/>
+			<judgestep order="2" desc="" cmdtype="2011" cmdparas="1~a~b"/>
+        </case>
+		<case id="035" name="数据比较大于等于" desc="" faulttype="0" mark="0">
+			<step order="1" desc="数据比较" cmdtype="2012" cmdparas="1~3~1"/>
+			<judgestep order="2" desc="" cmdtype="2012" cmdparas="1~3~1"/>
+        </case>
+		<case id="036" name="数据比较大于等于-异常步骤" desc="" faulttype="0" mark="0">
+			<step order="1" desc="数据比较" cmdtype="2012" cmdparas="1~a~b"/>
+			<judgestep order="2" desc="" cmdtype="2012" cmdparas="1~3~1"/>
+        </case>
+		<case id="037" name="数据比较大于等于-异常校验-未通过" desc="" faulttype="0" mark="0">
+			<step order="1" desc="数据比较" cmdtype="2012" cmdparas="1~3~1"/>
+			<judgestep order="2" desc="" cmdtype="2012" cmdparas="1~a~b"/>
+        </case>
+		<case id="038" name="数据比较不等于" desc="" faulttype="0" mark="0">
+			<step order="1" desc="数据比较" cmdtype="2013" cmdparas="1~a~1"/>
+			<judgestep order="2" desc="" cmdtype="2013" cmdparas="1~a~1"/>
+        </case>
+		<case id="039" name="数据比较不等于-异常步骤" desc="" faulttype="0" mark="0">
+			<step order="1" desc="数据比较" cmdtype="2013" cmdparas="1~1~1"/>
+			<judgestep order="2" desc="" cmdtype="2013" cmdparas="1~a~1"/>
+        </case>
+		<case id="040" name="数据比较不等于-异常校验-未通过" desc="" faulttype="0" mark="0">
+			<step order="1" desc="数据比较" cmdtype="2013" cmdparas="1~3~1"/>
+			<judgestep order="2" desc="" cmdtype="2013" cmdparas="1~1~1"/>
+        </case>
+		<case id="041" name="数据比较不等于-异常校验-参数个数不对" desc="" faulttype="0" mark="0">
+			<step order="1" desc="数据比较" cmdtype="2013" cmdparas="1~3~1"/>
+			<judgestep order="2" desc="" cmdtype="2013" cmdparas="1~b"/>
+        </case>
+		<case id="042" name="执行命令-windows" desc="" faulttype="0" mark="0">
+			<step order="1" desc="执行命令" cmdtype="3001" cmdparas="dir"/>
+			<judgestep order="2" desc="" cmdtype="2010" cmdparas="1~1~1"/>
+        </case>
+		<case id="043" name="执行命令-linux" desc="" faulttype="0" mark="0">
+			<step order="1" desc="执行命令" cmdtype="3001" cmdparas="ls"/>
+			<judgestep order="2" desc="" cmdtype="2010" cmdparas="1~1~1"/>
+        </case>
+		<case id="044" name="实时库读取" desc="" faulttype="0" mark="0">
+            <step order="1" desc="实时库读取单个值" cmdtype="1102" cmdparas="10.64.14.126~8181~1081~2~ORDER~"/>
+            <judgestep order="2" desc="" cmdtype="2010" cmdparas="3~steppara_1_1~['1']"/>
+        </case>
+		<case id="045" name="实时库读取" desc="" faulttype="0" mark="0">
+            <step order="1" desc="实时库读取多行值" cmdtype="1102" cmdparas="10.64.14.126~8181~1081~2,4,5~ORDER~"/>
+            <judgestep order="2" desc="" cmdtype="2010" cmdparas="3~steppara_1_1~[['1'], ['3'], ['4']]"/>
+        </case>
+		<case id="046" name="实时库读取" desc="" faulttype="0" mark="0">
+            <step order="1" desc="实时库读取多列值" cmdtype="1102" cmdparas="10.64.14.126~8181~1081~2~ORDER,obj_tableid~"/>
+            <judgestep order="2" desc="" cmdtype="2010" cmdparas="3~steppara_1_1~['1', '1071']"/>
+        </case>
+		<case id="047" name="实时库读取" desc="" faulttype="0" mark="0">
+            <step order="1" desc="实时库读取多维度值" cmdtype="1102" cmdparas="10.64.14.126~8181~1081~2,4,5~ORDER,obj_tableid~"/>
+            <judgestep order="2" desc="" cmdtype="2010" cmdparas="3~steppara_1_1~[['1', '1071'], ['3', '1071'], ['4', '1071']]"/>
+        </case>
+		<case id="048" name="实时库读取" desc="" faulttype="0" mark="0">
+            <step order="1" desc="实时库读取一行值" cmdtype="1102" cmdparas="10.64.14.126~8181~1081~2~_~"/>
+            <judgestep order="2" desc="" cmdtype="2010" cmdparas="3~steppara_1_1~['2', '1071', '115020', '1', '0', '1', '2022-08-07 00:15:00', '0', '0', '0', '1', '0']"/>
+        </case>
+		<case id="049" name="实时库读取" desc="" faulttype="0" mark="0">
+			<step order="1" desc="实时库读取多行值值" cmdtype="1102" cmdparas="10.64.14.126~8181~1081~2,4,5~_~"/>
+            <judgestep order="2" desc="" cmdtype="2010" cmdparas="3~steppara_1_1~[['2', '1071', '115020', '1', '0', '1', '2022-08-07 00:15:00', '0', '0', '0', '1', '0'], ['4', '1071', '115020', '1', '0', '3', '2022-08-07 00:45:00', '0', '0', '0', '1', '0'], ['5', '1071', '115020', '1', '0', '4', '2022-08-07 01:00:00', '0', '0', '0', '1', '0']]"/>
+		</case>
+		<case id="050" name="实时库读取" desc="" faulttype="0" mark="0">
+            <step order="1" desc="实时库读取一列值" cmdtype="1102" cmdparas="10.64.14.126~8181~1081~_~ORDER~"/>
+            <judgestep order="2" desc="" cmdtype="2010" cmdparas="3~steppara_1_1~[]"/>
+        </case>
+		<case id="051" name="实时库读取" desc="" faulttype="0" mark="0">
+			<step order="1" desc="实时库读取多列值" cmdtype="1102" cmdparas="10.64.14.126~8181~1081~_~ORDER,obj_tableid~"/>
+            <judgestep order="2" desc="" cmdtype="2010" cmdparas="3~steppara_1_1~[['2', '1071', '115020', '1', '0', '1', '2022-08-07 00:15:00', '0', '0', '0', '1', '0'], ['4', '1071', '115020', '1', '0', '3', '2022-08-07 00:45:00', '0', '0', '0', '1', '0'], ['5', '1071', '115020', '1', '0', '4', '2022-08-07 01:00:00', '0', '0', '0', '1', '0']]"/>
+		</case>
+		<case id="052" name="实时库读取-异常,服务没有启动" desc="" faulttype="0" mark="0">
+            <step order="1" desc="实时库读取一列值" cmdtype="1102" cmdparas="10.8.8.223~8181~1081~2~ORDER~"/>
+            <judgestep order="2" desc="" cmdtype="2010" cmdparas="3~steppara_1_1~['1']"/>
+        </case>
+		<case id="053" name="实时库读取-conditions" desc="" faulttype="0" mark="0">
+            <step order="1" desc="实时库读取单个值-单条件" cmdtype="1102" cmdparas="10.64.14.126~8181~1081~_~ORDER~ID@==@27"/>
+            <judgestep order="2" desc="" cmdtype="2010" cmdparas="3~steppara_1_1~['26']"/>
+        </case>
+		<case id="054" name="实时库读取-conditions" desc="" faulttype="0" mark="0">
+            <step order="1" desc="实时库读取单个值-多条件" cmdtype="1102" cmdparas="10.64.14.126~8181~1081~_~ORDER~OBJ_TABLEID@==@1071#AND#ID@==@27"/>
+            <judgestep order="2" desc="" cmdtype="2010" cmdparas="3~steppara_1_1~['26']"/>
+        </case>
+		<case id="055" name="实时库读取-conditions" desc="" faulttype="0" mark="0">
+            <step order="1" desc="实时库读取一行值-单条件" cmdtype="1102" cmdparas="10.64.14.126~8181~1081~_~_~ID@==@27"/>
+            <judgestep order="2" desc="" cmdtype="2010" cmdparas="3~steppara_1_1~['27', '1071', '115020', '1', '0', '26', '2022-08-07 06:30:00', '0', '0', '0', '1', '0']"/>
+        </case>
+		<case id="056" name="实时库读取-conditions" desc="" faulttype="0" mark="0">
+            <step order="1" desc="实时库读取多个值-单条件" cmdtype="1102" cmdparas="10.64.14.126~8181~1081~_~ORDER,obj_tableid~ID@==@27"/>
+            <judgestep order="2" desc="" cmdtype="2010" cmdparas="3~steppara_1_1~['26', '1071']"/>
+        </case>
+		<case id="057" name="实时库读取-conditions-异常" desc="" faulttype="0" mark="0">
+            <step order="1" desc="实时库读取多维值-不支持" cmdtype="1102" cmdparas="10.64.14.126~8181~1081~_~ORDER,obj_tableid~ID@==@27#AND#ID@==@28"/>
+            <judgestep order="2" desc="" cmdtype="2010" cmdparas="3~steppara_1_1~[]"/>
+        </case>
+		<case id="058" name="实时库读取-conditions" desc="" faulttype="0" mark="0">
+			<step order="1" desc="实时库读取一列值-单条件" cmdtype="1102" cmdparas="10.8.8.223~8081~1081~_~P~DATASRC_TYPE@==@0#AND#p@>=@0"/>
+			<judgestep order="2" desc="" cmdtype="2010" cmdparas="3~steppara_1_1~[]"/>
+		</case>
+		<case id="059" name="实时库读取-recordId\fieldName\condition都存在" desc="" faulttype="0" mark="0">
+            <step order="1" desc="实时库修改单个值" cmdtype="1102" cmdparas="10.64.14.126~8181~1081~2~ORDER~ID@==@27"/>
+            <judgestep order="2" desc="" cmdtype="2010" cmdparas="3~steppara_1_1~['1']"/>
+        </case>
+		<case id="060" name="实时库读取-recordId\fieldName\condition都不存在" desc="" faulttype="0" mark="0">
+            <step order="1" desc="实时库读取全表" cmdtype="1102" cmdparas="10.8.8.223~8081~1081~~~"/>
+            <judgestep order="2" desc="" cmdtype="2010" cmdparas="3~steppara_1_1~['1']"/>
+        </case>
+		<case id="061" name="实时库修改-异常-fieldName参数为空" desc="" faulttype="0" mark="0">
+            <step order="1" desc="实时库修改" cmdtype="1101" cmdparas="10.8.8.223~8081~1081~2~_~1093~_"/>
+            <judgestep order="2" desc="" cmdtype="2010" cmdparas="1~1~1"/>
+        </case>
+		<case id="062" name="实时库修改-异常-fieldValue参数为空" desc="" faulttype="0" mark="0">
+            <step order="1" desc="实时库修改" cmdtype="1101" cmdparas="10.8.8.223~8081~1081~2~obj_tableid~_~_"/>
+            <judgestep order="2" desc="" cmdtype="2010" cmdparas="1~1~1"/>
+        </case>
+		<case id="063" name="实时库修改-异常-fieldName,fieldValue参数为空" desc="" faulttype="0" mark="0">
+            <step order="1" desc="实时库修改" cmdtype="1101" cmdparas="10.8.8.223~8081~1081~2~_~_~_"/>
+            <judgestep order="2" desc="" cmdtype="2010" cmdparas="1~1~1"/>
+        </case>
+		<case id="064" name="实时库修改-异常-recordId,fieldName,fieldValue参数为空" desc="" faulttype="0" mark="0">
+            <step order="1" desc="实时库修改" cmdtype="1101" cmdparas="10.8.8.223~8081~1081~_~_~_~_"/>
+            <judgestep order="2" desc="" cmdtype="2010" cmdparas="1~1~1"/>
+        </case>
+		<case id="065" name="实时库修改-异常-fieldName\condition值个数不一样1" desc="" faulttype="0" mark="0">
+            <step order="1" desc="实时库修改多个值" cmdtype="1101" cmdparas="10.8.8.223~8081~1081~2~obj_tableid,obj_id~1093~_"/>
+            <judgestep order="2" desc="" cmdtype="2010" cmdparas="1~1~1"/>
+        </case>
+		<case id="066" name="实时库修改-异常-fieldName\condition值个数不一样2" desc="" faulttype="0" mark="0">
+            <step order="1" desc="实时库修改" cmdtype="1101" cmdparas="10.8.8.223~8081~1081~2~obj_tableid~1093,1092~_"/>
+            <judgestep order="2" desc="" cmdtype="2010" cmdparas="1~1~1"/>
+        </case>
+		<case id="067" name="实时库修改" desc="" faulttype="0" mark="0">
+            <step order="1" desc="实时库修改单个值" cmdtype="1101" cmdparas="10.8.8.223~8081~1081~2~obj_tableid~1093~"/>
+            <judgestep order="2" desc="" cmdtype="2010" cmdparas="1~1~1"/>
+        </case>
+		<case id="068" name="实时库修改" desc="" faulttype="0" mark="0">
+            <step order="1" desc="实时库修改多个值" cmdtype="1101" cmdparas="10.8.8.223~8081~1081~2~obj_tableid,obj_id~1091,1092~_"/>
+			<step order="2" desc="实时库读取" cmdtype="1102" cmdparas="10.8.8.223~8081~1081~2~obj_tableid,obj_id~"/>
+            <judgestep order="1" desc="" cmdtype="2010" cmdparas="3~steppara_2_1~['1091', '1092']"/>
+        </case>
+		<case id="069" name="实时库修改-condition" desc="" faulttype="0" mark="0">
+            <step order="1" desc="实时库修改多维值" cmdtype="1101" cmdparas="10.8.8.223~8081~1081~3,4~obj_tableid,obj_id~1091,1093~_"/>
+			<step order="2" desc="实时库读取" cmdtype="1102" cmdparas="10.8.8.223~8081~1081~3,4~obj_tableid,obj_id~"/>
+            <judgestep order="2" desc="" cmdtype="2010" cmdparas="3~steppara_2_1~[['1091', '1093'], ['1091', '1093']]"/>
+        </case>
+		<case id="070" name="实时库修改-conditions" desc="" faulttype="0" mark="0">
+            <step order="1" desc="实时库修改单个值" cmdtype="1101" cmdparas="10.8.8.223~8081~1081~_~obj_tableid~1093~ID@==@27"/>
+            <step order="2" desc="实时库读取" cmdtype="1102" cmdparas="10.8.8.223~8081~1081~27~obj_tableid~"/>
+            <judgestep order="1" desc="" cmdtype="2010" cmdparas="3~steppara_2_1~['1093']"/>
+        </case>
+		<case id="071" name="实时库修改-conditions" desc="" faulttype="0" mark="0">
+            <step order="1" desc="实时库修改多个值" cmdtype="1101" cmdparas="10.8.8.223~8081~1081~_~obj_tableid,obj_id~1081,1082~ID@==@671"/>
+			<step order="2" desc="实时库读取" cmdtype="1102" cmdparas="10.8.8.223~8081~1081~_~obj_tableid,obj_id~ID@==@671"/>
+            <judgestep order="1" desc="" cmdtype="2010" cmdparas="3~steppara_2_1~['1081', '1082']"/>
+        </case>
+		<case id="072" name="实时库修改-condition" desc="" faulttype="0" mark="0">
+            <step order="1" desc="实时库修改多维值" cmdtype="1101" cmdparas="10.8.8.223~8081~1081~_~obj_tableid,obj_id~1091,1093~ID@>=@672"/>
+			<step order="2" desc="实时库读取" cmdtype="1102" cmdparas="10.8.8.223~8081~1081~3,4~obj_tableid,obj_id~"/>
+            <judgestep order="2" desc="" cmdtype="2010" cmdparas="3~steppara_2_1~[['1091', '1093'], ['1091', '1093']]"/>
+        </case>
+		<case id="073" name="实时库修改-condition多条件" desc="" faulttype="0" mark="0">
+			<step order="1" desc="实时库修改多维值多条件" cmdtype="1101" cmdparas="10.8.8.223~8081~1081~_~obj_tableid,obj_id~1091,1093~ID@>=@672#AND#DAYTYPE@==@0"/>
+			<step order="2" desc="实时库读取" cmdtype="1102" cmdparas="10.8.8.223~8081~1081~3,4~obj_tableid,obj_id~"/>
+			<judgestep order="2" desc="" cmdtype="2010" cmdparas="3~steppara_2_1~[['1091', '1093'], ['1091', '1093']]"/>
+		</case>
+		<case id="074" name="实时库修改改全表" desc="" faulttype="0" mark="0">
+            <step order="1" desc="实时库修改改全表" cmdtype="1101" cmdparas="10.8.8.223~8081~1081~_~obj_tableid,obj_id~1071,115020~_"/>
+			<step order="2" desc="实时库读取" cmdtype="1102" cmdparas="10.8.8.223~8081~1081~10,673~obj_tableid,obj_id~"/>
+            <judgestep order="2" desc="" cmdtype="2010" cmdparas="3~steppara_2_1~[['1071', '115020'], ['1071', '115020']]"/>
+        </case>
+		<case id="075" name="实时库修改-异常-recordId非数字" desc="" faulttype="0" mark="0">
+            <step order="1" desc="实时库修改改全表" cmdtype="1101" cmdparas="10.8.8.223~8081~1081~cc~obj_tableid,obj_id~1072,115020~_"/>
+			<step order="2" desc="实时库修改" cmdtype="1102" cmdparas="10.8.8.223~8081~1081~2,673~obj_tableid,obj_id~"/>
+            <judgestep order="2" desc="" cmdtype="2010" cmdparas="3~steppara_2_1~[['1072', '115020'], ['1071', '115020']]"/>
+        </case>
+		<case id="076" name="实时库查询-异常-recordId非数字" desc="" faulttype="0" mark="0">
+			<step order="2" desc="实时库读取" cmdtype="1102" cmdparas="10.8.8.223~8081~1081~2C,673C~obj_tableid,obj_id~"/>
+            <judgestep order="2" desc="" cmdtype="2010" cmdparas="3~steppara_1_1~[['1072', '115020'], ['1071', '115020']]"/>
+        </case>
+		<case id="077" name="实时库删除-异常-超过4个值" desc="" faulttype="0" mark="0">
+			<step order="2" desc="实时库删除" cmdtype="1103" cmdparas="10.8.8.223~8081~1081~2~obj_tableid,obj_id~"/>
+            <judgestep order="2" desc="" cmdtype="2010" cmdparas="1~1~1"/>
+        </case>
+		<case id="078" name="实时库删除-异常-recordId非数字" desc="" faulttype="0" mark="0">
+			<step order="2" desc="实时库删除" cmdtype="1103" cmdparas="10.8.8.223~8081~1081~2C,673C"/>
+            <judgestep order="2" desc="" cmdtype="2010" cmdparas="1~1~1"/>
+        </case>
+		<case id="079" name="实时库删除-异常-recordId缺失" desc="" faulttype="0" mark="0">
+			<step order="1" desc="实时库删除" cmdtype="1103" cmdparas="10.8.8.223~8081~~2"/>
+            <judgestep order="2" desc="" cmdtype="2010" cmdparas="1~1~1"/>
+        </case>
+		<case id="080" name="实时库删除" desc="" faulttype="0" mark="0">
+			<step order="1" desc="实时库删除-一行" cmdtype="1103" cmdparas="10.8.8.223~8081~1073~115021"/>
+			<step order="2" desc="实时库读取" cmdtype="1102" cmdparas="10.8.8.223~8081~1073~115021~_~"/>
+            <judgestep order="2" desc="" cmdtype="2010" cmdparas="1~1~1"/>
+        </case>
+		<case id="081" name="实时库删除" desc="" faulttype="0" mark="0">
+			<step order="1" desc="实时库删除-多行" cmdtype="1103" cmdparas="10.8.8.223~8081~1073~115023,115024"/>
+			<step order="2" desc="实时库读取" cmdtype="1102" cmdparas="10.8.8.223~8081~1073~115023,115024~_~"/>	
+            <judgestep order="2" desc="" cmdtype="2010" cmdparas="1~1~1"/>
+        </case>
+		<case id="082" name="实时库删除" desc="" faulttype="0" mark="0">
+			<step order="1" desc="实时库删除-全表" cmdtype="1103" cmdparas="10.8.8.223~8081~1072~"/>
+			<step order="2" desc="实时库读取" cmdtype="1102" cmdparas="10.8.8.223~8081~1072~_~_~"/>	
+            <judgestep order="2" desc="" cmdtype="2010" cmdparas="1~1~1"/>
+        </case>
+		<case id="083" name="保留文件夹文仅清空文件夹" desc="" faulttype="0" mark="0">
+			<step order="1" desc="清空文件夹-windows" cmdtype="9005" cmdparas="D:\davinciapi\数据\beishanchu\"/>
+            <judgestep order="2" desc="" cmdtype="2010" cmdparas="1~1~1"/>
+        </case>
+		<case id="084" name="保留文件夹文仅清空文件夹" desc="" faulttype="0" mark="0">
+			<step order="1" desc="清空文件夹-windows-异常-文件夹不存在" cmdtype="9005" cmdparas="D:\buxunzai\bucunzai\"/>
+            <judgestep order="2" desc="" cmdtype="2010" cmdparas="1~1~1"/>
+        </case>
+		<case id="085" name="保留文件夹文仅清空文件夹" desc="" faulttype="0" mark="0">
+			<step order="1" desc="清空文件夹-linux" cmdtype="9005" cmdparas="/home/sprixin/cunzai/cunzai/"/>
+            <judgestep order="2" desc="" cmdtype="2010" cmdparas="1~1~1"/>
+        </case>
+		<case id="086" name="保留文件夹文仅清空文件夹" desc="" faulttype="0" mark="0">
+			<step order="1" desc="清空文件夹-linux-异常-文件夹不存在" cmdtype="9005" cmdparas="/home/sprixin/bucunzai/bucunzai/"/>
+            <judgestep order="2" desc="" cmdtype="2010" cmdparas="1~1~1"/>
+        </case>
+		<case id="087" name="保留文件夹文仅清空文件夹" desc="" faulttype="0" mark="0">
+			<step order="1" desc="清空文件夹-linux-异常-权限不够" cmdtype="9005" cmdparas="/home/sprixin/qxroot/"/>
+            <judgestep order="2" desc="" cmdtype="2010" cmdparas="1~1~1"/>
+        </case>
+		<case id="088" name="删除文件" desc="" faulttype="0" mark="0">
+			<step order="1" desc="删除文件-windows" cmdtype="9004" cmdparas="D:\davinciapi\数据\beishanchu\a.py"/>
+            <judgestep order="2" desc="" cmdtype="2010" cmdparas="1~1~1"/>
+        </case>
+		<case id="089" name="删除文件" desc="" faulttype="0" mark="0">
+			<step order="1" desc="删除文件-windows-异常-文件不存在" cmdtype="9004" cmdparas="D:\davinciapi\数据\beishanchu\c.py"/>
+            <judgestep order="2" desc="" cmdtype="2010" cmdparas="1~1~1"/>
+        </case>
+		<case id="090" name="删除文件" desc="" faulttype="0" mark="0">
+			<step order="1" desc="删除文件-linux" cmdtype="9004" cmdparas="/home/sprixin/cunzai/cun/a.py"/>
+            <judgestep order="2" desc="" cmdtype="2010" cmdparas="1~1~1"/>
+        </case>
+		<case id="091" name="删除文件" desc="" faulttype="0" mark="0">
+			<step order="1" desc="删除文件-linux-异常-文件不存在" cmdtype="9004" cmdparas="/home/sprixin/cunzai/cun/c.p"/>
+            <judgestep order="2" desc="" cmdtype="2010" cmdparas="1~1~1"/>
+        </case>
+		<case id="092" name="删除文件" desc="" faulttype="0" mark="0">
+			<step order="1" desc="删除文件-linux-异常-权限不够" cmdtype="9004" cmdparas="/home/sprixin/qxroot/a.py"/>
+            <judgestep order="2" desc="" cmdtype="2010" cmdparas="1~1~1"/>
+        </case>
+		<case id="093" name="创建驱动-异常" desc="" faulttype="0" mark="0">
+            <step order="1" desc="创建驱动" cmdtype="4001" cmdparas="Firefox"/>
+            <judgestep order="5" desc="" cmdtype="2010" cmdparas="1~1~1"/>
+        </case>
+		<case id="094" name="关闭驱动-异常" desc="" faulttype="0" mark="0">
+            <step order="1" desc="关闭驱动" cmdtype="4002" cmdparas="Firefox"/>
+            <judgestep order="5" desc="" cmdtype="2010" cmdparas="1~1~1"/>
+        </case>
+		<case id="095" name="web操作-异常" desc="" faulttype="0" mark="0">
+            <step order="2" desc="登录" cmdtype="4003" cmdparas="http://10.8.8.21:8080/SPPP-web/login~id|username@@id|password@@id|submit~send_keys@wpfs@@send_keys@wpfs@@click~steppara_1_1"/>
+            <judgestep order="5" desc="" cmdtype="2010" cmdparas="1~1~1"/>
+        </case>
+		<case id="096" name="驱动正常流程" desc="" faulttype="0" mark="0">
+            <step order="1" desc="创建驱动" cmdtype="4001" cmdparas="Chrome"/>
+			<step order="2" desc="登录" cmdtype="4003" cmdparas="http://10.8.8.21:18080/SPPP-web/login~id|username@@id|password@@id|submit~send_keys@wpfs@@send_keys@wpfs@@click~steppara_1_1"/>
+			<step order="3" desc="等待几秒" cmdtype="9003" cmdparas="5"/>
+            <step order="4" desc="关闭驱动" cmdtype="4002" cmdparas="steppara_1_1"/>
+            <judgestep order="5" desc="" cmdtype="2010" cmdparas="1~1~1"/>
+        </case>
+		<case id="097" name="检查关键字是否存在log文件内" desc="" faulttype="0" mark="0">
+			<judgestep order="2" desc="" cmdtype="9006" cmdparas="D:\davinciapi\wen\rxefilecreate.log~process rxefilecreate  Register OK!~1"/>
+		</case>
+		<case id="098" name="检查关键字是否存在log文件内" desc="" faulttype="0" mark="0">
+			<step order="1" desc="检查关键字是否存在log文件内" cmdtype="9006" cmdparas="D:\davinciapi\wen\rxefilecreate.log~process rxefilecreate  Register OK!~1"/>
+			<judgestep order="2" desc="" cmdtype="2010" cmdparas="1~1~1"/>
+		</case>
+		<case id="099" name="检查关键字是否存在log文件内-异常" desc="" faulttype="0" mark="0">
+			<judgestep order="2" desc="" cmdtype="9006" cmdparas="D:\davinciapi\wen\rxefilecreate.log~程序启动成功"/>
+		</case>
+		<case id="100" name="检查关键字是否存在log文件内-异常" desc="" faulttype="0" mark="0">
+			<step order="2" desc="检查关键字是否存在log文件内" cmdtype="9006" cmdparas="D:\davinciapi\wen\rxefilecreate.log~程序启动成功"/>
+			<judgestep order="2" desc="" cmdtype="2010" cmdparas="1~1~1"/>
+		</case>
+		<case id="101" name="日志返回结果" desc="" faulttype="0" mark="0">
+            <step order="1" desc="日志没有匹配文案" cmdtype="9006" cmdparas="D:\davinciapi\wen\rxpforecast.log~没有匹配文案~1~"/>
+            <judgestep order="5" desc="" cmdtype="2010" cmdparas="3~steppara_1_1~['没有匹配文案']"/>
+        </case>
+		<case id="102" name="检查关键字是否存在log文件内" desc="" faulttype="0" mark="0">
+			<judgestep order="2" desc="" cmdtype="9006" cmdparas="/home/sprixin/davinci/var/log/rxpforecast.log~发电量预测成功~1"/>
+		</case>
+		<case id="103" name="检查关键字是否存在log文件内" desc="" faulttype="0" mark="0">
+			<step order="1" desc="检查关键字是否存在log文件内" cmdtype="9006" cmdparas="/home/sprixin/davinci/var/log/rxpforecast.log~发电量预测成功~1"/>
+			<judgestep order="2" desc="" cmdtype="2010" cmdparas="1~1~1"/>
+		</case>
+		<case id="104" name="检查关键字是否存在log文件内-异常" desc="" faulttype="0" mark="0">
+			<judgestep order="2" desc="" cmdtype="9006" cmdparas="/home/sprixin/davinci/var/log/rxpforecast.log~发电量预测成功"/>
+		</case>
+		<case id="105" name="检查关键字是否存在log文件内-异常" desc="" faulttype="0" mark="0">
+			<step order="2" desc="检查关键字是否存在log文件内" cmdtype="9006" cmdparas="/home/sprixin/davinci/var/log/rxpforecast.log~发电量预测成功"/>
+			<judgestep order="2" desc="" cmdtype="2010" cmdparas="1~1~1"/>
+		</case>
+		<case id="106" name="日志返回结果" desc="" faulttype="0" mark="0">
+            <step order="1" desc="日志返回结果" cmdtype="9006" cmdparas="/home/sprixin/davinci/var/log/rxpforecast.log~光伏超短期结果：@,  [-09999]~1~1"/>
+			<step order="2" desc="数据库查询" cmdtype="5001" cmdparas="SELECT p/((select cap from plantcap where id=1)/(SELECT RUN_CAPACITY from plant)) from hdrsfcstdata_llgf where record_id=(SELECT id FROM hdrsfcstrecord2022 WHERE powertype = 0 AND fcst_time = '2022-08-08 12:15:00')~QMYSQL~10.64.14.126@3306@DAVINCI@_@_~3"/>
+            <judgestep order="5" desc="" cmdtype="2010" cmdparas="3~steppara_1_1~steppara_2_1"/>
+        </case>
+		<case id="107" name="判断文件是否存在-存在" desc="" faulttype="0" mark="0">
+			<step order="1" desc="判断文件是否存在-存在" cmdtype="9001" cmdparas="D:\davinciapi\wen\rxefilecreate.log"/>
+			<judgestep order="2" desc="" cmdtype="2010" cmdparas="1~1234~1234"/>
+        </case>
+		<case id="108" name="判断文件是否存在-不存在" desc="" faulttype="0" mark="0">
+			<step order="1" desc="判断文件是否存在-不存在" cmdtype="9001" cmdparas="/home/sprixin/davinci/var/log/rxpforecast.log"/>
+			<judgestep order="2" desc="" cmdtype="2010" cmdparas="1~1234~1234"/>
+        </case>
+		<case id="109" name="判断文件是否存在-存在" desc="" faulttype="0" mark="0">
+			<judgestep order="2" desc="" cmdtype="9001" cmdparas="D:\davinciapi\wen\rxefilecreate.log"/>
+        </case>
+		<case id="110" name="判断文件是否存在-不存在" desc="" faulttype="0" mark="0">
+			<judgestep order="2" desc="" cmdtype="9001" cmdparas="/home/sprixin/davinci/var/log/rxpforecast.log"/>
+        </case>
+		<case id="111" name="等待到指定时间False" desc="" faulttype="0" mark="0">
+            <step order="1" desc="等待到指定时间" cmdtype="9002" cmdparas="10:34:00~False"/>
+			<step order="2" desc="ini读取" cmdtype="1002" cmdparas="D:\davinciapi\wen\nrfmEfileToSim.ini~EFILE@@ceshi"/>
+            <judgestep order="2" desc="" cmdtype="2010" cmdparas="1~steppara_2_1~1234"/>
+        </case>
+		<case id="112" name="等待到指定时间False-异常" desc="" faulttype="0" mark="0">
+            <step order="1" desc="等待到指定时间False-输入非数字" cmdtype="9002" cmdparas="hhhhh~False"/>
+            <step order="2" desc="ini读取" cmdtype="1002" cmdparas="D:\davinciapi\wen\nrfmEfileToSim.ini~EFILE@@ceshi"/>
+            <judgestep order="2" desc="" cmdtype="2010" cmdparas="1~steppara_2_1~1234"/>
+        </case>
+		<case id="113" name="等待到指定时间True" desc="" faulttype="0" mark="0">
+            <step order="1" desc="等待到指定时间" cmdtype="9002" cmdparas="10:35:00~True"/>
+			<step order="2" desc="ini读取" cmdtype="1002" cmdparas="D:\davinciapi\wen\nrfmEfileToSim.ini~EFILE@@ceshi"/>
+            <judgestep order="2" desc="" cmdtype="2010" cmdparas="1~steppara_2_1~1234"/>
+        </case>
+		<case id="114" name="等待到指定时间True-异常" desc="" faulttype="0" mark="0">
+            <step order="1" desc="等待到指定时间-输入非数字" cmdtype="9002" cmdparas="ssss~True"/>
+			<step order="2" desc="ini读取" cmdtype="1002" cmdparas="D:\davinciapi\wen\nrfmEfileToSim.ini~EFILE@@ceshi"/>
+            <judgestep order="2" desc="" cmdtype="2010" cmdparas="1~steppara_2_1~1234"/>
+        </case>
+		<case id="115" name="xls文件获取某一行的几个值" desc="" faulttype="0" mark="0">
+			<step order="1" desc="xls文件获取某一行的几个值,返回类型list" cmdtype="1042" cmdparas="D:\davinciapi\wen\告警2022-04-27.xls~告警级别,告警类型~告警日期=2022-04-27 15:15:05~3~告警信息"/>
+            <judgestep order="2" desc="" cmdtype="2010" cmdparas="3~steppara_1_1~['一般', '气象站文件上传']"/>
+        </case>
+		<case id="116" name="xls文件获取某一行的几个值-异常" desc="" faulttype="0" mark="0">
+			<step order="1" desc="xls文件获取某一行的几个值,返回类型list-异常" cmdtype="1042" cmdparas="D:\davinciapi\wen\告警2022-04-27111.xls~告警级别,告警类型~告警日期=2022-04-27 15:15:05~3~告警信息"/>
+            <judgestep order="2" desc="" cmdtype="2010" cmdparas="3~steppara_1_1~['一般', '气象站文件上传']"/>
+        </case>
+		<case id="117" name="csv文件获取某一个值" desc="" faulttype="0" mark="0">
+			<step order="1" desc="csv文件获取某一个值,返回类型list" cmdtype="1042" cmdparas="D:\davinciapi\wen\20220623.csv~测试风电厂~时间=00:15~3"/>
+            <judgestep order="2" desc="" cmdtype="2010" cmdparas="3~steppara_1_1~['26.09']"/>
+        </case>
+		<case id="118" name="csv文件获取某一个值-异常" desc="" faulttype="0" mark="0">
+			<step order="1" desc="csv文件获取某一个值,返回类型list-异常" cmdtype="1042" cmdparas="D:\davinciapi\wen\20220623ddd.csv~测试风电厂~时间=00:15~3"/>
+            <judgestep order="2" desc="" cmdtype="2010" cmdparas="3~steppara_1_1~['26.09']"/>
+        </case>
+		<case id="n017" name="根据数据库返回数据等待时间" desc="" faulttype="0" mark="0">
+			<step order="1" desc="等待数据库有返回数据" cmdtype="9007" cmdparas="SELECT id FROM command~QMYSQL~10.64.14.70@3306@DAVINCI@_@_~3"/>		
+			<step order="2" desc="执行命令" cmdtype="3001" cmdparas="nohup  rxshut all &gt;/dev/null 2&gt;&amp;1 &amp;"/>
+			<step order="3" desc="ini读取" cmdtype="1002" cmdparas="D:\davinciapi\wen\nrfmEfileToSim.ini~EFILE@@ceshi"/>
+            <judgestep order="2" desc="" cmdtype="2010" cmdparas="1~steppara_3_1~12345"/>
+		</case>
+		<case id="119" name="文件是否存在-参数化下载路径DOWM_HOME" desc="" faulttype="0" mark="0">
+			<step order="1" desc="文件是否存在" cmdtype="9001" cmdparas="$DOWM_HOME\测试风电厂_理论发电量2022-09-01到2022-09-02.xls"/>
+            <judgestep order="1" desc="" cmdtype="2010" cmdparas="3~['26.09']~['26.09']"/>
+        </case>
+		<case id="120" name="文件是否存在-参数化下载路径CASE_HOME" desc="" faulttype="0" mark="0">
+			<step order="1" desc="文件是否存在" cmdtype="9001" cmdparas="$CASE_HOME\测试风电厂_理论发电量2022-09-01到2022-09-02.xls"/>
+            <judgestep order="1" desc="" cmdtype="2010" cmdparas="3~['26.09']~['26.09']"/>
+        </case>
+		<case id="121" name="文件存在则删除" desc="" faulttype="0" mark="0">
+			<step order="1" desc="文件是否存在" cmdtype="9004" cmdparas="$DOWM_HOME\测试风电厂_理论发电量2022-09-01到2022-09-02.xls"/>
+            <judgestep order="1" desc="" cmdtype="2010" cmdparas="3~['26.09']~['26.09']"/>
+        </case>
+		<case id="122" name="数据比较相等-多对一" desc="" faulttype="0" mark="0">
+            <judgestep order="2" desc="" cmdtype="2014" cmdparas="3~[2,2,2,2,2]~[2]"/>
+        </case>
+		<case id="123" name="数据比较相等-多对一" desc="" faulttype="0" mark="0">
+            <judgestep order="2" desc="" cmdtype="2014" cmdparas="3~['25', '25', '25', '25', '25']~['25']"/>
+        </case>
+		<case id="124" name="数据比较相等-多对一" desc="" faulttype="0" mark="0">
+            <judgestep order="2" desc="" cmdtype="2014" cmdparas="3~['25.33', '25.33', '25.33', '25.33', '25.33']~['25.33']"/>
+        </case>
+		<case id="125" name="数据比较相等-多对一" desc="" faulttype="0" mark="0">
+            <judgestep order="2" desc="" cmdtype="2014" cmdparas="3~['a', 'a', 'a', 'a', 'a']~['a']"/>
+        </case>
+		<case id="126" name="数据比较相等-多对一" desc="" faulttype="0" mark="0">
+            <judgestep order="2" desc="" cmdtype="2014" cmdparas="3~[['a'], ['a'], ['a'], ['a']]~[['a']]"/>
+        </case>
+		<case id="127" name="数据比较相等-多对一-失败" desc="" faulttype="0" mark="0">
+            <judgestep order="2" desc="" cmdtype="2014" cmdparas="3~[2,2,2,2,2]~[2.7]"/>
+        </case>
+		<case id="128" name="csv文件获取某一个值-模糊查询" desc="" faulttype="0" mark="0">
+			<step order="1" desc="csv文件获取某一个值,返回类型list" cmdtype="1042" cmdparas="D:\davinciapi\case\zz\s\115020-0-202208080729#*#.csv~R_1~Time=2022-08-08 07:30~3"/>
+            <judgestep order="2" desc="" cmdtype="2010" cmdparas="3~steppara_1_1~['211.465']"/>
+        </case>
+		<case id="129" name="csv文件获取某一个值-模糊查询" desc="" faulttype="0" mark="0">
+			<step order="1" desc="csv文件获取某一个值,返回类型list" cmdtype="1042" cmdparas="D:\davinciapi\case\zz\s\115020-0-20220808072910496.csv~R_1~Time=2022-08-08 07:30~3"/>
+            <judgestep order="2" desc="" cmdtype="2010" cmdparas="3~steppara_1_1~['211.465']"/>
+        </case>
+		<case id="130" name="csv文件获取某一个值-模糊查询-异常" desc="" faulttype="0" mark="0">
+			<step order="1" desc="csv文件匹配到多个值" cmdtype="1042" cmdparas="D:\davinciapi\case\zz\s\115020-0-202208261845#*#.csv~R_1~Time=2022-08-08 07:30~3"/>
+            <judgestep order="2" desc="" cmdtype="2010" cmdparas="3~steppara_1_1~['211.465']"/>
+        </case>
+		-->
+		
+		<!--
+		<case id="097" name="检查关键字是否存在log文件内" desc="" faulttype="0" mark="0">
+			<judgestep order="2" desc="" cmdtype="9006" cmdparas="D:\davinciapi\wen\rxefilecreate.log~process rxefilecreate  Register OK!~1~"/>
+		</case>
+		<case id="098" name="检查关键字是否存在log文件内" desc="" faulttype="0" mark="0">
+			<step order="1" desc="检查关键字是否存在log文件内" cmdtype="9006" cmdparas="D:\davinciapi\wen\rxefilecreate.log~process rxefilecreate  Register OK!~1~"/>
+			<judgestep order="2" desc="" cmdtype="2010" cmdparas="1~1~1"/>
+		</case>
+		<case id="099" name="检查关键字是否存在log文件内-异常" desc="" faulttype="0" mark="0">
+			<judgestep order="2" desc="" cmdtype="9006" cmdparas="D:\davinciapi\wen\rxefilecreate.log~程序启动成功"/>
+		</case>
+		<case id="100" name="检查关键字是否存在log文件内-异常" desc="" faulttype="0" mark="0">
+			<step order="2" desc="检查关键字是否存在log文件内" cmdtype="9006" cmdparas="D:\davinciapi\wen\rxefilecreate.log~程序启动成功"/>
+			<judgestep order="2" desc="" cmdtype="2010" cmdparas="1~1~1"/>
+		</case>
+		<case id="101" name="日志返回结果" desc="" faulttype="0" mark="0">
+            <step order="1" desc="日志没有匹配文案" cmdtype="9006" cmdparas="D:\davinciapi\wen\rxpforecast.log~没有匹配文案~1~"/>
+            <judgestep order="5" desc="" cmdtype="2010" cmdparas="3~steppara_1_1~['没有匹配文案']"/>
+        </case>
+		<case id="131" name="日志返回结果" desc="" faulttype="0" mark="0">
+            <step order="1" desc="日志没有匹配文案" cmdtype="9006" cmdparas="D:\davinciapi\wen\rxpforecast.log~没有匹配文案@A~1~1"/>
+            <judgestep order="5" desc="" cmdtype="2010" cmdparas="3~steppara_1_1~['没有匹配文案']"/>
+        </case>
+		<case id="132" name="日志返回结果" desc="" faulttype="0" mark="0">
+            <judgestep order="1" desc="日志检索到多个结果，不需要返回数据" cmdtype="9006" cmdparas="D:\davinciapi\wen\rxefilecreate.log~进程启动~1~"/>
+        </case>-->
+		<case id="133" name="日志返回结果" desc="" faulttype="0" mark="0">
+            <step order="1" desc="日志检索到多个结果，返回最后一条数据" cmdtype="9006" cmdparas="D:\davinciapi\wen\rxpforecast.log~[addTimeLog] [super:@]结果发送到hasave成功~1~1"/>
+            <judgestep order="5" desc="" cmdtype="2010" cmdparas="3~steppara_1_1~['115020-1']"/>
+        </case>
+		<case id="134" name="日志返回结果" desc="" faulttype="0" mark="0">
+            <step order="1" desc="日志检索到一个结果,返回[list]一个-固定值对比" cmdtype="9006" cmdparas="D:\davinciapi\wen\rxcalctheoryp.log~辐照度不是死值，理论(@) = 辐照度(899.026672) * paraA(0.095250) 197~1~1"/>
+			<judgestep order="5" desc="" cmdtype="2010" cmdparas="3~steppara_1_1~['85.632294']"/>
+        </case>
+		<case id="135" name="日志返回结果" desc="" faulttype="0" mark="0">
+            <step order="1" desc="日志检索到一个结果,返回[list]多个-数据库对比" cmdtype="9006" cmdparas="D:\davinciapi\wen\rxpforecast.log~光伏超短期结果：@,  [-09999]~1~1"/>
+			<step order="2" desc="数据库查询" cmdtype="5001" cmdparas="SELECT p/((select cap from plantcap where id=1)/(SELECT RUN_CAPACITY from plant)) from hdrsfcstdata_farm1 where record_id=(SELECT id FROM hdrsfcstrecord2022 WHERE powertype = 0 AND fcst_time = '2022-08-08 09:15:00')~QMYSQL~10.64.14.62@3306@davinci_main_yc@_@_~3"/>
+            <judgestep order="5" desc="" cmdtype="2010" cmdparas="3~steppara_1_1~steppara_2_1"/>
+        </case>
+		<!--
+		<case id="136" name="日志返回结果" desc="" faulttype="0" mark="0">
+            <step order="1" desc="日志检索到一个结果,返回[list]多个-列表对比" cmdtype="9006" cmdparas="D:\davinciapi\wen\rxpforecast.log~光伏超短期结果：@,  [-09999]~1~1"/>
+            <judgestep order="5" desc="" cmdtype="2010" cmdparas="3~steppara_1_1~[['9.79589'], ['12.185'], ['12.4103'], ['12.5523'], ['12.6015'], ['12.5871'], ['12.5451'], ['12.4779'], ['12.3877'], ['12.2767'], ['12.1473'], ['12.0017'], ['11.8421'], ['11.6709'], ['11.3863'], ['10.9105'], ['10.2812'], ['9.53639'], ['8.71373'], ['7.85114'], ['6.9864'], ['6.15754'], ['5.40216'], ['4.75818']]"/>
+        </case>
+		
+		-->
+    </suit>
+</test>

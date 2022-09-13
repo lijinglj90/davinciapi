@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<test>
+    <suit id="1" name="场外受阻电力校核套件" desc="前置条件">
+        <precondition>
+            <step order="1" desc="创建驱动" cmdtype="4001" cmdparas="chrome"/>
+            <step order="2" desc="登录" cmdtype="4003" cmdparas="http://10.8.8.22:8080/SPPP-web/login~id|username@@id|password@@id|submit~send_keys@wpfs@@send_keys@wpfs@@click~suitcondpara_1_1"/>
+        </precondition>
+        <case id="001" name="机头风速法" desc="机头风速法" faulttype="0" mark="0">
+            <step order="1" desc="机头风速法-页面数据获取" cmdtype="4003" cmdparas="http://10.8.8.22:8080/SPPP-web/theoretical/outWindObstructed~id|plantId@@id|time@@id|type@@id|queryBtn@@id|oTable~do_select@0@index@@set_datetime@2022-03-31@@do_select@1@value@@click@@get_tubiao_data@时间,可用(MW),实发(MW),偏差(%)@时间=00:00@3~suitcondpara_1_1"/>
+            <step order="2" desc="数据库查询" cmdtype="5001" cmdparas="select a.ava,b.ave,(a.ava-b.ave)*100/b.ave,substring(a.datatime,11,6)as time from (select datatime,availableturbine ava from hdrtheorypdata20220331  where datatime='2022-03-31 00:00:00')a,(select AVERAGE ave FROM hdranastat20220331 h WHERE h.ID =(SELECT a.ID FROM analoginput a WHERE a.TYPE =(SELECT m.ID FROM measurementtype m WHERE m.`NAME` = 'p') AND a.EQUIPMENTCONTAINER_ID = 115020 AND a.EQUIPMENTCONTAINER_TABLEID = 1071) AND h.HDTIME ='2022-03-31 00:00:00')b~QMYSQL~10.8.8.22@3306@DAVINCI@_@_~3"/>
+            <judgestep order="1" desc="" cmdtype="2010" cmdparas="3~steppara_1_1~steppara_2_1"/>
+        </case>
+        <!--<case id="002" name="机头风速法-导出" desc="机头风速法导出" faulttype="0" mark="0">
+            <step order="1" desc="测风塔外推法-导出" cmdtype="4003" cmdparas="http://10.8.8.22:8080/SPPP-web/theoretical/outWindObstructed~id|plantId@@id|time@@id|type@@id|queryBtn@@id|exportBtn~do_select@0@index@@set_datetime@2022-03-30@@do_select@1@value@@click@@click~suitcondpara_1_1~chrome"/>
+            <judgestep order="1" desc="" cmdtype="9001" cmdparas="C:\Users\Administrator\Downloads\中广核民勤风电场-场外受阻电力校核-机头风速法-20220330.xls"/>
+        </case>
+		<case id="003 name="测风塔外推法" desc="测风塔外推法" faulttype="0" mark="0">
+			<step order="1" desc="测风塔外推法-页面数据获取" cmdtype="4003" cmdparas="http://10.8.8.22:8080/SPPP-web/theoretical/outWindObstructed~id|plantId@@id|time@@id|type@@id|queryBtn@@id|oTable~do_select@0@index@@set_datetime@2022-03-30@@do_select@2@value@@click@@get_tubiao_data@时间,可用(MW),实发(MW),偏差(%)@时间=00:00@3~suitcondpara_1_1~chrome"/>
+			<step order="2" desc="数据库查询" cmdtype="5001" cmdparas="select substring(a.datatime,11,6) as time ,a.ava ,b.ave,(a.ava-b.ave)*100/b.ave as pc from (select datatime, availablemeter ava from hdrtheorypdata20220331  where datatime='2022-03-30 00:00:00')a,(select AVERAGE ave FROM hdranastat20220330 h WHERE h.ID = (SELECT a.ID FROM analoginput a WHERE a.TYPE = (SELECT m.ID FROM measurementtype m WHERE m.`NAME` = 'p') AND a.EQUIPMENTCONTAINER_ID = 115020 AND a.EQUIPMENTCONTAINER_TABLEID = 1071) AND h.HDTIME ='2022-03-31 00:00:00')b~QMYSQL~10.8.8.22@3306@DAVINCI@sa@cast1234~3"/>
+			<judgestep order="1" desc="" cmdtype="2010" cmdparas="3~steppara_1_1~steppara_2_1"/>
+        </case>
+		<case id="004" name="测风塔外推法-导出" desc="测风塔外推法-导出" faulttype="0" mark="0">
+			<step order="1" desc="测风塔外推法-导出" cmdtype="4003" cmdparas="http://10.8.8.22:8080/SPPP-web/theoretical/outWindObstructed~id|plantId@@id|time@@id|type@@id|queryBtn@@id|exportBtn~do_select@0@index@@set_datetime@2022-03-30@@do_select@2@value@@click@@click~suitcondpara_1_1~chrome"/>
+			<judgestep order="1" desc="" cmdtype="9001" cmdparas="C:\Users\Administrator\Downloads\中广核民勤风电场-场外受阻电力校核-测风塔外推法-20220330.xls"/>
+        </case>
+		<case id="005" name="样板机法" desc="样板机法" faulttype="0" mark="0">
+			<step order="1" desc="样板机法-页面数据获取" cmdtype="4003" cmdparas="http://10.8.8.22:8080/SPPP-web/theoretical/outWindObstructed~id|plantId@@id|time@@id|type@@id|queryBtn@@id|oTable~do_select@0@index@@set_datetime@2022-03-30@@do_select@2@value@@click@@get_tubiao_data@时间,可用(MW),实发(MW),偏差(%)@时间=00:00@3~suitcondpara_1_1~chrome"/>
+			<step order="2" desc="数据库查询" cmdtype="5001" cmdparas="select substring(a.datatime,11,6) as time ,a.ava ,b.ave,(a.ava-b.ave)*100/b.ave as pc from (select datatime, availablemode ava from hdrtheorypdata20220331  where datatime='2022-03-31 00:00:00')a,(select AVERAGE ave FROM hdranastat20220331 h WHERE h.ID = (SELECT a.ID FROM analoginput a WHERE a.TYPE = (SELECT m.ID FROM measurementtype m WHERE m.`NAME` = 'p') AND a.EQUIPMENTCONTAINER_ID = 115020 AND a.EQUIPMENTCONTAINER_TABLEID = 1071) AND h.HDTIME ='2022-03-31 00:00:00')b~QMYSQL~10.8.8.22@3306@DAVINCI@sa@cast1234~3"/>
+			<judgestep order="1" desc="" cmdtype="2010" cmdparas="3~steppara_1_1~steppara_2_1"/>
+        </case>
+		<case id="006" name="样板机法-导出" desc="样板机法-导出" faulttype="0" mark="0">
+			<step order="1" desc="样板机法-导出" cmdtype="4003" cmdparas="http://10.8.8.22:8080/SPPP-web/theoretical/outWindObstructed~id|plantId@@id|time@@id|type@@id|queryBtn@@id|exportBtn~do_select@0@index@@set_datetime@2022-03-30@@do_select@3@value@@click@@click~suitcondpara_1_1~chrome"/>
+			<judgestep order="1" desc="" cmdtype="9001" cmdparas="C:\Users\Administrator\Downloads\中广核民勤风电场-场外受阻电力校核-样板机法-20220330.xls"/>
+        </case>-->
+    </suit>
+</test>

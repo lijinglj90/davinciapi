@@ -1,0 +1,121 @@
+示例：
+
+test_001   赵工给的原始文件
+
+test_demo  
+
+​	case1 演示：程序返回值 和 写固定值  对比
+
+​	case2 演示：带变量的参数  需要加$
+
+​	case3 演示： 导出查询后的结果
+
+​	case1+case2 与case3的不同点：验证的导出功能，验证导出查询后的结果
+
+test登录异常 
+
+​	用来演示失败的case
+
+test_tubiao.xml 演示图表信息
+
+​	case1 演示：获取表格一行信息
+
+​	case2 演示：获取表格多个值
+
+​	case3 演示：获取表格单个值
+
+​	case4 演示：获取曲线多个值
+
+test_demo_ku.xml  演示数据库和id返回值
+
+​	case1 演示：程序返回值-页面 和 数据库返回值  对比 str类型
+​	case2 演示：图表get_tubiao_data 和 数据库返回多个值  对比 list类型
+​	case3 演示：图表get_tubiao_data 和 数据库返回单个值  对比 list类型
+​	case4 演示：图表get_tubiao_data 和 数据库返回单个值  对比 str类型
+​	case5 演示：曲线get_quxian_data 和 数据库返回多个值  对比 list类型
+
+
+<!--      
+注释内容（无其他注释符）
+<test：根标签，固定不变>
+	<suit：子标签-套件，固定不变 id="套件id" name="套件名称" desc="套件描述信息">
+        <precondition：子标签-前置条件，固定不变>
+            <step：子标签-步骤(可以有多个) order="步骤序号" desc="前置步骤描述信息" cmdtype="功能类型编号" cmdparas="值"/>
+            <step order="2" desc="登录" cmdtype="4003" cmdparas="http://10.8.8.21:8080/SPPP-web/login~id|username@@id|password@@id|submit~send_keys@wpfs@@send_keys@wpfs@@click~suitcondpara_1_1~"/>
+        </precondition>
+        <case：子标签-用例(可以有多个) id="用例编号" name="用例名称" desc="用例描述信息" faulttype="失败处理类型，0继续，1中断" mark="用例级别">
+            <step：子标签-步骤(可以有多个) order="用例步骤序号" desc="用例步骤描述信息" cmdtype="功能类型编号" cmdparas="值"/>
+            <judgestep：子标签-判别步骤 order="判别步骤序号" desc="判别步骤描述" cmdtype="判别步骤类型编号" cmdparas="判别步骤参数设置"/>
+        </case>
+    </suit>
+</test>
+
+cmdtype：
+    set_para_ini = "1001"
+    get_para_ini = "1002"
+    set_para_csv = "1011"
+    get_para_csv = "1012"
+    set_para_json = "1021"
+    get_para_json = "1022"
+    set_para_xml = "1031"
+    get_para_xml = "1032"
+
+    #实时库操作类
+    set_para_rtdb = "1101"
+    get_para_rtdb = "1102"
+    del_para_rtdb = "1103"
+
+
+    #数据比较类型
+    cmp_file_eq = "2001"
+    cmp_data_eq = "2010"
+    cmp_data_gr = "2011"
+    cmp_data_ge = "2012"
+    cmp_data_ne = "2013"
+
+    #执行命令类型
+    exec_cmd = "3001"
+
+    #web测试功能
+    web_driver_create = "4001"
+    web_driver_quet = "4002"
+    web_element_action = "4003"
+
+    #关系库操作
+    mysql_read = "5001"
+    mysql_write = "5002"
+
+    #杂项操作类型
+    file_exists = "9001"
+    wait_to_time = "9002"
+    wait_timespan = "9003"
+	
+cmdparas：
+    #数据比较类型
+    cmp_file_eq = "2001"   cmdparas="(1-整数，2-浮点数，3-列表，4-字符串)~(steppara_1_1或者具体值)~(steppara_1_1或者115093)" 
+    cmp_data_eq = "2010"   cmdparas="(1-整数，2-浮点数)~(steppara_1_1或者具体值)~(steppara_1_1或者115093)"
+    cmp_data_gr = "2011"   cmdparas="(1-整数，2-浮点数)~(steppara_1_1或者具体值)~(steppara_1_1或者115093)"
+    cmp_data_ge = "2012"   cmdparas="(1-整数，2-浮点数)~(steppara_1_1或者具体值)~(steppara_1_1或者115093)"
+    cmp_data_ne = "2013"   cmdparas="(1-整数，2-浮点数)~(steppara_1_1或者具体值)~(steppara_1_1或者115093)"
+
+	
+    #web测试功能
+    web_driver_create = "4001" 
+    web_driver_quet = "4002"
+    web_element_action = "4003"
+	
+	视情况而定，一般：
+	定位类型与定位参数之间用|           比如：id|farmid
+	操作类型与操作参数之间用@           比如：send_keys@wpfs
+	多个定位/操作之间用@@               比如：id|farmid@@id|day
+	定位类型与操作类型之间用~           比如：id|farmid~send_keys@wpfs
+	需要获取多个值之间用，              比如：预测功率,置信上限,置信下限
+	多个检索条件之前用#AND#             比如：日期=2022-03-12 00:45:00#AND#预测功率=32.114
+	可以加变量                          比如：$RTPARA_TODAY_2
+
+    #关系库操作
+    mysql_read = "5001"   cmdparas="(sql语句)~(数据库类型：QMYSQL/QKSQL/QDSQL/QPSQL)~(返回值类型：1-列表,2-字符串,3-列表嵌套字典,4-[[表头],[值1]，[值2]])"
+    mysql_write = "5002"                比如：
+
+-->
+

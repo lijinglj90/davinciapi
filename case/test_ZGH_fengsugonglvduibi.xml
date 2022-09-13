@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<test>
+    <suit id="1" name="中广核风速功率对比套件" desc="前置条件">
+        <precondition>
+            <step order="1" desc="创建驱动" cmdtype="4001" cmdparas="chrome"/>
+            <step order="2" desc="登录" cmdtype="4003" cmdparas="http://10.8.8.22:8080/SPPP-web/login~id|username@@id|password@@id|submit~send_keys@test@@send_keys@Test123456@@click~suitcondpara_1_1"/>
+        </precondition>
+		<case id="001" name="风速功率曲线" desc="风速功率曲线" faulttype="0" mark="0">
+			<step order="1" desc="风速功率曲线" cmdtype="4003" cmdparas="http://10.8.8.22:8080/SPPP-web/contrastcurve/zghWindPowerContrastCurve~id|plantId@@id|equipmentID@@id|floor@@id|starttime@@id|endtime@@id|fcst_time@@id|search@@id|panelbody~do_select@0@index@@do_select@0@index@@do_select@0@index@@set_datetime@$RTPARA_TODAY_2 00:15@@set_datetime@$RTPARA_TOMORROW_2 00:00@@do_select@0@index@@click@@get_tubiao_data@实发功率,预测功率,实测风速,预测风速,240分钟@日期=$RTPARA_TODAY_2 01:00:00~suitcondpara_1_1~chrome"/>
+            <!--<step order="1" desc="风速功率曲线" cmdtype="4003" cmdparas="http://10.8.8.22:8080/SPPP-web/contrastcurve/zghWindPowerContrastCurve~id|panelbody~get_tubiao_data@实发功率,预测功率,实测风速,预测风速,240分钟@日期=2022-05-17 01:00:00@3~suitcondpara_1_1~chrome"/>
+            <step order="2" desc="数据库获取" cmdtype="5001" cmdparas="~QMYSQL~10.8.8.22@3306@DAVINCI@sa@cast1234~4"/>-->
+            <judgestep order="1" desc="" cmdtype="2010" cmdparas="3~steppara_1_1~['57.605', '10.26', '8.517', '1.39', '0.387']"/>
+        </case>
+		<!--<case id="002" name="导出" desc="导出" faulttype="0" mark="0">
+            <step order="1" desc="导出" cmdtype="4003" cmdparas="http://10.8.8.22:8080/SPPP-web/contrastcurve/zghWindPowerContrastCurve~id|plantId@@id|equipmentID@@id|floor@@id|starttime@@id|endtime@@id|fcst_time@@id|search@@id|export~do_select@0@index@@do_select@0@index@@do_select@0@index@@set_datetime@2022-05-15 00:15@@set_datetime@2022-05-17 00:00@@do_select@0@index@@click@@click~suitcondpara_1_1~chrome"/>
+			<judgestep order="1" desc="" cmdtype="9001" cmdparas="C:\Users\Administrator\Downloads\测试风电场风速功率对比统计2022-05-16 00_15到2022-05-17 00_00.xls"/>
+			<step order="1" desc="风速功率曲线" cmdtype="4003" cmdparas="http://10.8.8.22:8080/SPPP-web/contrastcurve/zghWindPowerContrastCurve~id|plantId@@id|equipmentID@@id|floor@@id|starttime@@id|endtime@@id|fcst_time@@id|search@@id|dataTableTbody~do_select@0@index@@do_select@0@index@@do_select@0@index@@set_datetime@$RTPARA_TODAY_2 00:15@@set_datetime@$RTPARA_TOMORROW_2 00:00@@do_select@0@index@@click@@get_tubiao_data@实发功率,预测功率,实测风速,预测风速,240分钟@日期=$RTPARA_TODAY_2 01:00:00~suitcondpara_1_1~chrome"/>
+		</case>-->
+		
+    </suit>
+</test>

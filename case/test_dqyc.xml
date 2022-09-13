@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<test>
+	<suit id="001" name="测试">
+		<precondition>
+            <step order="2" desc="重启rxdatabaknoui程序" cmdtype="3001" cmdparas="rxshut all"/>
+		</precondition>
+		<case id="001" name="输出hello" faulttype="0" mark="0">
+			<step order="1" desc="输出hello" cmdtype="3001" cmdparas='echo hello'/>
+            <judgestep order="1" desc="" cmdtype="2010" cmdparas="4~12~12"/>
+		</case>
+	</suit>
+</test>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<test>
+    <suit id="case1" name="风电_数据治理_风速数据核对" desc="">
+        <precondition>
+            <step order="1" desc="创建浏览器驱动" cmdtype="4001" cmdparas="chrome"/>
+            <step order="2" desc="登录风电界面" cmdtype="4003" cmdparas="http://10.64.14.144:18080/SPPP-web/login~id|username@@id|password@@id|submit~send_keys@wpfs@@send_keys@wpfs@@click~suitcondpara_1_1~chrome"/>
+        </precondition>
+        <case id="test1" name="治理统计风速数据详表核对" desc="" faulttype="0" mark="0">
+            <step order="1" desc="查询治理统计测风塔数据详表" cmdtype="4003" cmdparas="http://10.64.14.144:18080/SPPP-web/datagovern/weatherStatistics/windSpeed~id|plantId@@id|floor@@id|dateType@@id|starttime@@id|endtime@@id|search@@id|statisticsTable~do_select@糖糖风电场@@do_select@轮毂高度@@do_select@日数据@@set_datetime@2022-05-23@@set_datetime@2022-05-24@@click@@get_tubiao_data@_@日期=2022-05-23@5~suitcondpara_1_1~chrome"/>
+            <step order="2" desc="查询数据库" cmdtype="5001" cmdparas="SELECT&#10;&#9;COUNT(h.MODIFYCODE) &#10;FROM&#10;&#9;hdrmodifydata h &#10;WHERE&#10;h.MODIFYCODE=8 and &#10;&#9;h.ID = (&#10;&#9;SELECT&#10;&#9;&#9;a.ID &#10;&#9;FROM&#10;&#9;&#9;analoginput a &#10;&#9;WHERE&#10;&#9;&#9;a.TYPE = ( SELECT m.ID FROM measurementtype m WHERE m.`NAME` = 'UAVG4' ) &#10;&#9;&#9;AND a.EQUIPMENTCONTAINER_ID = 115032 &#10;&#9;&#9;AND a.EQUIPMENTCONTAINER_TABLEID = 1072&#10;&#9;) &#10;&#9;AND h.HDTIME &gt;= '2022-05-23 00:00:00'&#10;&#9;AND h.HDTIME &lt;= '2022-05-24 00:00:00' &#10;&#9;AND ( DATE_FORMAT( h.HDTIME, '%Y%m%d%H%i%s' ) % 500 ) = 0 &#10;ORDER BY&#10;&#9;h.HDTIME~QMYSQL~10.64.14.144@3306@DAVINCI@sa@cast1234~5~"/>
+            <judgestep order="3" desc="" cmdtype="2010" cmdparas="5~steppara_1_1~steppara_2_1"/>
+        </case>
+        <!--case id="test2" name="治理统计风速数据详表核对" desc="" faulttype="0" mark="0">
+            <step order="1" desc="查询治理统计测风塔数据详表" cmdtype="4003" cmdparas="http://10.64.14.144:18080/SPPP-web/datagovern/weatherStatistics/windSpeed~id|plantId@@id|floor@@id|dateType@@id|starttime@@id|endtime@@id|search@@id|statisticsTable~do_select@糖糖风电场@@do_select@轮毂高度@@do_select@日数据@@set_datetime@2022-05-23@@set_datetime@2022-05-24@@click@@get_tubiao_data@_@xpath|//*[@id=&quot;statisticsTable&quot;]/tbody/tr/td[7]@4~suitcondpara_1_1~chrome"/>
+            <step order="2" desc="查询数据库" cmdtype="5001" cmdparas="SELECT&#10;&#9;COUNT(h.MODIFYCODE)/288*100 &#10;FROM&#10;&#9;hdrmodifydata h &#10;WHERE&#10;h.MODIFYCODE=8 and &#10;&#9;h.ID = (&#10;&#9;SELECT&#10;&#9;&#9;a.ID &#10;&#9;FROM&#10;&#9;&#9;analoginput a &#10;&#9;WHERE&#10;&#9;&#9;a.TYPE = ( SELECT m.ID FROM measurementtype m WHERE m.`NAME` = 'UAVG4' ) &#10;&#9;&#9;AND a.EQUIPMENTCONTAINER_ID = 115032 &#10;&#9;&#9;AND a.EQUIPMENTCONTAINER_TABLEID = 1072&#10;&#9;) &#10;&#9;AND h.HDTIME &gt;= '2022-05-23 00:00:00'&#10;&#9;AND h.HDTIME &lt;= '2022-05-24 00:00:00' &#10;&#9;AND ( DATE_FORMAT( h.HDTIME, '%Y%m%d%H%i%s' ) % 500 ) = 0 &#10;ORDER BY&#10;&#9;h.HDTIME~QMYSQL~10.64.14.144@3306@DAVINCI@sa@cast1234~4~"/>
+            <step order="3" desc="关闭驱动" cmdtype="4002" cmdparas="suitcondpara_1_1"/>
+            <judgestep order="3" desc="" cmdtype="2010" cmdparas="2~steppara_1_1~steppara_2_1"/>
+        </case-->
+    </suit>
+</test>

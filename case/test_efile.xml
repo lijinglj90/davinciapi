@@ -1,0 +1,553 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<test>
+    <suit id="001" name="光伏省调E文件核对" desc="">
+        <precondition>
+			<step order="1" desc="关闭程序" cmdtype="3001" cmdparas="rxshut all"/>
+		    <step order="2" desc="修改系统时间为2022-08-15 14:45:00" cmdtype="3001" cmdparas="sh /home/sprixin/davinci/bin/date-stime.sh"/>
+			<step order="3" desc="执行prog.sh脚本启动系统程序" cmdtype="3001" cmdparas="sh /home/sprixin/davinci/bin/prog.sh"/>
+            <step order="4" desc="等待系统程序运行3分钟" cmdtype="9003" cmdparas="180"/>
+        </precondition>
+        <case id="case001" name="安徽-短期文件核对" desc="" faulttype="0" mark="0">
+            <judgestep order="1" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinciapi/data/efile/anhui/dq72/安徽.电厂1_72wind_20220816.rb~/home/sprixin/davinci/usr/subfcst_project/fepcfg/ftpcfg/4/dq72/安徽.电厂1_72wind_20220816.rb~gb2312"/>
+        </case>
+		<case id="case002" name="安徽-超短期文件核对" desc="" faulttype="0" mark="0">
+            <judgestep order="1" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinciapi/data/efile/anhui/cdq/安徽.电厂1_4Cwind_202208151500.rb~/home/sprixin/davinci/usr/subfcst_project/fepcfg/ftpcfg/4/cdq/安徽.电厂1_4Cwind_202208151500.rb~gb2312"/>
+        </case>
+		<case id="case003" name="安徽-昨日开机容量文件核对" desc="" faulttype="0" mark="0">
+            <judgestep order="1" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinciapi/data/efile/anhui/gridp/安徽.电厂1_24Bwind_20220814.rb~/home/sprixin/davinci/usr/subfcst_project/fepcfg/ftpcfg/4/gridp/安徽.电厂1_24Bwind_20220814.rb~gb2312"/>
+        </case>
+		<case id="case004" name="安徽-实测气象文件核对" desc="" faulttype="0" mark="0">
+            <judgestep order="1" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinciapi/data/efile/anhui/qxz/安徽.电厂1_qx_202208151445.rb~/home/sprixin/davinci/usr/subfcst_project/fepcfg/ftpcfg/4/qxz/安徽.电厂1_qx_202208151445.rb~gb2312"/>
+        </case>
+		<case id="case005" name="安徽-24h数值天气预报文件核对" desc="" faulttype="0" mark="0">
+            <judgestep order="1" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinciapi/data/efile/anhui/nwp24/安徽.电厂1_24nwp_20220816.rb~/home/sprixin/davinci/usr/subfcst_project/fepcfg/ftpcfg/4/nwp24/安徽.电厂1_24nwp_20220816.rb~gb2312"/>
+        </case>
+		<case id="case006" name="安徽-72h数值天气预报文件核对" desc="" faulttype="0" mark="0">
+            <judgestep order="1" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinciapi/data/efile/anhui/nwp72/安徽.电厂1_72nwp_20220816.rb~/home/sprixin/davinci/usr/subfcst_project/fepcfg/ftpcfg/4/nwp72/安徽.电厂1_72nwp_20220816.rb~gb2312"/>
+        </case>
+		<case id="case007" name="安徽-实测单机信息文件核对" desc="" faulttype="0" mark="0">
+            <judgestep order="1" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinciapi/data/efile/anhui/dj/安徽.电厂1_dj_202208151445.rb~/home/sprixin/davinci/usr/subfcst_project/fepcfg/ftpcfg/4/dj/安徽.电厂1_dj_202208151445.rb~gb2312"/>
+        </case>
+		
+		<!--                                                 ===================北京wpd文件比对功能暂未实现========================
+		<case id="case008" name="北京-1天短期文件核对" desc="" faulttype="0" mark="0">
+            <judgestep order="1" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinciapi/data/efile/beijing/1daydq/farm1_20220816_0000_DQ.wpd~/home/sprixin/davinci/usr/subfcst_project/fepcfg/ftpcfg/10/1daydq/farm1_20220816_0000_DQ.wpd~gb2312"/>
+        </case>
+		<case id="case009" name="北京-2天短期文件核对" desc="" faulttype="0" mark="0">
+            <judgestep order="1" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinciapi/data/efile/beijing/2daydq/farm1_20220817_0000_DQ.wpd~/home/sprixin/davinci/usr/subfcst_project/fepcfg/ftpcfg/10/2daydq/farm1_20220817_0000_DQ.wpd~gb2312"/>
+        </case>
+		<case id="case010" name="北京-3天短期文件核对" desc="" faulttype="0" mark="0">
+            <judgestep order="1" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinciapi/data/efile/beijing/3daydq/farm1_20220818_0000_DQ.wpd~/home/sprixin/davinci/usr/subfcst_project/fepcfg/ftpcfg/10/3daydq/farm1_20220818_0000_DQ.wpd~gb2312"/>
+        </case>
+		<case id="case011" name="北京-4天短期文件核对" desc="" faulttype="0" mark="0">
+            <judgestep order="1" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinciapi/data/efile/beijing/4daydq/farm1_20220819_0000_DQ.wpd~/home/sprixin/davinci/usr/subfcst_project/fepcfg/ftpcfg/10/4daydq/farm1_20220819_0000_DQ.wpd~gb2312"/>
+        </case>
+		<case id="case012" name="北京-5天短期文件核对" desc="" faulttype="0" mark="0">
+            <judgestep order="1" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinciapi/data/efile/beijing/5daydq/farm1_20220820_0000_DQ.wpd~/home/sprixin/davinci/usr/subfcst_project/fepcfg/ftpcfg/10/5daydq/farm1_20220820_0000_DQ.wpd~gb2312"/>
+        </case>
+		<case id="case013" name="北京-6天短期文件核对" desc="" faulttype="0" mark="0">
+            <judgestep order="1" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinciapi/data/efile/beijing/6daydq/farm1_20220821_0000_DQ.wpd~/home/sprixin/davinci/usr/subfcst_project/fepcfg/ftpcfg/10/6daydq/farm1_20220821_0000_DQ.wpd~gb2312"/>
+        </case>
+		<case id="case014" name="北京-7天短期文件核对" desc="" faulttype="0" mark="0">
+            <judgestep order="1" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinciapi/data/efile/beijing/7daydq/farm1_20220822_0000_DQ.wpd~/home/sprixin/davinci/usr/subfcst_project/fepcfg/ftpcfg/10/7daydq/farm1_20220822_0000_DQ.wpd~gb2312"/>
+        </case>
+		-->
+		<case id="case015" name="北京-1天短期csv文件核对" desc="" faulttype="0" mark="0">
+            <judgestep order="1" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinciapi/data/efile/beijing/csv1daydq/20220816.csv~/home/sprixin/davinci/usr/subfcst_project/fepcfg/ftpcfg/10/csv1daydq/20220816.csv~gb2312"/>
+        </case>
+		<case id="case016" name="北京-2天短期csv文件核对" desc="" faulttype="0" mark="0">
+            <judgestep order="1" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinciapi/data/efile/beijing/csv2daydq/20220817.csv~/home/sprixin/davinci/usr/subfcst_project/fepcfg/ftpcfg/10/csv2daydq/20220817.csv~gb2312"/>
+        </case>
+		<case id="case017" name="北京-3天短期csv文件核对" desc="" faulttype="0" mark="0">
+            <judgestep order="1" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinciapi/data/efile/beijing/csv3daydq/20220818.csv~/home/sprixin/davinci/usr/subfcst_project/fepcfg/ftpcfg/10/csv3daydq/20220818.csv~gb2312"/>
+        </case>
+		<case id="case018" name="北京-4天短期csv文件核对" desc="" faulttype="0" mark="0">
+            <judgestep order="1" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinciapi/data/efile/beijing/csv4daydq/20220819.csv~/home/sprixin/davinci/usr/subfcst_project/fepcfg/ftpcfg/10/csv4daydq/20220819.csv~gb2312"/>
+        </case>
+		<case id="case019" name="北京-5天短期csv文件核对" desc="" faulttype="0" mark="0">
+            <judgestep order="1" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinciapi/data/efile/beijing/csv5daydq/20220820.csv~/home/sprixin/davinci/usr/subfcst_project/fepcfg/ftpcfg/10/csv5daydq/20220820.csv~gb2312"/>
+        </case>
+		<case id="case020" name="北京-6天短期csv文件核对" desc="" faulttype="0" mark="0">
+            <judgestep order="1" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinciapi/data/efile/beijing/csv6daydq/20220821.csv~/home/sprixin/davinci/usr/subfcst_project/fepcfg/ftpcfg/10/csv6daydq/20220821.csv~gb2312"/>
+        </case>
+		<case id="case021" name="北京-7天短期csv文件核对" desc="" faulttype="0" mark="0">
+            <judgestep order="1" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinciapi/data/efile/beijing/csv7daydq/20220822.csv~/home/sprixin/davinci/usr/subfcst_project/fepcfg/ftpcfg/10/csv7daydq/20220822.csv~gb2312"/>
+        </case>
+		<case id="case022" name="北京-测光数据文件核对" desc="" faulttype="0" mark="0">
+            <judgestep order="1" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinciapi/data/efile/beijing/qxz/北京测光日报_20220814.RB~/home/sprixin/davinci/usr/subfcst_project/fepcfg/ftpcfg/10/qxz/北京测光日报_20220814.RB~utf8"/>
+        </case>
+		
+		<case id="case023" name="重庆-短期文件核对" desc="" faulttype="0" mark="0">
+            <judgestep order="1" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinciapi/data/efile/chongqing/dq/电厂1_72wind_20220816.rb~/home/sprixin/davinci/usr/subfcst_project/fepcfg/ftpcfg/11/dq/电厂1_72wind_20220816.rb~gb2312"/>
+        </case>
+		<case id="case024" name="重庆-昨日实发功率文件核对" desc="" faulttype="0" mark="0">
+            <judgestep order="1" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinciapi/data/efile/chongqing/gridp/电厂1_24Bwind_20220814.rb~/home/sprixin/davinci/usr/subfcst_project/fepcfg/ftpcfg/11/gridp/电厂1_24Bwind_20220814.rb~gb2312"/>
+        </case>
+		<case id="case025" name="重庆-超短期文件核对" desc="" faulttype="0" mark="0">
+            <judgestep order="1" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinciapi/data/efile/chongqing/cdq/电厂1_4Cwind_202208151515.rb~/home/sprixin/davinci/usr/subfcst_project/fepcfg/ftpcfg/11/cdq/电厂1_4Cwind_202208151515.rb~gb2312"/>
+        </case>
+		<case id="case026" name="重庆-预测气象文件核对" desc="" faulttype="0" mark="0">
+            <judgestep order="1" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinciapi/data/efile/chongqing/nwp72/电厂1_72nwp_20220816.rb~/home/sprixin/davinci/usr/subfcst_project/fepcfg/ftpcfg/11/nwp72/电厂1_72nwp_20220816.rb~gb2312"/>
+        </case>
+		
+		<case id="case027" name="重庆-发电计划文件核对" desc="" faulttype="0" mark="0">
+            <judgestep order="1" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinciapi/data/efile/chongqing/1daydqplan/重庆光伏发电计划_电厂120220815144412.RB~/home/sprixin/davinci/usr/subfcst_project/fepcfg/ftpcfg/11/1daydqplan/重庆光伏发电计划_电厂120220815144412.RB~gb2312"/>
+        </case>
+		<case id="case028" name="重庆-发电计划文件核对" desc="" faulttype="0" mark="0">
+            <judgestep order="1" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinciapi/data/efile/chongqing/2daydqplan/重庆光伏发电计划_电厂120220815144413.RB~/home/sprixin/davinci/usr/subfcst_project/fepcfg/ftpcfg/11/2daydqplan/重庆光伏发电计划_电厂120220815144413.RB~gb2312"/>
+        </case>
+		<case id="case029" name="重庆-发电计划文件核对" desc="" faulttype="0" mark="0">
+            <judgestep order="1" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinciapi/data/efile/chongqing/3daydqplan/重庆光伏发电计划_电厂120220815144414.RB~/home/sprixin/davinci/usr/subfcst_project/fepcfg/ftpcfg/11/3daydqplan/重庆光伏发电计划_电厂120220815144414.RB~gb2312"/>
+        </case>
+		
+		<case id="case030" name="甘肃-短期预测文件核对" desc="" faulttype="0" mark="0">
+            <judgestep order="1" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinciapi/data/efile/gansu/tdq/farm1_20220816_0000_TDQ.PVD~/home/sprixin/davinci/usr/subfcst_project/fepcfg/ftpcfg/12/tdq/farm1_20220816_0000_TDQ.PVD~gb2312"/>
+        </case>
+		<case id="case031" name="甘肃-超短期预测文件核对" desc="" faulttype="0" mark="0">
+            <judgestep order="1" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinciapi/data/efile/gansu/cdq/farm1_20220815_1500_CDQ.PVD~/home/sprixin/davinci/usr/subfcst_project/fepcfg/ftpcfg/12/cdq/farm1_20220815_1500_CDQ.PVD~gb2312"/>
+        </case>
+		<case id="case032" name="甘肃-气象站数据文件核对" desc="" faulttype="0" mark="0">
+            <judgestep order="1" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinciapi/data/efile/gansu/qxz/farm1_20220815_1445_QXZ.PVD~/home/sprixin/davinci/usr/subfcst_project/fepcfg/ftpcfg/12/qxz/farm1_20220815_1445_QXZ.PVD~gb2312"/>
+        </case>
+		<case id="case033" name="甘肃-逆变器信息文件核对" desc="" faulttype="0" mark="0">
+            <judgestep order="1" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinciapi/data/efile/gansu/nbq/farm1_20220815_1445_NBQ.PVD~/home/sprixin/davinci/usr/subfcst_project/fepcfg/ftpcfg/12/nbq/farm1_20220815_1445_NBQ.PVD~gb2312"/>
+        </case>
+		<case id="case034" name="甘肃-计划功率文件核对" desc="" faulttype="0" mark="0">
+            <judgestep order="1" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinciapi/data/efile/gansu/jh/farm1_20220816_0000_JH.PVD~/home/sprixin/davinci/usr/subfcst_project/fepcfg/ftpcfg/12/jh/farm1_20220816_0000_JH.PVD~gb2312"/>
+        </case>
+		<case id="case035" name="甘肃-8天数值天气预报文件核对" desc="" faulttype="0" mark="0">
+            <judgestep order="1" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinciapi/data/efile/gansu/nwp72/farm1_20220816_0000_GNWP.PVD~/home/sprixin/davinci/usr/subfcst_project/fepcfg/ftpcfg/12/nwp72/farm1_20220816_0000_GNWP.PVD~gb2312"/>
+        </case>
+		<case id="case036" name="甘肃-理论功率文件核对" desc="" faulttype="0" mark="0">
+            <judgestep order="1" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinciapi/data/efile/gansu/theory/farm1_20220815_1445_THEROY.PVD~/home/sprixin/davinci/usr/subfcst_project/fepcfg/ftpcfg/12/theory/farm1_20220815_1445_THEROY.PVD~gb2312"/>
+        </case>
+		<case id="case037" name="黑龙江-短期文件核对" desc="" faulttype="0" mark="0">
+            <judgestep order="1" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinciapi/data/efile/heilongjiang/dq72/farm1_20220816_0000_DQ.PVD~/home/sprixin/davinci/usr/subfcst_project/fepcfg/ftpcfg/13/dq72/farm1_20220816_0000_DQ.PVD"/>
+        </case>
+		<case id="case038" name="黑龙江-检修文件核对" desc="" faulttype="0" mark="0">
+            <judgestep order="1" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinciapi/data/efile/heilongjiang/jx/farm1_20220816_0720_JX.PVD~/home/sprixin/davinci/usr/subfcst_project/fepcfg/ftpcfg/13/jx/farm1_20220816_0720_JX.PVD"/>
+        </case>
+		<case id="case039" name="黑龙江-超短期文件核对" desc="" faulttype="0" mark="0">
+            <judgestep order="1" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinciapi/data/efile/heilongjiang/cdq/farm1_20220815_1500_CDQ.PVD~/home/sprixin/davinci/usr/subfcst_project/fepcfg/ftpcfg/13/cdq/farm1_20220815_1500_CDQ.PVD"/>
+        </case>
+		<case id="case040" name="黑龙江-气象站文件核对" desc="" faulttype="0" mark="0">
+            <judgestep order="1" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinciapi/data/efile/heilongjiang/qxz/farm1_20220815_1445_QXZ.PVD~/home/sprixin/davinci/usr/subfcst_project/fepcfg/ftpcfg/13/qxz/farm1_20220815_1445_QXZ.PVD"/>
+        </case>
+		<case id="case041" name="黑龙江-逆变器文件核对" desc="" faulttype="0" mark="0">
+            <judgestep order="1" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinciapi/data/efile/heilongjiang/nbq/farm1_20220815_1445_NBQ.PVD~/home/sprixin/davinci/usr/subfcst_project/fepcfg/ftpcfg/13/nbq/farm1_20220815_1445_NBQ.PVD"/>
+        </case>
+		<case id="case042" name="黑龙江-电量预测文件核对" desc="" faulttype="0" mark="0">
+            <judgestep order="1" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinciapi/data/efile/heilongjiang/dl/farm1_202208_DL.PVD~/home/sprixin/davinci/usr/subfcst_project/fepcfg/ftpcfg/13/dl/farm1_202208_DL.PVD"/>
+        </case>
+		
+		<case id="case043" name="河南-短期预测文件核对" desc="" faulttype="0" mark="0">
+            <judgestep order="1" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinciapi/data/efile/henan/dq/河南.电厂1_72wind_20220816.rb~/home/sprixin/davinci/usr/subfcst_project/fepcfg/ftpcfg/14/dq/河南.电厂1_72wind_20220816.rb~gb2312"/>
+        </case>
+		<case id="case044" name="河南-超短期预测文件核对" desc="" faulttype="0" mark="0">
+            <judgestep order="1" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinciapi/data/efile/henan/cdq/河南.电厂1_4Cwind_202208151515.rb~/home/sprixin/davinci/usr/subfcst_project/fepcfg/ftpcfg/14/cdq/河南.电厂1_4Cwind_202208151515.rb~gb2312"/>
+        </case>
+		 <case id="case045" name="河南-昨日实发文件核对" desc="" faulttype="0" mark="0">
+            <judgestep order="1" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinciapi/data/efile/henan/gridp/河南.电厂1_24Bwind_20220814.rb~/home/sprixin/davinci/usr/subfcst_project/fepcfg/ftpcfg/14/gridp/河南.电厂1_24Bwind_20220814.rb~gb2312"/>
+        </case>
+		<case id="case046" name="河南-实发气象文件核对" desc="" faulttype="0" mark="0">
+            <judgestep order="1" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinciapi/data/efile/henan/qxz/河南.电厂1_qx_202208151445.rb~/home/sprixin/davinci/usr/subfcst_project/fepcfg/ftpcfg/14/qxz/河南.电厂1_qx_202208151445.rb~gb2312"/>
+        </case>
+		<case id="case047" name="河南-预测气象文件核对" desc="" faulttype="0" mark="0">
+            <judgestep order="1" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinciapi/data/efile/henan/nwp24/河南.电厂1_24nwp_20220816.rb~/home/sprixin/davinci/usr/subfcst_project/fepcfg/ftpcfg/14/nwp24/河南.电厂1_24nwp_20220816.rb~gb2312"/>
+        </case>
+		<case id="case048" name="河南-72h预测气象文件核对" desc="" faulttype="0" mark="0">
+            <judgestep order="1" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinciapi/data/efile/henan/nwp72/河南.电厂1_72nwp_20220816.rb~/home/sprixin/davinci/usr/subfcst_project/fepcfg/ftpcfg/14/nwp72/河南.电厂1_72nwp_20220816.rb~gb2312"/>
+        </case>
+		
+																			<!-- ===================湖北wpd文件比对功能暂未实现========================
+		<case id="case049" name="湖北-短期预测文件核对" desc="" faulttype="0" mark="0">
+            <judgestep order="1" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinciapi/data/efile/hubei/dq/farm1_DQ_20220816_0000.WPD~/home/sprixin/davinci/usr/subfcst_project/fepcfg/ftpcfg/15/dq/farm1_DQ_20220816_0000.WPD"/>
+        </case>
+		<case id="case050" name="湖北-数值天气预报文件核对" desc="" faulttype="0" mark="0">
+            <judgestep order="1" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinciapi/data/efile/hubei/nwp72/farm1_72NWP_20220816_0000.WPD~/home/sprixin/davinci/usr/subfcst_project/fepcfg/ftpcfg/15/nwp72/farm1_72NWP_20220816_0000.WPD"/>
+        </case>
+		<case id="case051" name="湖北-超短期预测文件核对" desc="" faulttype="0" mark="0">
+            <judgestep order="1" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinciapi/data/efile/hubei/cdq/farm1_CDQ_20220815_1500.WPD~/home/sprixin/davinci/usr/subfcst_project/fepcfg/ftpcfg/15/cdq/farm1_CDQ_20220815_1500.WPD"/>
+        </case>
+		<case id="case052" name="湖北-气象站信息文件核对" desc="" faulttype="0" mark="0">
+            <judgestep order="1" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinciapi/data/efile/hubei/qxz/farm1_QXZ_20220815_1445.WPD~/home/sprixin/davinci/usr/subfcst_project/fepcfg/ftpcfg/15/qxz/farm1_QXZ_20220815_1445.WPD"/>
+        </case>
+		<case id="case053" name="湖北-逆变器信息文件核对" desc="" faulttype="0" mark="0">
+            <judgestep order="1" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinciapi/data/efile/hubei/nbq/farm1_NBQ_20220815_1445.WPD~/home/sprixin/davinci/usr/subfcst_project/fepcfg/ftpcfg/15/nbq/farm1_NBQ_20220815_1445.WPD"/>
+        </case>
+		
+		<case id="case054" name="湖南-短期预测文件核对" desc="" faulttype="0" mark="0">
+            <judgestep order="1" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinciapi/data/efile/hunan/dq72/farm1_20220816_0000_DQ.WPD~/home/sprixin/davinci/usr/subfcst_project/fepcfg/ftpcfg/16/dq72/farm1_20220816_0000_DQ.WPD"/>
+        </case>
+		<case id="case055" name="湖南-短期计划文件核对" desc="" faulttype="0" mark="0">
+            <judgestep order="1" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinciapi/data/efile/hunan/dqplan/farm1_20220816_0000_PLAN.WPD~/home/sprixin/davinci/usr/subfcst_project/fepcfg/ftpcfg/16/dqplan/farm1_20220816_0000_PLAN.WPD"/>
+        </case>
+		<case id="case056" name="湖南-超短期预测文件核对" desc="" faulttype="0" mark="0">
+            <judgestep order="1" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinciapi/data/efile/hunan/cdq/farm1_20220815_1500_CDQ.WPD~/home/sprixin/davinci/usr/subfcst_project/fepcfg/ftpcfg/16/cdq/farm1_20220815_1500_CDQ.WPD"/>
+        </case>
+		<case id="case057" name="湖南-气象站文件核对" desc="" faulttype="0" mark="0">
+            <judgestep order="1" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinciapi/data/efile/hunan/qxz/farm1_20220815_1445_QXZ.WPD~/home/sprixin/davinci/usr/subfcst_project/fepcfg/ftpcfg/16/qxz/farm1_20220815_1445_QXZ.WPD"/>
+        </case>
+		<case id="case058" name="湖南-逆变器信息文件核对" desc="" faulttype="0" mark="0">
+            <judgestep order="1" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinciapi/data/efile/hunan/nbq/farm1_20220815_1445_NBQ.WPD~/home/sprixin/davinci/usr/subfcst_project/fepcfg/ftpcfg/16/nbq/farm1_20220815_1445_NBQ.WPD"/>
+        </case>
+		<case id="case059" name="湖南-72h预测气象文件核对" desc="" faulttype="0" mark="0">
+            <judgestep order="1" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinciapi/data/efile/hunan/nwp72/farm1_20220816_0000_NWP.WPD~/home/sprixin/davinci/usr/subfcst_project/fepcfg/ftpcfg/16/nwp72/farm1_20220816_0000_NWP.WPD"/>
+        </case>
+		 <case id="case060" name="湖南-理论功率文件核对" desc="" faulttype="0" mark="0">
+            <judgestep order="1" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinciapi/data/efile/hunan/theory/farm1_20220815_1445_THEROY.WPD~/home/sprixin/davinci/usr/subfcst_project/fepcfg/ftpcfg/16/theory/farm1_20220815_1445_THEROY.WPD"/>
+        </case>
+		<case id="case061" name="湖南-检修文件核对" desc="" faulttype="0" mark="0">
+            <judgestep order="1" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinciapi/data/efile/hunan/jx/farm1_20220815_1445_JX.WPD~/home/sprixin/davinci/usr/subfcst_project/fepcfg/ftpcfg/16/jx/farm1_20220815_1445_JX.WPD"/>
+        </case>
+		<case id="case062" name="湖南-电站信息文件核对" desc="" faulttype="0" mark="0">
+            <judgestep order="1" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinciapi/data/efile/hunan/info/farm1_20220814_0000_INFO.WPD~/home/sprixin/davinci/usr/subfcst_project/fepcfg/ftpcfg/16/info/farm1_20220814_0000_INFO.WPD"/>
+        </case>
+		
+		<case id="case063" name="江苏-1天短期预测文件核对" desc="" faulttype="0" mark="0">
+            <judgestep order="1" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinciapi/data/efile/jiangsu/1dq/farm1_20220816_0000_DQ.WPD~/home/sprixin/davinci/usr/subfcst_project/fepcfg/ftpcfg/17/1dq/farm1_20220816_0000_DQ.WPD"/>
+        </case>
+        <case id="case064" name="江苏-2天短期预测文件核对" desc="" faulttype="0" mark="0">
+            <judgestep order="1" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinciapi/data/efile/jiangsu/2dq/farm1_20220816_0000_DQ.WPD~/home/sprixin/davinci/usr/subfcst_project/fepcfg/ftpcfg/17/2dq/farm1_20220816_0000_DQ.WPD"/>
+        </case>
+        <case id="case065" name="江苏-超短期预测文件核对" desc="" faulttype="0" mark="0">
+            <judgestep order="1" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinciapi/data/efile/jiangsu/cdq/farm1_20220815_1500_CDQ.WPD~/home/sprixin/davinci/usr/subfcst_project/fepcfg/ftpcfg/17/cdq/farm1_20220815_1500_CDQ.WPD"/>
+        </case>
+        <case id="case066" name="江苏-10h超短期预测文件核对" desc="" faulttype="0" mark="0">
+            <judgestep order="1" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinciapi/data/efile/jiangsu/cdq10h/farm1_20220815_1500_CDQ.WPD~/home/sprixin/davinci/usr/subfcst_project/fepcfg/ftpcfg/17/cdq10h/farm1_20220815_1500_CDQ.WPD"/>
+        </case>
+        <case id="case067" name="江苏-气象站文件核对" desc="" faulttype="0" mark="0">
+            <judgestep order="1" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinciapi/data/efile/jiangsu/qxz/farm1_20220815_1445_QX.WPD~/home/sprixin/davinci/usr/subfcst_project/fepcfg/ftpcfg/17/qxz/farm1_20220815_1445_QX.WPD"/>
+        </case>
+        <case id="case068" name="江苏-短期168h预测文件核对" desc="" faulttype="0" mark="0">
+            <judgestep order="1" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinciapi/data/efile/jiangsu/dq168/farm1_20220816_0000_DQ.WPD~/home/sprixin/davinci/usr/subfcst_project/fepcfg/ftpcfg/17/dq168/farm1_20220816_0000_DQ.WPD"/>
+        </case>
+        <case id="case069" name="江苏-理论功率文件核对" desc="" faulttype="0" mark="0">
+            <judgestep order="1" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinciapi/data/efile/jiangsu/theory/farm1_20220815_1445_THEORY.WPD~/home/sprixin/davinci/usr/subfcst_project/fepcfg/ftpcfg/17/theory/farm1_20220815_1445_THEORY.WPD"/>
+        </case>
+		-->
+		<case id="case070" name="江西-短期预测文件核对" desc="" faulttype="0" mark="0">
+            <judgestep order="1" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinciapi/data/efile/jiangxi/dq/江西.电厂1_72wind_20220816.rb~/home/sprixin/davinci/usr/subfcst_project/fepcfg/ftpcfg/18/dq/江西.电厂1_72wind_20220816.rb~gb2312"/>
+        </case>
+        <case id="case071" name="江西-超短期预测文件核对" desc="" faulttype="0" mark="0">
+            <judgestep order="1" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinciapi/data/efile/jiangxi/cdq/江西.电厂1_4Cwind_202208151500.rb~/home/sprixin/davinci/usr/subfcst_project/fepcfg/ftpcfg/18/cdq/江西.电厂1_4Cwind_202208151500.rb~gb2312"/>
+        </case>
+        <case id="case072" name="江西-气象站信息文件核对" desc="" faulttype="0" mark="0">
+            <judgestep order="1" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinciapi/data/efile/jiangxi/qxz/江西.电厂1_qx_202208151445.rb~/home/sprixin/davinci/usr/subfcst_project/fepcfg/ftpcfg/18/qxz/江西.电厂1_qx_202208151445.rb~gb2312"/>
+        </case>
+        <case id="case073" name="江西-气象预测文件核对" desc="" faulttype="0" mark="0">
+            <judgestep order="1" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinciapi/data/efile/jiangxi/nwp24/江西.电厂1_24nwp_20220816.rb~/home/sprixin/davinci/usr/subfcst_project/fepcfg/ftpcfg/18/nwp24/江西.电厂1_24nwp_20220816.rb~gb2312"/>
+        </case>
+        <case id="case074" name="江西-72h气象预测文件核对" desc="" faulttype="0" mark="0">
+            <judgestep order="1" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinciapi/data/efile/jiangxi/nwp72/江西.电厂1_72nwp_20220816.rb~/home/sprixin/davinci/usr/subfcst_project/fepcfg/ftpcfg/18/nwp72/江西.电厂1_72nwp_20220816.rb~gb2312"/>
+        </case>
+		
+		<case id="case075" name="冀北-短期预测文件核对" desc="" faulttype="0" mark="0">
+            <judgestep order="1" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinciapi/data/efile/jibei/dq/GFDZ_farm1_DQ_20220816.CSV~/home/sprixin/davinci/usr/subfcst_project/fepcfg/ftpcfg/19/dq/GFDZ_farm1_DQ_20220816.CSV"/>
+        </case>
+        <case id="case076" name="冀北-超短期预测文件核对" desc="" faulttype="0" mark="0">
+            <judgestep order="1" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinciapi/data/efile/jibei/cdq/farm1_20220815_1445_GFCDQ.RB~/home/sprixin/davinci/usr/subfcst_project/fepcfg/ftpcfg/19/cdq/farm1_20220815_1445_GFCDQ.RB"/>
+        </case>
+        <case id="case077" name="冀北-气象站信息文件核对" desc="" faulttype="0" mark="0">
+            <judgestep order="1" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinciapi/data/efile/jibei/qxz/JBCGRB_电厂1_20220814.RB~/home/sprixin/davinci/usr/subfcst_project/fepcfg/ftpcfg/19/qxz/JBCGRB_电厂1_20220814.RB~gb2312"/>
+        </case>
+        <case id="case078" name="冀北-气象预测文件核对" desc="" faulttype="0" mark="0">
+            <judgestep order="1" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinciapi/data/efile/jibei/nwp/GFDZ_farm1_QX_20220816.CSV~/home/sprixin/davinci/usr/subfcst_project/fepcfg/ftpcfg/19/nwp/GFDZ_farm1_QX_20220816.CSV"/>
+        </case>
+        <case id="case079" name="冀北-单机信息文件核对" desc="" faulttype="0" mark="0">
+            <judgestep order="1" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinciapi/data/efile/jibei/djxx/farm1_20220815_1445.DJ~/home/sprixin/davinci/usr/subfcst_project/fepcfg/ftpcfg/19/djxx/farm1_20220815_1445.DJ"/>
+        </case>
+		
+		<case id="case080" name="吉林-短期预测文件核对" desc="" faulttype="0" mark="0">
+            <judgestep order="1" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinciapi/data/efile/jilin/dq/farm1_20220816_0000_DQ.PVD~/home/sprixin/davinci/usr/subfcst_project/fepcfg/ftpcfg/20/dq/farm1_20220816_0000_DQ.PVD"/>
+        </case>
+        <case id="case081" name="吉林-1短期240文件核对" desc="" faulttype="0" mark="0">
+            <judgestep order="1" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinciapi/data/efile/jilin/1dq240/farm1_20220816_0000_DQ.RB~/home/sprixin/davinci/usr/subfcst_project/fepcfg/ftpcfg/20/1dq240/farm1_20220816_0000_DQ.RB"/>
+        </case>
+        <case id="case082" name="吉林-2短期240文件核对" desc="" faulttype="0" mark="0">
+            <judgestep order="1" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinciapi/data/efile/jilin/2dq240/farm1_20220816_0000_DQ.RB~/home/sprixin/davinci/usr/subfcst_project/fepcfg/ftpcfg/20/2dq240/farm1_20220816_0000_DQ.RB"/>
+        </case>
+        <case id="case083" name="吉林-超短期预测文件核对" desc="" faulttype="0" mark="0">
+            <judgestep order="1" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinciapi/data/efile/jilin/cdq/farm1_20220815_1500_CDQ.PVD~/home/sprixin/davinci/usr/subfcst_project/fepcfg/ftpcfg/20/cdq/farm1_20220815_1500_CDQ.PVD"/>
+        </case>
+        <case id="case084" name="吉林-气象站信息文件核对" desc="" faulttype="0" mark="0">
+            <judgestep order="1" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinciapi/data/efile/jilin/qxz/farm1_20220815_1445_QXZ.PVD~/home/sprixin/davinci/usr/subfcst_project/fepcfg/ftpcfg/20/qxz/farm1_20220815_1445_QXZ.PVD"/>
+        </case>
+        <case id="case085" name="吉林-逆变器文件核对" desc="" faulttype="0" mark="0">
+            <judgestep order="1" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinciapi/data/efile/jilin/nbq/farm1_20220815_1445_NBQ.PVD~/home/sprixin/davinci/usr/subfcst_project/fepcfg/ftpcfg/20/nbq/farm1_20220815_1445_NBQ.PVD"/>
+        </case>
+        <case id="case086" name="吉林-发电量文件核对" desc="" faulttype="0" mark="0">
+            <judgestep order="1" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinciapi/data/efile/jilin/dl/farm1_202208_DL.RB~/home/sprixin/davinci/usr/subfcst_project/fepcfg/ftpcfg/20/dl/farm1_202208_DL.RB"/>
+        </case>
+		
+		<case id="case087" name="冀南-1day短期预测文件核对" desc="" faulttype="0" mark="0">
+            <judgestep order="1" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinciapi/data/efile/jinan/1daydq/短期_电厂1_20220816.RB~/home/sprixin/davinci/usr/subfcst_project/fepcfg/ftpcfg/21/1daydq/短期_电厂1_20220816.RB~gb2312"/>
+        </case>
+        <case id="case088" name="冀南-2day短期预测文件核对" desc="" faulttype="0" mark="0">
+            <judgestep order="1" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinciapi/data/efile/jinan/2daydq/短期_电厂1_20220817.RB~/home/sprixin/davinci/usr/subfcst_project/fepcfg/ftpcfg/21/2daydq/短期_电厂1_20220817.RB~gb2312"/>
+        </case>
+        <case id="case089" name="冀南-3day短期预测文件核对" desc="" faulttype="0" mark="0">
+            <judgestep order="1" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinciapi/data/efile/jinan/3daydq/短期_电厂1_20220818.RB~/home/sprixin/davinci/usr/subfcst_project/fepcfg/ftpcfg/21/3daydq/短期_电厂1_20220818.RB~gb2312"/>
+        </case>
+        <case id="case090" name="冀南-4day短期预测文件核对" desc="" faulttype="0" mark="0">
+            <judgestep order="1" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinciapi/data/efile/jinan/4daydq/短期_电厂1_20220819.RB~/home/sprixin/davinci/usr/subfcst_project/fepcfg/ftpcfg/21/4daydq/短期_电厂1_20220819.RB~gb2312"/>
+        </case>
+        <case id="case091" name="冀南-5day短期预测文件核对" desc="" faulttype="0" mark="0">
+            <judgestep order="1" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinciapi/data/efile/jinan/5daydq/短期_电厂1_20220820.RB~/home/sprixin/davinci/usr/subfcst_project/fepcfg/ftpcfg/21/5daydq/短期_电厂1_20220820.RB~gb2312"/>
+        </case>
+        <case id="case092" name="冀南-6day短期预测文件核对" desc="" faulttype="0" mark="0">
+            <judgestep order="1" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinciapi/data/efile/jinan/6daydq/短期_电厂1_20220821.RB~/home/sprixin/davinci/usr/subfcst_project/fepcfg/ftpcfg/21/6daydq/短期_电厂1_20220821.RB~gb2312"/>
+        </case>
+        <case id="case093" name="冀南-7day短期预测文件核对" desc="" faulttype="0" mark="0">
+            <judgestep order="1" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinciapi/data/efile/jinan/7daydq/短期_电厂1_20220822.RB~/home/sprixin/davinci/usr/subfcst_project/fepcfg/ftpcfg/21/7daydq/短期_电厂1_20220822.RB~gb2312"/>
+        </case>
+        <case id="case094" name="冀南-8day短期预测文件核对" desc="" faulttype="0" mark="0">
+            <judgestep order="1" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinciapi/data/efile/jinan/8daydq/短期_电厂1_20220823.RB~/home/sprixin/davinci/usr/subfcst_project/fepcfg/ftpcfg/21/8daydq/短期_电厂1_20220823.RB~gb2312"/>
+        </case>
+        <case id="case095" name="冀南-9day短期预测文件核对" desc="" faulttype="0" mark="0">
+            <judgestep order="1" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinciapi/data/efile/jinan/9daydq/短期_电厂1_20220824.RB~/home/sprixin/davinci/usr/subfcst_project/fepcfg/ftpcfg/21/9daydq/短期_电厂1_20220824.RB~gb2312"/>
+        </case>
+        <case id="case096" name="冀南-10day短期预测文件核对" desc="" faulttype="0" mark="0">
+            <judgestep order="1" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinciapi/data/efile/jinan/10daydq/短期_电厂1_20220825.RB~/home/sprixin/davinci/usr/subfcst_project/fepcfg/ftpcfg/21/10daydq/短期_电厂1_20220825.RB~gb2312"/>
+        </case>
+        <case id="case097" name="冀南-超短期预测文件核对" desc="" faulttype="0" mark="0">
+            <judgestep order="1" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinciapi/data/efile/jinan/cdq/超短期_电厂1_202208151445.dat~/home/sprixin/davinci/usr/subfcst_project/fepcfg/ftpcfg/21/cdq/超短期_电厂1_202208151445.dat~gb2312"/>
+        </case>
+		
+		<case id="case098" name="辽宁-1day短期预测文件核对" desc="" faulttype="0" mark="0">
+            <judgestep order="1" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinciapi/data/efile/liaoning/1daydq/20220816.xml~/home/sprixin/davinci/usr/subfcst_project/fepcfg/ftpcfg/22/1daydq/20220816.xml"/>
+        </case>
+        <case id="case099" name="辽宁-2day短期预测文件核对" desc="" faulttype="0" mark="0">
+            <judgestep order="1" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinciapi/data/efile/liaoning/2daydq/20220817.xml~/home/sprixin/davinci/usr/subfcst_project/fepcfg/ftpcfg/22/2daydq/20220817.xml"/>
+        </case>
+        <case id="case100" name="辽宁-3day短期预测文件核对" desc="" faulttype="0" mark="0">
+            <judgestep order="1" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinciapi/data/efile/liaoning/3daydq/20220818.xml~/home/sprixin/davinci/usr/subfcst_project/fepcfg/ftpcfg/22/3daydq/20220818.xml"/>
+        </case>
+        <case id="case101" name="辽宁-4day短期预测文件核对" desc="" faulttype="0" mark="0">
+            <judgestep order="1" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinciapi/data/efile/liaoning/4daydq/20220819.xml~/home/sprixin/davinci/usr/subfcst_project/fepcfg/ftpcfg/22/4daydq/20220819.xml"/>
+        </case>
+        <case id="case102" name="辽宁-5day短期预测文件核对" desc="" faulttype="0" mark="0">
+            <judgestep order="1" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinciapi/data/efile/liaoning/5daydq/20220820.xml~/home/sprixin/davinci/usr/subfcst_project/fepcfg/ftpcfg/22/5daydq/20220820.xml"/>
+        </case>
+        <case id="case103" name="辽宁-6day短期预测文件核对" desc="" faulttype="0" mark="0">
+            <judgestep order="1" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinciapi/data/efile/liaoning/6daydq/20220821.xml~/home/sprixin/davinci/usr/subfcst_project/fepcfg/ftpcfg/22/6daydq/20220821.xml"/>
+        </case>
+        <case id="case104" name="辽宁-7day短期预测文件核对" desc="" faulttype="0" mark="0">
+            <judgestep order="1" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinciapi/data/efile/liaoning/7daydq/20220822.xml~/home/sprixin/davinci/usr/subfcst_project/fepcfg/ftpcfg/22/7daydq/20220822.xml"/>
+        </case>
+		
+		<!--
+		<case id="case105" name="蒙东-上午短期预测文件核对" desc="" faulttype="0" mark="0">
+            <judgestep order="1" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinciapi/data/efile/mengdong/dq/farm1_20220816_DQ.WPD~/home/sprixin/davinci/usr/subfcst_project/fepcfg/ftpcfg/23/dq/farm1_20220816_DQ.WPD"/>
+        </case>
+        <case id="case106" name="蒙东-下午短期文件核对" desc="" faulttype="0" mark="0">
+            <judgestep order="1" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinciapi/data/efile/mengdong/2dq/farm1_20220816_DQ.WPD~/home/sprixin/davinci/usr/subfcst_project/fepcfg/ftpcfg/23/2dq/farm1_20220816_DQ.WPD"/>
+        </case>
+        <case id="case107" name="蒙东-日内短期文件核对" desc="" faulttype="0" mark="0">
+            <judgestep order="1" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinciapi/data/efile/mengdong/dq24/farm1_20220815_RN.WPD~/home/sprixin/davinci/usr/subfcst_project/fepcfg/ftpcfg/23/dq24/farm1_20220815_RN.WPD"/>
+        </case>
+        <case id="case108" name="蒙东-超短期预测文件核对" desc="" faulttype="0" mark="0">
+            <judgestep order="1" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinciapi/data/efile/mengdong/cdq/farm1_202208151445_CDQ.WPD~/home/sprixin/davinci/usr/subfcst_project/fepcfg/ftpcfg/23/cdq/farm1_202208151445_CDQ.WPD"/>
+        </case>-->
+        <case id="case109" name="蒙东-气象站信息文件核对" desc="" faulttype="0" mark="0">
+            <judgestep order="1" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinciapi/data/efile/mengdong/qxz/farm1_202208151445_CFT.RDT~/home/sprixin/davinci/usr/subfcst_project/fepcfg/ftpcfg/23/qxz/farm1_202208151445_CFT.RDT"/>
+        </case>
+		
+		<case id="case110" name="蒙西-短期预测文件核对" desc="" faulttype="0" mark="0">
+            <judgestep order="1" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinciapi/data/efile/mengxi/dq/farm1DQ20220816.PPD~/home/sprixin/davinci/usr/subfcst_project/fepcfg/ftpcfg/24/dq/farm1DQ20220816.PPD"/>
+        </case>
+        <case id="case111" name="蒙西-短期2文件核对" desc="" faulttype="0" mark="0">
+            <judgestep order="1" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinciapi/data/efile/mengxi/dq72/farm1DQ20220816.PPD~/home/sprixin/davinci/usr/subfcst_project/fepcfg/ftpcfg/24/dq72/farm1DQ20220816.PPD"/>
+        </case>
+        <case id="case112" name="蒙西-超短期预测文件核对" desc="" faulttype="0" mark="0">
+            <judgestep order="1" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinciapi/data/efile/mengxi/cdq/farm1CDQ202208151500.PPD~/home/sprixin/davinci/usr/subfcst_project/fepcfg/ftpcfg/24/cdq/farm1CDQ202208151500.PPD"/>
+        </case>
+		
+		<!--
+		<case id="case113" name="宁夏-短期预测文件核对" desc="" faulttype="0" mark="0">
+            <judgestep order="1" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinciapi/data/efile/ningxia/dq/farm1_20220816_0000_DQ.WPD~/home/sprixin/davinci/usr/subfcst_project/fepcfg/ftpcfg/25/dq/farm1_20220816_0000_DQ.WPD"/>
+        </case>
+        <case id="case114" name="宁夏-超短期预测文件核对" desc="" faulttype="0" mark="0">
+            <judgestep order="1" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinciapi/data/efile/ningxia/cdq/farm1_20220815_1500_CDQ.WPD~/home/sprixin/davinci/usr/subfcst_project/fepcfg/ftpcfg/25/cdq/farm1_20220815_1500_CDQ.WPD"/>
+        </case>
+        <case id="case115" name="宁夏-气象站文件核对" desc="" faulttype="0" mark="0">
+            <judgestep order="1" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinciapi/data/efile/ningxia/qxz/farm1_20220815_1445_QXZ.WPD~/home/sprixin/davinci/usr/subfcst_project/fepcfg/ftpcfg/25/qxz/farm1_20220815_1445_QXZ.WPD"/>
+        </case>
+        <case id="case116" name="宁夏-理论功率文件核对" desc="" faulttype="0" mark="0">
+            <judgestep order="1" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinciapi/data/efile/ningxia/llcdq/farm1_20220815_1445_LLCDQ.WPD~/home/sprixin/davinci/usr/subfcst_project/fepcfg/ftpcfg/25/llcdq/farm1_20220815_1445_LLCDQ.WPD"/>
+        </case>-->
+		
+		<case id="case117" name="青海-短期预测文件核对" desc="" faulttype="0" mark="0">
+            <judgestep order="1" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinciapi/data/efile/qinghai/dq/farm1_20220816_0000_DQ.PVD~/home/sprixin/davinci/usr/subfcst_project/fepcfg/ftpcfg/26/dq/farm1_20220816_0000_DQ.PVD"/>
+        </case>
+        <case id="case118" name="青海-可用短期文件核对" desc="" faulttype="0" mark="0">
+            <judgestep order="1" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinciapi/data/efile/qinghai/dquse/farm1_20220816_0000_DQ_USE.PVD~/home/sprixin/davinci/usr/subfcst_project/fepcfg/ftpcfg/26/dquse/farm1_20220816_0000_DQ_USE.PVD"/>
+        </case>
+        <case id="case119" name="青海-超短期文件核对" desc="" faulttype="0" mark="0">
+            <judgestep order="1" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinciapi/data/efile/qinghai/cdq/farm1_20220815_1500_CDQ.PVD~/home/sprixin/davinci/usr/subfcst_project/fepcfg/ftpcfg/26/cdq/farm1_20220815_1500_CDQ.PVD"/>
+        </case>
+        <case id="case120" name="青海-可用超短期预测文件核对" desc="" faulttype="0" mark="0">
+            <judgestep order="1" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinciapi/data/efile/qinghai/cdquse/farm1_20220815_1500_CDQ_USE.PVD~/home/sprixin/davinci/usr/subfcst_project/fepcfg/ftpcfg/26/cdquse/farm1_20220815_1500_CDQ_USE.PVD"/>
+        </case>
+        <case id="case121" name="青海-理论功率文件核对" desc="" faulttype="0" mark="0">
+            <judgestep order="2" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinciapi/data/efile/qinghai/theroy/farm1_20220815_1445_THEROY.PVD~/home/sprixin/davinci/usr/subfcst_project/fepcfg/ftpcfg/26/theroy/farm1_20220815_1445_THEROY.PVD"/>
+        </case>
+        <case id="case122" name="青海-气象站信息文件核对" desc="" faulttype="0" mark="0">
+            <judgestep order="1" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinciapi/data/efile/qinghai/qxz/farm1_20220815_1445_QXZ.PVD~/home/sprixin/davinci/usr/subfcst_project/fepcfg/ftpcfg/26/qxz/farm1_20220815_1445_QXZ.PVD"/>
+        </case>
+        <case id="case123" name="青海-逆变器文件核对" desc="" faulttype="0" mark="0">
+            <judgestep order="1" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinciapi/data/efile/qinghai/nbq/farm1_20220815_1445_NBQ.PVD~/home/sprixin/davinci/usr/subfcst_project/fepcfg/ftpcfg/26/nbq/farm1_20220815_1445_NBQ.PVD"/>
+        </case>
+        <case id="case124" name="青海-发电量文件核对" desc="" faulttype="0" mark="0">
+            <judgestep order="1" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinciapi/data/efile/qinghai/dl/farm1_202208_DL.RB~/home/sprixin/davinci/usr/subfcst_project/fepcfg/ftpcfg/26/dl/farm1_202208_DL.RB"/>
+        </case>
+		
+		<case id="case125" name="山东-短期预测文件核对" desc="" faulttype="0" mark="0">
+            <judgestep order="1" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinciapi/data/efile/shandong/dq168/山东.电厂1_7DQ_20220816.RB~/home/sprixin/davinci/usr/subfcst_project/fepcfg/ftpcfg/27/dq168/山东.电厂1_7DQ_20220816.RB~gb2312"/>
+        </case>
+        <case id="case126" name="山东-日前短期文件核对" desc="" faulttype="0" mark="0">
+            <judgestep order="1" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinciapi/data/efile/shandong/1dq24/山东.电厂1功率预测20220815.RB~/home/sprixin/davinci/usr/subfcst_project/fepcfg/ftpcfg/27/2dq/山东.电厂1功率预测20220815.RB~gb2312"/>
+        </case>
+        <case id="case127" name="山东-日前短期文件核对" desc="" faulttype="0" mark="0">
+            <judgestep order="1" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinciapi/data/efile/shandong/2dq24/山东.电厂1功率预测14_20220815.RB~/home/sprixin/davinci/usr/subfcst_project/fepcfg/ftpcfg/27/2dq24/山东.电厂1功率预测14_20220815.RB~gb2312"/>
+        </case>
+        <case id="case128" name="山东-超短期预测文件核对" desc="" faulttype="0" mark="0">
+            <judgestep order="1" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinciapi/data/efile/shandong/cdq/山东.电厂1实时功率预测202208151515.RB~/home/sprixin/davinci/usr/subfcst_project/fepcfg/ftpcfg/27/cdq/山东.电厂1实时功率预测202208151515.RB~gb2312"/>
+        </case>
+		
+		<case id="case129" name="上海-1次短期预测文件核对" desc="" faulttype="0" mark="0">
+            <judgestep order="1" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinciapi/data/efile/shanghai/1dq/fdyc_farm1_20220816.xml~/home/sprixin/davinci/usr/subfcst_project/fepcfg/ftpcfg/28/1dq/fdyc_farm1_20220816.xml"/>
+        </case>
+        <case id="case130" name="上海-2次短期预测文件核对" desc="" faulttype="0" mark="0">
+            <judgestep order="1" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinciapi/data/efile/shanghai/2dq/fdyc_farm1_20220817.xml~/home/sprixin/davinci/usr/subfcst_project/fepcfg/ftpcfg/28/2dq/fdyc_farm1_20220817.xml"/>
+        </case>
+        <case id="case131" name="上海-3次短期预测文件核对" desc="" faulttype="0" mark="0">
+            <judgestep order="1" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinciapi/data/efile/shanghai/3dq/fdyc_farm1_20220818.xml~/home/sprixin/davinci/usr/subfcst_project/fepcfg/ftpcfg/28/3dq/fdyc_farm1_20220818.xml"/>
+        </case>
+        <case id="case132" name="上海-超短期预测文件核对" desc="" faulttype="0" mark="0">
+            <judgestep order="1" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinciapi/data/efile/shanghai/cdq/cdqfdyc_farm1_20220815.RB~/home/sprixin/davinci/usr/subfcst_project/fepcfg/ftpcfg/28/cdq/cdqfdyc_farm1_20220815.RB"/>
+        </case>
+		
+		<case id="case133" name="陕西-短期预测文件核对" desc="" faulttype="0" mark="0">
+            <judgestep order="1" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinciapi/data/efile/shanxi_xian/dq/电厂1_72wind_20220816.rb~/home/sprixin/davinci/usr/subfcst_project/fepcfg/ftpcfg/29/dq/电厂1_72wind_20220816.rb~gb2312"/>
+        </case>
+        <case id="case134" name="陕西-短期2预测文件核对" desc="" faulttype="0" mark="0">
+            <judgestep order="1" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinciapi/data/efile/shanxi_xian/dq/电厂1_72wind_02_20220816.rb~/home/sprixin/davinci/usr/subfcst_project/fepcfg/ftpcfg/29/dq/电厂1_72wind_02_20220816.rb~gb2312"/>
+        </case>
+        <case id="case135" name="陕西-超短期预测文件核对" desc="" faulttype="0" mark="0">
+            <judgestep order="1" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinciapi/data/efile/shanxi_xian/cdq/电厂1_4Cwind_202208151500.rb~/home/sprixin/davinci/usr/subfcst_project/fepcfg/ftpcfg/29/cdq/电厂1_4Cwind_202208151500.rb~gb2312"/>
+        </case>
+        <case id="case136" name="陕西-昨日实发功率文件核对" desc="" faulttype="0" mark="0">
+            <judgestep order="1" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinciapi/data/efile/shanxi_xian/gridp/电厂1_24Bwind_20220814.rb~/home/sprixin/davinci/usr/subfcst_project/fepcfg/ftpcfg/29/gridp/电厂1_24Bwind_20220814.rb~gb2312"/>
+        </case>
+        <case id="case137" name="陕西-气象预测文件核对" desc="" faulttype="0" mark="0">
+            <judgestep order="1" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinciapi/data/efile/shanxi_xian/nwp24/电厂1_24nwp_20220816.rb~/home/sprixin/davinci/usr/subfcst_project/fepcfg/ftpcfg/29/nwp24/电厂1_24nwp_20220816.rb~gb2312"/>
+        </case>
+        <case id="case138" name="陕西-72h气象预测文件核对" desc="" faulttype="0" mark="0">
+            <judgestep order="1" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinciapi/data/efile/shanxi_xian/nwp72/电厂1_240nwp_20220816.rb~/home/sprixin/davinci/usr/subfcst_project/fepcfg/ftpcfg/29/nwp72/电厂1_240nwp_20220816.rb~gb2312"/>
+        </case>
+        <case id="case139" name="陕西-昨日理论功率文件核对" desc="" faulttype="0" mark="0">
+            <judgestep order="1" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinciapi/data/efile/shanxi_xian/theorypzr/电厂1_96TheoryPower_20220814.rb~/home/sprixin/davinci/usr/subfcst_project/fepcfg/ftpcfg/29/theorypzr/电厂1_96TheoryPower_20220814.rb~gb2312"/>
+        </case>
+        <case id="case140" name="陕西-实时理论功率文件核对" desc="" faulttype="0" mark="0">
+            <judgestep order="1" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinciapi/data/efile/shanxi_xian/theoryprt/电厂1_RtTheoryPower_202208151445.rb~/home/sprixin/davinci/usr/subfcst_project/fepcfg/ftpcfg/29/theoryprt/电厂1_RtTheoryPower_202208151445.rb~gb2312"/>
+        </case>
+		
+		<case id="case141" name="四川-短期预测文件核对" desc="" faulttype="0" mark="0">
+            <judgestep order="1" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinciapi/data/efile/sichuan/dq/farm1_20220816_0000_DQ.PVD~/home/sprixin/davinci/usr/subfcst_project/fepcfg/ftpcfg/30/dq/farm1_20220816_0000_DQ.PVD"/>
+        </case>
+        <case id="case142" name="四川-超短期预测文件核对" desc="" faulttype="0" mark="0">
+            <judgestep order="1" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinciapi/data/efile/sichuan/cdq/farm1_20220815_1500_CDQ.PVD~/home/sprixin/davinci/usr/subfcst_project/fepcfg/ftpcfg/30/cdq/farm1_20220815_1500_CDQ.PVD"/>
+        </case>
+        <case id="case143" name="四川-昨日理论功率文件核对" desc="" faulttype="0" mark="0">
+            <judgestep order="1" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinciapi/data/efile/sichuan/theorypzr/farm1_20220814_0000_YX.PVD~/home/sprixin/davinci/usr/subfcst_project/fepcfg/ftpcfg/30/theorypzr/farm1_20220814_0000_YX.PVD"/>
+        </case>
+		
+		<case id="case144" name="天津-短期预测文件核对" desc="" faulttype="0" mark="0">
+            <judgestep order="1" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinciapi/data/efile/tianjin/dq168/farm1_20220816_0000_DQ.PVD~/home/sprixin/davinci/usr/subfcst_project/fepcfg/ftpcfg/31/dq168/farm1_20220816_0000_DQ.PVD"/>
+        </case>
+        <case id="case145" name="天津-超短期文件核对" desc="" faulttype="0" mark="0">
+            <judgestep order="1" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinciapi/data/efile/tianjin/cdq/farm1_20220815_1500_CDQ.PVD~/home/sprixin/davinci/usr/subfcst_project/fepcfg/ftpcfg/31/cdq/farm1_20220815_1500_CDQ.PVD"/>
+        </case>
+        <case id="case146" name="天津-气象站信息文件核对" desc="" faulttype="0" mark="0">
+            <judgestep order="1" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinciapi/data/efile/tianjin/qxz/farm1_20220815_1445_QXZ.PVD~/home/sprixin/davinci/usr/subfcst_project/fepcfg/ftpcfg/31/qxz/farm1_20220815_1445_QXZ.PVD"/>
+        </case>
+        <case id="case147" name="天津-逆变器文件核对" desc="" faulttype="0" mark="0">
+            <judgestep order="1" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinciapi/data/efile/tianjin/nbq/farm1_20220815_1445_NBQ.PVD~/home/sprixin/davinci/usr/subfcst_project/fepcfg/ftpcfg/31/nbq/farm1_20220815_1445_NBQ.PVD"/>
+        </case>
+		
+		<case id="case148" name="西北-短期预测文件核对" desc="" faulttype="0" mark="0">
+            <judgestep order="1" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinciapi/data/efile/xibei/dq24/西北.电厂1_光伏站_短期可用发电功率预测_20220816000000.TXT~/home/sprixin/davinci/usr/subfcst_project/fepcfg/ftpcfg/32/dq24/西北.电厂1_光伏站_短期可用发电功率预测_20220816000000.TXT~gb2312"/>
+        </case>
+        <case id="case149" name="西北-超短期文件核对" desc="" faulttype="0" mark="0">
+            <judgestep order="1" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinciapi/data/efile/xibei/cdq/西北.电厂1_光伏站_超短期可用发电功率预测_20220815150000.TXT~/home/sprixin/davinci/usr/subfcst_project/fepcfg/ftpcfg/32/cdq/西北.电厂1_光伏站_超短期可用发电功率预测_20220815150000.TXT~gb2312"/>
+        </case>
+        <case id="case150" name="西北-气象站信息文件核对" desc="" faulttype="0" mark="0">
+            <judgestep order="1" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinciapi/data/efile/xibei/qxz/西北.电厂1_光伏气象站_实时量测_20220815144500.TXT~/home/sprixin/davinci/usr/subfcst_project/fepcfg/ftpcfg/32/qxz/西北.电厂1_光伏气象站_实时量测_20220815144500.TXT~gb2312"/>
+        </case>
+        <case id="case151" name="西北-逆变器信息文件核对" desc="" faulttype="0" mark="0">
+            <judgestep order="1" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinciapi/data/efile/xibei/nbq/西北.电厂1_光伏逆变器_实时量测_20220815144500.TXT~/home/sprixin/davinci/usr/subfcst_project/fepcfg/ftpcfg/32/nbq/西北.电厂1_光伏逆变器_实时量测_20220815144500.TXT~gb2312"/>
+        </case>
+        <case id="case152" name="西北-集电线文件核对" desc="" faulttype="0" mark="0">
+            <judgestep order="1" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinciapi/data/efile/xibei/jdx/西北.电厂1_光伏集电线_实时量测_20220815144500.TXT~/home/sprixin/davinci/usr/subfcst_project/fepcfg/ftpcfg/32/jdx/西北.电厂1_光伏集电线_实时量测_20220815144500.TXT~gb2312"/>
+        </case>
+        <case id="case153" name="西北-逆变器文件核对" desc="" faulttype="0" mark="0">
+            <judgestep order="1" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinciapi/data/efile/xibei/sslc/西北.电厂1_光伏站_实时量测_20220815144500.TXT~/home/sprixin/davinci/usr/subfcst_project/fepcfg/ftpcfg/32/sslc/西北.电厂1_光伏站_实时量测_20220815144500.TXT~gb2312"/>
+        </case>
+		<!--
+		<case id="case154" name="新疆-上午短期预测文件核对" desc="" faulttype="0" mark="0">
+            <judgestep order="1" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinciapi/data/efile/xinjiang/dq/farm1_20220816_0000_DQ.WPD~/home/sprixin/davinci/usr/subfcst_project/fepcfg/ftpcfg/33/dq/farm1_20220816_0000_DQ.WPD"/>
+        </case>
+        <case id="case155" name="新疆-下午短期文件核对" desc="" faulttype="0" mark="0">
+            <judgestep order="1" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinciapi/data/efile/xinjiang/dq2/farm1_20220816_0000_DQ.WPD~/home/sprixin/davinci/usr/subfcst_project/fepcfg/ftpcfg/33/dq2/farm1_20220816_0000_DQ.WPD"/>
+        </case>
+        <case id="case156" name="新疆-超短期文件核对" desc="" faulttype="0" mark="0">
+            <judgestep order="1" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinciapi/data/efile/xinjiang/cdq/farm1_20220815_1500_CDQ.WPD~/home/sprixin/davinci/usr/subfcst_project/fepcfg/ftpcfg/33/cdq/farm1_20220815_1500_CDQ.WPD"/>
+        </case>
+        <case id="case157" name="新疆-气象站文件核对" desc="" faulttype="0" mark="0">
+            <judgestep order="1" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinciapi/data/efile/xinjiang/qxz/farm1_20220815_1445_QXZ.WPD~/home/sprixin/davinci/usr/subfcst_project/fepcfg/ftpcfg/33/qxz/farm1_20220815_1445_QXZ.WPD"/>
+        </case>
+        <case id="case158" name="新疆-逆变器文件核对" desc="" faulttype="0" mark="0">
+            <judgestep order="1" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinciapi/data/efile/xinjiang/nbq/farm1_20220815_1445_NBQ.WPD~/home/sprixin/davinci/usr/subfcst_project/fepcfg/ftpcfg/33/nbq/farm1_20220815_1445_NBQ.WPD"/>
+        </case>-->
+		
+		<case id="case159" name="西藏-短期预测文件核对" desc="" faulttype="0" mark="0">
+            <judgestep order="1" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinciapi/data/efile/xizang/dq24/farm1_20220816_0000_DQ.PVD~/home/sprixin/davinci/usr/subfcst_project/fepcfg/ftpcfg/34/dq24/farm1_20220816_0000_DQ.PVD"/>
+        </case>
+        <case id="case160" name="西藏-超短期文件核对" desc="" faulttype="0" mark="0">
+            <judgestep order="1" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinciapi/data/efile/xizang/cdq/farm1_20220815_1500_CDQ.PVD~/home/sprixin/davinci/usr/subfcst_project/fepcfg/ftpcfg/34/cdq/farm1_20220815_1500_CDQ.PVD"/>
+        </case>
+        <case id="case161" name="西藏-气象站文件核对" desc="" faulttype="0" mark="0">
+            <judgestep order="1" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinciapi/data/efile/xizang/qxz/farm1_20220815_1445_QX.PVD~/home/sprixin/davinci/usr/subfcst_project/fepcfg/ftpcfg/34/qxz/farm1_20220815_1445_QX.PVD"/>
+        </case>
+        <case id="case162" name="西藏-数值天气预报文件核对" desc="" faulttype="0" mark="0">
+            <judgestep order="1" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinciapi/data/efile/xizang/nwp240/farm1_20220816_0000_240NWP.PVD~/home/sprixin/davinci/usr/subfcst_project/fepcfg/ftpcfg/34/nwp240/farm1_20220816_0000_240NWP.PVD"/>
+        </case>
+		
+		<case id="case163" name="云南-短期预测文件核对" desc="" faulttype="0" mark="0">
+            <judgestep order="1" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinciapi/data/efile/yunnan/dq/farm1_20220816_0000_DQ.PVD~/home/sprixin/davinci/usr/subfcst_project/fepcfg/ftpcfg/35/dq/farm1_20220816_0000_DQ.PVD"/>
+        </case>
+        <case id="case164" name="云南-超短期文件核对" desc="" faulttype="0" mark="0">
+            <judgestep order="1" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinciapi/data/efile/yunnan/cdq/farm1_20220815_1500_CDQ.PVD~/home/sprixin/davinci/usr/subfcst_project/fepcfg/ftpcfg/35/cdq/farm1_20220815_1500_CDQ.PVD"/>
+        </case>
+        <case id="case165" name="云南-数值天气预报文件核对" desc="" faulttype="0" mark="0">
+            <judgestep order="1" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinciapi/data/efile/yunnan/nwp72/farm1_20220816_0000_GNWP.PVD~/home/sprixin/davinci/usr/subfcst_project/fepcfg/ftpcfg/35/nwp72/farm1_20220816_0000_GNWP.PVD"/>
+        </case>
+		
+		<case id="case166" name="浙江-短期预测文件核对" desc="" faulttype="0" mark="0">
+            <judgestep order="1" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinciapi/data/efile/zhejiang/dq72/浙江.电厂1_72wind_20220816.rb~/home/sprixin/davinci/usr/subfcst_project/fepcfg/ftpcfg/36/dq72/浙江.电厂1_72wind_20220816.rb~gb2312"/>
+        </case>
+        <case id="case167" name="浙江-超短期文件核对" desc="" faulttype="0" mark="0">
+            <judgestep order="1" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinciapi/data/efile/zhejiang/cdq/浙江.电厂1_4Cwind_202208151445.rb~/home/sprixin/davinci/usr/subfcst_project/fepcfg/ftpcfg/36/cdq/浙江.电厂1_4Cwind_202208151445.rb~gb2312"/>
+        </case>
+        <case id="case168" name="浙江-气象站文件核对" desc="" faulttype="0" mark="0">
+            <judgestep order="1" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinciapi/data/efile/zhejiang/qxz/浙江.电厂1_qx_202208151445.rb~/home/sprixin/davinci/usr/subfcst_project/fepcfg/ftpcfg/36/qxz/浙江.电厂1_qx_202208151445.rb~gb2312"/>
+        </case>
+        <case id="case169" name="浙江-数值天气预报文件核对" desc="" faulttype="0" mark="0">
+            <judgestep order="1" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinciapi/data/efile/zhejiang/nwp72/浙江.电厂1_72nwp_20220816.rb~/home/sprixin/davinci/usr/subfcst_project/fepcfg/ftpcfg/36/nwp72/浙江.电厂1_72nwp_20220816.rb~gb2312"/>
+        </case>
+        <case id="case170" name="浙江-气象站文件核对" desc="" faulttype="0" mark="0">
+            <judgestep order="1" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinciapi/data/efile/zhejiang/gridp/浙江.电厂1_24Bwind_20220814.rb~/home/sprixin/davinci/usr/subfcst_project/fepcfg/ftpcfg/36/gridp/浙江.电厂1_24Bwind_20220814.rb~gb2312"/>
+        </case>
+    </suit>
+</test>

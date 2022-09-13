@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<test>
+    <suit id="stattool_001" name="统计0-5 0-5" desc="">
+        <precondition>
+            <!--<step order="1" desc="删除历史数据" cmdtype="5002" cmdparas="delete &#10;FROM&#10;fdayform &#10;WHERE&#10;DATATIME&gt;= '2021-11-17 00:00:00'~QMYSQL~10.64.14.76@_@DAVINCI_STATTOOL@_@_"/>
+            <step order="2" desc="修改系统时间为2021-11-18 12:02:00" cmdtype="3001" cmdparas="sh /home/sprixin/davinci/bin/date-stime.sh"/>
+            <step order="3" desc="修改statisticstool.ini中span的值为300" cmdtype="1001" cmdparas="/home/sprixin/davinci/usr/subfcst_project_wind/forecast/statisticstool.ini~statis@@span~300"/>
+            <step order="4" desc="修改statisticstool.ini中theory的值为1" cmdtype="1001" cmdparas="/home/sprixin/davinci/usr/subfcst_project_wind/forecast/statisticstool.ini~powertype@@theory~0"/>
+            <step order="5" desc="修改statisticstool.ini中的real的值为1" cmdtype="1001" cmdparas="/home/sprixin/davinci/usr/subfcst_project_wind/forecast/statisticstool.ini~powertype@@real~0"/>
+            <step order="6" desc="执行prog.sh脚本启动系统程序" cmdtype="3001" cmdparas="sh /home/sprixin/davinci/bin/prog.sh"/>
+            <step order="7" desc="等待系统程序运行6分钟" cmdtype="9003" cmdparas="360"/>
+            <step order="8" desc="关闭程序" cmdtype="3001" cmdparas="nohup rxshut all &gt;/dev/null 2&gt;&amp;1 &amp;"/>-->
+        </precondition>
+        <case id="test001" name="昨天-日实际发电量" desc="" faulttype="0" mark="0">
+            <step order="1" desc="计算预期结果" cmdtype="9005" cmdparas="/home/sprixin/lj/davinciapi"/>
+            <step order="2" desc="查询实际结果" cmdtype="5001" cmdparas="SELECT accumpower FROM  fdayform WHERE DATATIME = '2021-11-17 00:00:00'~QMYSQL~10.64.14.76@_@DAVINCI_STATTOOL@_@_~4"/>
+            <!--<step order="3" desc="核对实际结果和预期结果" cmdtype="2010" cmdparas="2~steppara_1_1~steppara_2_1"/>-->
+			<judgestep order="3" desc="" cmdtype="2010" cmdparas="2~1~steppara_2_1"/>
+        </case>
+        <!-- <case id="test002" name="昨日-日理论发电量" desc="" faulttype="0" mark="0">
+            <step order="1" desc="计算预期结果" cmdtype="5001" cmdparas="SELECT round(sum(theoryp)/12,3) from hdrtheorypdata5m20211117 where datatime like '2021-11-17%'~QMYSQL~10.64.14.76@_@DAVINCI_STATTOOL@_@_~2~0"/>
+            <step order="2" desc="查询实际结果" cmdtype="5001" cmdparas="SELECT&#10;&#9;theorysump &#10;FROM&#10;&#9;fdayform &#10;WHERE&#10;&#9;DATATIME = '2021-11-17 00:00:00'~QMYSQL~10.64.14.76@_@DAVINCI_STATTOOL@_@_@_@DAVINCI_STATTOOL@_@_~2~0"/>
+            <step order="3" desc="核对实际结果和预期结果" cmdtype="2010" cmdparas="2~steppara_1_1~steppara_2_1"/>
+        </case>
+        <case id="test003" name="昨日-平均实发功率" desc="" faulttype="0" mark="0">
+            <step order="1" desc="计算预期结果" cmdtype="5001" cmdparas="select round(AVg(average),3) from hdranastat5m20211117 h WHERE  h.ID = (SELECT &#9;a.ID FROM&#9;analoginput a WHERE&#9;a.TYPE = ( SELECT m.ID FROM measurementtype m WHERE m.`NAME` = 'p' ) &#9;AND a.EQUIPMENTCONTAINER_TABLEID = 1071)~QMYSQL~10.64.14.76@_@DAVINCI_STATTOOL@_@_~2~0"/>
+            <step order="2" desc="查询实际结果" cmdtype="5001" cmdparas="SELECT&#10;&#9;AVG_P  &#10;FROM&#10;&#9;fdayform &#10;WHERE&#10;&#9;DATATIME = '2021-11-17 00:00:00'~QMYSQL~10.64.14.76@_@DAVINCI_STATTOOL@_@_~2~0"/>
+            <step order="3" desc="核对实际结果和预期结果" cmdtype="2010" cmdparas="2~steppara_1_1~steppara_2_1"/>
+        </case>
+        <case id="test004" name="昨日-并网时刻最大值对应时刻" desc="" faulttype="0" mark="0">
+            <step order="1" desc="计算预期结果" cmdtype="5001" cmdparas=" select DTMAXVAL from hdranastat5m20211117 h WHERE  h.ID = (SELECT &#9;a.ID FROM&#9;analoginput a WHERE&#9;a.TYPE = ( SELECT m.ID FROM measurementtype m WHERE m.`NAME` = 'p' ) &#9;AND a.EQUIPMENTCONTAINER_TABLEID = 1071) and MAXVAL =(select max(MAXVAL) from hdranastat5m20211117 h WHERE  h.ID = (SELECT &#9;a.ID FROM&#9;analoginput a WHERE&#9;a.TYPE = ( SELECT m.ID FROM measurementtype m WHERE m.`NAME` = 'p' ) &#9;AND a.EQUIPMENTCONTAINER_TABLEID = 1071)) ORDER BY hdtime limit 1 ~QMYSQL~10.64.14.76@_@DAVINCI_STATTOOL@_@_~2~0"/>
+            <step order="2" desc="查询实际结果" cmdtype="5001" cmdparas="SELECT&#10;  gridpmaxtime 并网功率最大值对应时间&#10;FROM&#10;&#9;fdayform &#10;WHERE&#10;&#9;DATATIME = '2021-11-17 00:00:00'~QMYSQL~10.64.14.76@_@DAVINCI_STATTOOL@_@_~2~0"/>
+            <step order="3" desc="核对实际结果和预期结果" cmdtype="2010" cmdparas="4~steppara_1_1~steppara_2_1"/>
+        </case>
+        <case id="test005" name="昨日-日并网功率最大值" desc="" faulttype="0" mark="0">
+            <step order="1" desc="计算预期结果" cmdtype="5001" cmdparas="select round(max(MAXVAL),3) from hdranastat5m20211117 h WHERE  h.ID = (SELECT &#9;a.ID FROM&#9;analoginput a WHERE&#9;a.TYPE = ( SELECT m.ID FROM measurementtype m WHERE m.`NAME` = 'p' ) &#9;AND a.EQUIPMENTCONTAINER_TABLEID = 1071)~QMYSQL~10.64.14.76@_@DAVINCI_STATTOOL@_@_~2~0"/>
+            <step order="2" desc="查询实际结果" cmdtype="5001" cmdparas="SELECT&#10;&#9;gridpmax 并网功率最大值&#10;FROM&#10;&#9;fdayform &#10;WHERE&#10;&#9;DATATIME = '2021-11-17 00:00:00'~QMYSQL~10.64.14.76@_@DAVINCI_STATTOOL@_@_~2~0"/>
+            <step order="3" desc="核对实际结果和预期结果" cmdtype="2010" cmdparas="2~steppara_1_1~steppara_2_1"/>
+        </case>
+        <case id="test006" name="昨日-风机平均风速" desc="" faulttype="0" mark="0">
+            <step order="1" desc="计算预期结果" cmdtype="5001" cmdparas="select round(avg(AVERAGE),3) from hdranastat5m20211117 h WHERE  h.ID = (SELECT &#9;a.ID FROM&#9;analoginput a WHERE&#9;a.TYPE = ( SELECT m.ID FROM measurementtype m WHERE m.`NAME` = 'WINDSPEED' ) &#9;AND a.EQUIPMENTCONTAINER_TABLEID = 1071)~QMYSQL~10.64.14.76@_@DAVINCI_STATTOOL@_@_~2~0"/>
+            <step order="2" desc="查询实际结果" cmdtype="5001" cmdparas="select round(avg(AVERAGE),3) from hdranastat5m20211117 h WHERE  h.ID = (SELECT &#9;a.ID FROM&#9;analoginput a WHERE&#9;a.TYPE = ( SELECT m.ID FROM measurementtype m WHERE m.`NAME` = 'WINDSPEED' ) &#9;AND a.EQUIPMENTCONTAINER_TABLEID = 1071)~QMYSQL~10.64.14.76@_@DAVINCI_STATTOOL@_@_~2~0"/>
+            <step order="3" desc="核对实际结果和预期结果" cmdtype="2010" cmdparas="2~steppara_1_1~steppara_2_1"/>
+        </case>
+        <case id="test007" name="昨日-测风塔平均风速" desc="" faulttype="0" mark="0">
+            <step order="1" desc="计算预期结果" cmdtype="5001" cmdparas="select round(avg(AVERAGE),3) from hdranastat5m20211117 h WHERE  h.ID = (SELECT &#9;a.ID FROM&#9;analoginput a WHERE&#9;a.TYPE = ( SELECT m.ID FROM measurementtype m WHERE m.`NAME` = 'uavg4' ) &#9;AND a.EQUIPMENTCONTAINER_TABLEID = 1072 and EQUIPMENTCONTAINER_ID=(select id from wind_metertower where IS_MAIN=0 ) )~QMYSQL~10.64.14.76@_@DAVINCI_STATTOOL@_@_~2~0"/>
+            <step order="2" desc="查询实际结果" cmdtype="5001" cmdparas="SELECT&#10;&#9;wtoweravgwind 测风塔日平均风速&#10;FROM&#10;&#9;fdayform &#10;WHERE&#10;&#9;DATATIME = '2021-11-17 00:00:00'~QMYSQL~10.64.14.76@_@DAVINCI_STATTOOL@_@_~2~0"/>
+            <step order="3" desc="核对实际结果和预期结果" cmdtype="2010" cmdparas="2~steppara_2_1~steppara_1_1"/>
+        </case>
+        <case id="test008" name="昨日-日最大风速" desc="" faulttype="0" mark="0">
+            <step order="1" desc="计算预期结果" cmdtype="5001" cmdparas="select round(max(MAXVAL),3) from hdranastat5m20211117 h WHERE  h.ID = (SELECT &#9;a.ID FROM&#9;analoginput a WHERE&#9;a.TYPE = ( SELECT m.ID FROM measurementtype m WHERE m.`NAME` = 'WINDSPEED' ) &#9;AND a.EQUIPMENTCONTAINER_TABLEID = 1071)~QMYSQL~10.64.14.76@_@DAVINCI_STATTOOL@_@_~2~0"/>
+            <step order="2" desc="查询实际结果" cmdtype="5001" cmdparas="SELECT&#10;&#9;maxwind 日最大风速&#10;FROM&#10;&#9;fdayform &#10;WHERE&#10;&#9;DATATIME = '2021-11-17 00:00:00'~QMYSQL~10.64.14.76@_@DAVINCI_STATTOOL@_@_~2~0"/>
+            <step order="3" desc="核对实际结果和预期结果" cmdtype="2010" cmdparas="2~steppara_1_1~steppara_2_1"/>
+        </case>
+        <case id="test009" name="昨日-日平均温度" desc="" faulttype="0" mark="0">
+            <step order="1" desc="计算预期结果" cmdtype="5001" cmdparas="select round(avg(AVERAGE),3) from hdranastat5m20211117 h WHERE  h.ID = (SELECT &#9;a.ID FROM&#9;analoginput a WHERE&#9;a.TYPE = ( SELECT m.ID FROM measurementtype m WHERE m.`NAME` = 'TEMPERATURE1' ) &#9;AND a.EQUIPMENTCONTAINER_TABLEID = 1072  and EQUIPMENTCONTAINER_ID=(select id from wind_metertower where IS_MAIN=0 ))~QMYSQL~10.64.14.76@_@DAVINCI_STATTOOL@_@_~2~0"/>
+            <step order="2" desc="查询实际结果" cmdtype="5001" cmdparas="SELECT&#10;&#9;avgtemperature 日平均温度&#10;FROM&#10;&#9;fdayform &#10;WHERE&#10;&#9;DATATIME = '2021-11-17 00:00:00'~QMYSQL~10.64.14.76@_@DAVINCI_STATTOOL@_@_~2~0"/>
+            <step order="3" desc="核对实际结果和预期结果" cmdtype="2010" cmdparas="2~steppara_1_1~steppara_2_1"/>
+        </case>
+        <case id="test10" name="当天-日实际发电量" desc="" faulttype="0" mark="0">
+            <step order="1" desc="计算预期结果" cmdtype="5001" cmdparas="SELECT round(sum(average)/12,3) FROM  hdranastat5m20211118 h WHERE  h.ID = (SELECT &#9;a.ID FROM&#9;analoginput a WHERE&#9;a.TYPE = ( SELECT m.ID FROM measurementtype m WHERE m.`NAME` = 'p' ) &#9;AND a.EQUIPMENTCONTAINER_TABLEID = 1071) and hdtime &lt;= '2021-11-18 12:00:00'~QMYSQL~10.64.14.76@_@DAVINCI_STATTOOL@_@_~2~0"/>
+            <step order="2" desc="查询实际结果" cmdtype="5001" cmdparas="SELECT&#10;&#9;accumpower 日累计发电量&#10;FROM&#10;&#9;fdayform &#10;WHERE&#10;&#9;DATATIME = '2021-11-18 00:00:00'~QMYSQL~10.64.14.76@_@DAVINCI_STATTOOL@_@_~2~0"/>
+            <step order="3" desc="核对实际结果和预期结果" cmdtype="2010" cmdparas="2~steppara_1_1~steppara_2_1"/>
+        </case>
+        <case id="test11" name="当天-日理论发电量" desc="" faulttype="0" mark="0">
+            <step order="1" desc="计算预期结果" cmdtype="5001" cmdparas="SELECT round(sum(theoryp)/12,3) from hdrtheorypdata5m20211118 where datatime like '2021-11-18%' and  datatime &lt;= '2021-11-18 12:00:00'~QMYSQL~10.64.14.76@_@DAVINCI_STATTOOL@_@_~3~0"/>
+            <step order="2" desc="查询实际结果" cmdtype="5001" cmdparas="SELECT&#10;&#9;theorysump &#10;FROM&#10;&#9;fdayform &#10;WHERE&#10;&#9;DATATIME = '2021-11-18 00:00:00'~QMYSQL~10.64.14.76@_@DAVINCI_STATTOOL@_@_~2~0"/>
+            <step order="3" desc="核对实际结果和预期结果" cmdtype="2010" cmdparas="2~steppara_1_1~steppara_2_1"/>
+        </case>
+        <case id="test011" name="当天-日平均实发功率" desc="" faulttype="0" mark="0">
+            <step order="1" desc="计算预期结果" cmdtype="5001" cmdparas="select round(AVg(average),3) from hdranastat5m20211118 h WHERE  h.ID = (SELECT &#9;a.ID FROM&#9;analoginput a WHERE&#9;a.TYPE = ( SELECT m.ID FROM measurementtype m WHERE m.`NAME` = 'p' ) &#9;AND a.EQUIPMENTCONTAINER_TABLEID = 1071) and hdtime &lt;= '2021-11-18 12:00:00'~QMYSQL~10.64.14.76@_@DAVINCI_STATTOOL@_@_~2~0"/>
+            <step order="2" desc="查询实际结果" cmdtype="5001" cmdparas="SELECT&#10;&#9;AVG_P  &#10;FROM&#10;&#9;fdayform &#10;WHERE&#10;&#9;DATATIME = '2021-11-18 00:00:00'~QMYSQL~10.64.14.76@_@DAVINCI_STATTOOL@_@_~2~0"/>
+            <step order="3" desc="核对实际结果和预期结果" cmdtype="2010" cmdparas="2~steppara_1_1~steppara_2_1"/>
+        </case>
+        <case id="test012" name="当天-并网功率最大值对应时刻" desc="" faulttype="0" mark="0">
+            <step order="1" desc="计算预期结果" cmdtype="5001" cmdparas=" select DTMAXVAL from hdranastat5m20211118 h WHERE  h.ID = (SELECT &#9;a.ID FROM&#9;analoginput a WHERE&#9;a.TYPE = ( SELECT m.ID FROM measurementtype m WHERE m.`NAME` = 'p' ) &#9;AND a.EQUIPMENTCONTAINER_TABLEID = 1071) and MAXVAL =(select max(MAXVAL) from hdranastat5m20211118 h WHERE  h.ID = (SELECT &#9;a.ID FROM&#9;analoginput a WHERE&#9;a.TYPE = ( SELECT m.ID FROM measurementtype m WHERE m.`NAME` = 'p' ) &#9;AND a.EQUIPMENTCONTAINER_TABLEID = 1071)) and hdtime &lt;= '2021-11-18 12:00:00' ORDER BY hdtime limit 1~QMYSQL~10.64.14.76@_@DAVINCI_STATTOOL@_@_~2~0"/>
+            <step order="2" desc="查询实际结果" cmdtype="5001" cmdparas="SELECT&#10;  gridpmaxtime 并网功率最大值对应时间&#10;FROM&#10;&#9;fdayform &#10;WHERE&#10;&#9;DATATIME = '2021-11-18 00:00:00'~QMYSQL~10.64.14.76@_@DAVINCI_STATTOOL@_@_~2~0"/>
+            <step order="3" desc="核对实际结果和预期结果" cmdtype="2010" cmdparas="2~steppara_1_1~steppara_2_1"/>
+        </case>
+        <case id="test013" name="当天-日并网功率最大值" desc="" faulttype="0" mark="0">
+            <step order="1" desc="计算预期结果" cmdtype="5001" cmdparas="select round(max(MAXVAL),3) from hdranastat5m20211118 h WHERE  h.ID = (SELECT &#9;a.ID FROM&#9;analoginput a WHERE&#9;a.TYPE = ( SELECT m.ID FROM measurementtype m WHERE m.`NAME` = 'p' ) &#9;AND a.EQUIPMENTCONTAINER_TABLEID = 1071) and hdtime &lt;= '2021-11-18 12:00:00' ~QMYSQL~10.64.14.76@_@DAVINCI_STATTOOL@_@_~2~0"/>
+            <step order="2" desc="查询实际结果" cmdtype="5001" cmdparas="SELECT&#10;&#9;gridpmax 并网功率最大值&#10;FROM&#10;&#9;fdayform &#10;WHERE&#10;&#9;DATATIME = '2021-11-18 00:00:00'~QMYSQL~10.64.14.76@_@DAVINCI_STATTOOL@_@_~2~0"/>
+            <step order="3" desc="核对实际结果和预期结果" cmdtype="2010" cmdparas="2~steppara_1_1~steppara_2_1"/>
+        </case>
+        <case id="test014" name="当天-风机平均风速" desc="" faulttype="0" mark="0">
+            <step order="1" desc="计算预期结果" cmdtype="5001" cmdparas="SELECT&#10;&#9;fanavgwind 日平均风速&#10;FROM&#10;&#9;fdayform &#10;WHERE&#10;&#9;DATATIME = '2021-11-18 00:00:00'~QMYSQL~10.64.14.76@_@DAVINCI_STATTOOL@_@_~2~0"/>
+            <step order="2" desc="查询实际结果" cmdtype="5001" cmdparas="SELECT&#10;&#9;fanavgwind 日平均风速&#10;FROM&#10;&#9;fdayform &#10;WHERE&#10;&#9;DATATIME = '2021-11-18 00:00:00'~QMYSQL~10.64.14.76@_@DAVINCI_STATTOOL@_@_~2~0"/>
+            <step order="3" desc="核对实际结果和预期结果" cmdtype="2010" cmdparas="2~steppara_1_1~steppara_2_1"/>
+        </case>
+        <case id="test015" name="当天-测风塔平均风速" desc="" faulttype="0" mark="0">
+            <step order="1" desc="计算预期结果" cmdtype="5001" cmdparas="select round(avg(AVERAGE),3) from hdranastat5m20211118 h WHERE  h.ID = (SELECT &#9;a.ID FROM&#9;analoginput a WHERE&#9;a.TYPE = ( SELECT m.ID FROM measurementtype m WHERE m.`NAME` = 'uavg4' ) &#9;AND a.EQUIPMENTCONTAINER_TABLEID = 1072 and EQUIPMENTCONTAINER_ID=(select id from wind_metertower where IS_MAIN=0 ) ) and hdtime &lt;= '2021-11-18 12:00:00' &#10;~QMYSQL~10.64.14.76@_@DAVINCI_STATTOOL@_@_~2~0"/>
+            <step order="2" desc="查询实际结果" cmdtype="5001" cmdparas="SELECT&#10;&#9;wtoweravgwind 测风塔日平均风速&#10;FROM&#10;&#9;fdayform &#10;WHERE&#10;&#9;DATATIME = '2021-11-18 00:00:00'~QMYSQL~10.64.14.76@_@DAVINCI_STATTOOL@_@_~2~0"/>
+            <step order="3" desc="核对实际结果和预期结果" cmdtype="2010" cmdparas="2~steppara_1_1~steppara_2_1"/>
+        </case>
+        <case id="test016" name="当天-日最大风速" desc="" faulttype="0" mark="0">
+            <step order="1" desc="计算预期结果" cmdtype="5001" cmdparas="select round(AVg(average),3) from hdranastat5m20211118 h WHERE  h.ID = (SELECT &#9;a.ID FROM&#9;analoginput a WHERE&#9;a.TYPE = ( SELECT m.ID FROM measurementtype m WHERE m.`NAME` = 'p' ) &#9;AND a.EQUIPMENTCONTAINER_TABLEID = 1071) and hdtime &lt;= '2021-11-18 12:00:00'~QMYSQL~10.64.14.76@_@DAVINCI_STATTOOL@_@_~2~0"/>
+            <step order="2" desc="查询实际结果" cmdtype="5001" cmdparas="SELECT&#10;&#9;AVG_P  &#10;FROM&#10;&#9;fdayform &#10;WHERE&#10;&#9;DATATIME = '2021-11-18 00:00:00'~QMYSQL~10.64.14.76@_@DAVINCI_STATTOOL@_@_~2~0"/>
+            <step order="3" desc="核对实际结果和预期结果" cmdtype="2010" cmdparas="2~steppara_1_1~steppara_2_1"/>
+        </case>
+        <case id="test017" name="当天-日平均温度" desc="" faulttype="0" mark="0">
+            <step order="1" desc="计算预期数据" cmdtype="5001" cmdparas="select round(avg(AVERAGE),3) from hdranastat5m20211118 h WHERE  h.ID = (SELECT &#9;a.ID FROM&#9;analoginput a WHERE&#9;a.TYPE = ( SELECT m.ID FROM measurementtype m WHERE m.`NAME` = 'TEMPERATURE1' ) &#9;AND a.EQUIPMENTCONTAINER_TABLEID = 1072  and EQUIPMENTCONTAINER_ID=(select id from wind_metertower where IS_MAIN=0 )) and hdtime &lt;= '2021-11-18 12:00:00' ~QMYSQL~10.64.14.76@_@DAVINCI_STATTOOL@_@_~2~0"/>
+            <step order="2" desc="查询实际结果" cmdtype="5001" cmdparas="SELECT&#10;&#9;avgtemperature 日平均温度&#10;FROM&#10;&#9;fdayform &#10;WHERE&#10;&#9;DATATIME = '2021-11-18 00:00:00'~QMYSQL~10.64.14.76@_@DAVINCI_STATTOOL@_@_~2~0"/>
+            <step order="3" desc="核对实际结果和预期结果" cmdtype="2010" cmdparas="2~steppara_1_1~steppara_2_1"/>
+        </case>-->
+    </suit>
+</test>

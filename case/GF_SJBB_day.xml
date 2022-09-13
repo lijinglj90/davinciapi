@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<test>
+    <suit id="1" name="风电_数据报表_短期预测日报" desc="">
+        <precondition>
+            <step order="1" desc="创建浏览器驱动" cmdtype="4001" cmdparas="chrome"/>
+            <step order="2" desc="登录风电界面" cmdtype="4003" cmdparas="http://10.64.14.174:18080/SPPP-web/login~id|username@@id|password@@id|submit~send_keys@wpfs@@send_keys@wpfs@@click~suitcondpara_1_1~chrome"/>
+        </precondition>
+        <case id="test1" name="风电_预测日报_日期核对" desc="" faulttype="0" mark="0">
+            <step order="1" desc="查询日期数据" cmdtype="4003" cmdparas="http://10.64.14.174:18080/SPPP-web/dayReport/dayReport~id|farmid@@id|powertype@@id|starttime@@id|endtime@@id|search@@id|oTable_wrapper~do_select@0@index@@do_select@0@index@@set_datetime@2022-03-30@@set_datetime@2022-03-30@@click@@get_quxian_data@日期@日期=2022-03-30@3~suitcondpara_1_1~chrome"/>
+            <step order="2" desc="查询数据库" cmdtype="5001" cmdparas="SELECT  left(DATATIME,10) FROM dayform WHERE OBJTABLE_ID = 1071 AND OBJ_ID = 115020 AND DATATIME = '2022-03-30 00:00:00'~QMYSQL~10.64.14.174@_@davinci1030scsf@_@_~3"/>
+            <judgestep order="2" desc="" cmdtype="2010" cmdparas="3~steppara_1_1~steppara_2_1"/>
+        </case>
+        <!--<case id="test2" name="风电_预测日报_开机容量核对" desc="" faulttype="0" mark="0">
+            <step order="1" desc="查询界面开机容量数据" cmdtype="4003" cmdparas="http://10.64.14.174:18080/SPPP-web/dayReport/dayReport~id|farmid@@id|powertype@@id|starttime@@id|endtime@@id|search@@id|oTable_wrapper~do_select@0@index@@do_select@0@index@@set_datetime@2022-03-30@@set_datetime@2022-03-30@@click@@get_quxian_data@开机容量(MW)@日期=2022-03-30@2~suitcondpara_1_1~chrome"/>
+            <step order="2" desc="查询数据库" cmdtype="5001" cmdparas="SELECT  CAP FROM dayform WHERE OBJTABLE_ID = 1071 AND OBJ_ID = 115020 AND DATATIME = '2022-03-30 00:00:00'~QMYSQL~2"/>
+            <judgestep order="2" desc="" cmdtype="2010" cmdparas="2~steppara_1_1~steppara_2_1"/>
+        </case>
+        <case id="test3" name="风电_预测日报_实发功率核对" desc="" faulttype="0" mark="0">
+            <step order="1" desc="查询实发功率数据" cmdtype="4003" cmdparas="http://10.64.14.174:18080/SPPP-web/dayReport/dayReport~id|farmid@@id|powertype@@id|starttime@@id|endtime@@id|search@@id|oTable_wrapper~do_select@0@index@@do_select@0@index@@set_datetime@2022-03-30@@set_datetime@2022-03-30@@click@@get_quxian_data@实发功率(MW)@日期=2022-03-30@2~suitcondpara_1_1~chrome"/>
+            <step order="2" desc="查询数据库" cmdtype="5001" cmdparas="SELECT  P FROM dayform WHERE OBJTABLE_ID = 1071 AND OBJ_ID = 115020 AND DATATIME = '2022-03-30 00:00:00'~QMYSQL~2"/>
+            <judgestep order="2" desc="" cmdtype="2010" cmdparas="2~steppara_1_1~steppara_2_1"/>
+        </case>
+        <case id="test4" name="风电_预测日报_预测功率核对" desc="" faulttype="0" mark="0">
+            <step order="1" desc="查询预测功率数据" cmdtype="4003" cmdparas="http://10.64.14.174:18080/SPPP-web/dayReport/dayReport~id|farmid@@id|powertype@@id|starttime@@id|endtime@@id|search@@id|oTable_wrapper~do_select@0@index@@do_select@0@index@@set_datetime@2022-03-30@@set_datetime@2022-03-30@@click@@get_quxian_data@预测功率(MW)@日期=2022-03-30@2~suitcondpara_1_1~chrome"/>
+            <step order="2" desc="查询数据库" cmdtype="5001" cmdparas="SELECT  PREP FROM dayform WHERE OBJTABLE_ID = 1071 AND OBJ_ID = 115020 AND DATATIME = '2022-03-30 00:00:00'~QMYSQL~2"/>
+            <judgestep order="2" desc="" cmdtype="2010" cmdparas="2~steppara_1_1~steppara_2_1"/>
+        </case>
+        <case id="test5" name="风电_预测日报_均方根误差核对" desc="" faulttype="0" mark="0">
+            <step order="1" desc="查询均方根误差数据" cmdtype="4003" cmdparas="http://10.64.14.174:18080/SPPP-web/dayReport/dayReport~id|farmid@@id|powertype@@id|starttime@@id|endtime@@id|search@@id|oTable_wrapper~do_select@0@index@@do_select@0@index@@set_datetime@2022-03-30@@set_datetime@2022-03-30@@click@@get_quxian_data@均方根误差@日期=2022-03-30@2~suitcondpara_1_1~chrome"/>
+            <step order="2" desc="查询数据库" cmdtype="5001" cmdparas="SELECT  RMSE FROM dayform WHERE OBJTABLE_ID = 1071 AND OBJ_ID = 115020 AND DATATIME = '2022-03-30 00:00:00'~QMYSQL~2"/>
+            <judgestep order="2" desc="" cmdtype="2010" cmdparas="2~steppara_1_1~steppara_2_1"/>
+        </case>
+        <case id="test6" name="风电_预测日报_平均绝对误差核对" desc="" faulttype="0" mark="0">
+            <step order="1" desc="查询平均绝对误差数据" cmdtype="4003" cmdparas="http://10.64.14.174:18080/SPPP-web/dayReport/dayReport~id|farmid@@id|powertype@@id|starttime@@id|endtime@@id|search@@id|oTable_wrapper~do_select@0@index@@do_select@0@index@@set_datetime@2022-03-30@@set_datetime@2022-03-30@@click@@get_quxian_data@平均绝对误差@日期=2022-03-30@2~suitcondpara_1_1~chrome"/>
+            <step order="2" desc="查询数据库" cmdtype="5001" cmdparas="SELECT  MAE FROM dayform WHERE OBJTABLE_ID = 1071 AND OBJ_ID = 115020 AND DATATIME = '2022-03-30 00:00:00'~QMYSQL~2"/>
+            <judgestep order="2" desc="" cmdtype="2010" cmdparas="2~steppara_1_1~steppara_2_1"/>
+        </case>
+        <case id="test7" name="风电_预测日报_相关性系数核对" desc="" faulttype="0" mark="0">
+            <step order="1" desc="查询相关性系数数据" cmdtype="4003" cmdparas="http://10.64.14.174:18080/SPPP-web/dayReport/dayReport~id|farmid@@id|powertype@@id|starttime@@id|endtime@@id|search@@id|oTable_wrapper~do_select@0@index@@do_select@0@index@@set_datetime@2022-03-30@@set_datetime@2022-03-30@@click@@get_quxian_data@相关性系数@日期=2022-03-30@2~suitcondpara_1_1~chrome"/>
+            <step order="2" desc="查询数据库" cmdtype="5001" cmdparas="SELECT  COLREL FROM dayform WHERE OBJTABLE_ID = 1071 AND OBJ_ID = 115020 AND DATATIME = '2022-03-30 00:00:00'~QMYSQL~2"/>
+            <judgestep order="2" desc="" cmdtype="2010" cmdparas="2~steppara_1_1~steppara_2_1"/>
+        </case>
+        <case id="test8" name="风电_预测日报_准确率核对" desc="" faulttype="0" mark="0">
+            <step order="1" desc="查询准确率数据" cmdtype="4003" cmdparas="http://10.64.14.174:18080/SPPP-web/dayReport/dayReport~id|farmid@@id|powertype@@id|starttime@@id|endtime@@id|search@@id|oTable_wrapper~do_select@0@index@@do_select@0@index@@set_datetime@2022-04-01@@set_datetime@2022-04-01@@click@@get_quxian_data@准确率@日期=2022-04-01@2~suitcondpara_1_1~chrome"/>
+            <step order="2" desc="查询数据库" cmdtype="5001" cmdparas="SELECT  ACCUR FROM dayform WHERE OBJTABLE_ID = 1071 AND OBJ_ID = 115020 AND DATATIME = '2022-04-01 00:00:00'~QMYSQL~2"/>
+            <judgestep order="2" desc="" cmdtype="2010" cmdparas="2~steppara_1_1~steppara_2_1"/>
+        </case>
+        <case id="test9" name="风电_预测日报_合格率核对" desc="" faulttype="0" mark="0">
+            <step order="1" desc="查询合格率数据" cmdtype="4003" cmdparas="http://10.64.14.174:18080/SPPP-web/dayReport/dayReport~id|farmid@@id|powertype@@id|starttime@@id|endtime@@id|search@@id|oTable_wrapper~do_select@0@index@@do_select@0@index@@set_datetime@2022-04-01@@set_datetime@2022-04-01@@click@@get_quxian_data@合格率@日期=2022-04-01@2~suitcondpara_1_1~chrome"/>
+            <step order="2" desc="查询数据库" cmdtype="5001" cmdparas="SELECT  QUALIFY FROM dayform WHERE OBJTABLE_ID = 1071 AND OBJ_ID = 115020 AND DATATIME = '2022-04-01 00:00:00'~QMYSQL~2"/>
+            <judgestep order="2" desc="" cmdtype="2010" cmdparas="2~steppara_1_1~steppara_2_1"/>
+        </case> -->
+    </suit>
+</test>

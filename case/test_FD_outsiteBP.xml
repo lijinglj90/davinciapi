@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<test>
+    <suit id="1" name="风电-场外受阻电力校核套件" desc="前置条件">
+        <precondition>
+            <!--<step order="1" desc="创建驱动" cmdtype="4001" cmdparas="chrome"/>
+            <step order="2" desc="登录" cmdtype="4003" cmdparas="http://10.64.14.70:18080/SPPP-web/login~id|username@@id|password@@id|submit~send_keys@wpfs@@send_keys@wpfs@@click~suitcondpara_1_1"/>-->
+        </precondition>
+		<case id="17264" name="机头风速法-导出" desc="机头风速法导出" faulttype="0" mark="0">
+			<step order="1" desc="数据库查询" cmdtype="5001" cmdparas="select substring(a.datatime,12,5) as time,a.ava,b.ave,((select round(a.ava,3))-(select round(b.ave,3)))*100/(select round(b.ave,3)) as pc from (select datatime, availableturbine ava from hdrtheorypdata$RTPARA_TODAY_1  where datatime ='$RTPARA_TODAY_2 01:00:00')a left join (select HDTIME,AVERAGE ave FROM hdranastat$RTPARA_TODAY_1 h WHERE h.ID = (SELECT a.ID FROM analoginput a left join plant p on a.EQUIPMENTCONTAINER_ID = p.id WHERE p.ALIASNAME='测试风电厂' and a.TYPE = (SELECT m.ID FROM measurementtype m WHERE m.`NAME` = 'p')  AND a.EQUIPMENTCONTAINER_TABLEID = 1071))b on b.HDTIME =a.datatime group by a.datatime~QMYSQL~3306@DAVINCI@_@_~3"/>
+			<judgestep order="1" desc="" cmdtype="2010" cmdparas="3~steppara_1_1~['3.4']"/>
+        </case>
+        <!--<case id="17263" name="机头风速法" desc="机头风速法" faulttype="0" mark="0">
+            <step order="1" desc="机头风速法-页面数据获取" cmdtype="4003" cmdparas="http://10.64.14.70:18080/SPPP-web/theoretical/outWindObstructed~id|plantId@@id|time@@id|type@@id|queryBtn@@id|oTable~do_select@0@index@@set_datetime@$RTPARA_TODAY_2@@do_select@0@index@@click@@get_tubiao_data@时间,可用(MW),实发(MW),偏差(%)@时间=01:00@3~suitcondpara_1_1"/>
+            <step order="2" desc="数据库查询" cmdtype="5001" cmdparas="select substring(a.datatime,12,5) as time,a.ava,b.ave,((select round(a.ava,3))-(select round(b.ave,3)))*100/(select round(b.ave,3)) as pc from (select datatime, availableturbine ava from hdrtheorypdata$RTPARA_TODAY_1  where datatime ='$RTPARA_TODAY_2 01:00:00')a left join (select HDTIME,AVERAGE ave FROM hdranastat$RTPARA_TODAY_1 h WHERE h.ID = (SELECT a.ID FROM analoginput a left join plant p on a.EQUIPMENTCONTAINER_ID = p.id WHERE p.ALIASNAME='测试风电厂' and a.TYPE = (SELECT m.ID FROM measurementtype m WHERE m.`NAME` = 'p')  AND a.EQUIPMENTCONTAINER_TABLEID = 1071))b on b.HDTIME =a.datatime group by a.datatime~QMYSQL~10.64.14.70@3306@DAVINCI@_@_~3"/>
+            <judgestep order="1" desc="" cmdtype="2010" cmdparas="3~steppara_1_1~steppara_2_1"/>
+        </case>-->
+		<!--<case id="005" name="机头风速法-累计(MWh)" desc="机头风速法累计(MWh)" faulttype="0" mark="0">
+            <step order="1" desc="机头风速法累计(MWh)-页面数据获取" cmdtype="4003" cmdparas="http://10.64.14.70:18080/SPPP-web/theoretical/outWindObstructed~id|plantId@@id|time@@id|type@@id|queryBtn@@id|oTable~do_select@0@index@@set_datetime@$RTPARA_TODAY_2@@do_select@1@value@@click@@get_tubiao_data@可用(MW),实发(MW)@时间=累计(MWh)@3~suitcondpara_1_1"/>
+            <step order="2" desc="数据库查询" cmdtype="5001" cmdparas="select sum(a.ava)/timenum/60,sum(b.ave)/timenum/60 from (select (SELECT TIMESTAMPDIFF(MINUTE,'$RTPARA_TODAY_2 00:00:00', (select ADDDATE(now(),interval 60 second)))) timenum,availableturbine ava from hdrtheorypdata$RTPARA_TODAY_1  where datatime between '$RTPARA_TODAY_2 00:00:00' and (select ADDDATE(now(),interval 60 second)))a,(select AVERAGE ave FROM hdranastat$RTPARA_TODAY_1 h WHERE h.ID =(SELECT a.ID FROM analoginput a left join plant p on a.EQUIPMENTCONTAINER_ID = p.id WHERE p.ALIASNAME='测试风电厂' and a.TYPE = (SELECT m.ID FROM measurementtype m WHERE m.`NAME` = 'p')  AND a.EQUIPMENTCONTAINER_TABLEID = 1071) AND h.HDTIME between '$RTPARA_TODAY_2 00:00:00' and (select ADDDATE(now(),interval 60 second)))b~QMYSQL~10.64.14.70@3306@DAVINCI@_@_~3"/>
+            <judgestep order="1" desc="" cmdtype="2010" cmdparas="3~steppara_1_1~steppara_2_1"/>
+        </case>-->
+        <!-- <case id="17264" name="机头风速法-导出" desc="机头风速法导出" faulttype="0" mark="0">
+			<step order="3" desc="" cmdtype="9004" cmdparas="$DOWM_HOME\测试风电厂-场外受阻电力校核-机头风速法-$RTPARA_TODAY_1.xls"/>
+            <step order="1" desc="测风塔外推法-导出" cmdtype="4003" cmdparas="http://10.64.14.70:18080/SPPP-web/theoretical/outWindObstructed~id|plantId@@id|time@@id|type@@id|queryBtn@@id|exportBtn~do_select@0@index@@set_datetime@$RTPARA_TODAY_2@@do_select@1@value@@click@@click~suitcondpara_1_1~chrome"/>
+            <step order="2" desc="等待时间" cmdtype="9003" cmdparas="5"/>
+			<judgestep order="1" desc="" cmdtype="9001" cmdparas="$DOWM_HOME\测试风电厂-场外受阻电力校核-机头风速法-$RTPARA_TODAY_1.xls"/>
+        </case>
+		<case id="17267" name="测风塔外推法" desc="测风塔外推法" faulttype="0" mark="0">
+			<step order="1" desc="测风塔外推法-页面数据获取" cmdtype="4003" cmdparas="http://10.64.14.70:18080/SPPP-web/theoretical/outWindObstructed~id|plantId@@id|time@@id|type@@id|queryBtn@@id|oTable~do_select@0@index@@set_datetime@$RTPARA_TODAY_2@@do_select@2@value@@click@@get_tubiao_data@时间,可用(MW),实发(MW),偏差(%)@时间=00:20@3~suitcondpara_1_1~chrome"/>
+			<step order="2" desc="数据库查询" cmdtype="5001" cmdparas="select substring(a.datatime,12,5) as time,a.ava,b.ave,((select round(a.ava,3))-(select round(b.ave,3)))*100/(select round(b.ave,3)) as pc from (select datatime, availablemeter ava from hdrtheorypdata$RTPARA_TODAY_1  where datatime ='$RTPARA_TODAY_2 00:20:00')a left join (select HDTIME,AVERAGE ave FROM hdranastat$RTPARA_TODAY_1 h WHERE h.ID = (SELECT a.ID FROM analoginput a left join plant p on a.EQUIPMENTCONTAINER_ID = p.id WHERE p.ALIASNAME='测试风电厂' and a.TYPE = (SELECT m.ID FROM measurementtype m WHERE m.`NAME` = 'p')  AND a.EQUIPMENTCONTAINER_TABLEID = 1071))b on b.HDTIME =a.datatime group by a.datatime~QMYSQL~10.64.14.70@3306@DAVINCI@sa@cast1234~3"/>
+			<judgestep order="1" desc="" cmdtype="2010" cmdparas="3~steppara_1_1~steppara_2_1"/>
+        </case>
+		<case id="17268" name="测风塔外推法-导出" desc="测风塔外推法-导出" faulttype="0" mark="0">
+			<step order="3" desc="" cmdtype="9004" cmdparas="$DOWM_HOME\测试风电厂-场外受阻电力校核-测风塔外推法-$RTPARA_TODAY_1.xls"/>
+			<step order="1" desc="测风塔外推法-导出" cmdtype="4003" cmdparas="http://10.64.14.70:18080/SPPP-web/theoretical/outWindObstructed~id|plantId@@id|time@@id|type@@id|queryBtn@@id|exportBtn~do_select@0@index@@set_datetime@$RTPARA_TODAY_2@@do_select@2@value@@click@@click~suitcondpara_1_1~chrome"/>
+			<step order="2" desc="等待时间" cmdtype="9003" cmdparas="5"/>
+			<judgestep order="1" desc="" cmdtype="9001" cmdparas="$DOWM_HOME\测试风电厂-场外受阻电力校核-测风塔外推法-$RTPARA_TODAY_1.xls"/>
+        </case>
+		<case id="17265" name="样板机法" desc="样板机法" faulttype="0" mark="0">
+			<step order="1" desc="样板机法-页面数据获取" cmdtype="4003" cmdparas="http://10.64.14.70:18080/SPPP-web/theoretical/outWindObstructed~id|plantId@@id|time@@id|type@@id|queryBtn@@id|oTable~do_select@0@index@@set_datetime@$RTPARA_TODAY_2@@do_select@3@value@@click@@get_tubiao_data@时间,可用(MW),实发(MW),偏差(%)@时间=00:59@3~suitcondpara_1_1~chrome"/>
+			<step order="2" desc="数据库查询" cmdtype="5001" cmdparas="select substring(a.datatime,12,5) as time,a.ava,b.ave,((select round(a.ava,3))-(select round(b.ave,3)))*100/(select round(b.ave,3)) as pc from (select datatime, availablemode ava from hdrtheorypdata$RTPARA_TODAY_1  where datatime='$RTPARA_TODAY_2 00:59:00')a left join (select HDTIME,AVERAGE ave FROM hdranastat$RTPARA_TODAY_1 h WHERE h.ID = (SELECT a.ID FROM analoginput a left join plant p on a.EQUIPMENTCONTAINER_ID = p.id WHERE p.ALIASNAME='测试风电厂' and a.TYPE = (SELECT m.ID FROM measurementtype m WHERE m.`NAME` = 'p')  AND a.EQUIPMENTCONTAINER_TABLEID = 1071))b on b.HDTIME =a.datatime group by a.datatime~QMYSQL~10.64.14.70@3306@DAVINCI@sa@cast1234~3"/>
+			<judgestep order="1" desc="" cmdtype="2010" cmdparas="3~steppara_1_1~steppara_2_1"/>
+        </case>
+		<case id="17266" name="样板机法-导出" desc="样板机法-导出" faulttype="0" mark="0">
+			<step order="3" desc="" cmdtype="9004" cmdparas="$DOWM_HOME\测试风电厂-场外受阻电力校核-样板机法-$RTPARA_TODAY_1.xls"/>
+			<step order="1" desc="样板机法-导出" cmdtype="4003" cmdparas="http://10.64.14.70:18080/SPPP-web/theoretical/outWindObstructed~id|plantId@@id|time@@id|type@@id|queryBtn@@id|exportBtn~do_select@0@index@@set_datetime@$RTPARA_TODAY_2@@do_select@3@value@@click@@click~suitcondpara_1_1~chrome"/>
+			<step order="2" desc="等待时间" cmdtype="9003" cmdparas="5"/>
+			<judgestep order="1" desc="" cmdtype="9001" cmdparas="$DOWM_HOME\测试风电厂-场外受阻电力校核-样板机法-$RTPARA_TODAY_1.xls"/>
+        </case>
+		<case id="07" name="机头风速法-导出数据核对" desc="机头风速法导出" faulttype="0" mark="0">
+			<step order="1" desc="" cmdtype="9004" cmdparas="$DOWM_HOME\测试风电厂-场外受阻电力校核-机头风速法-$RTPARA_TODAY_1.xls"/>
+            <step order="2" desc="测风塔外推法-导出" cmdtype="4003" cmdparas="http://10.64.14.70:18080/SPPP-web/theoretical/outWindObstructed~id|plantId@@id|time@@id|type@@id|queryBtn@@id|exportBtn~do_select@0@index@@set_datetime@$RTPARA_TODAY_2@@do_select@1@value@@click@@click~suitcondpara_1_1~chrome"/>
+			<step order="3" desc="" cmdtype="1042" cmdparas="$DOWM_HOME\测试风电厂-场外受阻电力校核-机头风速法-$RTPARA_TODAY_1.xls~时间,可用(MW),实发(MW),偏差(%)~时间=15:51~3"/>
+			<step order="4" desc="数据库查询" cmdtype="5001" cmdparas="select substring(a.datatime,12,5) as time,a.ava,b.ave,((select round(a.ava,3))-(select round(b.ave,3)))*100/(select round(b.ave,3)) as pc from (select datatime, availableturbine ava from hdrtheorypdata$RTPARA_TODAY_1  where datatime ='$RTPARA_TODAY_2 15:51:00')a left join (select HDTIME,AVERAGE ave FROM hdranastat$RTPARA_TODAY_1 h WHERE h.ID = (SELECT a.ID FROM analoginput a left join plant p on a.EQUIPMENTCONTAINER_ID = p.id WHERE p.ALIASNAME='测试风电厂' and a.TYPE = (SELECT m.ID FROM measurementtype m WHERE m.`NAME` = 'p')  AND a.EQUIPMENTCONTAINER_TABLEID = 1071))b on b.HDTIME =a.datatime group by a.datatime~QMYSQL~10.64.14.70@3306@DAVINCI@_@_~3"/>
+            <judgestep order="1" desc="" cmdtype="2010" cmdparas="3~steppara_3_1~steppara_4_1"/>
+        </case>
+		<case id="08" name="测风塔外推法-导出数据核对" desc="测风塔外推法-导出" faulttype="0" mark="0">
+			<step order="1" desc="" cmdtype="9004" cmdparas="$DOWM_HOME\测试风电厂-场外受阻电力校核-测风塔外推法-$RTPARA_YESTERDAY_1.xls"/>
+			<step order="2" desc="测风塔外推法-导出" cmdtype="4003" cmdparas="http://10.64.14.70:18080/SPPP-web/theoretical/outWindObstructed~id|plantId@@id|time@@id|type@@id|queryBtn@@id|exportBtn~do_select@0@index@@set_datetime@$RTPARA_YESTERDAY_2@@do_select@2@value@@click@@click~suitcondpara_1_1~chrome"/>
+			<step order="3" desc="" cmdtype="1042" cmdparas="$DOWM_HOME\测试风电厂-场外受阻电力校核-测风塔外推法-$RTPARA_YESTERDAY_1.xls~时间,可用(MW),实发(MW),偏差(%)~时间=15:51~3"/>
+			<step order="4" desc="数据库查询" cmdtype="5001" cmdparas="select substring(a.datatime,12,5) as time,a.ava,b.ave,((select round(a.ava,3))-(select round(b.ave,3)))*100/(select round(b.ave,3)) as pc from (select datatime, availablemeter ava from hdrtheorypdata$RTPARA_YESTERDAY_1  where datatime ='$RTPARA_YESTERDAY_2 15:51:00')a left join (select HDTIME,AVERAGE ave FROM hdranastat$RTPARA_YESTERDAY_1 h WHERE h.ID = (SELECT a.ID FROM analoginput a left join plant p on a.EQUIPMENTCONTAINER_ID = p.id WHERE p.ALIASNAME='测试风电厂' and a.TYPE = (SELECT m.ID FROM measurementtype m WHERE m.`NAME` = 'p')  AND a.EQUIPMENTCONTAINER_TABLEID = 1071))b on b.HDTIME =a.datatime group by a.datatime~QMYSQL~10.64.14.70@3306@DAVINCI@sa@cast1234~3"/>
+			<judgestep order="1" desc="" cmdtype="2010" cmdparas="3~steppara_3_1~steppara_4_1"/>
+        </case>
+		<case id="09" name="样板机法-导出数据核对" desc="样板机法-导出" faulttype="0" mark="0">
+			<step order="1" desc="" cmdtype="9004" cmdparas="$DOWM_HOME\测试风电厂-场外受阻电力校核-样板机法-$RTPARA_YESTERDAY_1xls"/>
+			<step order="2" desc="样板机法-导出" cmdtype="4003" cmdparas="http://10.64.14.70:18080/SPPP-web/theoretical/outWindObstructed~id|plantId@@id|time@@id|type@@id|queryBtn@@id|exportBtn~do_select@0@index@@set_datetime@$RTPARA_YESTERDAY_2@@do_select@3@value@@click@@click~suitcondpara_1_1~chrome"/>
+			<step order="3" desc="" cmdtype="1042" cmdparas="$DOWM_HOME\测试风电厂-场外受阻电力校核-样板机法-$RTPARA_YESTERDAY_1.xls~时间,可用(MW),实发(MW),偏差(%)~时间=15:51~3"/>
+			<step order="4" desc="数据库查询" cmdtype="5001" cmdparas="select substring(a.datatime,12,5) as time,a.ava,b.ave,((select round(a.ava,3))-(select round(b.ave,3)))*100/(select round(b.ave,3)) as pc from (select datatime, availablemode ava from hdrtheorypdata$RTPARA_YESTERDAY_1  where datatime='$RTPARA_YESTERDAY_2 15:51:00')a left join (select HDTIME,AVERAGE ave FROM hdranastatRTPARA_YESTERDAY_1 h WHERE h.ID = (SELECT a.ID FROM analoginput a left join plant p on a.EQUIPMENTCONTAINER_ID = p.id WHERE p.ALIASNAME='测试风电厂' and a.TYPE = (SELECT m.ID FROM measurementtype m WHERE m.`NAME` = 'p')  AND a.EQUIPMENTCONTAINER_TABLEID = 1071))b on b.HDTIME =a.datatime group by a.datatime~QMYSQL~10.64.14.70@3306@DAVINCI@sa@cast1234~3"/>
+			<judgestep order="1" desc="" cmdtype="2010" cmdparas="3~steppara_3_1~steppara_4_1"/>
+        </case> -->
+    </suit>
+</test>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<test>
+    <suit id="1" name="光伏气象站信息套件" desc="前置条件">
+        <precondition>
+            <step order="1" desc="创建驱动" cmdtype="4001" cmdparas="chrome"/>
+            <step order="2" desc="登录" cmdtype="4003" cmdparas="http://10.64.14.69:18080/SPPP-web/login~id|username@@id|password@@id|submit~send_keys@spfs@@send_keys@spfs@@click~suitcondpara_1_1"/>
+        </precondition>
+		<case id="001" name="光伏气象站" desc="" faulttype="0" mark="0">
+			<step order="1" desc="光伏气象站" cmdtype="4003" cmdparas="http://10.64.14.69:18080/SPPP-web/pvEndetector/turnspfs~id|plantId@@id|pvEndetector~do_select@0@index@@get_tubiao_data@编号,气象站名称,电场,经度,纬度,海拔(m),虚拟气象站,是否主气象站,安装时间@_@3~suitcondpara_1_1~chrome"/>
+			<step order="2" desc="数据库查询" cmdtype="5001" cmdparas="select pv.NUMBER,pv.ALIASNAME, p.ALIASNAME,pv.LONGITUDE,pv.LATITUDE,pv.ALTITUDE,pv.IS_VIRTUAL,pv.IS_MAIN,pv.RUNTIME from pv_endetector pv left join plant p on pv.PLANT_ID=p.id where pv.id=115021~QMYSQL~10.64.14.69@3306@DAVINCI@sa@cast1234~3"/>
+			<judgestep order="1" desc="" cmdtype="2010" cmdparas="3~steppara_1_1~steppara_2_1"/>
+        </case> 
+		<!--<case id="002" name="详情" desc="" faulttype="0" mark="0">
+			<step order="1" desc="详情" cmdtype="4003" cmdparas="http://10.64.14.69:18080/SPPP-web/pvEndetector/turnspfs~id|plantId@@xpath@/html/body/section/div[2]/div/div/div[2]/div[2]/table/tbody/tr/td[10]/a~do_select@0@index@@click~suitcondpara_1_1~chrome"/>			
+			<step order="2" desc="数据库查询" cmdtype="5001" cmdparas="select pv.NUMBER,pv.ALIASNAME, p.ALIASNAME,pv.LONGITUDE,pv.LATITUDE,pv.ALTITUDE,pv.IS_VIRTUAL,pv.IS_MAIN,RUNTIME from pv_endetector  pv left join plant p on pv.PLANT_ID=p.id where pv.id=115020~10.8.8.39@3306@DAVINCI@sa@cast1234~3"/>
+			<judgestep order="1" desc="" cmdtype="2010" cmdparas="3~steppara_1_1~steppara_2_1"/>
+        </case>-->
+    </suit>
+</test>

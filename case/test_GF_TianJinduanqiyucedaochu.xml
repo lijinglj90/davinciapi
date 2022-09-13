@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<test>
+    <suit id="1" name="天津短期预测导出套件" desc="前置条件">
+        <precondition>
+            <step order="1" desc="创建驱动" cmdtype="4001" cmdparas="chrome"/>
+            <step order="2" desc="登录" cmdtype="4003" cmdparas="http://10.64.14.69:18080/SPPP-web/login~id|username@@id|password@@id|submit~send_keys@test@@send_keys@Test123456@@click~suitcondpara_1_1"/>
+
+        </precondition>
+		<!-- <case id="001" name="天津导出格式" desc="" faulttype="0" mark="0">
+			<step order="3" desc="" cmdtype="9004" cmdparas="C:\Users\Administrator\Downloads\$RTPARA_TODAY_1.csv"/>
+			<step order="2" desc="导出" cmdtype="4003" cmdparas="http://10.64.14.69:18080/SPPP-web/tianJinForecast/tianJinForecast~id|farmid@@id|starttime@@id|export~do_select@0@index@@set_datetime@$RTPARA_TODAY_2@@click~suitcondpara_1_1~chrome"/>			
+			<judgestep order="1" desc="" cmdtype="9001" cmdparas="C:\Users\Administrator\Downloads\$RTPARA_TODAY_1.csv"/>
+        </case> -->
+		<case id="002" name="导出文件核对文件数据" desc="" faulttype="0" mark="0">
+            <step order="1" desc="导出" cmdtype="4003" cmdparas="http://10.64.14.69:18080/SPPP-web/spfsWeather/irradiance~id|farmid@@id|starttime@@id|export~do_select@0@index@@set_datetime@$RTPARA_TODAY_2 00:00@@click~suitcondpara_1_1~chrome"/>	
+			<step order="2" desc="" cmdtype="1042" cmdparas="C:\Users\Administrator\Downloads\测试光伏电厂_光伏电场辐照度$RTPARA_TODAY_2##_00_00到$RTPARA_TODAY_2##_23_45.xls~水平总辐照度（W.h/m^2）~时间=$RTPARA_TODAY_2~3~辐照度累计报表"/>
+			<!--<step order="3" desc="查询数据库" cmdtype="5001" cmdparas="select p from hdrfcstdata_farm1 where fcst_time BETWEEN '2022-06-24 :00:00'and'2022-06-24 23:45:00' and daytype = 2 and powertype = 4 and fcst_nodetype= 1 and is_main = 1 order by fcst_time asc~QMYSQL~10.64.14.69@3306@DAVINCI@sa@cast1234~3"/>-->
+			<judgestep order="2" desc="" cmdtype="2010" cmdparas="3~steppara_2_1~[['11743.274']]"/>
+        </case>
+    </suit>
+</test>
