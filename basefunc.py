@@ -98,7 +98,7 @@ def waitspan(seconds:str):
     else:
         lg.myloger.error("等待时间小于0")
 
-def cmp_file(file1:str,file2:str,encodestr=''):
+def cmp_file(file1:str,file2:str,encodestr='',Leftn='',rightn=''):
     '''检查文件是否一致，如果不一致则返回差异信息
     :输入参数：
     - file1 文件1
@@ -113,7 +113,9 @@ def cmp_file(file1:str,file2:str,encodestr=''):
     if encodestr not in ['']:
         file1 = file1.encode(encoding=encodestr)
         file2 = file2.encode(encoding=encodestr)
-    print('cmp_file:',file1,file2,encodestr)
+    else:
+        encodestr = get_encoding(file1)
+    # print('cmp_file:',file1,file2,encodestr,Leftn,rightn)
 
     '检查文件是否存在'
     file_exist = os.path.exists(file1)
@@ -137,11 +139,70 @@ def cmp_file(file1:str,file2:str,encodestr=''):
         return False, info
 
     '检查内容是否一致'
-    return filecmp.cmp(file1,file2),""
+    if not Leftn and not rightn:  #两个值均为空
+        # print('两个值均为空,对应的文件编码',encodestr)
+        status = filecmp.cmp(file1, file2)
+    else:   #有一个为空，或者均不为空
+
+        '检查传入参数是否正确'
+        try:
+            if Leftn:
+                Leftn = eval(Leftn)
+            if rightn:
+                rightn = eval(rightn)
+        except Exception as e:
+            info = '输入的行号有误，报错信息:' + str(e)
+            return False, info
+        # print('有一个为空，或者均不为空,对应的文件编码',encodestr,'Leftn:',Leftn, 'rightn:',rightn)
+        status = cmp_part(file1, file2,encodestr,Leftn,rightn)
+
+    if status:
+        return status, ""
+    else:
+        info = "传入文件[%s],与文件[%s]内容不一致,比对失败，请检查" % (file1,file2)
+        lg.myloger.error(info)
+        return status, info
+
+def cmp_part(file1:str,file2:str,encodestr,Leftn,rightn):
+    status = True
+    with open(file1, 'r', encoding=encodestr) as f1, open(file2, 'r', encoding=encodestr) as f2:
+        line1 = f1.readlines()
+        line2 = f2.readlines()
+        # print(len(line1))
+        if not Leftn:
+            Leftn = 1
+        elif not rightn:
+            rightn = len(line1)
+        elif len(line1) != len(line2) or len(line1)<1:   #pass
+            info = '两个文件大小不一样，或者文件为空'
+            lg.myloger.error(info)
+            status = False
+            return status
+        elif Leftn>len(line1):
+            info = '起始行号超出文件最大行数'
+            lg.myloger.error(info)
+            return False
+        elif rightn:
+            if rightn >= len(line1) or rightn<=Leftn or rightn < 1:
+                info = '结束行号超出文件最大行数、不正确、小于起始行号'
+                lg.myloger.error(info)
+                status = False
+                return status
+        stinfo = '用户传入的文件[%s]和文件[%s]，编码格式[%s],起始行号[%s]，结束行号[%s]' %(file1,file2,encodestr,Leftn,rightn)
+        lg.myloger.info(stinfo)
+        for i in range(0, len(line1)):
+            if i >= Leftn - 1 and i <= rightn - 1:
+                b1 = line1[i]
+                b2 = line2[i]
+                # print(b1)
+                # print(b2)
+                if b1 != b2:
+                    status = False
+                    return status
+    return status
 
 
 def isinfofile(file, keywords,type='1',CheckType='',separate='',return_type='3',encodingstr=''):
-    """
     '''
         :输入参数：\n
         - file     文件目录地址
@@ -157,7 +218,6 @@ def isinfofile(file, keywords,type='1',CheckType='',separate='',return_type='3',
         - info   备注信息
         - data   表格数据信息， 失败为None，成功为一个列表
     '''
-    """
     #默认utf-8编码格式打开，后期有需要再扩展
     stinfo = "isinfofile调用，file路径:%s keywords检索目标值:%s type 匹配类型:%s CheckType返回数据匹配规则:%s" % (file, keywords, type, CheckType)
     # print(stinfo)

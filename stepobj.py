@@ -19,6 +19,7 @@ import os
 from enum import Enum
 import basefunc as bs
 from pandascfg import PandasCfg
+from wpdcfg import WpdCfg
 import copy
 import shutil
 import time
@@ -43,6 +44,9 @@ class CmdType():
     get_para_xml = "1032"
     set_para_pandas = '1041'
     get_para_pandas = '1042'
+    set_para_wpd = "1051"
+    get_para_wpd = "1052"
+
 
     #实时库操作类
     set_para_rtdb = "1101"
@@ -284,6 +288,25 @@ class StepObj():
         status, info = cc.setvalue(paras[2], paras[3], paras[4])
 
         return StepExecResult(status, info, [])
+
+    '''wpd文件访问接口'''
+    from xmlcfg import XmlCfg
+    def __get_para_wpd__(self, paras: list):
+        if len(paras) < 3:
+            return StepExecResult(False, "参数个数错误", [])
+        else:
+            try:
+                wx = WpdCfg(paras[0])
+                status, info, value = wx.readvalue_wpd(paras[1], paras[2])
+                ls = []
+                if not status is None:
+                    ls.append(value)
+                return StepExecResult(status, info, ls)
+            except Exception as e:
+                return StepExecResult(False, e, [])
+
+    def __set_para_wpd__(self, paras: list):
+        return StepExecResult(False, '待开发功能哦', [])
     
     '''实时库访问接口'''
     from rtdbcfg import RtdbCfg 
@@ -418,9 +441,14 @@ class StepObj():
             if len(paras) < 2:
                 return StepExecResult(False,"参数个数错误",[])
             elif len(paras) == 2:
+                l = ['', '', '']
+                paras.extend(l)
+            elif len(paras) == 3:
+                l = ['', '']
+                paras.extend(l)
+            elif len(paras) == 4:
                 paras.append('')
-
-            status,info = bs.cmp_file(paras[0],paras[1],paras[2])
+            status,info = bs.cmp_file(paras[0],paras[1],paras[2],paras[3],paras[4])
 
             return StepExecResult(status,info,[])
         except Exception as e:
@@ -763,6 +791,10 @@ class StepObj():
             return self.__get_para_pandas__(self.__paras)
         elif self.__cmdtype == CmdType.set_para_pandas:   #1041
             return self.__set_para_pandas__(self.__paras)
+        elif self.__cmdtype == CmdType.get_para_wpd:
+            return self.__get_para_wpd__(self.__paras)
+        elif self.__cmdtype == CmdType.set_para_wpd:
+            return self.__set_para_wpd__(self.__paras)
         elif self.__cmdtype == CmdType.cmp_data_eq:
             return self.__cmp_data_eq__(self.__paras)
         elif self.__cmdtype == CmdType.cmp_data_ge:
@@ -816,10 +848,10 @@ class StepObj():
         #         return StepExecResult(False,"命令类型不支持",[])
 
 if __name__ == '__main__':
-    # cmdtype=2001
-    # paras = [r'D:\davinciapi\wen\a\farm1_20220711_0000_DQ.WPD',r'D:\davinciapi\wen\b\farm1_20220711_0000_DQ.WPD']
-    # StepObj(cmdtype,paras).__cmp_file_eq__(paras)
-    # import filecmp
+    cmdtype="2001"
+    paras = [r'D:\davinciapi\case\zz\对比后删除A\farm1_20220816_0000_DQ.wpd',r'D:\davinciapi\case\zz\对比后删除B\farm1_20220816_0000_DQ.wpd','gb2312']
+    StepObj(cmdtype,paras).__cmp_file_eq__(paras)
+    import filecmp
     # print(filecmp.cmp(paras[0], paras[1]))
     # cmdtype = 5001
     # # a = ["SELECT LONGITUDE,RUNTIME from wind_turbine where ALIASNAME = '风机_1'~QMYSQL~10.8.8.22@3306@DAVINCI@sa@cast1234~3]
@@ -831,6 +863,6 @@ if __name__ == '__main__':
     # a = [r'D:\davinciapi\wen\a - 副本\rxefilecreate.log','[U-17]','_']
     # StepObj(cmdtype,a).__isinfo_file__(a)
 
-    cmdtype = 3001
-    a = ['dir']
-    StepObj(cmdtype, a).__exec_cmd__(a)
+    # cmdtype = 3001
+    # a = ['dir']
+    # StepObj(cmdtype, a).__exec_cmd__(a)
