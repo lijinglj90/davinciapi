@@ -74,9 +74,15 @@ if __name__ == '__main__':
 #     # aql = "select a.ava,b.ave,(a.ava-b.ave)*100/b.ave,substring(a.datatime,11,6)as time from (select datatime,availableturbine ava from hdrtheorypdata20220331  where datatime='2022-03-31 00:00:00')a,(select AVERAGE ave FROM hdranastat20220331 h WHERE h.ID =(SELECT a.ID FROM analoginput a WHERE a.TYPE =(SELECT m.ID FROM measurementtype m WHERE m.`NAME` = 'p') AND a.EQUIPMENTCONTAINER_ID = 115020 AND a.EQUIPMENTCONTAINER_TABLEID = 1071) AND h.HDTIME ='2022-03-31 00:00:00')b"
 #     # aql = "SELECT * from wind_turbine where PLANT_ID = 115093 and ALIASNAME = '风机_1'"
 #     aql = "SELECT alarmstring FROM hdralarmbase20210415 WHERE dttimestamp='2021-04-15 08:23:05'"
-    aql = "SELECT p/((select cap from plantcap where id=1)/(SELECT RUN_CAPACITY from plant)) from hdrsfcstdata_llgf where record_id=(SELECT id FROM hdrsfcstrecord2022 WHERE powertype = 0 AND fcst_time = '2022-08-08 12:15:00')"
-    c = RdbObj('QMYSQL','10.64.14.126@_@_@_@_').exec_querry(aql,return_type='3')
+#     aql = "SELECT p/((select cap from plantcap where id=1)/(SELECT RUN_CAPACITY from plant)) from hdrsfcstdata_llgf where record_id=(SELECT id FROM hdrsfcstrecord2022 WHERE powertype = 0 AND fcst_time = '2022-08-08 12:15:00')"
+#     c = RdbObj('QMYSQL','10.64.14.126@_@_@_@_').exec_querry(aql,return_type='3')
 #     c = RdbObj()
 #     c = RdbObj('QMYSQL').exec_querry(aql,return_type='4')
+    #SELECT windpower 日风功率密度 FROM fdayform WHERE DATATIME = '2022-09-25 00:00:00'~QMYSQL~10.64.14.70@_@davinci@_@_~3
+    aql = "SELECT windpower 日风功率密度 FROM fdayform WHERE DATATIME = '2022-09-25 00:00:00'"
+    # aql = "SELECT AVERAGE,DTMAXVAL FROM hdranastat5m20220925 WHERE id=49 AND hdtime <= '2022-09-25 00:05:00'"
+    # aql = "SELECT AVERAGE FROM hdranastat5m20220925 WHERE id=49 AND hdtime <= '2022-09-25 00:00:00'"
+
+    c = RdbObj('QMYSQL', '10.64.14.70@_@davinci@_@').exec_querry(aql, return_type='3')
     print(c)
-    print(len(c[-1]))
+    # print(len(c[-1]))

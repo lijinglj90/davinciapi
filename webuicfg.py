@@ -342,6 +342,7 @@ class WebCfg():
                 filterinfo = action_ls[2]
             if count > 3:
                 return_type = action_ls[3]
+            # print('get_tubiao_data传入值', el, myDriver, fieldinfo, filterinfo, return_type)
             status, info, data = bootstrap.getdata_from_bootstrapp_table_tubiao(el, myDriver, fieldinfo, filterinfo, return_type)
 
         elif act == "getdata_fanstatus":  # 读取风机状态数据

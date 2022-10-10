@@ -10,11 +10,414 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="599ead8f-e21f-48e2-88bb-f9578f0703ad" name="Default Changelist" comment="" />
+    <list default="true" id="599ead8f-e21f-48e2-88bb-f9578f0703ad" name="Default Changelist" comment="test">
+      <change afterPath="$PROJECT_DIR$/calculation.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/case/zz/FD_SJBB_srqday.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/case/zz/test_efile_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/case/zz/对比后删除A/2022-09-02.wpd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/case/zz/对比后删除A/farm1_202208151445_CFT.RDT" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/case/zz/对比后删除A/farm1_20220815_1445_QXZ.PVD" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/case/zz/对比后删除A/farm1_20220816_0000_DQ.PVD" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/case/zz/对比后删除A/farm1_20220816_0000_DQ.RB" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/case/zz/对比后删除A/farm1_20220816_0000_DQ.wpd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/case/zz/对比后删除B/B/farm1_20220816_0000_DQ.wpd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/case/zz/对比后删除B/farm1_202208151445_CFT.RDT" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/case/zz/对比后删除B/farm1_20220815_1445_QXZ.PVD" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/case/zz/对比后删除B/farm1_20220816_0000_DQ.PVD" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/case/zz/对比后删除B/farm1_20220816_0000_DQ.RB" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/case/zz/对比后删除B/farm1_20220816_0000_DQ.wpd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-13_13-51-24" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-13_13-52-08" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-13_13-52-37" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-13_13-52-47" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-13_13-53-10" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-13_13-53-20" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-13_13-55-27" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-13_14-13-20" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-13_14-16-25" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-13_14-16-46" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-13_14-18-16" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-13_14-29-29" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-13_14-30-18" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-13_14-35-13" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-13_14-35-48" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-13_14-37-58" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-13_21-02-50" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-13_21-03-56" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-13_21-05-20" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-13_21-06-40" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-13_21-07-54" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-13_21-10-59" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-13_21-11-36" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-13_21-13-50" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-13_21-15-01" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-13_21-15-44" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-13_21-15-56" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-13_21-16-48" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-13_21-17-40" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-13_21-20-43" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-13_21-22-22" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-13_21-23-31" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-13_21-24-57" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-13_21-26-00" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-13_21-28-55" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-13_21-29-43" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-13_21-31-07" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-13_21-31-39" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-13_21-31-54" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-13_21-33-18" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-14_09-03-50" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-14_09-05-05" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-14_09-08-21" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-14_09-10-46" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-14_10-10-52" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-14_10-11-31" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-14_10-11-48" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-14_10-13-57" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-14_10-14-55" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-14_10-16-21" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-14_10-18-50" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-14_10-19-33" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-14_14-43-27" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-14_15-52-37" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-14_16-05-16" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-15_09-53-34" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-15_11-15-08" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-15_11-16-08" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-15_14-40-29" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-15_14-40-52" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-15_14-44-11" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-15_14-44-52" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-15_14-49-32" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-15_14-49-44" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-15_14-51-26" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-15_14-52-51" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-15_14-53-23" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-15_14-53-42" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-15_14-54-25" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-15_14-54-46" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-15_14-54-56" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-15_14-55-16" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-15_14-55-51" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-15_14-56-01" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-15_15-04-01" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-15_15-06-45" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-15_15-07-14" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-15_15-07-59" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-15_15-08-30" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-15_15-08-52" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-15_15-09-55" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-15_15-18-23" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-15_15-19-39" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-15_15-22-07" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-15_15-38-13" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-15_15-46-44" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-15_15-52-50" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-15_15-53-03" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-15_15-54-16" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-15_15-55-41" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-15_15-56-46" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-15_15-59-38" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-15_16-02-16" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-15_16-02-53" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-15_16-04-14" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-15_16-04-56" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-15_16-05-58" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-15_16-09-59" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-15_16-10-37" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-15_16-15-19" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-15_16-17-15" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-15_16-17-37" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-15_16-20-20" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-15_16-22-48" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-15_16-23-40" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-15_16-26-33" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-15_16-27-27" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-15_16-28-47" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-15_16-31-54" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-15_16-35-33" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-15_16-37-07" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-15_16-42-38" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-15_16-51-59" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-15_17-48-33" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-16_15-26-24" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-26_14-46-40" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-27_09-28-06" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-27_09-29-41" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-27_09-36-52" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-27_09-37-45" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-27_09-38-28" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-27_10-23-32" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-27_10-30-10" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-27_10-37-39" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-27_14-27-04" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-27_14-35-51" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-27_14-44-08" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-27_14-47-25" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-27_15-07-51" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-27_16-09-29" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-28_11-03-43" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-28_11-14-24" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-28_11-14-32" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-28_11-18-09" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-28_11-18-44" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-28_13-54-12" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-28_13-54-32" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-28_13-55-03" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-28_14-08-22" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-28_14-10-04" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-28_14-56-15" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-28_15-05-47" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-28_15-06-26" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-28_16-35-14" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-29_16-12-17" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-29_20-11-24" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-29_20-19-56" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-29_20-25-16" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-29_20-40-23" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-29_20-42-35" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-29_20-46-27" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-29_20-50-27" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-29_20-50-58" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-29_20-51-08" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-29_20-51-16" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-29_20-51-43" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-29_20-51-50" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-29_20-51-56" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-29_20-52-02" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-29_20-52-21" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-29_20-53-15" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-29_20-53-34" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-29_20-53-45" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-29_20-53-50" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-29_20-55-23" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-29_20-55-37" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-29_20-55-50" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-29_20-56-46" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-29_20-56-58" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-29_20-57-15" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-29_20-59-05" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-29_21-02-53" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-29_21-04-04" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-29_21-05-19" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-29_21-07-11" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-29_21-07-37" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-29_21-08-07" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-29_21-09-34" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-30_13-57-29" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-30_14-24-28" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-30_14-36-43" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-30_14-39-56" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-30_14-40-10" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-30_14-41-04" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-30_14-42-28" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-30_14-44-03" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-30_14-46-48" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-30_14-51-31" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-30_14-52-45" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-30_14-53-37" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-30_15-12-00" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-30_15-12-53" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-30_15-14-19" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-30_15-16-42" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-30_15-19-19" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-30_15-19-44" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-30_15-23-19" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-30_15-31-18" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-30_15-35-28" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-30_15-35-49" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-30_15-36-11" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-30_15-36-32" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-30_15-36-59" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-30_15-37-35" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-30_15-37-46" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-30_15-38-18" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-30_15-39-17" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-30_15-41-19" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-30_15-42-20" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-30_15-47-15" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-30_15-48-06" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-30_15-49-27" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-30_15-49-38" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-30_15-50-24" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-30_15-56-42" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-30_15-57-13" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-30_15-58-25" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-30_16-04-22" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-30_16-05-44" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-30_16-06-41" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-30_16-07-49" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-30_16-08-18" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-30_16-14-14" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-30_16-14-34" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-30_16-46-10" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-30_16-48-05" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-30_17-33-35" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-30_17-36-40" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-30_17-37-25" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-30_17-37-41" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-30_17-39-54" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-30_17-40-36" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-30_17-41-34" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-30_17-42-20" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-30_17-43-47" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-30_17-45-51" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-30_17-46-19" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-30_17-46-33" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-30_17-46-46" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-30_17-47-14" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-30_17-48-44" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-30_17-48-53" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-30_17-49-18" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-30_17-50-02" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-30_17-55-02" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-30_17-55-40" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-30_17-58-15" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-30_18-00-36" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-30_18-02-51" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-30_18-06-02" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-30_18-08-37" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-30_18-10-50" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-30_18-11-34" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-30_18-15-57" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-30_18-19-31" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-30_18-21-24" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-30_18-22-06" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-30_18-25-06" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-09-30_18-26-31" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-10-08_10-06-55" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-10-08_10-32-31" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-10-08_10-32-51" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-10-08_11-16-14" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-10-08_11-46-19" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-10-08_11-47-39" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-10-08_13-36-57" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-10-08_13-37-11" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-10-08_13-39-50" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-10-08_13-42-27" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-10-08_13-43-21" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-10-08_13-45-12" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-10-08_13-45-51" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-10-08_13-49-05" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-10-08_13-49-31" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-10-08_14-09-33" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-10-08_14-09-41" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-10-08_14-14-57" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-10-08_14-15-24" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-10-08_14-15-58" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-10-08_14-16-07" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-10-08_14-16-24" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-10-08_14-16-31" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-10-08_14-17-40" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-10-08_14-17-46" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-10-08_14-17-52" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-10-08_14-52-51" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-10-08_14-52-59" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-10-08_14-53-14" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-10-08_14-53-25" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-10-08_15-18-19" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-10-08_15-18-31" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-10-08_15-18-44" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-10-08_15-18-51" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-10-08_15-18-54" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-10-08_15-19-06" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-10-08_15-19-10" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-10-08_15-31-19" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-10-08_15-31-27" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-10-08_15-31-38" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-10-08_15-31-51" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-10-08_15-32-10" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-10-08_15-44-04" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-10-08_15-44-16" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-10-08_15-45-31" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-10-08_15-48-43" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-10-08_15-54-11" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-10-08_15-54-16" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-10-08_15-56-04" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-10-08_15-59-03" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-10-08_15-59-27" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-10-08_16-05-37" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-10-08_16-06-27" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-10-08_16-09-04" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-10-08_16-09-21" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-10-08_16-10-01" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-10-08_16-12-30" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-10-08_16-12-40" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-10-08_16-19-50" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-10-08_16-31-12" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-10-08_16-32-46" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-10-08_17-31-07" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-10-08_17-33-48" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-10-08_17-53-40" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-10-09_14-39-02" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-10-09_14-39-16" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-10-09_14-44-28" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-10-09_14-44-55" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-10-09_14-45-38" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-10-09_14-46-06" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/test_2022-10-10_10-18-47" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pygetopt.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wen/2022-09-02.wpd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wen/farm1_20220816_0000_DQ - 副本.wpd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wen/farm1_20220816_0000_DQ.wpd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wen/farm1_20220817_0000_DQ.wpd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/z.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/版本及提交内容说明.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/basefunc.py" beforeDir="false" afterPath="$PROJECT_DIR$/basefunc.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bootstrap.py" beforeDir="false" afterPath="$PROJECT_DIR$/bootstrap.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/case/zz/HDRSEQUENCE.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/case/zz/REMOTEUNIT.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/case/zz/RTDBNWPDATA.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/case/zz/STATUSINPUT.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/case/zz/WIND_TURBINE.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/case/zz/rxhttpsrv.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/case/zz/test0_yichang.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/case/zz/test1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/case/zz/test3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/case/zz/test_yichang.xml" beforeDir="false" afterPath="$PROJECT_DIR$/case/zz/test_yichang.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/caseobj.py" beforeDir="false" afterPath="$PROJECT_DIR$/caseobj.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pandascfg.py" beforeDir="false" afterPath="$PROJECT_DIR$/pandascfg.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rdbmysql.py" beforeDir="false" afterPath="$PROJECT_DIR$/rdbmysql.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rdbobj.py" beforeDir="false" afterPath="$PROJECT_DIR$/rdbobj.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sptestframe.py" beforeDir="false" afterPath="$PROJECT_DIR$/sptestframe.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stepobj.py" beforeDir="false" afterPath="$PROJECT_DIR$/stepobj.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webuicfg.py" beforeDir="false" afterPath="$PROJECT_DIR$/webuicfg.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wen/a - 副本/1.xls" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/wen/a - 副本/2.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/wen/a - 副本/b/farm1_20220711_0000_DQ.WPD" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/wen/a - 副本/rxdatabaknoui.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/wen/a - 副本/rxefilecreate.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/wen/a - 副本/rxinit.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/wen/a/MEASUREMENT.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/wen/a/RTDBFCSTDATA.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/wen/a/tableconfig.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/wen/aa/RTDBTHEORYPDATA.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/wen/aa/RTDBTHEORYPDATA1.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/wen/aa/RTDBTHEORYPDATA2.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/wen/aa/RTDBTHEORYPDATA3.csv" beforeDir="false" afterPath="$PROJECT_DIR$/case/zz/对比后删除B/A/farm1_20220816_0000_DQ.wpd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wen/aa/RTDBTHEORYPDATA_xieru.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/wen/aa/a.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/wen/aa/a1.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/wen/aa/b.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/wen/aa/data.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/wen/aa/hdrconf.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/wen/b/2022-08-07.wpd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/wen/b/20220624.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/wen/b/farm1_20220711_0000_DQ.WPD" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/wen/z.py" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -32,6 +435,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="TERMINAL_CUSTOM_COMMANDS_GOT_IT" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
@@ -40,7 +444,137 @@
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="org.jetbrains.plugins.github.ui.GithubSettingsConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\davinciapi" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\davinciapi" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.z (1)">
+    <configuration name="basefunc" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="davinciapi" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/basefunc.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="calculation" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="davinciapi" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/calculation.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="rdbobj" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="davinciapi" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/rdbobj.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="z (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="davinciapi" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/z.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="z" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="davinciapi" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/wen" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="D:\davinciapi\z.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.z (1)" />
+        <item itemvalue="Python.basefunc" />
+        <item itemvalue="Python.calculation" />
+        <item itemvalue="Python.rdbobj" />
+        <item itemvalue="Python.z" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -54,8 +588,30 @@
       <updated>1662718493566</updated>
       <workItem from="1662718495004" duration="6000" />
       <workItem from="1662718513557" duration="1102000" />
-      <workItem from="1663031901615" duration="22000" />
+      <workItem from="1663031901615" duration="167632000" />
     </task>
+    <task id="LOCAL-00001" summary="test">
+      <created>1663032286234</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1663032286234</updated>
+    </task>
+    <task id="LOCAL-00002" summary="test">
+      <created>1663032609024</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1663032609024</updated>
+    </task>
+    <task id="LOCAL-00003" summary="提交9.15之前代码">
+      <created>1663242205246</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1663242205246</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -73,18 +629,95 @@
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="test" />
+    <MESSAGE value="提交9.15之前代码" />
+    <option name="LAST_COMMIT_MESSAGE" value="提交9.15之前代码" />
+  </component>
   <component name="WindowStateProjectService">
-    <state x="904" y="302" key="Github.ShareDialog" timestamp="1663031807101">
+    <state x="438" y="80" key="CommitChangelistDialog2" timestamp="1663242176638">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
-    <state x="904" y="302" key="Github.ShareDialog/0.0.1680.1010@0.0.1680.1010" timestamp="1663031807101" />
-    <state x="806" y="109" key="Github.UntrackedFilesDialog" timestamp="1662718595902">
+    <state x="438" y="80" key="CommitChangelistDialog2/0.0.1680.1010@0.0.1680.1010" timestamp="1663242176638" />
+    <state x="620" y="259" key="FileChooserDialogImpl" timestamp="1664269436585">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
-    <state x="806" y="109" key="Github.UntrackedFilesDialog/0.0.1680.1010@0.0.1680.1010" timestamp="1662718595902" />
+    <state x="620" y="259" key="FileChooserDialogImpl/0.0.1680.1010@0.0.1680.1010" timestamp="1664269436585" />
+    <state x="904" y="302" key="Github.ShareDialog" timestamp="1663242120974">
+      <screen x="0" y="0" width="1680" height="1010" />
+    </state>
+    <state x="904" y="302" key="Github.ShareDialog/0.0.1680.1010@0.0.1680.1010" timestamp="1663242120974" />
+    <state x="806" y="109" key="Github.UntrackedFilesDialog" timestamp="1663031989108">
+      <screen x="0" y="0" width="1680" height="1010" />
+    </state>
+    <state x="806" y="109" key="Github.UntrackedFilesDialog/0.0.1680.1010@0.0.1680.1010" timestamp="1663031989108" />
+    <state width="1323" height="307" key="GridCell.Tab.0.bottom" timestamp="1665306937495">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="307" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1665306937495" />
+    <state width="1264" height="279" key="GridCell.Tab.0.bottom/0.0.1680.1010@0.0.1680.1010" timestamp="1665297965259" />
+    <state width="1323" height="307" key="GridCell.Tab.0.center" timestamp="1665306937494">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="307" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1665306937494" />
+    <state width="1264" height="279" key="GridCell.Tab.0.center/0.0.1680.1010@0.0.1680.1010" timestamp="1665297965258" />
+    <state width="1323" height="307" key="GridCell.Tab.0.left" timestamp="1665306937494">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="307" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1665306937494" />
+    <state width="1264" height="279" key="GridCell.Tab.0.left/0.0.1680.1010@0.0.1680.1010" timestamp="1665297965257" />
+    <state width="1323" height="307" key="GridCell.Tab.0.right" timestamp="1665306937495">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="307" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1665306937495" />
+    <state width="1264" height="279" key="GridCell.Tab.0.right/0.0.1680.1010@0.0.1680.1010" timestamp="1665297965259" />
+    <state width="1637" height="234" key="GridCell.Tab.1.bottom" timestamp="1664523418286">
+      <screen x="0" y="0" width="1680" height="1010" />
+    </state>
+    <state width="1637" height="234" key="GridCell.Tab.1.bottom/0.0.1680.1010@0.0.1680.1010" timestamp="1664523418286" />
+    <state width="1637" height="234" key="GridCell.Tab.1.center" timestamp="1664523418285">
+      <screen x="0" y="0" width="1680" height="1010" />
+    </state>
+    <state width="1637" height="234" key="GridCell.Tab.1.center/0.0.1680.1010@0.0.1680.1010" timestamp="1664523418285" />
+    <state width="1637" height="234" key="GridCell.Tab.1.left" timestamp="1664523418285">
+      <screen x="0" y="0" width="1680" height="1010" />
+    </state>
+    <state width="1637" height="234" key="GridCell.Tab.1.left/0.0.1680.1010@0.0.1680.1010" timestamp="1664523418285" />
+    <state width="1637" height="234" key="GridCell.Tab.1.right" timestamp="1664523418286">
+      <screen x="0" y="0" width="1680" height="1010" />
+    </state>
+    <state width="1637" height="234" key="GridCell.Tab.1.right/0.0.1680.1010@0.0.1680.1010" timestamp="1664523418286" />
     <state x="393" y="223" key="SettingsEditor" timestamp="1663031923040">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
     <state x="393" y="223" key="SettingsEditor/0.0.1680.1010@0.0.1680.1010" timestamp="1663031923040" />
+    <state x="432" y="237" key="Vcs.Push.Dialog.v2" timestamp="1663242195227">
+      <screen x="0" y="0" width="1680" height="1010" />
+    </state>
+    <state x="432" y="237" key="Vcs.Push.Dialog.v2/0.0.1680.1010@0.0.1680.1010" timestamp="1663242195227" />
+    <state width="848" height="513" key="XDebugger.FullValuePopup" timestamp="1663230138017">
+      <screen x="0" y="0" width="1680" height="1010" />
+    </state>
+    <state width="848" height="513" key="XDebugger.FullValuePopup/0.0.1680.1010@0.0.1680.1010" timestamp="1663230138017" />
+    <state x="578" y="236" width="853" height="575" key="dock-window-1" timestamp="1664522368954">
+      <screen x="0" y="0" width="1680" height="1010" />
+    </state>
+    <state x="578" y="236" width="853" height="575" key="dock-window-1/0.0.1680.1010@0.0.1680.1010" timestamp="1664522368954" />
+    <state x="503" y="217" width="672" height="678" key="search.everywhere.popup" timestamp="1663210608940">
+      <screen x="0" y="0" width="1680" height="1010" />
+    </state>
+    <state x="503" y="217" width="672" height="678" key="search.everywhere.popup/0.0.1680.1010@0.0.1680.1010" timestamp="1663210608940" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/davinciapi$sptestframe.coverage" NAME="sptestframe Coverage Results" MODIFIED="1664453995424" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/davinciapi$pygetopt.coverage" NAME="pygetopt Coverage Results" MODIFIED="1664345368501" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/davinciapi$zz.coverage" NAME="zz Coverage Results" MODIFIED="1663219735985" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/wen" />
+    <SUITE FILE_PATH="coverage/davinciapi$basefunc.coverage" NAME="basefunc Coverage Results" MODIFIED="1665215942336" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/davinciapi$z.coverage" NAME="z Coverage Results" MODIFIED="1664455317383" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/wen" />
+    <SUITE FILE_PATH="coverage/davinciapi$z__1_.coverage" NAME="z (1) Coverage Results" MODIFIED="1665297965246" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/davinciapi$filecmp.coverage" NAME="filecmp Coverage Results" MODIFIED="1663058318129" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$USER_HOME$/AppData/Local/Programs/Python/Python37/Lib" />
+    <SUITE FILE_PATH="coverage/davinciapi$rdbobj.coverage" NAME="rdbobj Coverage Results" MODIFIED="1665215650481" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/davinciapi$calculation.coverage" NAME="calculation Coverage Results" MODIFIED="1665215836018" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/davinciapi$stepobj.coverage" NAME="stepobj Coverage Results" MODIFIED="1663224950668" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

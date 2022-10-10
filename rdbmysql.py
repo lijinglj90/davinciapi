@@ -116,31 +116,61 @@ class RdbMysql(RdbBase):
         # 关闭数据库连接
         db.close()
         #根据return_type返回对应的格式
-        if return_type not in ['4','5','6', 4, 5, 6]: #list 值 例：(True, '', ['115093', '0'])
+        # print('@@@@@@@@@@@@@@',results, data)
+        #两行两列：sql="SELECT AVERAGE,DTMAXVAL FROM hdranastat5m20220925 WHERE id=49 AND hdtime <= '2022-09-25 00:05:00'"
+        if return_type in ['3',3]:
+            """
+              # list 值 例：
+              两行两列: (True, '', [['4311.416016', '2022-09-24 23:56:28'], ['4290.012695', '2022-09-25 00:00:05']])
+              一行值：(True, '', ['4311.416016', '4869.40625'])
+              一列值：(True, '', [['4311.416016'], ['4290.012695']])
+              单个值：(True, '', ['4311.416016'])
+            """
             if len(data)== 2 :
                 data_l1 = data[1]
             else:
                 data_l1 = data[1:]
             return ret,info,data_l1
-        elif return_type in ["4", 4]: #str 值 例：(True, '', '115093,0')
+        elif return_type in ["4", 4]:
+            """
+            str 值 例：
+            两行两列: (True, '', '4311.416016,2022-09-24 23:56:28,4290.012695,2022-09-25 00:00:05')
+            一行值：(True, '', '4311.416016,4869.40625')
+            一列值：(True, '', '4311.416016,4290.012695')
+            单个值：(True, '', '4311.416016')
+            """
+            data_l4 = ''
             if len(data) == 2:
-                l2 = []
+                l4 = []
                 for i in data[1]:
-                    l2.append(str(i))
-                data_l2 = ",".join(l2)
+                    l4.append(str(i))
+                data_l4 = ",".join(l4)
             else:
-                l2 = []
+                l4 = []
                 for i in range(1, len(data)):
                     for j in data[i]:
-                        l2.append(str(j))
-                    data_l2 = ",".join(l2)
-            return ret, info, data_l2
-        elif return_type in ["5", 5]:  #list-dict 例：(True, '', [{'id': 115093, 'PLANT_TYPE': 0}])
-            data_l3 = []
+                        l4.append(str(j))
+                    data_l4 = ",".join(l4)
+            return ret, info, data_l4
+        elif return_type in ["5", 5]:
+            """
+            list-dict 例：
+            两行两列: (True, '', [{'AVERAGE': '4311.416016', 'DTMAXVAL': '2022-09-24 23:56:28'}, {'AVERAGE': '4290.012695', 'DTMAXVAL': '2022-09-25 00:00:05'}])
+            一行值：(True, '', [{'AVERAGE': '4311.416016', 'MAXVAL': '4869.40625'}])
+            一列值：(True, '', [{'AVERAGE': '4311.416016'}, {'AVERAGE': '4290.012695'}])
+            单个值：(True, '', [{'AVERAGE': '4311.416016'}])
+            """
+            data_l5 = []
             for i in range(1, len(data)):
-                data_l3.append(dict(zip(data[0], data[i])))
-            return ret,info,data_l3
-        elif return_type in ["6", 6]:                 #(True, '', [['id', 'PLANT_TYPE'], [115093, 0]])
+                data_l5.append(dict(zip(data[0], data[i])))
+            return ret,info,data_l5
+        elif return_type in ["6", 6]:
+            """
+            两行两列: (True, '', [['AVERAGE', 'DTMAXVAL'], ['4311.416016', '2022-09-24 23:56:28'], ['4290.012695', '2022-09-25 00:00:05']])
+            一行值：(True, '', [['AVERAGE', 'MAXVAL'], ['4311.416016', '4869.40625']])
+            一列值：(True, '', [['AVERAGE'], ['4311.416016'], ['4290.012695']])
+            单个值：(True, '', [['AVERAGE'], ['4311.416016']])
+            """
             return ret,info,data
         else:
             return False, "请输入对应的返回类型", []

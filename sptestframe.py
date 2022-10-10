@@ -37,7 +37,7 @@ import getopt
 import os
 import evnobj as eo
 import logger as lg
-
+from pygetopt import *
 
 #全局唯一标识
 unique_id = 1
@@ -136,69 +136,33 @@ def __findfiles__(path, t):
                 __findfiles__(npath, t)
     return
 
-
-if __name__ == "__main__":
-    # '''
-    # 解析参数：
-    #     -m 用例等级id，长参数为--mark
-    #     -f 用例文件，长参数为--file
-    #     -p 用例文件存放路径，长参数为--path
-    #     -e 环境变量，长参数为--evnbase，为"模块名.类名",如功率预测的为"evnfcst.EnvFcst"
-    # '''
-    # try:
-    #     options,args = getopt.getopt(sys.argv[1:],"m:f:p:b:l", ["mark=","file=","path=","evnbase=","files="])
-    # except getopt.GetoptError:
-    #     sys.exit()
-    #
-    mark = "0"    #控制xml文件内，单条case是否运行  目前建议全部写0
-    file = ""     #忽略
-    # 写文件夹，程序活获取次文件夹下所有的xml文件存储到files变量  files=[]
-    # path = r"D:/davinciapi/case/SpFcst/UI"
-    # path = r"D:\davinciapi\case\zz"
-    path = ''
-    # path = r'C:\davinciapi\case\SpFcst\UI'
-    baseevn = ""  #忽略
-    # 写具体某一个xml文件  path变量需要为空，path=[]
-    # files = [r"D:/davinciapi/case/SpFcst/UI/COMMON/test_cdqyc.xml"]
-    #
-    # # print(options)
-    # for name,value in options:
-    #     if name in ("-m","--mark"):
-    #         mark = value
-    #     elif name in ("-f","--file"):
-    #         file = value
-    #     elif name in ("-p","--path"):
-    #         path=value
-    #     elif name in ("-b","--evnbase"):
-    #         baseevn=value
-    #     elif name in ("-l", "--files"):
-    #         c = value
-    #         files.append(value)
+def run():
+    pygetopt = getoptmain()
+    print(pygetopt)
+    mark = pygetopt['mark']
+    file = pygetopt['file']
+    path = pygetopt['path']
+    baseevn = pygetopt['baseevn']
+    # files = [r"D:/davinciapi/case/zz/test_yichang.xml"]
+    # files = pygetopt['files']
 
     files = []
-    if not file.strip()=="":
+    if not file.strip() == "":
         files.append(file)
 
-    if not path.strip()=="":
+    if not path.strip() == "":
         tfs = []
-        __findfiles__(path,tfs)
+        __findfiles__(path, tfs)
         files.extend(tfs)
     print(files)
 
-    # '''设置基本环境变量'''
-    # if len(baseevn) > 0:
-    #     eo.setevn(baseevn)
-    #
-    # if len(files) == 0:
-    #     lg.myloger.error("参数错误:未传入有效用例文件")
+    '''设置基本环境变量'''
+    if len(baseevn) > 0:
+        eo.setevn(baseevn)
 
-    #暂时先这么写死，后期会增改的哦
-    # mark = "0"
-    # file = ""
-    #path = ""
-    # baseevn = ""
-    files = [r"D:/davinciapi/case/zz/test_yichang.xml"]
-    # files = [r"/home/sprixin/davinciapi/case/test_yichang.xml"]
+    if len(files) == 0:
+        lg.myloger.error("参数错误:未传入有效用例文件")
+
 
     report_info = ""
 
@@ -206,13 +170,13 @@ if __name__ == "__main__":
 
     for casefile in files:
         suits = []
-        info = '######################用例[%s]执行情况：######################'% casefile
+        info = '######################用例[%s]执行情况：######################' % casefile
         report_info += info
         report_info += "\n\n"
-        status,subsuits =__readfile__(casefile)
+        status, subsuits = __readfile__(casefile)
         # print(status, subsuits)
 
-        if status:   #True
+        if status:  # True
             suits.extend(subsuits)
             '''执行用例套件'''
             for suit in suits:
@@ -224,9 +188,13 @@ if __name__ == "__main__":
             report_info += subsuits
             report_info += "\n\n"
 
-
-
-
     '''发出报告'''
     print(report_info)
+
+
+
+if __name__ == "__main__":
+    run()
+
+
 

@@ -199,7 +199,7 @@ def getdata_from_bootstrapp_table_tubiao(el, driver:WebDriver, fields: str = "",
             if i not in thead_th_v_list:
                 info = "配置错误:读取列[%s]有列在表中未找到，表的列为[%s]" % (fields, thead_th_v_list)
                 return False, info, None
-    # print(el, driver, need_field_list, filter_field_list, filter_field_value_list, thead_th_v_list,return_type)
+    # print('getdata_from_bootstrapp_table_tubiao:::',el, driver, need_field_list, filter_field_list, filter_field_value_list, thead_th_v_list,return_type)
     status, info, data = getdata(el, driver, need_field_list, filter_field_list, filter_field_value_list, thead_th_v_list,return_type)
     return status, info, data
 
@@ -328,7 +328,8 @@ def getdata(el, driver:WebDriver, need_field_list, filter_field_list, filter_fie
 
     #根据return_type返回对应的数据类型
     # print(table_dict)
-    if return_type not in ['4','5','6',4, 5, 6]:   #list
+    # if return_type not in ['4','5','6',4, 5, 6]:   #list
+    if return_type in ['3', 3]:  # list
         tb_list = []
         for tb in table_dict:
             tb_list.append(list(tb.values()))
@@ -370,7 +371,7 @@ def getdata_fanstatus(el, driver:WebDriver, fields: str = "", filter: str = "", 
 
         :info异常信息说明：
         - 表格为空
-        - 待读取的列不存在，属于输入参数错误，一般为带读取列不存在
+        - 待读取的列不存在，属于输入参数错误，一般为待读取列不存在
         - 检索条件配置错误， 属于输入参数错误，一般为检索列不存在
     '''
     time.sleep(1)

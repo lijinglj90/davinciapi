@@ -197,6 +197,10 @@ class PandasCfg:
         - sheetname 指定的sheet页
         - return_type  返回值类型
         '''
+
+        # stinfo = "__readexcelV__调用，用户待读取的目标值列表need_field_list:%s 条件表头信息fltstr_field_list:%s 条件表头对应的值fltstr_field_value_list:%s 返回值类型return_type:%s,指定的sheet页sheetname:%s" % (
+        #     need_field_list, fltstr_field_list, fltstr_field_value_list, return_type, sheetname)
+        # lg.myloger.info(stinfo)
         #获取整个文件信息
         excel_data = pd.read_excel(self.__cfgpath__, sheet_name=None)
         #获取文件全部的sheet页
@@ -420,13 +424,16 @@ class PandasCfg:
         - fltstr_field_value_list 条件表头对应的值
         - thead_list 文件表头信息
         - table_list_dict 文件全部数据，格式为列表嵌套字典
-        - sheetname 指定的sheet页
         - return_type  返回值类型
         '''
+
+        stinfo = "__getdata__调用，用户待读取的目标值列表need_field_list:%s 条件表头信息fltstr_field_list:%s 条件表头对应的值fltstr_field_value_list:%s 返回值类型return_type:%s,文件表头信息thead_list:%s,文件全部内容table_list_dict:%s" % (
+            need_field_list, fltstr_field_list, fltstr_field_value_list, return_type,thead_list,table_list_dict)
+        lg.myloger.info(stinfo)
+
         # 判断过滤列是否存在
         table_dict = []  #得到过滤后的数据，格式为列表嵌套字典
-        # print('全部的数据',table_list_dict)
-        # print('hahahahaha','请求条件：',need_field_list, fltstr_field_list, fltstr_field_value_list, thead_list, table_list_dict, return_type)
+        # print('全部的数据',table_list_dict)s
         if len(fltstr_field_list) > 0 and fltstr_field_list[0] != '_':  # 有判断条件
             for i in fltstr_field_list:
                 if i not in thead_list:
@@ -611,10 +618,10 @@ if __name__ == '__main__':
     #获取行值
     # paras = [r"D:\\davinciapi\\wen\\aa\\data.json", '_', 'Pulse=110#AND#Calories=409.1']
     #取列的值
-    # paras = [r"D:\\davinciapi\\wen\\aa\\data.json", 'Duration', '_']
-    # cc = PandasCfg(paras[0])
-    # status, info, value = cc.readvalue(paras[1], paras[2])
-    # print(status, info, value)
+    paras = [r"D:\\davinciapi\\wen\\aa\\data.json", 'Duration', '_']
+    cc = PandasCfg(paras[0])
+    status, info, value = cc.readvalue(paras[1], paras[2])
+    print(status, info, value)
 
 # try:
 #     jx = eval(j)

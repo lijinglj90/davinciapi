@@ -23,6 +23,7 @@ from wpdcfg import WpdCfg
 import copy
 import shutil
 import time
+from calculation import *
 
 import sys
 # from pluginmanager import PluginManager
@@ -82,7 +83,7 @@ class CmdType():
     wait_to_time = "9002"
     wait_timespan = "9003"
     wait_sql = "9007"
-    log_file = "9008"
+    calc_formula = "9008"
 
     #在此增加新的函数定义
 
@@ -761,10 +762,117 @@ class StepObj():
         except Exception as e:
             return StepExecResult(False, e, [])
 
+    def __calc_formula__(self,paras:list):
+        obj = None
+        print("__calc_formula__输入参数", paras)
+        # for i in paras:
+        #     print(i)
+        print(len(paras))
+        try:
+            status = False
+            info = '请检查用例'
+            data = []
+            if paras[0] == 'air_density':
+                if len(paras)==3:
+                    status, info, data = bs.air_density_info(paras[1],paras[2])
+                    print(type(data))
+                    print('status:',status, 'info:',info, 'data:', data)
+                else:
+                    return StepExecResult(False, "空气密度air_density_one需要3个参数，传入参数个数错误", [])
+            elif paras[0] == 'Wind_power_density':
+                if len(paras) == 4:
+                    status, info, data = bs.Wind_power_density_info(paras[1],paras[2],paras[3])
+                    print(type(data))
+                    print('status:',status, 'info:',info, 'data:', data)
+                else:
+                    return StepExecResult(False, "风功率密度Wind_power_density需要4个参数，传入参数个数错误", [])
+            elif paras[0] == 'get_average':
+                if len(paras) == 2:
+                    status, info, data = bs.average_info(paras[1])
+                    print(type(data))
+                    print('status:',status, 'info:',info, 'data:', data)
+                else:
+                    return StepExecResult(False, "算数平均get_average需要2个参数，传入参数个数错误", [])
+            elif paras[0] == 'get_average_jing':
+                if len(paras) == 2:
+                    status, info, data = bs.average_jing_info(paras[1])
+                    print(type(data))
+                    print('status:',status, 'info:',info, 'data:', data)
+                else:
+                    return StepExecResult(False, "算数平均-精度get_average_jing需要2个参数，传入参数个数错误", [])
+            elif paras[0] == 'get_sum':
+                if len(paras) == 2:
+                    status, info, data = bs.get_sum_info(paras[1])
+                    print(type(data))
+                    print('status:',status, 'info:',info, 'data:', data)
+                else:
+                    return StepExecResult(False, "列表求和get_sum需要2个参数，传入参数个数错误", [])
+            elif paras[0] == 'get_mse':
+                if len(paras) == 2:
+                    status, info, data = bs.get_mse_info(paras[1],paras[2])
+                    print(type(data))
+                    print('status:',status, 'info:',info, 'data:', data)
+                else:
+                    return StepExecResult(False, "均方误差get_mse需要3个参数，传入参数个数错误", [])
+            elif paras[0] == 'get_rmse':
+                if len(paras) == 2:
+                    status, info, data = bs.get_rmse_info(paras[1],paras[2],paras[3])
+                    print(type(data))
+                    print('status:',status, 'info:',info, 'data:', data)
+                else:
+                    return StepExecResult(False, "短期均方根误差get_rmse需要4个参数，传入参数个数错误", [])
+            elif paras[0] == 'get_mae':
+                if len(paras) == 2:
+                    status, info, data = bs.get_mae_info(paras[1],paras[2],paras[3])
+                    print(type(data))
+                    print('status:',status, 'info:',info, 'data:', data)
+                else:
+                    return StepExecResult(False, "平均绝对误差get_average需要4个参数，传入参数个数错误", [])
+            elif paras[0] == 'get_colrel':
+                if len(paras) == 2:
+                    status, info, data = bs.get_colrel_info(paras[1],paras[2])
+                    print(type(data))
+                    print('status:',status, 'info:',info, 'data:', data)
+                else:
+                    return StepExecResult(False, "相关性系数get_colrel需要3个参数，传入参数个数错误", [])
+            elif paras[0] == 'get_qualify':
+                if len(paras) == 5:
+                    status, info, data = bs.get_qualify_info(paras[1],paras[2],paras[3],paras[4])
+                    print(type(data))
+                    print('status:',status, 'info:',info, 'data:', data)
+                else:
+                    return StepExecResult(False, "合格率get_qualify需要5个参数，传入参数个数错误", [])
+            elif paras[0] == 'get_max_errorlv':
+                if len(paras) == 3:
+                    status, info, data = bs.get_max_errorlv_info(paras[1],paras[2])
+                    print(type(data))
+                    print('status:',status, 'info:',info, 'data:', data)
+                else:
+                    return StepExecResult(False, "最大误差合格率get_max_errorlv需要3个参数，传入参数个数错误", [])
+            elif paras[0] == 'get_er_Harmonic_mean':
+                if len(paras) == 4:
+                    status, info, data = bs.get_er_Harmonic_mean_info(paras[1],paras[2],paras[3])
+                    print(type(data))
+                    print('status:',status, 'info:',info, 'data:', data)
+                else:
+                    return StepExecResult(False, "合格率get_qualify需要5个参数，传入参数个数错误", [])
+
+
+            else:
+                return StepExecResult(False, "您输入的公式暂不支持，请查证或者提交需求", [])
+            if status:
+                return StepExecResult(status, info, data)
+            else:
+                return StepExecResult(True, "", [])
+
+        except Exception as e:
+            info = str(e)
+            return StepExecResult(False, info, [])
+
+
     def myexec(self):
         '''单条测试用例步骤执行接口'''
         #当增加函数时在此增加调用操作
-
         if self.__cmdtype == CmdType.get_para_ini:
             return self.__get_para_ini__(self.__paras)
         elif self.__cmdtype == CmdType.set_para_ini:
@@ -833,6 +941,8 @@ class StepObj():
             return self.__rdb_querry__(self.__paras)
         elif self.__cmdtype == CmdType.rdb_write:
             return self.__rdb_excute__(self.__paras)
+        elif self.__cmdtype == CmdType.calc_formula:    #9008
+            return self.__calc_formula__(self.__paras)
         # else:
         #     PluginManager.LoadAllPlugin();
         #     #遍历所有接入点下的所有插件

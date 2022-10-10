@@ -7,6 +7,7 @@ from splitcfg import SplitSymbol
 from dateutil.relativedelta import relativedelta
 import os
 import platform
+import time
 
 STEP_ARG_SPAN = SplitSymbol.SYMBOL_BETWEEN_ARGS
 
@@ -312,7 +313,12 @@ class CaseObj():
                 suborder = 1
                 for relpara in stepretult.returndatas:
                     key = "steppara_%s_%d" % (step.order,suborder)
+                    # print('##############key', key, relpara)
                     self.__step_return_paras[key] = relpara
+
+                time.sleep(5)
+                info = "用例%s对应的步骤%s执行完毕，已经等待5秒" % (self.__case.id, step.order)
+                lg.myloger.info(info)
 
             judgestepparas = self.__checkstepparas__(self.__case.judgestep.cmdparas)
             judgeobj = StepObj(self.__case.judgestep.cmdtype,judgestepparas)
@@ -443,6 +449,10 @@ class SuitObj():
                 self.__condstepparas[key] = relpara
                 suborder += 1
 
+            time.sleep(5)
+            info = "前置步骤%s执行完毕，已经等待5秒" % step.order
+            lg.myloger.info(info)
+
         '执行用例'
         for case in self.__suit.cases:
             if mark == "" or int(case.mark) <= int(mark):
@@ -452,6 +462,10 @@ class SuitObj():
                 self.__case_return_paras[case.id] = caserel
                 if rel != 0 and case.faulttype == 1:
                     break
+
+                time.sleep(5)
+                info = "用例%s执行完毕，已经等待5秒" % case.id
+                lg.myloger.info(info)
 
         '''生成套件执行报告'''
         return self.__report__()
@@ -477,7 +491,7 @@ class SuitObj():
         abnormalinfo = ""
         notexecutedcount = 0
         notexecuteinfo = ""
-        
+
         for caserelkey in self.__case_return_paras:
             caserel = self.__case_return_paras[caserelkey]
             if caserel.status == 0:
@@ -495,8 +509,14 @@ class SuitObj():
         count = succeedcount + failedcount + abnormalcount
         if self.__suit.casecount > count:
             notexecutedcount = self.__suit.casecount - count
+            List = []
             for case in self.__suit.cases:
+                List.append(case.id)
                 if case.id not in self.__case_return_paras:
+                    if len(notexecuteinfo) > 0:
+                        succeedinfo += ","
+                    notexecuteinfo += case.id
+                elif List.count(case.id) > 1:
                     if len(notexecuteinfo) > 0:
                         succeedinfo += ","
                     notexecuteinfo += case.id
