@@ -63,7 +63,8 @@ def __readcase__(node):
     '''读取用例信息'''
     case_temp = cb.CaseCfg(node.attrib["id"],node.attrib["name"],node.attrib["faulttype"],node.attrib["mark"])
 
-    step_node = node.getchildren()
+    # step_node = node.getchildren()
+    step_node = list(node)
     if len(step_node) > 0:
         for step in step_node:
             step_temp = __readstep__(step)
@@ -79,12 +80,14 @@ def __readcase__(node):
 def __readsuit__(node,result_list):
     '''读取套件配置信息'''
     suit = cb.SuitCfg(node.attrib["id"],node.attrib["name"])
-    children_node = node.getchildren()
+    # children_node = node.getchildren()
+    children_node = list(node)
     if len(children_node) == 0:
         return
     for child in children_node:
         if child.tag == "precondition":
-            step_node = child.getchildren()
+            # step_node = child.getchildren()
+            step_node = list(child)
             if len(step_node) > 0:
                 for step in step_node:
                     step_temp = __readstep__(step)
@@ -107,7 +110,8 @@ def __readfile__(file_name):
         result_list = []
         root = ET.parse(file_name).getroot()
         if root.tag == "test":
-            children_node = root.getchildren()
+            # children_node = root.getchildren()
+            children_node = list(root)
             if len(children_node) == 0:
                 return True, []
             for child in children_node:

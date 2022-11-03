@@ -2,6 +2,7 @@ import pandas as pd
 import os
 import logger as lg
 from splitcfg import SplitSymbol
+import chardet
 
 class PandasCfg:
     ''' 文件操作,支持(txt、csv、excel(xls/xlsx/xlsm)、json、剪切板、数据库、html、hdf、parquet、pickled文件、sas、stata)'''
@@ -10,7 +11,7 @@ class PandasCfg:
     __con_and = "#AND#"
     __con_inner = "@"
 
-    def __init__(self,cfgpath:str, encoding='utf-8'):
+    def __init__(self,cfgpath:str, encoding=''):
         '''构造函数
             功能：
                 通过传入参数创建文件对象
@@ -19,7 +20,21 @@ class PandasCfg:
         '''
         self.__end = cfgpath.split(".")[-1].strip().lower()
         self.__cfgpath__ = cfgpath
-        self.__encoding__ = encoding
+        # self.__encoding__ = encoding
+        get_encoding = self.get_encoding(self.__cfgpath__)
+        if encoding:  # 用户指定编码格式  encoding不为空
+            self.__encoding__ = encoding  # 使用用户指定编码格式
+        else:  # 用户没有指定编码格式
+            if get_encoding:  # 程序自动获取文件编码格式，不为空
+                self.__encoding__ = get_encoding  # 使用程序获取的编码格式
+            else:
+                self.__encoding__ = 'utf-8'  # 给一个默认值
+
+    def get_encoding(self,cfgpath):
+        # 二进制方式读取，获取字节数据，检测类型
+        with open(cfgpath, 'rb') as f:
+            data = f.read()
+            return chardet.detect(data)['encoding']
 
     def readvalue(self, fields:str, fltstr:str, return_type:str, sheetname='',
                   file_type='', default=''):
@@ -118,7 +133,7 @@ class PandasCfg:
         - 待读取的列不存在，属于输入参数错误，一般为带读取列不存在
         - 检索条件配置错误， 属于输入参数错误，一般为检索列不存在
         '''
-        print('####',fltstr, attrname, value, sheetname, file_type)
+        # print('####',fltstr, attrname, value, sheetname, file_type)
         stinfo = "readvalue调用，cfgpath路径:%s fltstr检索条件:%s attrname待更改的目标值:%s value更改后的值:%s" % (
         self.__cfgpath__, fltstr, attrname, value)
         lg.myloger.info(stinfo)
@@ -154,9 +169,9 @@ class PandasCfg:
             lg.myloger.error(stinfo)
             return False, info,''
         else:
-            print(value)
-            print(value[0])
-            print(type(value))
+            # print(value)
+            # print(value[0])
+            # print(type(value))
             if value[0] == '[' and value[-1] == ']':
                 if len(need_attrname_list) ==1:
                     need_dict[need_attrname_list[0]] = eval(value)
@@ -168,9 +183,9 @@ class PandasCfg:
                     return False, info, ''
                 else:
                     need_dict = dict(zip(need_attrname_list, need_value_list))
-            print(need_value_list, type(need_value_list), len(need_value_list),need_dict)
+            # print(need_value_list, type(need_value_list), len(need_value_list),need_dict)
 
-        print(flt_dict, need_attrname_list, need_value_list)
+        # print(flt_dict, need_attrname_list, need_value_list)
         if self.__end in ['xls', 'xlsx', 'xlsm'] or file_type in ['xls', 'xlsx', 'xlsm']:  # 读取excel文件，包括xlsx、xls、xlsm格式
             pass
             # status, info, value = self.__setexcelV__(need_attrname_list, fltstr_field_list, fltstr_field_value_list,
@@ -205,13 +220,13 @@ class PandasCfg:
         excel_data = pd.read_excel(self.__cfgpath__, sheet_name=None)
         #获取文件全部的sheet页
         sheet_list = list(excel_data.keys())
-        table_list_dict = []  # [{表头：数据},{表头：数据}]
+        table_list_dict_old = []  # [{表头：数据},{表头：数据}]
         # print(excel_data[sheet_list[0]].to_dict(orient="records"))
 
         if sheetname == '':
             # 读取菜单数据(表头)
             thead_list = excel_data[sheet_list[0]].to_dict(orient="split")['columns']
-            table_list_dict = excel_data[sheet_list[0]].to_dict(orient="records")  # 使用to_dict(orient="‘dict’, ‘list’, ‘series’, ‘split’, ‘records’, ‘index’")  records表示转换成我们需要的的列表嵌套字典结构
+            table_list_dict_old = excel_data[sheet_list[0]].to_dict(orient="records")  # 使用to_dict(orient="‘dict’, ‘list’, ‘series’, ‘split’, ‘records’, ‘index’")  records表示转换成我们需要的的列表嵌套字典结构
         else:
             if sheetname not in sheet_list:
                 info = f"配置错误：表内没有对应的sheet页{sheetname}"
@@ -219,8 +234,17 @@ class PandasCfg:
             else:
                 # 读取菜单数据(表头)
                 thead_list = excel_data[sheetname].to_dict(orient="split")['columns']
-                table_list_dict = excel_data[sheetname].to_dict(orient="records")  # 使用to_dict(orient="‘dict’, ‘list’, ‘series’, ‘split’, ‘records’, ‘index’")  records表示转换成我们需要的的列表嵌套字典结构
+                table_list_dict_old = excel_data[sheetname].to_dict(orient="records")  # 使用to_dict(orient="‘dict’, ‘list’, ‘series’, ‘split’, ‘records’, ‘index’")  records表示转换成我们需要的的列表嵌套字典结构
 
+        # print('全部的数据',table_list_dict_old,len(table_list_dict_old))
+        table_list_dict = []  #修整数据
+        for i in range(0, len(table_list_dict_old)):
+            # print('@@@@@@@@@@@@@@@@@@',table_list_dict_old[i],type(table_list_dict_old[i]),i)
+            cc = {}
+            for key, value in table_list_dict_old[i].items():
+                cc[key] = str(value)
+            table_list_dict.append(cc)
+        # print('修整后的数据',table_list_dict,len(table_list_dict))
         # 判断待读取的列是否存在
         if len(need_field_list) > 0 and need_field_list[0] != '_':
             for i in need_field_list:  # 获取读取列的索引号
@@ -309,13 +333,13 @@ class PandasCfg:
         else:
             print('条件为空')
             for i,j in need_dict.items():
-                print(i,j)
+                # print(i,j)
                 try:
                     ix = eval(i)
-                    print(type(ix), ix)
+                    # print(type(ix), ix)
                     if isinstance(ix, int):
                         try:
-                            print(f'这个j传入的是一个值类型type(j)，更改一行值是{j}')
+                            # print(f'这个j传入的是一个值类型type(j)，更改一行值是{j}')
                             csv_data.loc[ix] = j  # 更改/添加一行值
                             b += len(headers)
                         except Exception as e:
@@ -328,10 +352,10 @@ class PandasCfg:
                         return False, info, ""
 
                 except:
-                    print(type(i), i)
+                    # print(type(i), i)
                     if isinstance(i, str):
                         try:
-                            print(f'这个j传入的是一个值类型type(j)，更改一列值是{j}')
+                            # print(f'这个j传入的是一个值类型type(j)，更改一列值是{j}')
                             csv_data[i] = j  # 更改/添加一列值
                             b += hangshu
                         except Exception as e:
@@ -344,7 +368,7 @@ class PandasCfg:
                         lg.myloger.error(info)
                         return False, info, ""
 
-        print('######',b)
+        # print('######',b)
         if b == 0:  # 如果更改次数为0，则返回失败信息
             info = f"文件没有任何更改：请检查条件信息: {flt_dict}"
             lg.myloger.error(info)
@@ -430,10 +454,8 @@ class PandasCfg:
         stinfo = "__getdata__调用，用户待读取的目标值列表need_field_list:%s 条件表头信息fltstr_field_list:%s 条件表头对应的值fltstr_field_value_list:%s 返回值类型return_type:%s,文件表头信息thead_list:%s,文件全部内容table_list_dict:%s" % (
             need_field_list, fltstr_field_list, fltstr_field_value_list, return_type,thead_list,table_list_dict)
         lg.myloger.info(stinfo)
-
         # 判断过滤列是否存在
         table_dict = []  #得到过滤后的数据，格式为列表嵌套字典
-        # print('全部的数据',table_list_dict)s
         if len(fltstr_field_list) > 0 and fltstr_field_list[0] != '_':  # 有判断条件
             for i in fltstr_field_list:
                 if i not in thead_list:
@@ -477,7 +499,8 @@ class PandasCfg:
         # print('table_dict的值:',table_dict)
 
         # 根基return_type返回对应的数据类型
-        if return_type not in ['4', '5', '6', 4, 5, 6]:  # list
+
+        if return_type in ['3',3]:  # list
             tb_list = []
             for tb in table_dict:
                 tb_list.append(list(tb.values()))

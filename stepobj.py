@@ -255,11 +255,13 @@ class StepObj():
         if len(paras)<3:
             info = '传入参数个数不符合要求'
             return False,info,''
-        elif len(paras)==3:
-            paras.append('3')
-            paras.append('')
-        elif len(paras)==4:
-            paras.append('')
+        elif len(paras)<5:
+            paras = paras + [''] * (5 - len(paras))
+        # elif len(paras)==3:
+        #     paras.append('3')
+        #     paras.append('')
+        # elif len(paras)==4:
+        #     paras.append('')
 
         if '#*#' in paras[0]:
             dir,filename = os.path.split(paras[0])
@@ -441,14 +443,16 @@ class StepObj():
         try:
             if len(paras) < 2:
                 return StepExecResult(False,"参数个数错误",[])
-            elif len(paras) == 2:
-                l = ['', '', '']
-                paras.extend(l)
-            elif len(paras) == 3:
-                l = ['', '']
-                paras.extend(l)
-            elif len(paras) == 4:
-                paras.append('')
+            elif len(paras) < 5:
+                paras = paras + [''] * (5 - len(paras))
+            # elif len(paras) == 2:
+            #     l = ['', '', '']
+            #     paras.extend(l)
+            # elif len(paras) == 3:
+            #     l = ['', '']
+            #     paras.extend(l)
+            # elif len(paras) == 4:
+            #     paras.append('')
             status,info = bs.cmp_file(paras[0],paras[1],paras[2],paras[3],paras[4])
 
             return StepExecResult(status,info,[])
@@ -543,20 +547,24 @@ class StepObj():
         try:
             # print('stepobj::',paras)
             para_count = len(paras)
-            if para_count < 1 or para_count > 2:
+            if para_count < 1 or para_count > 3:
                 return StepExecResult(False,"参数个数错误",[])
             elif para_count == 1:
                 paras.append('')
+                paras.append('True')
+            elif para_count == 2:
+                paras.append('True')
+            elif paras[2]=='':
+                paras[2] = 'True'
 
             status = bs.hasfile(paras[0],paras[1])
-            print(status)
-            if status:
-                return StepExecResult(status,"",[])
+            if status == eval(paras[2]):
+                return StepExecResult(True,"",[])
             else:
-                info = '请检查文件路径' + str(paras[0])
-                return StepExecResult(status, info, [])
+                info = '文件返回状态码%s与预期结果%s不符，请检查文件路径' %(status, paras[2]) + str(paras[0])
+                return StepExecResult(False, info, [])
         except Exception as e:
-            info = '请检查文件路径' + str(e)
+            info = '请检查用例是否编写正确' + str(e)
             return StepExecResult(False, info, [])
 
     '''文件删除接口'''
@@ -582,7 +590,7 @@ class StepObj():
                     print('文件存在，且被删除')
                 except Exception as e:
                     # print('删除文件异常')
-                    info = '删除文件异常，在linux环境下不能删除root用户创建的文件'
+                    info = '删除文件异常，在linux环境下不能删除root用户创建的文件，windows下不能删除被其他程序打开的文件'
                     return StepExecResult(False, info, [])
             else:
                 print('文件不存在，不需要操作')

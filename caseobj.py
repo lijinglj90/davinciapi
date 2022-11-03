@@ -514,11 +514,11 @@ class SuitObj():
                 List.append(case.id)
                 if case.id not in self.__case_return_paras:
                     if len(notexecuteinfo) > 0:
-                        succeedinfo += ","
+                        notexecuteinfo += ","
                     notexecuteinfo += case.id
                 elif List.count(case.id) > 1:
                     if len(notexecuteinfo) > 0:
-                        succeedinfo += ","
+                        notexecuteinfo += ","
                     notexecuteinfo += case.id
                 
         reportstr = "******************套件id[%s]套件name[%s]执行情况******************\n" % (self.__suit.id,self.__suit.name)

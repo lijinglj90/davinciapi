@@ -68,7 +68,7 @@ class RdbMysql(RdbBase):
     def exec_querry(self,sql:str,return_type:str='3'):
         # 打开数据库连接，执行sql，有返回值
         # db = MySQLdb.connect(host=self.host, port=int(self.port),user=self.user, passwd=self.passwd, db=self.database,charset='utf8' )
-        db = pymysql.connect(host=self.host, port=int(self.port), user=self.user, passwd=self.passwd, db=self.database,charset='utf8')
+        db = pymysql.connect(host=self.host, port=int(self.port), user=self.user, passwd=self.passwd, db=self.database,charset='utf8',read_timeout=60, write_timeout=60)
         # 使用cursor()方法获取操作游标 
         cursor = db.cursor()
 

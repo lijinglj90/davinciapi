@@ -11,7 +11,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="599ead8f-e21f-48e2-88bb-f9578f0703ad" name="Default Changelist" comment="test">
-      <change afterPath="$PROJECT_DIR$/calculation.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/case/zz/FD_SJBB_srqday.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/case/zz/test_efile_1.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/case/zz/对比后删除A/2022-09-02.wpd" afterDir="false" />
@@ -356,16 +355,13 @@
       <change afterPath="$PROJECT_DIR$/log/test_2022-10-09_14-45-38" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/log/test_2022-10-09_14-46-06" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/log/test_2022-10-10_10-18-47" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pygetopt.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/wen/2022-09-02.wpd" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/wen/farm1_20220816_0000_DQ - 副本.wpd" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/wen/farm1_20220816_0000_DQ.wpd" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/wen/farm1_20220817_0000_DQ.wpd" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/z.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/版本及提交内容说明.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/basefunc.py" beforeDir="false" afterPath="$PROJECT_DIR$/basefunc.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bootstrap.py" beforeDir="false" afterPath="$PROJECT_DIR$/bootstrap.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/case/zz/HDRSEQUENCE.csv" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/case/zz/REMOTEUNIT.csv" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/case/zz/RTDBNWPDATA.csv" beforeDir="false" />
@@ -377,12 +373,12 @@
       <change beforePath="$PROJECT_DIR$/case/zz/test3.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/case/zz/test_yichang.xml" beforeDir="false" afterPath="$PROJECT_DIR$/case/zz/test_yichang.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/caseobj.py" beforeDir="false" afterPath="$PROJECT_DIR$/caseobj.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/first.py" beforeDir="false" afterPath="$PROJECT_DIR$/first.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pandascfg.py" beforeDir="false" afterPath="$PROJECT_DIR$/pandascfg.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/rdbmysql.py" beforeDir="false" afterPath="$PROJECT_DIR$/rdbmysql.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/rdbobj.py" beforeDir="false" afterPath="$PROJECT_DIR$/rdbobj.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sptestframe.py" beforeDir="false" afterPath="$PROJECT_DIR$/sptestframe.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/stepobj.py" beforeDir="false" afterPath="$PROJECT_DIR$/stepobj.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webuicfg.py" beforeDir="false" afterPath="$PROJECT_DIR$/webuicfg.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wen/a - 副本/1.xls" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/wen/a - 副本/2.xlsx" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/wen/a - 副本/b/farm1_20220711_0000_DQ.WPD" beforeDir="false" />
@@ -406,6 +402,7 @@
       <change beforePath="$PROJECT_DIR$/wen/b/20220624.csv" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/wen/b/farm1_20220711_0000_DQ.WPD" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/wen/z.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/版本及提交内容说明.txt" beforeDir="false" afterPath="$PROJECT_DIR$/版本及提交内容说明.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -500,6 +497,28 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="pandascfg" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="davinciapi" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pandascfg.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="rdbobj" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="davinciapi" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -544,35 +563,13 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="z" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="davinciapi" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/wen" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="D:\davinciapi\z.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Python.z (1)" />
+        <item itemvalue="Python.rdbobj" />
+        <item itemvalue="Python.pandascfg" />
         <item itemvalue="Python.basefunc" />
         <item itemvalue="Python.calculation" />
-        <item itemvalue="Python.rdbobj" />
-        <item itemvalue="Python.z" />
       </list>
     </recent_temporary>
   </component>
@@ -588,7 +585,10 @@
       <updated>1662718493566</updated>
       <workItem from="1662718495004" duration="6000" />
       <workItem from="1662718513557" duration="1102000" />
-      <workItem from="1663031901615" duration="167632000" />
+      <workItem from="1663031901615" duration="217366000" />
+      <workItem from="1665973992458" duration="2693000" />
+      <workItem from="1666662934717" duration="28423000" />
+      <workItem from="1667441643297" duration="939000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <created>1663032286234</created>
@@ -611,7 +611,14 @@
       <option name="project" value="LOCAL" />
       <updated>1663242205246</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="版本号：V1.0_20220920-20221010&#10;本次提交内容：&#10;需求17：字段值不一致无法对比(UI服务需求）&#10;需求24：页面数据展示与数据库返回字段不一致(UI服务需求）&#10;需求62：sptestframe.py主文件中的配置建议单独放一个配置文件中配置(UI服务需求）&#10;需求77：支持统计通用case的公式计算(服务端需求）&#10;需求109：SVN增加版本号及修改需求说明 （其他需求）&#10;需求110：pandascfg.py文件增加log输出获取的全部内容信息(UI服务需求）&#10;需求111：增加一个打印出未执行case的id(UI服务需求）&#10;需求112：增加case等待时间(UI服务需求）&#10;需求113：get_tubiao_data去掉兜底逻辑(UI服务需求）&#10;需求115：exec_querry去掉兜底逻辑(UI服务需求）">
+      <created>1665371503945</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1665371503945</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -632,13 +639,14 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="test" />
     <MESSAGE value="提交9.15之前代码" />
-    <option name="LAST_COMMIT_MESSAGE" value="提交9.15之前代码" />
+    <MESSAGE value="版本号：V1.0_20220920-20221010&#10;本次提交内容：&#10;需求17：字段值不一致无法对比(UI服务需求）&#10;需求24：页面数据展示与数据库返回字段不一致(UI服务需求）&#10;需求62：sptestframe.py主文件中的配置建议单独放一个配置文件中配置(UI服务需求）&#10;需求77：支持统计通用case的公式计算(服务端需求）&#10;需求109：SVN增加版本号及修改需求说明 （其他需求）&#10;需求110：pandascfg.py文件增加log输出获取的全部内容信息(UI服务需求）&#10;需求111：增加一个打印出未执行case的id(UI服务需求）&#10;需求112：增加case等待时间(UI服务需求）&#10;需求113：get_tubiao_data去掉兜底逻辑(UI服务需求）&#10;需求115：exec_querry去掉兜底逻辑(UI服务需求）" />
+    <option name="LAST_COMMIT_MESSAGE" value="版本号：V1.0_20220920-20221010&#10;本次提交内容：&#10;需求17：字段值不一致无法对比(UI服务需求）&#10;需求24：页面数据展示与数据库返回字段不一致(UI服务需求）&#10;需求62：sptestframe.py主文件中的配置建议单独放一个配置文件中配置(UI服务需求）&#10;需求77：支持统计通用case的公式计算(服务端需求）&#10;需求109：SVN增加版本号及修改需求说明 （其他需求）&#10;需求110：pandascfg.py文件增加log输出获取的全部内容信息(UI服务需求）&#10;需求111：增加一个打印出未执行case的id(UI服务需求）&#10;需求112：增加case等待时间(UI服务需求）&#10;需求113：get_tubiao_data去掉兜底逻辑(UI服务需求）&#10;需求115：exec_querry去掉兜底逻辑(UI服务需求）" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="438" y="80" key="CommitChangelistDialog2" timestamp="1663242176638">
+    <state x="551" y="138" key="CommitChangelistDialog2" timestamp="1665371471742">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
-    <state x="438" y="80" key="CommitChangelistDialog2/0.0.1680.1010@0.0.1680.1010" timestamp="1663242176638" />
+    <state x="551" y="138" key="CommitChangelistDialog2/0.0.1680.1010@0.0.1680.1010" timestamp="1665371471742" />
     <state x="620" y="259" key="FileChooserDialogImpl" timestamp="1664269436585">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
@@ -651,50 +659,50 @@
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
     <state x="806" y="109" key="Github.UntrackedFilesDialog/0.0.1680.1010@0.0.1680.1010" timestamp="1663031989108" />
-    <state width="1323" height="307" key="GridCell.Tab.0.bottom" timestamp="1665306937495">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state width="1075" height="452" key="GridCell.Tab.0.bottom" timestamp="1667441766132">
+      <screen x="0" y="0" width="1680" height="1010" />
     </state>
     <state width="1323" height="307" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1665306937495" />
-    <state width="1264" height="279" key="GridCell.Tab.0.bottom/0.0.1680.1010@0.0.1680.1010" timestamp="1665297965259" />
-    <state width="1323" height="307" key="GridCell.Tab.0.center" timestamp="1665306937494">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state width="1075" height="452" key="GridCell.Tab.0.bottom/0.0.1680.1010@0.0.1680.1010" timestamp="1667441766132" />
+    <state width="1075" height="452" key="GridCell.Tab.0.center" timestamp="1667441766132">
+      <screen x="0" y="0" width="1680" height="1010" />
     </state>
     <state width="1323" height="307" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1665306937494" />
-    <state width="1264" height="279" key="GridCell.Tab.0.center/0.0.1680.1010@0.0.1680.1010" timestamp="1665297965258" />
-    <state width="1323" height="307" key="GridCell.Tab.0.left" timestamp="1665306937494">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state width="1075" height="452" key="GridCell.Tab.0.center/0.0.1680.1010@0.0.1680.1010" timestamp="1667441766132" />
+    <state width="1075" height="452" key="GridCell.Tab.0.left" timestamp="1667441766132">
+      <screen x="0" y="0" width="1680" height="1010" />
     </state>
     <state width="1323" height="307" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1665306937494" />
-    <state width="1264" height="279" key="GridCell.Tab.0.left/0.0.1680.1010@0.0.1680.1010" timestamp="1665297965257" />
-    <state width="1323" height="307" key="GridCell.Tab.0.right" timestamp="1665306937495">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state width="1075" height="452" key="GridCell.Tab.0.left/0.0.1680.1010@0.0.1680.1010" timestamp="1667441766132" />
+    <state width="1075" height="452" key="GridCell.Tab.0.right" timestamp="1667441766132">
+      <screen x="0" y="0" width="1680" height="1010" />
     </state>
     <state width="1323" height="307" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1665306937495" />
-    <state width="1264" height="279" key="GridCell.Tab.0.right/0.0.1680.1010@0.0.1680.1010" timestamp="1665297965259" />
-    <state width="1637" height="234" key="GridCell.Tab.1.bottom" timestamp="1664523418286">
+    <state width="1075" height="452" key="GridCell.Tab.0.right/0.0.1680.1010@0.0.1680.1010" timestamp="1667441766132" />
+    <state width="1637" height="234" key="GridCell.Tab.1.bottom" timestamp="1665741669258">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
-    <state width="1637" height="234" key="GridCell.Tab.1.bottom/0.0.1680.1010@0.0.1680.1010" timestamp="1664523418286" />
-    <state width="1637" height="234" key="GridCell.Tab.1.center" timestamp="1664523418285">
+    <state width="1637" height="234" key="GridCell.Tab.1.bottom/0.0.1680.1010@0.0.1680.1010" timestamp="1665741669258" />
+    <state width="1637" height="234" key="GridCell.Tab.1.center" timestamp="1665741669257">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
-    <state width="1637" height="234" key="GridCell.Tab.1.center/0.0.1680.1010@0.0.1680.1010" timestamp="1664523418285" />
-    <state width="1637" height="234" key="GridCell.Tab.1.left" timestamp="1664523418285">
+    <state width="1637" height="234" key="GridCell.Tab.1.center/0.0.1680.1010@0.0.1680.1010" timestamp="1665741669257" />
+    <state width="1637" height="234" key="GridCell.Tab.1.left" timestamp="1665741669256">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
-    <state width="1637" height="234" key="GridCell.Tab.1.left/0.0.1680.1010@0.0.1680.1010" timestamp="1664523418285" />
-    <state width="1637" height="234" key="GridCell.Tab.1.right" timestamp="1664523418286">
+    <state width="1637" height="234" key="GridCell.Tab.1.left/0.0.1680.1010@0.0.1680.1010" timestamp="1665741669256" />
+    <state width="1637" height="234" key="GridCell.Tab.1.right" timestamp="1665741669257">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
-    <state width="1637" height="234" key="GridCell.Tab.1.right/0.0.1680.1010@0.0.1680.1010" timestamp="1664523418286" />
+    <state width="1637" height="234" key="GridCell.Tab.1.right/0.0.1680.1010@0.0.1680.1010" timestamp="1665741669257" />
     <state x="393" y="223" key="SettingsEditor" timestamp="1663031923040">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
     <state x="393" y="223" key="SettingsEditor/0.0.1680.1010@0.0.1680.1010" timestamp="1663031923040" />
-    <state x="432" y="237" key="Vcs.Push.Dialog.v2" timestamp="1663242195227">
+    <state x="432" y="237" key="Vcs.Push.Dialog.v2" timestamp="1665371564267">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
-    <state x="432" y="237" key="Vcs.Push.Dialog.v2/0.0.1680.1010@0.0.1680.1010" timestamp="1663242195227" />
+    <state x="432" y="237" key="Vcs.Push.Dialog.v2/0.0.1680.1010@0.0.1680.1010" timestamp="1665371564267" />
     <state width="848" height="513" key="XDebugger.FullValuePopup" timestamp="1663230138017">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
@@ -712,12 +720,13 @@
     <SUITE FILE_PATH="coverage/davinciapi$sptestframe.coverage" NAME="sptestframe Coverage Results" MODIFIED="1664453995424" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/davinciapi$pygetopt.coverage" NAME="pygetopt Coverage Results" MODIFIED="1664345368501" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/davinciapi$zz.coverage" NAME="zz Coverage Results" MODIFIED="1663219735985" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/wen" />
-    <SUITE FILE_PATH="coverage/davinciapi$basefunc.coverage" NAME="basefunc Coverage Results" MODIFIED="1665215942336" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/davinciapi$pandascfg.coverage" NAME="pandascfg Coverage Results" MODIFIED="1665714983277" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/davinciapi$basefunc.coverage" NAME="basefunc Coverage Results" MODIFIED="1665647777375" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/davinciapi$z.coverage" NAME="z Coverage Results" MODIFIED="1664455317383" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/wen" />
-    <SUITE FILE_PATH="coverage/davinciapi$z__1_.coverage" NAME="z (1) Coverage Results" MODIFIED="1665297965246" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/davinciapi$z__1_.coverage" NAME="z (1) Coverage Results" MODIFIED="1667441704340" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/davinciapi$filecmp.coverage" NAME="filecmp Coverage Results" MODIFIED="1663058318129" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$USER_HOME$/AppData/Local/Programs/Python/Python37/Lib" />
-    <SUITE FILE_PATH="coverage/davinciapi$rdbobj.coverage" NAME="rdbobj Coverage Results" MODIFIED="1665215650481" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/davinciapi$calculation.coverage" NAME="calculation Coverage Results" MODIFIED="1665215836018" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/davinciapi$rdbobj.coverage" NAME="rdbobj Coverage Results" MODIFIED="1666854840132" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/davinciapi$stepobj.coverage" NAME="stepobj Coverage Results" MODIFIED="1663224950668" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

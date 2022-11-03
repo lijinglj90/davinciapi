@@ -3,6 +3,7 @@ from rdbmysql import RdbMysql
 from rdbdisql import RdbDSql
 from rdbking import RdbKing
 from rdbpsql import RdbPSql
+from rdbinsql import RdbInSql
 
 class RdbObj():
     def __init__(self, dbtype:str = "",concectstr:str = ""):
@@ -21,6 +22,8 @@ class RdbObj():
             self.dbobj = RdbDSql()
         elif mytype == "QPSQL":
             self.dbobj = RdbPSql()
+        elif mytype == "QINSQL":
+            self.dbobj = RdbInSql()
         else:
             self.dbobj = None
 
@@ -79,10 +82,14 @@ if __name__ == '__main__':
 #     c = RdbObj()
 #     c = RdbObj('QMYSQL').exec_querry(aql,return_type='4')
     #SELECT windpower 日风功率密度 FROM fdayform WHERE DATATIME = '2022-09-25 00:00:00'~QMYSQL~10.64.14.70@_@davinci@_@_~3
-    aql = "SELECT windpower 日风功率密度 FROM fdayform WHERE DATATIME = '2022-09-25 00:00:00'"
+    # aql = "select left(datatime,4),LIRRAVG,LIRRAMAX,LIRRADIATION ,GRIDPMAXTIME,GRIDPMAX, ACCUMPOWER/10,THEORYSUMP/10,LABLEHOUR,LSUMSUNLIGHT,FANAVGWIND,AVGTEMPERATURE,AVGMODULETEMPERATURE, ACCDIRECTR,ACCFIFFRAD,ifnull(INCLINEIRR,'nan') from fyearform where objtable_id = 1071 and obj_id = 115020 and datatime='2022-01-01 00:00:00' order by datatime"
     # aql = "SELECT AVERAGE,DTMAXVAL FROM hdranastat5m20220925 WHERE id=49 AND hdtime <= '2022-09-25 00:05:00'"
     # aql = "SELECT AVERAGE FROM hdranastat5m20220925 WHERE id=49 AND hdtime <= '2022-09-25 00:00:00'"
 
-    c = RdbObj('QMYSQL', '10.64.14.70@_@davinci@_@').exec_querry(aql, return_type='3')
+    # c = RdbObj('QMYSQL', '10.64.14.69@_@DAVINCI@_@').exec_querry(aql, return_type='3')
+    # print(c)
+
+    qq = "select * from testing"
+    c = RdbObj('QMYSQL', '10.8.8.200@8086@test@admin@123456').exec_querry(qq, return_type='3')
     print(c)
     # print(len(c[-1]))
