@@ -361,14 +361,12 @@ class WebCfg():
 
         elif act == "do_select":
             count  = len(action_ls)
-            if count < 2:
+            if count < 3:
                 info = "动作参数[%s]配置错误:do_select缺少参数" % action_str
                 status =  False
             else:
                 value = action_ls[1]
-                myby = "text"
-                if count > 2:
-                    myby = action_ls[2]
+                myby = action_ls[2]
 
                 status,info = self.__set_value_of_select_element__(el,value,myby)
         elif act == "set_datetime":
@@ -390,6 +388,17 @@ class WebCfg():
             time.sleep(1)
         elif act == "alert_dismiss":  #取消操作
             data = myDriver.switch_to.alert.dismiss()
+        elif act == "text_select":
+            count = len(action_ls)
+            if count < 3:
+                info = "动作参数[%s]配置错误:text_select缺少参数" % action_str
+                status = False
+            else:
+                value = action_ls[1]
+                myby = action_ls[2]
+
+                # status, info = self.__set_value_of_select_element__(el, value, myby)
+                status, info, data = self.__get_value_of_select_element__(el, value, myby)
         else:
             info = "不支持的操作类型:[%s]" % action_str
             status = False
@@ -521,6 +530,55 @@ class WebCfg():
             info = "设置Select控件值错误：采用方法{},无对应值{}命中,异常信息为{}".format(by,value,e)
         
         return status,info
+
+    def __get_value_of_select_element__(self, el, indexnum: str, by: str = "text"):
+        '''
+            设置下拉选择框的值
+            :输入参数:
+            - el             Select控件
+            - by             方法类型，备选为"index","value"和"text",对应相应方法，缺省为"text"
+            - value          与方法对应参数，by为"index"，则为选项序号；
+                             by为"value"，则为对应值；by为"text"，则为对应显示值；
+
+            :输出参数:
+            - status         执行结果状态，成功为True，反之为False
+            - info           出错信息，成功则为空
+        '''
+        status = True
+        info = ""
+        myby = by.lower().strip()
+        value_list = []
+        text_list = []
+        V = []
+        try:
+            options_list = el.find_elements_by_tag_name('option')
+            for options in options_list:
+                value_list.append(options.get_attribute('value'))
+                text_list.append(options.text)
+
+            if myby == "value":
+                if int(indexnum) >= len(value_list):
+                    status = False
+                    info = f"输入的下标{indexnum}不存在，没有对应value"
+                else:
+                    V = value_list[int(indexnum)]
+            elif myby == "text":
+                if int(indexnum) >= len(value_list):
+                    status = False
+                    info = f"输入的下标{indexnum}不存在，没有对应text"
+                else:
+                    V = text_list[int(indexnum)]
+            elif myby == "valueall":
+                V = value_list
+            elif myby == "textall":
+                V = text_list
+            else:
+                status = False
+                info = "获取Select选择值错误：方法[%s]不支持,应为[\"Value\",\"text\",\"Valueall\",\"textall\"]之一" % (by)
+        except Exception as e:
+            info = "设置Select控件值错误：采用方法{},无对应值{}命中,异常信息为{}".format(by, indexnum, e)
+
+        return status, info, V
 
     def __set_datetime__(self,position_str:str,datetime_str:str,driver:WebDriver):
         '''

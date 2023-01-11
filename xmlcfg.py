@@ -41,7 +41,7 @@ class XmlCfg():
         '''
         self.__cfgpath = cfgpath
 
-        get_encoding = self.get_encoding(self.__cfgpath)
+        get_encoding = self.get_encoding(self.__cfgpath)   #获取文件编码格式
         if get_encoding:  # 程序自动获取文件编码格式，不为空
             self._encoding = get_encoding  # 使用程序获取的编码格式
         else:
@@ -51,8 +51,8 @@ class XmlCfg():
             self.__hasfile = False
         else:
             self.__hasfile = True
-            self.__domtree = xml.dom.minidom.parse(cfgpath)
-            self.__documentElement = self.__domtree.documentElement
+            self.__domtree = xml.dom.minidom.parse(cfgpath)  #获取 xml 文档对象
+            self.__documentElement = self.__domtree.documentElement # 获得根节点
 
     class Filter():
         '''节点选择定位条件结构
@@ -94,6 +94,7 @@ class XmlCfg():
                 条件字符串，格式举例：Node1_Name|AttrCon@Attr_Name@value#AND#NodeCoN@_@value@@Node2_Name|AttrCon@Attr_Name@value#AND#NodeCoN@_@value
             返回：
                 条件映射：如正确解析，返回条件映射。当异常时为None，当条件串为空时为None
+                key|AttrCon@name@date@@value|AttrCon@order@1@@time|AttrCon@timetype@1
         '''
         dict_nodeflt = {}
         if con_str == "":
@@ -101,26 +102,29 @@ class XmlCfg():
             lg.myloger.error(info)
             return dict_nodeflt,info
 
-        nodeftrs = con_str.split(self.__con_filter)
+        nodeftrs = con_str.split(self.__con_filter)   #"@@"  [book|AttrCon@category@math  @@  title|AttrCon@timetype@1]
         for nodeftr in nodeftrs:
-            ftrpair = nodeftr.split(self.__con_nodefilter)
+            ftrpair = nodeftr.split(self.__con_nodefilter)   #"|"  [book  |  AttrCon@category@math]
             if len(ftrpair) != 2:
                 info = ">> 条件[%s]格式错误：在[%s]处" % (con_str,nodeftr)
                 lg.myloger.error(info)
                 return None,info
             nodeflr_obj = XmlCfg.Node_Filter(ftrpair[0])
+            print('###nodeflr_obj:', nodeflr_obj)
             fltstr = ftrpair[1]
-            flts = fltstr.split(self.__con_and)
+            flts = fltstr.split(self.__con_and)  #"#AND#"
             for flt in flts:
-                items = flt.split(self.__con_innerfilter)
+                items = flt.split(self.__con_innerfilter)  #"@" [AttrCon  @  category  @  math]
                 if len(items) != 3 or (items[0] != "AttrCon" and items[0] != "NodeCon"):
                     info = ">> 条件[%s]格式错误：在[%s]处" % (con_str,flt)
                     lg.myloger.error(info)
                     return None,info
+                print('$$$$',items)
                 nodeflr_obj.addfilter(items[0], items[1], items[2])
 
             dict_nodeflt[ftrpair[0]] = nodeflr_obj
 
+        print('###dict_nodeflt:',dict_nodeflt)
         return dict_nodeflt,""
 
 
@@ -217,9 +221,9 @@ class XmlCfg():
                 return None,info
             hasText = False
             for sub in subs:
-                if sub.nodeType == Node.TEXT_NODE:
+                if sub.nodeType == Node.TEXT_NODE: #节点类型
                     hasText = True
-                    return sub.data,""
+                    return sub.data,""   #等价于sub.nodeValue 都是获取节点内容
             if not hasText:
                 info = ">> 条件格式错误：节点[%s]没有文本节点" % (tarnode.nodeName)
                 lg.myloger.error(info)
@@ -272,18 +276,27 @@ class XmlCfg():
         stinfo ="cfgpath:%s nodestr:%s filtstr:%s keystr:%s default:%s" %(self.__cfgpath,nodestr,fltstr,keystr,default)
         lg.myloger.info(stinfo)
 
-        if not self.__hasfile:
+        if not self.__hasfile:    #判断文件是否存在
             info = ">> 无此文件，请核对路径[%s]" % self.__cfgpath
             lg.myloger.error(stinfo)
             return False,info,None
 
-        temp_list = nodestr.split(self.__node_splitstr)
-        dict_nodeflts,info = self.__compilecon__(fltstr)
+        temp_list = nodestr.split(self.__node_splitstr)   #'@@'   分割节点串  [book@@title]
+        print('####',temp_list,len(temp_list))
+        dict_nodeflts,info = self.__compilecon__(fltstr)   #book|AttrCon@category@math@@title|AttrCon@timetype@1
+        # print(dict_nodeflts)  #{'book': <__main__.XmlCfg.Node_Filter object at 0x0000024C9534B448>, 'title': <__main__.XmlCfg.Node_Filter object at 0x0000024C9534B5C8>}
+        # print(list(dict_nodeflts.keys()))
+        # sss = dict_nodeflts['book'].filters[1].value
+        # print('%%%%',sss)
+        # print("dict_nodeflts的值是一个字典，{节点名:类Node_Filter()}")
+        # print("dict_nodeflts['book']的值是个类：Node_Filter()，包含字符串node,列表filter")
+        # print("dict_nodeflts['book'].filters[0]的值也是一个类Filter()，包含字符串type(属性or节点内容)，name(属性名)，value(属性值)")
+
         if dict_nodeflts is None:
             lg.myloger.error(stinfo)
             return False,info,None
-        
-        if len(temp_list) < 1:
+
+        if len(temp_list) < 1:  #这个分支不会被覆盖
             if len(dict_nodeflts) > 1:
                 info = "节点字典个数不匹配"
                 lg.myloger.error(info)
@@ -293,9 +306,9 @@ class XmlCfg():
                 lg.myloger.info(info)
                 return False,info,value
         else:
-            currNode = self.__documentElement
-            for nodeName in temp_list:
-                subnodes = currNode.getElementsByTagName(nodeName)
+            currNode = self.__documentElement   #根节点
+            for nodeName in temp_list:  #[book@@title]
+                subnodes = currNode.getElementsByTagName(nodeName)  #返回对应节点的(节点列表)NodeList对象
                 if subnodes is None or len(subnodes) == 0:
                     info = ">> 节点参数[%s]配置错误，节点[%s]不存在" % (nodestr, nodeName)
                     lg.myloger.error(info)
@@ -305,7 +318,7 @@ class XmlCfg():
                     subnode = None
                     if nodeName in dict_nodeflts.keys():
                         fltpair = dict_nodeflts[nodeName]
-                        subnode,nodeinfo = self.__getnode(subnodes, fltpair.filters)
+                        subnode,nodeinfo = self.__getnode(subnodes, fltpair.filters)   #返回对应节点的节点对象
                     else:
                         subnode,nodeinfo = self.__getnode(subnodes, None)
 
@@ -322,7 +335,7 @@ class XmlCfg():
                                 return False,info,None
                             else:
                                 return True,info,value
-        lg.myloger.info("返回缺省值")                    
+        lg.myloger.info("返回缺省值")
         return True,"缺省值",default
     
     
@@ -398,4 +411,30 @@ class XmlCfg():
     def save(self):
         with open(os.path.join(self.__cfgpath), 'w', encoding=self._encoding) as fh:
             self.__domtree.writexml(fh)
-        
+
+
+if __name__ == '__main__':
+    # cfgpath = r"D:\davinciapi\wen\f_fgsztxx.xml"
+    # myobj = XmlCfg(cfgpath)
+    # nodestr = "key@@value@@time"
+    # # fltstr = "key|AttrCon@name@date@@value|AttrCon@order@1#AND#AttrCon@datatype@0"
+    # fltstr = "key|AttrCon@name@date@@value|AttrCon@order@1@@time|AttrCon@timetype@1"
+    # keystr = "AttrCon@format"
+
+    cfgpath = r"D:\davinciapi\case\zz\对比后删除A\new 2.xml"
+    myobj = XmlCfg(cfgpath)
+    nodestr = "book@@title"
+    # fltstr = "book|AttrCon@category@math#AND#AttrCon@name@datemath@@title|AttrCon@timetype@1"  #2ge
+    fltstr = "book|AttrCon@category@math@@title|AttrCon@timetype@1"
+    # keystr = "AttrCon@order"
+    keystr = "NodeCon@_"
+
+    # cfgpath = r"D:\davinciapi\case\zz\对比后删除A\new 2.xml"
+    # myobj = XmlCfg(cfgpath)
+    # nodestr = ""
+    # # fltstr = "key|AttrCon@name@date@@value|AttrCon@order@1#AND#AttrCon@datatype@0"
+    # fltstr = ""
+    # keystr = "AttrCon@type"
+
+    value = myobj.readvalue(nodestr, fltstr, keystr, "aaaa")
+    print(value)

@@ -32,7 +32,6 @@ linuxadb = [  #全部使用的是root权限安装
     # 'pip3 install chardet -i http://pypi.douban.com/simple/ --trusted-host pypi.douban.com',  #8.3
     # 'pip3 install openpyxl -i http://pypi.douban.com/simple/ --trusted-host pypi.douban.com',
     'pip3 install influxdb -i http://pypi.douban.com/simple/ --trusted-host pypi.douban.com',
-
 ]
 for i in adb:
     time.sleep(1)

@@ -261,7 +261,7 @@ def getdata_from_bootstrapp_table_quxian(el, driver:WebDriver, fields: str = "",
     return status, info, data
 
 
-def getdata(el, driver:WebDriver, need_field_list, filter_field_list, filter_field_value_list, thead_th_v_list, return_type: str = "3"):
+def getdata(el, driver:WebDriver, need_field_list, filter_field_list, filter_field_value_list, thead_th_v_list, return_type):
 # def getdata(el, need_field_list, filter_field_list, filter_field_value_list, thead_th_v_list, return_type: str = "3"):
     # 读取内容与菜单一起组成一个字典
     time.sleep(1)
@@ -353,7 +353,7 @@ def getdata(el, driver:WebDriver, need_field_list, filter_field_list, filter_fie
             tb_list.append(list(table_dict[i].values()))
         return True, "", tb_list
     else:
-        return False, "请输入对应的返回类型", []
+        return False, "get_tubiao_data方法请输入对应的返回类型", []
 
 
 def getdata_fanstatus(el, driver:WebDriver, fields: str = "", filter: str = "", return_type: str = "3"):  # (el对象，‘’，‘’)

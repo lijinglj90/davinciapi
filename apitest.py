@@ -183,14 +183,14 @@ if __name__ == "__main__":
         nodestr = "key@@value@@time"
         # fltstr = "key|AttrCon@name@date@@value|AttrCon@order@1#AND#AttrCon@datatype@0"
         fltstr = "key|AttrCon@name@date@@value|AttrCon@order@1@@time|AttrCon@timetype@1"
-        keystr = "AttrCon@format11111"
-        # value = myobj.readvalue(nodestr,fltstr,keystr,"aaaa")
-        # print(value)
-        # assert value == "yyyy-MM-dd"
+        keystr = "AttrCon@format"
+        value = myobj.readvalue(nodestr,fltstr,keystr,"aaaa")
+        print(value)
+        assert value == "yyyy-MM-dd"
 
-        b = myobj.setvalue(nodestr,fltstr,keystr,"dd/MM/yyyy")
-        print(b)
-        myobj.save()
+        # b = myobj.setvalue(nodestr,fltstr,keystr,"dd/MM/yyyy")
+        # print(b)
+        # myobj.save()
         # value = myobj.readvalue(nodestr,fltstr,keystr,"aaaa")
         # print('@@@@@',value)
         # assert value == "dd/MM/yyyy"

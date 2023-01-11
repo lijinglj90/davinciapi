@@ -98,11 +98,66 @@ def waitspan(seconds:str):
     else:
         lg.myloger.error("等待时间小于0")
 
-def cmp_file(file1:str,file2:str,encodestr='',Leftn='',rightn=''):
+def fuzzy_cmp_file(file1:str,file2:str,encodestr='',Leftn='', rightn='',fuzzyn=''):
+    '''模糊匹配到多个文件生成列表，循环对比两个列表内的文件，如果某两个文件对比程工，则返回True 反之返回False
+        :输入参数：
+        - file1 文件1，模糊关键字#*#
+        - file2 文件2，模糊关键字#*#
+        - encodestr 字符编码格式，可以为空
+        - Leftn 起始行号
+        - rightn 结束行号
+
+        :输出参数：
+        - status 比较过程信息，过程执行正确为True，执行异常则为False
+        - info   如果过程执行异常信息
+        - result 如果一致则返回True，否则返回False'''
+    statuslist = []
+    infolist = []
+    fuzzy_find_list_0 = []
+    fuzzy_find_list_1 = []
+    if '#*#' in file1:
+        fuzzy_find_list_0 = fuzzy_find(file1)
+    else:
+        fuzzy_find_list_0.append(file1)
+
+    if '#*#' in file2:
+        fuzzy_find_list_1 = fuzzy_find(file2)
+    else:
+        fuzzy_find_list_1.append(file2)
+
+    # lg.myloger.info('模糊查询的两个列表分别是：',fuzzy_find_list_0, fuzzy_find_list_1)
+
+    if len(fuzzy_find_list_0) == 0 or len(fuzzy_find_list_1) == 0:
+        info = f'没有匹配到对应文件，请手动检查，参数一：{file1}查询结果为：{fuzzy_find_list_0}。参数二：{file2}查询结果为：{fuzzy_find_list_1}'
+        # lg.myloger.error(False, info)
+        return False, info
+    else:
+        for i in fuzzy_find_list_0:
+            for j in fuzzy_find_list_1:
+                status, infos = cmp_file(i, j, encodestr, Leftn, rightn, fuzzyn)
+                statuslist.append(status)
+                infolist.append(infos)
+        infolists = ';'.join(infolist)
+        # print(statuslist,infolists)
+        # lg.myloger.error(statuslist,infolists)
+        if True in statuslist:
+            info = '模糊匹配，某两个文件对比一致，则此条用例通过'
+            # lg.myloger.error(True, info)
+            return True, info
+        else:
+            # info = f'全部文件均比对失败，请手动检查，{paras[0]}查询结果为：{fuzzy_find_list_0},{paras[1]}查询结果为：{fuzzy_find_list_1}'
+            info = f'全部文件均比对失败，请手动检查，参数一：{file1}查询结果为：{fuzzy_find_list_0}。参数二：{file2}查询结果为：{fuzzy_find_list_1}。对比详细信息为：{infolists}'
+            # lg.myloger.error(False, info)
+            return False, info
+
+def cmp_file(file1:str,file2:str,encodestr='',Leftn='',rightn='',fuzzyn=''):
     '''检查文件是否一致，如果不一致则返回差异信息
     :输入参数：
     - file1 文件1
     - file2 文件2
+    - encodestr 字符编码格式，可以为空
+    - Leftn 起始行号
+    - rightn 结束行号
 
     :输出参数：
     - status 比较过程信息，过程执行正确为True，执行异常则为False
@@ -115,7 +170,7 @@ def cmp_file(file1:str,file2:str,encodestr='',Leftn='',rightn=''):
         file2 = file2.encode(encoding=encodestr)
     else:
         encodestr = get_encoding(file1)
-    # print('cmp_file:',file1,file2,encodestr,Leftn,rightn)
+    # print('cmp_file:',file1,file2,encodestr,Leftn,rightn,fuzzyn)
 
     '检查文件是否存在'
     file_exist = os.path.exists(file1)
@@ -130,21 +185,20 @@ def cmp_file(file1:str,file2:str,encodestr='',Leftn='',rightn=''):
         lg.myloger.error(info)
         return False, info
 
-    '检查文件名是否一致'
-    _,filename1=os.path.split(file1)
-    _,filename2=os.path.split(file2)
-    if filename1 != filename2:
-        info = "传入文件[%s,%s]文件名不一致" % (file1,file2)
-        lg.myloger.error(info)
-        return False, info
+    # '检查文件名是否一致',因增加了文件名字模糊匹配所以此代码需要呗注释
+    # _,filename1=os.path.split(file1)
+    # _,filename2=os.path.split(file2)
+    # if filename1 != filename2:
+    #     info = "传入文件[%s,%s]文件名不一致" % (file1,file2)
+    #     lg.myloger.error(info)
+    #     return False, info
 
     '检查内容是否一致'
-    if not Leftn and not rightn:  #两个值均为空
+    if not Leftn and not rightn and not fuzzyn:  #三个值均为空
         # print('两个值均为空,对应的文件编码',encodestr)
         info = "传入文件[%s],与文件[%s]内容不一致,比对失败，请检查" % (file1, file2)
         status = filecmp.cmp(file1, file2)
     else:   #有一个为空，或者均不为空
-
         '检查传入参数是否正确'
         try:
             if Leftn:
@@ -154,8 +208,8 @@ def cmp_file(file1:str,file2:str,encodestr='',Leftn='',rightn=''):
         except Exception as e:
             info = '输入的行号有误，报错信息:' + str(e)
             return False, info
-        # print('有一个为空，或者均不为空,对应的文件编码',encodestr,'Leftn:',Leftn, 'rightn:',rightn)
-        status,info = cmp_part(file1, file2,encodestr,Leftn,rightn)
+        print('有一个为空，或者均不为空,对应的文件编码',encodestr,'Leftn:',Leftn, 'rightn:',rightn,'fuzzyn',fuzzyn)
+        status,info = cmp_part(file1, file2,encodestr,Leftn,rightn,fuzzyn)
 
     if status:
         return status, ""
@@ -164,55 +218,92 @@ def cmp_file(file1:str,file2:str,encodestr='',Leftn='',rightn=''):
         lg.myloger.error(info)
         return status, info
 
-def cmp_part(file1:str,file2:str,encodestr,Leftn,rightn):
-    status = True
-    with open(file1, 'r', encoding=encodestr) as f1, open(file2, 'r', encoding=encodestr) as f2:
-        line1 = f1.readlines()
-        line2 = f2.readlines()
-        # print(len(line1))
-        if not Leftn:
-            Leftn = 1
-        elif not rightn:
-            rightn = len(line1)
-        elif len(line1) != len(line2) or len(line1)<1:   #pass
-            info = '两个文件大小不一样，或者文件为空'
-            lg.myloger.error(info)
-            status = False
-            return status,info
-        elif Leftn>len(line1):
-            info = '起始行号超出文件最大行数'
-            lg.myloger.error(info)
-            return False,info
-        elif rightn:
-            if rightn > len(line1) :
-                info = '结束行号超出文件最大行数'
+def cmp_part(file1:str,file2:str,encodestr,Leftn,rightn,fuzzyn):
+    try:
+        hangl = []
+        xbAl = []
+        xbBl = []
+        if fuzzyn:
+            print('fuzzyn不为空', fuzzyn)
+            fuzzynl = fuzzyn.split('@@')
+            print('fuzzynl:', fuzzynl)
+            if len(fuzzynl) > 0:
+                for j in fuzzynl:
+                    fuzzynlist = j.split('@')
+                    print(fuzzynlist)
+                    if len(fuzzynlist) != 3 or '' in fuzzynlist:
+                        info = f'传入的参数不正确{fuzzyn}，请检查是否为”行号@@开始下标@@结束下标“ '
+                        return False, info
+                    else:
+                        hangl.append(int(fuzzynlist[0]))
+                        xbAl.append(int(fuzzynlist[1]))
+                        xbBl.append(int(fuzzynlist[2]))
+
+        status = True
+        with open(file1, 'r', encoding=encodestr) as f1, open(file2, 'r', encoding=encodestr) as f2:
+            line1 = f1.readlines()
+            line2 = f2.readlines()
+            # print(len(line1))
+            if not Leftn:
+                Leftn = 1
+            if not rightn:
+                rightn = len(line1)
+            if len(line1) != len(line2) or len(line1)<1:   #pass
+                info = '两个文件大小不一样，或者文件为空'
                 lg.myloger.error(info)
                 status = False
                 return status,info
-            elif rightn<Leftn :
-                info = '结束行号小于起始行号'
+            if Leftn>len(line1):
+                info = '起始行号超出文件最大行数'
                 lg.myloger.error(info)
-                status = False
-                return status, info
-            elif rightn < 1:
-                info = '结束行号不能小于1'
-                lg.myloger.error(info)
-                status = False
-                return status, info
-        stinfo = '用户传入的文件[%s]和文件[%s]，编码格式[%s],起始行号[%s]，结束行号[%s],文件实际上有[%s]行' %(file1,file2,encodestr,Leftn,rightn,len(line1))
-        lg.myloger.info(stinfo)
-        for i in range(0, len(line1)):
-            if i >= Leftn - 1 and i <= rightn - 1:
-                b1 = line1[i]
-                b2 = line2[i]
-                # print(b1)
-                # print(b2)
-                if b1 != b2:
-                    rownum = i+1
-                    info = '文件比对第[%s]行不一致，请检查' % rownum
+                return False,info
+            if rightn:
+                if rightn > len(line1) :
+                    info = '结束行号超出文件最大行数'
+                    lg.myloger.error(info)
                     status = False
                     return status,info
-    return status,''
+                elif rightn<Leftn :
+                    info = '结束行号小于起始行号'
+                    lg.myloger.error(info)
+                    status = False
+                    return status, info
+                elif rightn < 1:
+                    info = '结束行号不能小于1'
+                    lg.myloger.error(info)
+                    status = False
+                    return status, info
+            stinfo = '用户传入的文件[%s]和文件[%s]，编码格式[%s],起始行号[%s]，结束行号[%s],文件实际上有[%s]行' %(file1,file2,encodestr,Leftn,rightn,len(line1))
+            lg.myloger.info(stinfo)
+            for i in range(0, len(line1)):
+                if i >= Leftn - 1 and i <= rightn - 1:
+                    b1 = line1[i]
+                    b2 = line2[i]
+                    rownum = i + 1
+
+                    if rownum in hangl:
+                        xb = hangl.index(rownum)
+                        # print('hahahah', i, rownum)
+                        # print(b1[0:xbAl[xb]])
+                        # print(b2[0:xbAl[xb]])
+                        # print(b1[xbBl[xb] - 1:])
+                        # print(b2[xbBl[xb] - 1:])
+                        # print('wojiushi xiabiaozhi ', xb)
+                        if b1[0:xbAl[xb]] != b2[0:xbAl[xb]] or b1[xbBl[xb] - 1:] != b2[xbBl[xb] - 1:]:
+                            info = f'文件比对第{rownum}行，详细内容：{b1[0:xbAl[xb]]},或者{b1[xbBl[xb] - 1:]}不一致，请检查'
+                            status = False
+                            return status, info
+                        continue
+
+                    elif b1 != b2:
+                        info = '文件比对第[%s]行不一致，请检查' % rownum
+                        status = False
+                        return status,info
+        return status,''
+    except Exception as e:
+        info = str(e)
+        return False, info
+
 
 
 def isinfofile(file, keywords,type='1',CheckType='',separate='',return_type='3',encodingstr=''):
@@ -531,14 +622,27 @@ def get_encoding(file):
         data = f.read()
         return chardet.detect(data)['encoding']
 
-def fuzzy_find(dir, name):
+#根据关键字对路径进行分割
+def splic_filepath(filepath):
+    dir, filename = os.path.split(filepath)
+    namelist = filename.split('#*#')
+    leftname = namelist[0]
+    rightname = namelist[-1]
+    return dir, filename, leftname, rightname
+
+
+#模糊匹配列表
+def fuzzy_find(filepath):
     # 文件名模糊匹配，暂时仅支持dir路径下的文件
     # print(dir)
+    dir, filename, leftname, rightname = splic_filepath(filepath)
     fuzzy_find_list = []
-    for i in [x for x in os.listdir(dir) if os.path.isfile(os.path.join(dir, x)) and name in os.path.splitext(x)[0]]:
+    for i in [x for x in os.listdir(dir) if os.path.isfile(os.path.join(dir, x)) and leftname in os.path.splitext(x)[0]]:
         print(os.path.join(dir, i))
         fuzzy_find_V = os.path.join(dir, i)
-        fuzzy_find_list.append(fuzzy_find_V)
+        if fuzzy_find_V.endswith(rightname):
+            fuzzy_find_list.append(fuzzy_find_V)
+    # print('@@', fuzzy_find_list)
 
     # os.path.isfile() 需要完整路径或者相对当前目录的相对路径
     #  如果需要查下dir路径下所有文件夹下的文件，开放以下代码。。暂时仅支持dir路径下的文件
@@ -740,7 +844,4 @@ if __name__ == '__main__':
     # c = "{'wen_list':{'sql':'select AVERAGE from hdranastat5m20220925 h WHERE  h.ID = 150 AND hdtime <= \"2022-09-25 12:00:00\"','dbtype':'QMYSQL','concectstr':'10.64.14.70@3306@davinci@_@_','return_type':'3'},'ya_list':{'sql':'select AVERAGE from hdranastat5m20220925 WHERE ID = 152 AND hdtime <= \"2022-09-25 12:00:00\"','dbtype':'QMYSQL','concectstr':'10.64.14.70@3306@davinci@_@_','return_type':'3'},'UAVG4_list':{'sql':'select AVERAGE from hdranastat5m20220925 h WHERE  h.ID = 118 AND hdtime <= \"2022-09-25 12:00:00\"','dbtype':'QMYSQL','concectstr':'10.64.14.70@3306@davinci@_@_','return_type':'3'}}"
     # zz = Wind_power_density_info(c)
     # print(zz)
-    v1 =['2022', 436.509, 1061.786, '2022-09-23 13:13:19', 98.274, 8005.223, 2814.779, 2659.802, 1543.662, 1.003, 20.687, 27.628, 3194.25, 3342.464, 3341.808, nan]
 
-    v2 =['2022', '436.509', '1061.786', '3341.808', '2022-09-23 13:13:19', '98.274', '8005.2226562','2814.7785156', '2659.802', '1543.662', '1.003', '20.687', '27.628', '3194.25', '3342.464', 'nan']
-    cmp_eq('3',v1,v2)

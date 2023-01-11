@@ -160,6 +160,11 @@ def __generate_rt_paras__():
     - RTPARA_YESTERDAY_3：      "%Y/%m/%d"格式的昨日日期
     - RTPARA_YESTERDAY_DAY_1：  "%d"格式的昨天-日 [01,02,03,04~~]
     - RTPARA_YESTERDAY_DAY_2：  "%d"格式的昨天-日 [1,2,3,4~~]
+    - RTPARA_BF_YESTERDAY_1：      "%Y%m%d"格式的前日日期
+    - RTPARA_BF_YESTERDAY_2：      "%Y-%m-%d"格式的前日日期
+    - RTPARA_BF_YESTERDAY_3：      "%Y/%m/%d"格式的前日日期
+    - RTPARA_BF_YESTERDAY_DAY_1：  "%d"格式的前天-日 [01,02,03,04~~]
+    - RTPARA_BF_YESTERDAY_DAY_2：  "%d"格式的前天-日 [1,2,3,4~~]
     - RTPARA_TOMORROW_1：      "%Y%m%d"格式的明日日期
     - RTPARA_TOMORROW_2：      "%Y-%m-%d"格式的明日日期
     - RTPARA_TOMORROW_3：      "%Y/%m/%d"格式的明日日期
@@ -211,6 +216,15 @@ def __generate_rt_paras__():
 
     paras["RTPARA_YESTERDAY_DAY_1"] = dt_y.strftime("%d")
     paras["RTPARA_YESTERDAY_DAY_2"] = dt_y.day
+
+    #前天
+    dt_By = datetime.now() + timedelta(days=-2)
+    paras["RTPARA_BF_YESTERDAY_1"] = dt_By.strftime("%Y%m%d")
+    paras["RTPARA_BF_YESTERDAY_2"] = dt_By.strftime("%Y-%m-%d")
+    paras["RTPARA_BF_YESTERDAY_3"] = dt_By.strftime("%Y/%m/%d")
+
+    paras["RTPARA_BF_YESTERDAY_DAY_1"] = dt_By.strftime("%d")
+    paras["RTPARA_BF_YESTERDAY_DAY_2"] = dt_By.day
 
     #明天
     dt_t = datetime.now() + timedelta(days=1)

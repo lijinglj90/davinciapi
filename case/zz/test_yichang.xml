@@ -2,15 +2,19 @@
 <test>
     <suit id="001" name="计划开机容量设置页面" desc="">
         <precondition>
+			<step order="1" desc="创建浏览器驱动" cmdtype="4001" cmdparas="chrome"/>
+            <step order="2" desc="登录风电界面" cmdtype="4003" cmdparas="http://10.8.8.26:18080/SPPP-web/login~id|username@@id|password@@id|submit~send_keys@spfs@@send_keys@spfs@@click~suitcondpara_1_1~chrome"/>
             <!--<step order="1" desc="创建浏览器驱动" cmdtype="4001" cmdparas="chrome"/>
-            <step order="2" desc="登录异常" cmdtype="4003" cmdparas="http://10.64.14.70:18080/SPPP-web/login~id|username@@id|password@@id|submit~send_keys@wpfs@@send_keys@wpfs@@click~suitcondpara_1_1"/>
-			<step order="3" desc="登录" cmdtype="4003" cmdparas="http://10.8.8.21:8080/SPPP-web/login~id|username@@id|password@@id|submit~send_keys@wpfs@@send_keys@wpfs@@click~suitcondpara_1_1"/>-->
+			<step order="3" desc="登录" cmdtype="4003" cmdparas="http://10.64.14.69:18080/SPPP-web/login~id|username@@id|password@@id|submit~send_keys@spfs@@send_keys@spfs@@click~suitcondpara_1_1"/>
+            
+			<step order="3" desc="登录" cmdtype="4003" cmdparas="http://10.64.14.70:18080/SPPP-web/login~id|username@@id|password@@id|submit~send_keys@wpfs@@send_keys@wpfs@@click~suitcondpara_1_1"/>
+			<step order="2" desc="登录异常" cmdtype="4003" cmdparas="http://10.64.14.70:18080/SPPP-web/login~id|username@@id|password@@id|submit~send_keys@wpfs@@send_keys@wpfs@@click~suitcondpara_1_1"/>-->
         </precondition>
-        <!--<case id="001" name="ini读取-通过" desc="" faulttype="0" mark="0">
+        <!--<case id="987_1" name="ini读取-通过" desc="" faulttype="0" mark="0">
             <step order="1" desc="ini读取" cmdtype="1002" cmdparas="D:\davinciapi\wen\nrfmEfileToSim.ini~EFILE@@ceshi"/>
             <judgestep order="2" desc="" cmdtype="2010" cmdparas="1~steppara_1_1~1234"/>
 		</case>
-		<case id="002" name="ini读取-异常" desc="" faulttype="0" mark="0">
+		<case id="987_2" name="ini读取-异常" desc="" faulttype="0" mark="0">
             <step order="1" desc="ini读取" cmdtype="1002" cmdparas="D:\davinciapi\wen\nrfmEfileToSim.ini~EFILE~qqqq"/>
             <judgestep order="2" desc="" cmdtype="2010" cmdparas="1~steppara_1_1~1234"/>
         </case>
@@ -47,8 +51,8 @@
 			<judgestep order="2" desc="" cmdtype="2010" cmdparas="1~1234~1234"/>
 		</case>-->
 		<!--节点定位异常,id="011" name="json数据修改"-->
-		
-		<!--<case id="011" name="json数据修改" desc="" faulttype="0" mark="0">
+		<!--
+		<case id="011" name="json数据修改" desc="" faulttype="0" mark="0">
 			<step order="2" desc="json修改" cmdtype="1021" cmdparas="D:\davinciapi\wen\hdrconf.json~hds~hds|AttrCon@src_hdr@analog_d#AND#AttrCon@target_hdr@analog_d_15~AttrCon@target_period~4"/>
 			<judgestep order="2" desc="" cmdtype="2010" cmdparas="1~1234~1234"/>
 		</case>
@@ -116,7 +120,7 @@
 			<step order="1" desc="xml修改" cmdtype="1031" cmdparas="D:\davinciapi\wen\f_fgsztxx.xml~key@@value@@time~key|AttrCon@name@date@@value|AttrCon@order@1@@time|AttrCon@timetype11@1~AttrCon@isseq~1"/>
 			<judgestep order="2" desc="" cmdtype="2010" cmdparas="1~1234~1234"/>
         </case>
-		<case id="027" name="xml修改-异常-文件不存在" desc="" faulttype="0" mark="0">
+		<case id="026_1" name="xml修改-异常-文件不存在" desc="" faulttype="0" mark="0">
 			<step order="1" desc="xml修改" cmdtype="1031" cmdparas="D:\davinciapi\wen\f_fgsztxx111.xml~key@@value@@time~key|AttrCon@name@date@@value|AttrCon@order@1@@time|AttrCon@timetype@1~AttrCon@isseq~1"/>
 			<judgestep order="2" desc="" cmdtype="2010" cmdparas="1~1234~1234"/>
         </case>
@@ -547,34 +551,13 @@
 			<step order="1" desc="csv文件匹配到多个值" cmdtype="1042" cmdparas="D:\davinciapi\case\zz\s\115020-0-202208261845#*#.csv~R_1~Time=2022-08-08 07:30~3"/>
             <judgestep order="2" desc="" cmdtype="2010" cmdparas="3~steppara_1_1~['211.465']"/>
         </case>
-		-->
-		
-		<!--
-		<case id="097" name="检查关键字是否存在log文件内" desc="" faulttype="0" mark="0">
-			<judgestep order="2" desc="" cmdtype="9006" cmdparas="D:\davinciapi\wen\rxefilecreate.log~process rxefilecreate  Register OK!~1~"/>
-		</case>
-		<case id="098" name="检查关键字是否存在log文件内" desc="" faulttype="0" mark="0">
-			<step order="1" desc="检查关键字是否存在log文件内" cmdtype="9006" cmdparas="D:\davinciapi\wen\rxefilecreate.log~process rxefilecreate  Register OK!~1~"/>
-			<judgestep order="2" desc="" cmdtype="2010" cmdparas="1~1~1"/>
-		</case>
-		<case id="099" name="检查关键字是否存在log文件内-异常" desc="" faulttype="0" mark="0">
-			<judgestep order="2" desc="" cmdtype="9006" cmdparas="D:\davinciapi\wen\rxefilecreate.log~程序启动成功"/>
-		</case>
-		<case id="100" name="检查关键字是否存在log文件内-异常" desc="" faulttype="0" mark="0">
-			<step order="2" desc="检查关键字是否存在log文件内" cmdtype="9006" cmdparas="D:\davinciapi\wen\rxefilecreate.log~程序启动成功"/>
-			<judgestep order="2" desc="" cmdtype="2010" cmdparas="1~1~1"/>
-		</case>
-		<case id="101" name="日志返回结果" desc="" faulttype="0" mark="0">
-            <step order="1" desc="日志没有匹配文案" cmdtype="9006" cmdparas="D:\davinciapi\wen\rxpforecast.log~没有匹配文案~1~"/>
-            <judgestep order="5" desc="" cmdtype="2010" cmdparas="3~steppara_1_1~['没有匹配文案']"/>
-        </case>
 		<case id="131" name="日志返回结果" desc="" faulttype="0" mark="0">
             <step order="1" desc="日志没有匹配文案" cmdtype="9006" cmdparas="D:\davinciapi\wen\rxpforecast.log~没有匹配文案@A~1~1"/>
             <judgestep order="5" desc="" cmdtype="2010" cmdparas="3~steppara_1_1~['没有匹配文案']"/>
         </case>
 		<case id="132" name="日志返回结果" desc="" faulttype="0" mark="0">
             <judgestep order="1" desc="日志检索到多个结果，不需要返回数据" cmdtype="9006" cmdparas="D:\davinciapi\wen\rxefilecreate.log~进程启动~1~"/>
-        </case>-->
+        </case>
 		<case id="133" name="日志返回结果" desc="" faulttype="0" mark="0">
             <step order="1" desc="日志检索到多个结果，返回最后一条数据" cmdtype="9006" cmdparas="D:\davinciapi\wen\rxpforecast.log~[addTimeLog] [super:@]结果发送到hasave成功~1~1"/>
             <judgestep order="5" desc="" cmdtype="2010" cmdparas="3~steppara_1_1~['115020-1']"/>
@@ -588,12 +571,569 @@
 			<step order="2" desc="数据库查询" cmdtype="5001" cmdparas="SELECT p/((select cap from plantcap where id=1)/(SELECT RUN_CAPACITY from plant)) from hdrsfcstdata_farm1 where record_id=(SELECT id FROM hdrsfcstrecord2022 WHERE powertype = 0 AND fcst_time = '2022-08-08 09:15:00')~QMYSQL~10.64.14.62@3306@davinci_main_yc@_@_~3"/>
             <judgestep order="5" desc="" cmdtype="2010" cmdparas="3~steppara_1_1~steppara_2_1"/>
         </case>
-		<!--
 		<case id="136" name="日志返回结果" desc="" faulttype="0" mark="0">
             <step order="1" desc="日志检索到一个结果,返回[list]多个-列表对比" cmdtype="9006" cmdparas="D:\davinciapi\wen\rxpforecast.log~光伏超短期结果：@,  [-09999]~1~1"/>
             <judgestep order="5" desc="" cmdtype="2010" cmdparas="3~steppara_1_1~[['9.79589'], ['12.185'], ['12.4103'], ['12.5523'], ['12.6015'], ['12.5871'], ['12.5451'], ['12.4779'], ['12.3877'], ['12.2767'], ['12.1473'], ['12.0017'], ['11.8421'], ['11.6709'], ['11.3863'], ['10.9105'], ['10.2812'], ['9.53639'], ['8.71373'], ['7.85114'], ['6.9864'], ['6.15754'], ['5.40216'], ['4.75818']]"/>
         </case>
+		<case id="137_027" name="文件一致性对比-时间失败" desc="" faulttype="0" mark="0">
+			<judgestep order="2" desc="" cmdtype="2001" cmdparas="D:\davinciapi\case\zz\对比后删除A\farm1_20220816_0000_DQ.wpd~D:\davinciapi\case\zz\对比后删除B\farm1_20220816_0000_DQ.wpd~utf-8"/>
+        </case>
+		<case id="138_027" name="文件一致性对比" desc="" faulttype="0" mark="0">
+			<judgestep order="2" desc="" cmdtype="2001" cmdparas="D:\davinciapi\case\zz\对比后删除B\farm1_20220816_0000_DQ.wpd~D:\davinciapi\case\zz\对比后删除B\farm1_20220816_0000_DQ.wpd~utf-8"/>
+        </case>
+		<case id="139_027" name="文件一致性对比" desc="" faulttype="0" mark="0">
+			<judgestep order="2" desc="" cmdtype="2001" cmdparas="D:\davinciapi\case\zz\对比后删除A\farm1_20220816_0000_DQ.wpd~D:\davinciapi\case\zz\对比后删除A\farm1_20220816_0000_DQ.wpd~utf-8"/>
+        </case>
+		<case id="140_027" name="文件一致性对比-区间" desc="" faulttype="0" mark="0">
+			<judgestep order="2" desc="" cmdtype="2001" cmdparas="D:\davinciapi\case\zz\对比后删除A\farm1_20220816_0000_DQ.wpd~D:\davinciapi\case\zz\对比后删除B\farm1_20220816_0000_DQ.wpd~~4~9"/>
+        </case>
+		<case id="141_027" name="文件一致性对比-时间失败" desc="" faulttype="0" mark="0">
+			<judgestep order="2" desc="" cmdtype="2001" cmdparas="D:\davinciapi\case\zz\对比后删除A\farm1_20220816_0000_DQ.wpd~D:\davinciapi\case\zz\对比后删除B\farm1_20220816_0000_DQ.wpd~~~9"/>
+        </case>
+		<case id="142" name="文件一致性对比-区间" desc="" faulttype="0" mark="0">
+			<judgestep order="2" desc="" cmdtype="2001" cmdparas="D:\davinciapi\case\zz\对比后删除A\farm1_20220816_0000_DQ.wpd~D:\davinciapi\case\zz\对比后删除B\farm1_20220816_0000_DQ.wpd~~4~"/>
+        </case>
+		<case id="142_027" name="文件一致性对比-区间" desc="" faulttype="0" mark="0">
+			<judgestep order="2" desc="" cmdtype="2001" cmdparas="C:\Users\Administrator\Desktop\梦\farm1_20220815_1445_NBQ.PVD~C:\Users\Administrator\Desktop\farm1_20220815_1445_NBQ.PVD~~2~"/>
+        </case>
+		<case id="142_028" name="文件一致性对比-区间" desc="" faulttype="0" mark="0">
+			<judgestep order="2" desc="" cmdtype="2001" cmdparas="C:\Users\Administrator\Desktop\梦\farm1_20220815_1445_NBQ.PVD~C:\Users\Administrator\Desktop\farm1_20220815_1445_NBQ.PVD~~2~61"/>
+        </case>
+		<case id="142_029" name="文件一致性对比-区间" desc="" faulttype="0" mark="0">
+			<judgestep order="2" desc="" cmdtype="2001" cmdparas="C:\Users\Administrator\Desktop\梦\farm1_20220815_1445_NBQ.PVD~C:\Users\Administrator\Desktop\farm1_20220815_1445_NBQ.PVD~~1~5"/>
+        </case>
+		<case id="142_030" name="文件一致性对比-区间" desc="" faulttype="0" mark="0">
+			<judgestep order="2" desc="" cmdtype="2001" cmdparas="C:\Users\Administrator\Desktop\梦\farm1_20220815_1445_NBQ.PVD~C:\Users\Administrator\Desktop\farm1_20220815_1445_NBQ.PVD~~0~5"/>
+        </case>
+		<case id="142_031" name="文件一致性对比-区间" desc="" faulttype="0" mark="0">
+			<judgestep order="2" desc="" cmdtype="2001" cmdparas="C:\Users\Administrator\Desktop\梦\farm1_20220815_1445_NBQ.PVD~C:\Users\Administrator\Desktop\farm1_20220815_1445_NBQ.PVD~~56~63"/>
+        </case>
+		<case id="142_032" name="文件一致性对比-区间" desc="" faulttype="0" mark="0">
+			<judgestep order="2" desc="" cmdtype="2001" cmdparas="C:\Users\Administrator\Desktop\梦\farm1_20220815_1445_NBQ.PVD~C:\Users\Administrator\Desktop\farm1_20220815_1445_NBQ.PVD~~6~3"/>
+        </case>
+		<case id="142_033" name="文件一致性对比-区间" desc="" faulttype="0" mark="0">
+			<judgestep order="2" desc="" cmdtype="2001" cmdparas="C:\Users\Administrator\Desktop\梦\farm1_20220815_1445_NBQ.PVD~C:\Users\Administrator\Desktop\farm1_20220815_1445_NBQ.PVD~~56~61"/>
+        </case>
+		<case id="142_034" name="文件一致性对比-区间" desc="" faulttype="0" mark="0">
+			<judgestep order="2" desc="" cmdtype="2001" cmdparas="C:\Users\Administrator\Desktop\梦\farm1_20220815_1445_NBQ.PVD~C:\Users\Administrator\Desktop\farm1_20220815_1445_NBQ.PVD~~56~56"/>
+        </case>
+		<case id="143" name="pwd文件查询结果" desc="" faulttype="0" mark="0">
+			<step order="1" desc="wpd文件查询-返回单条整行数据" cmdtype="1052" cmdparas="D:\davinciapi\wen\2022-09-02.wpd~27~"/>
+            <judgestep order="5" desc="" cmdtype="2010" cmdparas="3~steppara_1_1~[]"/>
+        </case>
+		<case id="144" name="pwd文件查询结果" desc="" faulttype="0" mark="0">
+			<step order="1" desc="wpd文件查询-返回多条整行数据" cmdtype="1052" cmdparas="D:\davinciapi\wen\2022-09-02.wpd~2-3,5~"/>
+            <judgestep order="5" desc="" cmdtype="2010" cmdparas="3~steppara_1_1~[]"/>
+        </case>
+		<case id="145" name="pwd文件查询结果" desc="" faulttype="0" mark="0">
+			<step order="1" desc="wpd文件查询-返回单条部分数据(id=27的下标为2,3,4,5,6,7,8,11的数据)" cmdtype="1052" cmdparas="D:\davinciapi\wen\2022-09-02.wpd~27~2-8,11"/>
+            <judgestep order="5" desc="" cmdtype="2010" cmdparas="3~steppara_1_1~[]"/>
+        </case>
+		<case id="146" name="pwd文件查询结果-校验通过" desc="" faulttype="0" mark="0">
+			<step order="1" desc="wpd文件查询-返回单条单列数据(id=27的下标为3的数据)" cmdtype="1052" cmdparas="D:\davinciapi\wen\2022-09-02.wpd~27~3"/>
+            <judgestep order="5" desc="" cmdtype="2010" cmdparas="3~steppara_1_1~['']"/>
+        </case>
+		<case id="147" name="pwd文件查询结果" desc="" faulttype="0" mark="0">
+			<step order="1" desc="wpd文件查询-返回多条单列数据(id=2,3,5的下标为7的数据)" cmdtype="1052" cmdparas="D:\davinciapi\wen\2022-09-02.wpd~2-3,5~7"/>
+            <judgestep order="5" desc="" cmdtype="2010" cmdparas="3~steppara_1_1~[]"/>
+        </case>
+		<case id="148" name="pwd文件查询结果" desc="" faulttype="0" mark="0">
+			<step order="1" desc="wpd文件查询-返回多条多列数据(id=2,3,5的下标为3,4,7的数据)" cmdtype="1052" cmdparas="D:\davinciapi\wen\2022-09-02.wpd~2-3,5~3-4,7"/>
+            <judgestep order="5" desc="" cmdtype="2010" cmdparas="3~steppara_1_1~[]"/>
+        </case>
+		<case id="149" name="pwd文件查询结果-异常" desc="" faulttype="0" mark="0">
+			<step order="1" desc="wpd文件查询-异常id非数字" cmdtype="1052" cmdparas="D:\davinciapi\wen\2022-09-02.wpd~27A~"/>
+            <judgestep order="5" desc="" cmdtype="2010" cmdparas="3~steppara_1_1~[]"/>
+        </case>
+		<case id="150" name="pwd文件查询结果-异常" desc="" faulttype="0" mark="0">
+			<step order="1" desc="wpd文件查询-异常id为空" cmdtype="1052" cmdparas="D:\davinciapi\wen\2022-09-02.wpd~~"/>
+            <judgestep order="5" desc="" cmdtype="2010" cmdparas="3~steppara_1_1~[]"/>
+        </case>
+		<case id="151" name="pwd文件查询结果-异常" desc="" faulttype="0" mark="0">
+			<step order="1" desc="wpd文件查询-异常id不存在" cmdtype="1052" cmdparas="D:\davinciapi\wen\2022-09-02.wpd~999999~"/>
+            <judgestep order="5" desc="" cmdtype="2010" cmdparas="3~steppara_1_1~['没有匹配文案']"/>
+        </case>
+		<case id="152" name="pwd文件查询结果-异常" desc="" faulttype="0" mark="0">
+			<step order="1" desc="wpd文件查询-下标不存在" cmdtype="1052" cmdparas="D:\davinciapi\wen\2022-09-02.wpd~27~12"/>
+            <judgestep order="5" desc="" cmdtype="2010" cmdparas="3~steppara_1_1~[]"/>
+        </case>
+		<case id="153" name="pwd文件查询结果-异常" desc="" faulttype="0" mark="0">
+			<step order="1" desc="wpd文件查询-下标非数字" cmdtype="1052" cmdparas="D:\davinciapi\wen\2022-09-02.wpd~27~3A"/>
+            <judgestep order="5" desc="" cmdtype="2010" cmdparas="3~steppara_1_1~[]"/>
+        </case>
+		<case id="154" name="pwd文件查询结果-异常" desc="" faulttype="0" mark="0">
+			<step order="1" desc="wpd文件查询-文件内#id没有分开，非气象wpd文件" cmdtype="1052" cmdparas="D:\davinciapi\wen\farm1_20220817_0000_DQ.wpd~27~"/>
+            <judgestep order="5" desc="" cmdtype="2010" cmdparas="3~steppara_1_1~[]"/>
+        </case>
+		<case id="155" name="pwd文件查询结果-校验失败" desc="" faulttype="0" mark="0">
+			<step order="1" desc="wpd文件查询-返回单条整行数据" cmdtype="1052" cmdparas="D:\davinciapi\wen\2022-09-02.wpd~27~"/>
+			<step order="2" desc="数据库查询" cmdtype="5001" cmdparas="select unix_timestamp(a.fcst_time) as time,a.power,b.* from (select p as power, fcst_time from hdrfcstdata_farm1 where record_id=60002 and fcst_time='2022-09-02 06:45')a,
+(select irradiance as Radiate,UAVG1 as Windspeed,TEMPERATURE1 as Temperature,HUMIDITY1 as Humidity,PRESSURE1 as Pressure,VAVG1 as WindDir from hdrnwpdata_farm1 where record_id=60001 and fcst_time='2022-09-02 06:45')b~QMYSQL~10.64.14.62@3306@davinci_main_databak@_@_~3"/>
+            <judgestep order="5" desc="" cmdtype="2010" cmdparas="3~steppara_1_1~steppara_2_1"/>
+        </case>
+		<case id="156" name="pwd文件查询结果-校验通过" desc="" faulttype="0" mark="0">
+			<step order="1" desc="wpd文件查询-返回单条部分数据(id=27的下标为2,3,4,5,6,7,8,11的数据)" cmdtype="1052" cmdparas="D:\davinciapi\wen\2022-09-02.wpd~27~2-8,11"/>
+			<step order="2" desc="数据库查询" cmdtype="5001" cmdparas="select unix_timestamp(a.fcst_time) as time,a.power,b.* from (select p as power, fcst_time from hdrfcstdata_farm1 where record_id=60002 and fcst_time='2022-09-02 06:45')a,
+(select irradiance as Radiate,UAVG1 as Windspeed,TEMPERATURE1 as Temperature,HUMIDITY1 as Humidity,PRESSURE1 as Pressure,VAVG1 as WindDir from hdrnwpdata_farm1 where record_id=60001 and fcst_time='2022-09-02 06:45')b~QMYSQL~10.64.14.62@3306@davinci_main_databak@_@_~3"/>
+            <judgestep order="5" desc="" cmdtype="2010" cmdparas="3~steppara_1_1~steppara_2_1"/>
+        </case>
+		<case id="157" name="pwd文件查询结果-校验通过" desc="" faulttype="0" mark="0">
+			<step order="1" desc="wpd文件查询-返回单条部分数据(id=27的下标为3的数据)" cmdtype="1052" cmdparas="D:\davinciapi\wen\2022-09-02.wpd~27~3"/>
+			<step order="2" desc="数据库查询" cmdtype="5001" cmdparas="select p as power from hdrfcstdata_farm1 where record_id=60002 and fcst_time='2022-09-02 06:45'~QMYSQL~10.64.14.62@3306@davinci_main_databak@_@_~3"/>
+            <judgestep order="5" desc="" cmdtype="2010" cmdparas="3~steppara_1_1~steppara_2_1"/>
+        </case>
+		<case id="158" name="pwd文件查询结果-校验通过" desc="" faulttype="0" mark="0">
+			<step order="1" desc="wpd文件查询-返回多条部分数据(id=27的下标为3的数据 和id=28的下标为3的数据)" cmdtype="1052" cmdparas="D:\davinciapi\wen\2022-09-02.wpd~27,28~3"/>
+			<step order="2" desc="数据库查询" cmdtype="5001" cmdparas="select p as power from hdrfcstdata_farm1 where record_id=60002 and fcst_time BETWEEN '2022-09-02 06:45' and '2022-09-02 07:00'~QMYSQL~10.64.14.62@3306@davinci_main_databak@_@_~3"/>
+            <judgestep order="5" desc="" cmdtype="2010" cmdparas="3~steppara_1_1~steppara_2_1"/>
+        </case>
+		<case id="159" name="pwd文件查询结果-校验通过" desc="" faulttype="0" mark="0">
+			<step order="1" desc="wpd文件查询-返回多条多列数据(id=27的下标为4,5,6,7,8,11的数据 和id=28的下标为4,5,6,7,8,11的数据)" cmdtype="1052" cmdparas="D:\davinciapi\wen\2022-09-02.wpd~27,28~4-8,11"/>
+			<step order="2" desc="数据库查询" cmdtype="5001" cmdparas="select irradiance as Radiate,UAVG1 as Windspeed,TEMPERATURE1 as Temperature,HUMIDITY1 as Humidity,PRESSURE1 as Pressure,VAVG1 as WindDir from hdrnwpdata_farm1 where record_id=60001 and fcst_time BETWEEN '2022-09-02 06:45' and '2022-09-02 07:00'~QMYSQL~10.64.14.62@3306@davinci_main_databak@_@_~3"/>
+            <judgestep order="5" desc="" cmdtype="2010" cmdparas="3~steppara_1_1~steppara_2_1"/>
+        </case>
+		<case id="160" name="pwd文件查询结果-异常" desc="" faulttype="0" mark="0">
+			<step order="1" desc="wpd文件不存在" cmdtype="1052" cmdparas="D:\davinciapi\wen\2022-09-02222.wpd~27~3A"/>
+            <judgestep order="5" desc="" cmdtype="2010" cmdparas="3~steppara_1_1~[]"/>
+        </case>
+		<case id="161" name="风电_预测日报_日前_日期核对" desc="" faulttype="0" mark="0">
+            <step order="1" desc="查询数据库" cmdtype="5001" cmdparas="SELECT AVERAGE FROM hdranastat5m20220925 h WHERE h.ID = 49~QMYSQL~10.64.14.69@_@davinci@_@_"/>
+            <judgestep order="2" desc="" cmdtype="2010" cmdparas="3~steppara_1_1~['']"/>
+        </case>
+		<case id="162" name="风功率密度" desc="" faulttype="0" mark="0">
+			<step order="1" desc="查询数据库" cmdtype="5001" cmdparas="select AVERAGE from hdranastat5m20220925 WHERE ID = 150 AND hdtime &lt;= '2022-09-25 12:00:00'~QMYSQL~10.64.14.70@_@davinci@_@_~3"/>
+			<step order="2" desc="查询数据库" cmdtype="5001" cmdparas="select AVERAGE from hdranastat5m20220925 WHERE ID = 152 AND hdtime &lt;= '2022-09-25 12:00:00'~QMYSQL~10.64.14.70@_@davinci@_@_~3"/>
+			<step order="3" desc="查询数据库" cmdtype="5001" cmdparas="select AVERAGE from hdranastat5m20220925  WHERE ID = 118 AND hdtime &lt;= '2022-09-25 12:00:00'~QMYSQL~10.64.14.70@_@davinci@_@_~3"/>
+            <step order="4" desc="计算" cmdtype="9008" cmdparas="Wind_power_density~steppara_1_1~steppara_2_1~steppara_3_1"/>
+			<step order="5" desc="查询数据库" cmdtype="5001" cmdparas="SELECT windpower 日风功率密度 FROM fdayform WHERE DATATIME = '2022-09-25 00:00:00'~QMYSQL~10.64.14.70@_@davinci@_@_~3"/>
+            <judgestep order="1" desc="" cmdtype="2010" cmdparas="3~steppara_4_1~steppara_5_1"/>
+        </case>
+		<case id="163" name="算数平均" desc="" faulttype="0" mark="0">
+			<step order="1" desc="查询数据库" cmdtype="5001" cmdparas="select AVERAGE from hdranastat5m20220925 WHERE ID = 150 AND hdtime &lt;= '2022-09-25 12:00:00'~QMYSQL~10.64.14.70@_@davinci@_@_~3"/>
+            <step order="2" desc="计算" cmdtype="9008" cmdparas="get_average~steppara_1_1"/>
+            <judgestep order="1" desc="" cmdtype="2010" cmdparas="3~steppara_2_1~['222']"/>
+        </case>
+		<case id="164" name="算数平均-异常-参数个数不正确" desc="" faulttype="0" mark="0">
+			<step order="1" desc="查询数据库" cmdtype="5001" cmdparas="select AVERAGE from hdranastat5m20220925 WHERE ID = 150 AND hdtime &lt;= '2022-09-25 12:00:00'~QMYSQL~10.64.14.70@_@davinci@_@_~3"/>
+            <step order="2" desc="计算" cmdtype="9008" cmdparas="get_average~steppara_1_1~'3'"/>
+            <judgestep order="1" desc="" cmdtype="2010" cmdparas="3~steppara_2_1~['7.584']"/>
+        </case>
+		<case id="165" name="文件是否存在-一参_步骤" desc="" faulttype="0" mark="0">
+			<step order="1" desc="文件是否存在" cmdtype="9001" cmdparas="D:\davinciapi\wen\rxcalctheoryp.log"/>
+            <judgestep order="1" desc="" cmdtype="2010" cmdparas="3~['26.09']~['26.09']"/>
+        </case>
+		<case id="166" name="文件是否存在-一参_对比" desc="" faulttype="0" mark="0">
+            <judgestep order="1" desc="文件是否存在" cmdtype="9001" cmdparas="D:\davinciapi\wen\rxcalctheoryp.log"/>
+        </case>
+		<case id="167" name="文件是否存在-两参_步骤" desc="" faulttype="0" mark="0">
+			<step order="1" desc="文件是否存在" cmdtype="9001" cmdparas="D:\davinciapi\wen\rxcalctheoryp.log~gb2312"/>
+            <judgestep order="1" desc="" cmdtype="2010" cmdparas="3~['26.09']~['26.09']"/>
+        </case>
+		<case id="168" name="文件是否存在-两参_对比" desc="" faulttype="0" mark="0">
+            <judgestep order="1" desc="文件是否存在" cmdtype="9001" cmdparas="D:\davinciapi\wen\rxcalctheoryp.log~gb2312"/>
+        </case>
+		<case id="169" name="文件是否存在-三参_步骤" desc="" faulttype="0" mark="0">
+			<step order="1" desc="文件是否存在" cmdtype="9001" cmdparas="D:\davinciapi\wen\rxcalctheoryp.log~gb2312~True"/>
+            <judgestep order="1" desc="" cmdtype="2010" cmdparas="3~['26.09']~['26.09']"/>
+        </case>
+		<case id="170" name="文件是否存在-三参_对比" desc="" faulttype="0" mark="0">
+            <judgestep order="1" desc="文件是否存在" cmdtype="9001" cmdparas="D:\davinciapi\wen\rxcalctheoryp.log~gb2312~True"/>
+        </case>
+		<case id="171" name="文件是否存在-三参_步骤" desc="" faulttype="0" mark="0">
+			<step order="1" desc="文件是否存在" cmdtype="9001" cmdparas="D:\davinciapi\wen\rxcalctheoryp222.log~gb2312~False"/>
+            <judgestep order="1" desc="" cmdtype="2010" cmdparas="3~['26.09']~['26.09']"/>
+        </case>
+		<case id="172" name="文件是否存在-三参_对比" desc="" faulttype="0" mark="0">
+            <judgestep order="1" desc="文件是否存在" cmdtype="9001" cmdparas="D:\davinciapi\wen\rxcalctheoryp222.log~gb2312~False"/>
+        </case>
+		<case id="173" name="文件是否存在-三参_步骤" desc="" faulttype="0" mark="0">
+			<step order="1" desc="文件是否存在" cmdtype="9001" cmdparas="D:\davinciapi\wen\rxcalctheoryp.log~gb2312~False"/>
+            <judgestep order="1" desc="" cmdtype="2010" cmdparas="3~['26.09']~['26.09']"/>
+        </case>
+		<case id="174" name="文件是否存在-三参_对比" desc="" faulttype="0" mark="0">
+            <judgestep order="1" desc="文件是否存在" cmdtype="9001" cmdparas="D:\davinciapi\wen\rxcalctheoryp.log~gb2312~False"/>
+        </case>
+		<case id="175" name="文件是否存在-三参_步骤-异常" desc="" faulttype="0" mark="0">
+			<step order="1" desc="文件是否存在" cmdtype="9001" cmdparas="D:\davinciapi\wen\rxcalctheoryp222.log~False~gb2312"/>
+            <judgestep order="1" desc="" cmdtype="2010" cmdparas="3~['26.09']~['26.09']"/>
+        </case>
+		<case id="176" name="文件是否存在-三参_对比-异常" desc="" faulttype="0" mark="0">
+            <judgestep order="1" desc="文件是否存在" cmdtype="9001" cmdparas="D:\davinciapi\wen\rxcalctheoryp222.log~False~gb2312"/>
+        </case>
+		<case id="176_1" name="文件是否存在-linux-zip" desc="" faulttype="0" mark="0">
+            <judgestep order="1" desc="文件是否存在" cmdtype="9001" cmdparas="/home/sprixin/davinciapi/case.zip~~"/>
+		</case>
+		<case id="176_2" name="文件是否存在-windows-zip" desc="" faulttype="0" mark="0">
+            <judgestep order="1" desc="文件是否存在" cmdtype="9001" cmdparas="D:\davinciapi\wen\pack.zip~~"/>
+        </case>
+		<case id="176_3" name="文件是否存在-windows-zip-模糊查询单个" desc="" faulttype="0" mark="0">
+            <judgestep order="1" desc="文件是否存在" cmdtype="9001" cmdparas="D:\davinciapi\wen\case_2022-09-01-12_37_#*#.zip~~True"/>
+		</case>
+		<case id="176_4" name="文件是否存在-windows-zip-模糊查询多个" desc="" faulttype="0" mark="0">
+            <judgestep order="1" desc="文件是否存在" cmdtype="9001" cmdparas="D:\davinciapi\wen\case_2022-09-01-12_#*#_18.zip~~True"/>
+        </case>
+		<case id="176_5" name="文件是否存在-windows-zip-模糊查询空" desc="" faulttype="0" mark="0">
+            <judgestep order="1" desc="文件是否存在" cmdtype="9001" cmdparas="D:\davinciapi\wen\case_2022-09-01-15_#*#_18.zip~~False"/>
+        </case>
+		<case id="176_6" name="文件是否存在-linux-zip-模糊查询单个" desc="" faulttype="0" mark="0">
+            <judgestep order="1" desc="文件是否存在" cmdtype="9001" cmdparas="/home/sprixin/davinciapi/case_2022-09-01-12:37:#*#.zip~~True"/>
+		</case>
+		<case id="176_7" name="文件是否存在-linux-zip-模糊查询多个" desc="" faulttype="0" mark="0">
+            <judgestep order="1" desc="文件是否存在" cmdtype="9001" cmdparas="/home/sprixin/davinciapi/case_2022-09-01-12:#*#:18.zip~~True"/>
+        </case>
+		<case id="176_8" name="文件是否存在-linux-zip-模糊查询空" desc="" faulttype="0" mark="0">
+            <judgestep order="1" desc="文件是否存在" cmdtype="9001" cmdparas="/home/sprixin/davinciapi/case_2022-09-01-15:#*#:18.zip~~False"/>
+        </case>
+		<case id="177" name="文件是否存在-两参_步骤-异常" desc="" faulttype="0" mark="0">
+			<step order="1" desc="文件是否存在" cmdtype="9001" cmdparas="D:\davinciapi\wen\rxcalctheoryp.log~True"/>
+            <judgestep order="1" desc="" cmdtype="2010" cmdparas="3~['26.09']~['26.09']"/>
+        </case>
+		<case id="178" name="文件是否存在-两参_对比-异常" desc="" faulttype="0" mark="0">
+            <judgestep order="1" desc="文件是否存在" cmdtype="9001" cmdparas="D:\davinciapi\wen\rxcalctheoryp.log~True"/>
+        </case>
+		<case id="179" name="文件是否存在-两参_步骤" desc="" faulttype="0" mark="0">
+			<step order="1" desc="文件是否存在" cmdtype="9001" cmdparas="D:\davinciapi\wen\rxcalctheoryp.log~~True"/>
+            <judgestep order="1" desc="" cmdtype="2010" cmdparas="3~['26.09']~['26.09']"/>
+        </case>
+		<case id="180" name="文件是否存在-两参_对比" desc="" faulttype="0" mark="0">
+            <judgestep order="1" desc="文件是否存在" cmdtype="9001" cmdparas="D:\davinciapi\wen\rxcalctheoryp.log~~True"/>
+        </case>
+		<case id="181" name="光伏_电场累计年报导出数据核对" desc="" faulttype="0" mark="0">
+            <step order="3" desc="" cmdtype="1042" cmdparas="D:\davinciapi\wen\测试光伏电厂_电场累计年报2022到2023.xls~_~平均辐照度(W/㎡)=436.509~3"/>
+            <judgestep order="2" desc="" cmdtype="2010" cmdparas="3~steppara_3_1~['2022-01-01 00:00:00', '436.509', '1061.786', '2022-09-23 13:13:19', '98.274', '8005.223', '2814.779', '2659.802', '1543.662', '1.003', '20.687', '27.628', '3194.25', '3342.464', '3341.808', 'nan']"/>
+        </case>
+		<case id="182" name="光伏_电场累计年报导出数据核对" desc="" faulttype="0" mark="0">
+            <step order="3" desc="" cmdtype="1042" cmdparas="D:\davinciapi\wen\测试光伏电厂_电场累计年报2022到2023.xls~日累计倾斜总辐照量(MJ/㎡)~平均辐照度(W/㎡)=436.509~3"/>
+            <judgestep order="2" desc="" cmdtype="2010" cmdparas="3~steppara_3_1~['nan']"/>
+        </case>
+		<case id="183" name="光伏_电场累计年报导出数据核对" desc="" faulttype="0" mark="0">
+            <step order="3" desc="" cmdtype="1042" cmdparas="D:\davinciapi\wen\测试光伏电厂_电场累计年报2022到2023.xls~_~_~3"/>
+            <judgestep order="2" desc="" cmdtype="2010" cmdparas="3~steppara_3_1~[['2022-01-01 00:00:00', '436.509', '1061.786', '2022-09-23 13:13:19', '98.274', '8005.223', '2814.779', '2659.802', '1543.662', '1.003', '20.687', '27.628', '3194.25', '3342.464', '3341.808', 'nan'], ['1905-07-13 00:00:00', '436.5', '1061.7', '2022-09-23 13:13:20', '98.274', '8005.223', '2814.779', '2659.802', '1543.662', '1.003', '20.687', '27.628', '3194.25', '3342.464', '3341.808', 'nan']]"/>
+        </case>
+		<case id="184" name="光伏_电场累计年报导出数据核对" desc="" faulttype="0" mark="0">
+            <step order="3" desc="" cmdtype="1042" cmdparas="D:\davinciapi\wen\测试光伏电厂_电场累计年报2022到2023.xls~日累计倾斜总辐照量(MJ/㎡),最大辐照度(W/㎡),并网功率最大值对应时间~_~3"/>
+            <judgestep order="2" desc="" cmdtype="2010" cmdparas="3~steppara_3_1~[['nan', '1061.786', '2022-09-23 13:13:19'], ['nan', '1061.7', '2022-09-23 13:13:20']]"/>
+        </case>
+		<case id="185" name="光伏_电场累计年报导出数据核对" desc="" faulttype="0" mark="0">
+            <step order="3" desc="" cmdtype="1042" cmdparas="D:\davinciapi\wen\测试光伏电厂_电场累计年报2022到2023.xls~_~平均辐照度(W/㎡)=436.509~4"/>
+            <judgestep order="2" desc="" cmdtype="2010" cmdparas="4~steppara_3_1~2022-01-01 00:00:00,436.509,1061.786,2022-09-23 13:13:19,98.274,8005.223,2814.779,2659.802,1543.662,1.003,20.687,27.628,3194.25,3342.464,3341.808,nan"/>
+        </case>
+		<case id="186" name="光伏_电场累计年报导出数据核对" desc="" faulttype="0" mark="0">
+            <step order="3" desc="" cmdtype="1042" cmdparas="D:\davinciapi\wen\测试光伏电厂_电场累计年报2022到2023.xls~日累计倾斜总辐照量(MJ/㎡)~平均辐照度(W/㎡)=436.509~4"/>
+            <judgestep order="2" desc="" cmdtype="2010" cmdparas="4~steppara_3_1~nan"/>
+        </case>
+		<case id="187" name="光伏_电场累计年报导出数据核对" desc="" faulttype="0" mark="0">
+            <step order="3" desc="" cmdtype="1042" cmdparas="D:\davinciapi\wen\测试光伏电厂_电场累计年报2022到2023.xls~_~_~4"/>
+            <judgestep order="2" desc="" cmdtype="2010" cmdparas="4~steppara_3_1~2022-01-01 00:00:00,436.509,1061.786,2022-09-23 13:13:19,98.274,8005.223,2814.779,2659.802,1543.662,1.003,20.687,27.628,3194.25,3342.464,3341.808,nan,1905-07-13 00:00:00,436.5,1061.7,2022-09-23 13:13:20,98.274,8005.223,2814.779,2659.802,1543.662,1.003,20.687,27.628,3194.25,3342.464,3341.808,nan"/>
+        </case>
+		<case id="188" name="光伏_电场累计年报导出数据核对" desc="" faulttype="0" mark="0">
+            <step order="3" desc="" cmdtype="1042" cmdparas="D:\davinciapi\wen\测试光伏电厂_电场累计年报2022到2023.xls~日累计倾斜总辐照量(MJ/㎡),最大辐照度(W/㎡),并网功率最大值对应时间~_~4"/>
+            <judgestep order="2" desc="" cmdtype="2010" cmdparas="4~steppara_3_1~nan,1061.786,2022-09-23 13:13:19,nan,1061.7,2022-09-23 13:13:20"/>
+        </case>
+		<case id="189" name="光伏_电场累计年报导出数据核对" desc="" faulttype="0" mark="0">
+            <step order="3" desc="" cmdtype="1042" cmdparas="D:\davinciapi\wen\测试光伏电厂_电场累计年报2022到2023.xls~_~平均辐照度(W/㎡)=436.509~5"/>
+            <judgestep order="2" desc="" cmdtype="2010" cmdparas="3~steppara_3_1~['2022-01-01 00:00:00', '436.509', '1061.786', '2022-09-23 13:13:19', '98.274', '8005.223', '2814.779', '2659.802', '1543.662', '1.003', '20.687', '27.628', '3194.25', '3342.464', '3341.808', 'nan']"/>
+        </case>
+		<case id="190" name="光伏_电场累计年报导出数据核对" desc="" faulttype="0" mark="0">
+            <step order="3" desc="" cmdtype="1042" cmdparas="D:\davinciapi\wen\测试光伏电厂_电场累计年报2022到2023.xls~日累计倾斜总辐照量(MJ/㎡)~平均辐照度(W/㎡)=436.509~5"/>
+            <judgestep order="2" desc="" cmdtype="2010" cmdparas="3~steppara_3_1~['nan']"/>
+        </case>
+		<case id="191" name="光伏_电场累计年报导出数据核对" desc="" faulttype="0" mark="0">
+            <step order="3" desc="" cmdtype="1042" cmdparas="D:\davinciapi\wen\测试光伏电厂_电场累计年报2022到2023.xls~_~_~5"/>
+            <judgestep order="2" desc="" cmdtype="2010" cmdparas="3~steppara_3_1~[['2022-01-01 00:00:00', '436.509', '1061.786', '2022-09-23 13:13:19', '98.274', '8005.223', '2814.779', '2659.802', '1543.662', '1.003', '20.687', '27.628', '3194.25', '3342.464', '3341.808', 'nan'], ['1905-07-13 00:00:00', '436.5', '1061.7', '2022-09-23 13:13:20', '98.274', '8005.223', '2814.779', '2659.802', '1543.662', '1.003', '20.687', '27.628', '3194.25', '3342.464', '3341.808', 'nan']]"/>
+        </case>
+		<case id="192" name="光伏_电场累计年报导出数据核对" desc="" faulttype="0" mark="0">
+            <step order="3" desc="" cmdtype="1042" cmdparas="D:\davinciapi\wen\测试光伏电厂_电场累计年报2022到2023.xls~日累计倾斜总辐照量(MJ/㎡),最大辐照度(W/㎡),并网功率最大值对应时间~_~5"/>
+            <judgestep order="2" desc="" cmdtype="2010" cmdparas="3~steppara_3_1~[['nan', '1061.786', '2022-09-23 13:13:19'], ['nan', '1061.7', '2022-09-23 13:13:20']]"/>
+        </case>
+		<case id="193" name="获取influxDB数据库数据" desc="" faulttype="0" mark="0">
+            <step order="1" desc="查询数据库" cmdtype="5001" cmdparas="select * from testing~QINSQL~10.8.8.200@8086@test@admin@123456~3"/>
+            <judgestep order="2" desc="" cmdtype="2010" cmdparas="3~steppara_1_1~[]"/>
+        </case>
+		<case id="194" name="获取influxDB数据库数据-端口号异常超时" desc="" faulttype="0" mark="0">
+            <step order="1" desc="查询数据库" cmdtype="5001" cmdparas="select * from testing~QINSQL~10.8.8.200@3306@test@admin@123456~3"/>
+            <judgestep order="2" desc="" cmdtype="2010" cmdparas="3~steppara_1_1~[]"/>
+        </case>
+		<case id="195" name="自定义时间参数化" desc="" faulttype="0" mark="0">
+            <step order="1" desc="自定义时间参数化" cmdtype="9010" cmdparas="years~1~%Y-%m-%d %H:%M:%S"/>
+            <judgestep order="2" desc="" cmdtype="2010" cmdparas="1~steppara_1_1~''"/>
+        </case>
+		<case id="196" name="自定义时间参数化-实践" desc="" faulttype="0" mark="0">
+			<step order="1" desc="自定义时间参数化" cmdtype="9010" cmdparas="days~-8~%Y-%m-%d"/>
+            <step order="2" desc="查询数据库" cmdtype="5001" cmdparas="SELECT AVERAGE FROM hdranastat5m20221102 h WHERE h.ID = 49 AND h.HDTIME = '$steppara_1_1 00:05:00'~QMYSQL~10.64.14.69@_@davinci@_@_"/>
+            <judgestep order="2" desc="" cmdtype="2010" cmdparas="3~steppara_2_1~['']"/>
+        </case>
+		<case id="027_01" name="文件一致性对比_均模糊匹配多个值-全不匹配" desc="" faulttype="0" mark="0">
+			<judgestep order="2" desc="" cmdtype="2001" cmdparas="D:\davinciapi\case\zz\对比后删除B\farm1_20220815_14#*#_QXZ.PVD~D:\davinciapi\case\zz\对比后删除A\farm1_20220815_14#*#_QXZ.PVD~~~"/>
+        </case>
+		<case id="027_02" name="文件一致性对比_均模糊匹配多个值-部分匹配" desc="" faulttype="0" mark="0">
+			<judgestep order="2" desc="" cmdtype="2001" cmdparas="D:\davinciapi\case\zz\对比后删除B\farm1_20220816_14#*#_QXZ.PVD~D:\davinciapi\case\zz\对比后删除A\farm1_20220816_14#*#_QXZ.PVD~~~"/>
+        </case>
+		<case id="027_03" name="文件一致性对比_均模糊匹配单个值-不匹配" desc="" faulttype="0" mark="0">
+			<judgestep order="2" desc="" cmdtype="2001" cmdparas="D:\davinciapi\case\zz\对比后删除B\farm1_20220817_14#*#_QXZ.PVD~D:\davinciapi\case\zz\对比后删除A\farm1_20220817_14#*#_QXZ.PVD~~~"/>
+        </case>
+		<case id="027_04" name="文件一致性对比_均模糊匹配单个值-匹配" desc="" faulttype="0" mark="0">
+			<judgestep order="2" desc="" cmdtype="2001" cmdparas="D:\davinciapi\case\zz\对比后删除B\farm1_20220818_14#*#_QXZ.PVD~D:\davinciapi\case\zz\对比后删除A\farm1_20220818_14#*#_QXZ.PVD~~~"/>
+        </case>
+		<case id="027_05" name="文件一致性对比_均模糊匹配不到数据" desc="" faulttype="0" mark="0">
+			<judgestep order="2" desc="" cmdtype="2001" cmdparas="D:\davinciapi\case\zz\对比后删除B\farm1_202208155_14#*#_QXZ.PVD~D:\davinciapi\case\zz\对比后删除A\farm1_202208155_14#*#_QXZ.PVD~~~"/>
+        </case>
+		<case id="027_06" name="文件一致性对比_左模糊匹配多个值-全不匹配" desc="" faulttype="0" mark="0">
+			<judgestep order="2" desc="" cmdtype="2001" cmdparas="D:\davinciapi\case\zz\对比后删除B\farm1_20220815_14#*#_QXZ.PVD~D:\davinciapi\case\zz\对比后删除A\farm1_20220815_1445_QXZ.PVD~~~"/>
+        </case>
+		<case id="027_07" name="文件一致性对比_左模糊匹配多个值-部分匹配" desc="" faulttype="0" mark="0">
+			<judgestep order="2" desc="" cmdtype="2001" cmdparas="D:\davinciapi\case\zz\对比后删除B\farm1_20220816_14#*#_QXZ.PVD~D:\davinciapi\case\zz\对比后删除A\farm1_20220816_1447_QXZ.PVD~~~"/>
+        </case>
+		<case id="027_08" name="文件一致性对比_左模糊匹配单个值-不匹配" desc="" faulttype="0" mark="0">
+			<judgestep order="2" desc="" cmdtype="2001" cmdparas="D:\davinciapi\case\zz\对比后删除B\farm1_20220817_14#*#_QXZ.PVD~D:\davinciapi\case\zz\对比后删除A\farm1_20220817_1445_QXZ.PVD~~"/>
+        </case>
+		<case id="027_09" name="文件一致性对比_左模糊匹配单个值-匹配" desc="" faulttype="0" mark="0">
+			<judgestep order="2" desc="" cmdtype="2001" cmdparas="D:\davinciapi\case\zz\对比后删除B\farm1_20220818_14#*#_QXZ.PVD~D:\davinciapi\case\zz\对比后删除A\farm1_20220818_1447_QXZ.PVD~~~"/>
+        </case>
+		<case id="027_10" name="文件一致性对比_右模糊匹配多个值-全不匹配" desc="" faulttype="0" mark="0">
+			<judgestep order="2" desc="" cmdtype="2001" cmdparas="D:\davinciapi\case\zz\对比后删除B\farm1_20220815_1445_QXZ.PVD~D:\davinciapi\case\zz\对比后删除A\farm1_20220815_14#*#_QXZ.PVD~~~"/>
+        </case>
+		<case id="027_11" name="文件一致性对比_右模糊匹配多个值-部分匹配" desc="" faulttype="0" mark="0">
+			<judgestep order="2" desc="" cmdtype="2001" cmdparas="D:\davinciapi\case\zz\对比后删除B\farm1_20220816_1447_QXZ.PVD~D:\davinciapi\case\zz\对比后删除A\farm1_20220816_14#*#_QXZ.PVD~~~"/>
+        </case>
+		<case id="027_12" name="文件一致性对比_右模糊匹配单个值-不匹配" desc="" faulttype="0" mark="0">
+			<judgestep order="2" desc="" cmdtype="2001" cmdparas="D:\davinciapi\case\zz\对比后删除B\farm1_20220817_1445_QXZ.PVD~D:\davinciapi\case\zz\对比后删除A\farm1_20220817_14#*#_QXZ.PVD~~~"/>
+        </case>
+		<case id="027_13" name="文件一致性对比_右模糊匹配单个值-匹配" desc="" faulttype="0" mark="0">
+			<judgestep order="2" desc="" cmdtype="2001" cmdparas="D:\davinciapi\case\zz\对比后删除B\farm1_20220818_1447_QXZ.PVD~D:\davinciapi\case\zz\对比后删除A\farm1_20220818_14#*#_QXZ.PVD~~~"/>
+        </case>
+		<case id="027_14" name="文件一致性对比_右模糊匹配不到数据" desc="" faulttype="0" mark="0">
+			<judgestep order="2" desc="" cmdtype="2001" cmdparas="D:\davinciapi\case\zz\对比后删除B\farm1_202208188_1447_QXZ.PVD~D:\davinciapi\case\zz\对比后删除A\farm1_20220818_14#*#_QXZ.PVD~~~"/>
+        </case>
+		<case id="027_15" name="文件一致性对比_精确匹配" desc="" faulttype="0" mark="0">
+			<judgestep order="2" desc="" cmdtype="2001" cmdparas="D:\davinciapi\case\zz\对比后删除B\farm1_20220816_1447_QXZ.PVD~D:\davinciapi\case\zz\对比后删除A\farm1_20220816_1447_QXZ.PVD~~"/>
+        </case>
+		<case id="027_001" name="文件一致性对比_均模糊匹配多个值-全不匹配" desc="" faulttype="0" mark="0">
+			<judgestep order="2" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinciapi/wen/a/farm1_20220815_14#*#_QXZ.PVD~/home/sprixin/davinciapi/wen/b/farm1_20220815_14#*#_QXZ.PVD~~~"/>
+        </case>
+		<case id="027_002" name="文件一致性对比_均模糊匹配多个值-部分匹配" desc="" faulttype="0" mark="0">
+			<judgestep order="2" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinciapi/wen/a/farm1_20220816_14#*#_QXZ.PVD~/home/sprixin/davinciapi/wen/b/farm1_20220816_14#*#_QXZ.PVD~~~"/>
+        </case>
+		<case id="027_003" name="文件一致性对比_均模糊匹配单个值-不匹配" desc="" faulttype="0" mark="0">
+			<judgestep order="2" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinciapi/wen/a/farm1_20220817_14#*#_QXZ.PVD~/home/sprixin/davinciapi/wen/b/farm1_20220817_14#*#_QXZ.PVD~~~"/>
+        </case>
+		<case id="027_004" name="文件一致性对比_均模糊匹配单个值-匹配" desc="" faulttype="0" mark="0">
+			<judgestep order="2" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinciapi/wen/a/farm1_20220818_14#*#_QXZ.PVD~/home/sprixin/davinciapi/wen/b/farm1_20220818_14#*#_QXZ.PVD~~~"/>
+        </case>
+		<case id="027_005" name="文件一致性对比_均模糊匹配不到数据" desc="" faulttype="0" mark="0">
+			<judgestep order="2" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinciapi/wen/a/farm1_202208155_14#*#_QXZ.PVD~/home/sprixin/davinciapi/wen/b/farm1_202208155_14#*#_QXZ.PVD~~~"/>
+        </case>
+		<case id="027_006" name="文件一致性对比_左模糊匹配多个值-全不匹配" desc="" faulttype="0" mark="0">
+			<judgestep order="2" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinciapi/wen/a/farm1_20220815_14#*#_QXZ.PVD~/home/sprixin/davinciapi/wen/b/farm1_20220815_1445_QXZ.PVD~~~"/>
+        </case>
+		<case id="027_007" name="文件一致性对比_左模糊匹配多个值-部分匹配" desc="" faulttype="0" mark="0">
+			<judgestep order="2" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinciapi/wen/a/farm1_20220816_14#*#_QXZ.PVD~/home/sprixin/davinciapi/wen/b/farm1_20220816_1447_QXZ.PVD~~~"/>
+        </case>
+		<case id="027_008" name="文件一致性对比_左模糊匹配单个值-不匹配" desc="" faulttype="0" mark="0">
+			<judgestep order="2" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinciapi/wen/a/farm1_20220817_14#*#_QXZ.PVD~/home/sprixin/davinciapi/wen/b/farm1_20220817_1445_QXZ.PVD~~"/>
+        </case>
+		<case id="027_009" name="文件一致性对比_左模糊匹配单个值-匹配" desc="" faulttype="0" mark="0">
+			<judgestep order="2" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinciapi/wen/a/farm1_20220818_14#*#_QXZ.PVD~/home/sprixin/davinciapi/wen/b/farm1_20220818_1447_QXZ.PVD~~~"/>
+        </case>
+		<case id="027_010" name="文件一致性对比_右模糊匹配多个值-全不匹配" desc="" faulttype="0" mark="0">
+			<judgestep order="2" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinciapi/wen/a/farm1_20220815_1445_QXZ.PVD~/home/sprixin/davinciapi/wen/b/farm1_20220815_14#*#_QXZ.PVD~~~"/>
+        </case>
+		<case id="027_011" name="文件一致性对比_右模糊匹配多个值-部分匹配" desc="" faulttype="0" mark="0">
+			<judgestep order="2" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinciapi/wen/a/farm1_20220816_1447_QXZ.PVD~/home/sprixin/davinciapi/wen/b/farm1_20220816_14#*#_QXZ.PVD~~~"/>
+        </case>
+		<case id="027_012" name="文件一致性对比_右模糊匹配单个值-不匹配" desc="" faulttype="0" mark="0">
+			<judgestep order="2" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinciapi/wen/a/farm1_20220817_1445_QXZ.PVD~/home/sprixin/davinciapi/wen/b/farm1_20220817_14#*#_QXZ.PVD~~~"/>
+        </case>
+		<case id="027_013" name="文件一致性对比_右模糊匹配单个值-匹配" desc="" faulttype="0" mark="0">
+			<judgestep order="2" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinciapi/wen/a/farm1_20220818_1447_QXZ.PVD~/home/sprixin/davinciapi/wen/b/farm1_20220818_14#*#_QXZ.PVD~~~"/>
+        </case>
+		<case id="027_014" name="文件一致性对比_右模糊匹配不到数据" desc="" faulttype="0" mark="0">
+			<judgestep order="2" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinciapi/wen/a/farm1_202208188_1447_QXZ.PVD~/home/sprixin/davinciapi/wen/b/farm1_20220818_14#*#_QXZ.PVD~~~"/>
+        </case>
+		<case id="027_00001" name="文件一致性对比_行忽略字段" desc="" faulttype="0" mark="0">
+			<judgestep order="2" desc="" cmdtype="2001" cmdparas="D:\davinciapi\case\zz\对比后删除B\farm1_20220815_1445_QXZ.PVD~D:\davinciapi\case\zz\对比后删除A\farm1_20220815_1445_QXZ.PVD~~~~1@21@23"/>
+        </case>
+		<case id="027_00002" name="文件一致性对比_1_5无行忽略字段FLASE" desc="" faulttype="0" mark="0">
+			<judgestep order="2" desc="" cmdtype="2001" cmdparas="D:\davinciapi\case\zz\对比后删除B\farm1_20220815_1445_QXZ.PVD~D:\davinciapi\case\zz\对比后删除A\farm1_20220815_1445_QXZ.PVD~~1~5"/>
+        </case>
+		<case id="027_00003" name="文件一致性对比_1_5且1行忽略字段" desc="" faulttype="0" mark="0">
+			<judgestep order="2" desc="" cmdtype="2001" cmdparas="D:\davinciapi\case\zz\对比后删除B\farm1_20220815_1445_QXZ.PVD~D:\davinciapi\case\zz\对比后删除A\farm1_20220815_1445_QXZ.PVD~~1~5~1@21@23"/>
+        </case>
+		<case id="027_00004" name="文件一致性对比_3_5且1行忽略字段" desc="" faulttype="0" mark="0">
+			<judgestep order="2" desc="" cmdtype="2001" cmdparas="D:\davinciapi\case\zz\对比后删除B\farm1_20220815_1445_QXZ.PVD~D:\davinciapi\case\zz\对比后删除A\farm1_20220815_1445_QXZ.PVD~~3~5~1@21@23"/>
+        </case>
+		<case id="027_00005" name="文件一致性对比_3_5无行忽略字段" desc="" faulttype="0" mark="0">
+			<judgestep order="2" desc="" cmdtype="2001" cmdparas="D:\davinciapi\case\zz\对比后删除B\farm1_20220815_1445_QXZ.PVD~D:\davinciapi\case\zz\对比后删除A\farm1_20220815_1445_QXZ.PVD~~3~5~"/>
+        </case>
+		<case id="027_00006" name="文件一致性对比_模糊查询_行忽略字段" desc="" faulttype="0" mark="0">
+			<judgestep order="2" desc="" cmdtype="2001" cmdparas="D:\davinciapi\case\zz\对比后删除B\farm1_20220815_14#*#_QXZ.PVD~D:\davinciapi\case\zz\对比后删除A\farm1_20220815_1445_QXZ.PVD~~~~1@21@23"/>
+        </case>
+		<case id="027_00007" name="文件一致性对比_模糊查询_3_5无行忽略字段" desc="" faulttype="0" mark="0">
+			<judgestep order="2" desc="" cmdtype="2001" cmdparas="D:\davinciapi\case\zz\对比后删除B\farm1_20220815_1445_QXZ.PVD~D:\davinciapi\case\zz\对比后删除A\farm1_20220815_14#*#_QXZ.PVD~~3~5"/>
+        </case>
+		<case id="027_00008" name="文件一致性对比_模糊查询_1_5无行忽略字段FLASE" desc="" faulttype="0" mark="0">
+			<judgestep order="2" desc="" cmdtype="2001" cmdparas="D:\davinciapi\case\zz\对比后删除B\farm1_20220815_14#*#_QXZ.PVD~D:\davinciapi\case\zz\对比后删除A\farm1_20220815_14#*#_QXZ.PVD~~1~5"/>
+        </case>
+		<case id="027_00009" name="文件一致性对比_模糊查询_1_5且1行忽略字段" desc="" faulttype="0" mark="0">
+			<judgestep order="2" desc="" cmdtype="2001" cmdparas="D:\davinciapi\case\zz\对比后删除B\farm1_20220815_14#*#_QXZ.PVD~D:\davinciapi\case\zz\对比后删除A\farm1_20220815_14#*#_QXZ.PVD~~1~5~1@21@23"/>
+        </case>
+		<case id="027_00010" name="文件一致性对比_模糊查询_1_5且1行忽略字段_异常1FLASE" desc="" faulttype="0" mark="0">
+			<judgestep order="2" desc="" cmdtype="2001" cmdparas="D:\davinciapi\case\zz\对比后删除B\farm1_20220815_14#*#_QXZ.PVD~D:\davinciapi\case\zz\对比后删除A\farm1_20220815_14#*#_QXZ.PVD~~1~5~1@21@"/>
+        </case>
+		<case id="027_00011" name="文件一致性对比_模糊查询_1_5且1行忽略字段_异常2FLASE" desc="" faulttype="0" mark="0">
+			<judgestep order="2" desc="" cmdtype="2001" cmdparas="D:\davinciapi\case\zz\对比后删除B\farm1_20220815_14#*#_QXZ.PVD~D:\davinciapi\case\zz\对比后删除A\farm1_20220815_14#*#_QXZ.PVD~~1~5~1@@23"/>
+        </case>
+		<case id="027_00012" name="文件一致性对比_模糊查询_1_5且1行忽略字段_异常3FLASE" desc="" faulttype="0" mark="0">
+			<judgestep order="2" desc="" cmdtype="2001" cmdparas="D:\davinciapi\case\zz\对比后删除B\farm1_20220815_14#*#_QXZ.PVD~D:\davinciapi\case\zz\对比后删除A\farm1_20220815_14#*#_QXZ.PVD~~1~5~@21@23"/>
+        </case>
+		<case id="027_00013" name="文件一致性对比_模糊查询_1_5且1行忽略字段_异常4FLASE" desc="" faulttype="0" mark="0">
+			<judgestep order="2" desc="" cmdtype="2001" cmdparas="D:\davinciapi\case\zz\对比后删除B\farm1_20220815_14#*#_QXZ.PVD~D:\davinciapi\case\zz\对比后删除A\farm1_20220815_14#*#_QXZ.PVD~~1~5~1@21"/>
+        </case>
+		<case id="027_00014" name="文件一致性对比_全文多行忽略字段_1和4行忽略字段" desc="" faulttype="0" mark="0">
+			<judgestep order="2" desc="" cmdtype="2001" cmdparas="D:\davinciapi\case\zz\对比后删除B\farm1_20220819_1445_QXZ.PVD~D:\davinciapi\case\zz\对比后删除A\farm1_20220819_1445_QXZ.PVD~~~~1@21@23@@4@50@52"/>
+        </case>
+		<case id="027_00015" name="文件一致性对比_部分文件多行忽略字段_1和4行忽略字段" desc="" faulttype="0" mark="0">
+			<judgestep order="2" desc="" cmdtype="2001" cmdparas="D:\davinciapi\case\zz\对比后删除B\farm1_20220819_1445_QXZ.PVD~D:\davinciapi\case\zz\对比后删除A\farm1_20220819_1445_QXZ.PVD~~1~10~1@21@23@@4@50@52"/>
+        </case>
+		<case id="027_00016" name="文件一致性对比_模糊匹配多行忽略字段_1和4行忽略字段" desc="" faulttype="0" mark="0">
+			<judgestep order="2" desc="" cmdtype="2001" cmdparas="D:\davinciapi\case\zz\对比后删除B\farm1_20220819_14#*#_QXZ.PVD~D:\davinciapi\case\zz\对比后删除A\farm1_20220819_14#*#_QXZ.PVD~~~~1@21@23@@4@50@52"/>
+        </case>
+		<case id="027_00017" name="文件一致性对比_多行忽略字段_用例格式异常1FLASE" desc="" faulttype="0" mark="0">
+			<judgestep order="2" desc="" cmdtype="2001" cmdparas="D:\davinciapi\case\zz\对比后删除B\farm1_20220819_1445_QXZ.PVD~D:\davinciapi\case\zz\对比后删除A\farm1_20220819_1445_QXZ.PVD~~~~1@21@23@@"/>
+        </case>
+		<case id="027_00018" name="文件一致性对比_多行忽略字段_用例格式异常2FLASE" desc="" faulttype="0" mark="0">
+			<judgestep order="2" desc="" cmdtype="2001" cmdparas="D:\davinciapi\case\zz\对比后删除B\farm1_20220819_1445_QXZ.PVD~D:\davinciapi\case\zz\对比后删除A\farm1_20220819_1445_QXZ.PVD~~~~1@21@@@4@50@52"/>
+        </case>
+		<case id="027_00019" name="文件一致性对比_多行忽略字段_用例格式异常3FLASE" desc="" faulttype="0" mark="0">
+			<judgestep order="2" desc="" cmdtype="2001" cmdparas="D:\davinciapi\case\zz\对比后删除B\farm1_20220819_1445_QXZ.PVD~D:\davinciapi\case\zz\对比后删除A\farm1_20220819_1445_QXZ.PVD~~~~1@21@23@@4@@52"/>
+        </case>
+		<case id="027_00020" name="文件一致性对比_多行忽略字段_用例格式异常4FLASE" desc="" faulttype="0" mark="0">
+			<judgestep order="2" desc="" cmdtype="2001" cmdparas="D:\davinciapi\case\zz\对比后删除B\farm1_20220819_1445_QXZ.PVD~D:\davinciapi\case\zz\对比后删除A\farm1_20220819_1445_QXZ.PVD~~~~@@@@@"/>
+        </case>
+		<case id="027_00021" name="文件一致性对比_部分文件多行忽略字段_1和4行忽略字段FLASE" desc="" faulttype="0" mark="0">
+			<judgestep order="2" desc="" cmdtype="2001" cmdparas="D:\davinciapi\case\zz\对比后删除B\farm1_20220819_1445_QXZ.PVD~D:\davinciapi\case\zz\对比后删除A\farm1_20220819_1445_QXZ.PVD~~1~10~"/>
+        </case>
+		<case id="027_00022" name="文件一致性对比_部分文件多行忽略字段_1和4行忽略字段" desc="" faulttype="0" mark="0">
+			<judgestep order="2" desc="" cmdtype="2001" cmdparas="D:\davinciapi\case\zz\对比后删除B\farm1_20220819_1445_QXZ.PVD~D:\davinciapi\case\zz\对比后删除A\farm1_20220819_1445_QXZ.PVD~~1~10~1@21@23@@4@50@52"/>
+        </case>
+		<case id="027_00023" name="文件一致性对比_部分文件多行忽略字段_1行忽略字段FLASE" desc="" faulttype="0" mark="0">
+			<judgestep order="2" desc="" cmdtype="2001" cmdparas="D:\davinciapi\case\zz\对比后删除B\farm1_20220819_1445_QXZ.PVD~D:\davinciapi\case\zz\对比后删除A\farm1_20220819_1445_QXZ.PVD~~1~10~1@21@23"/>
+        </case>
+		<case id="027_00024" name="文件一致性对比_部分文件多行忽略字段_4行忽略字段FLASE" desc="" faulttype="0" mark="0">
+			<judgestep order="2" desc="" cmdtype="2001" cmdparas="D:\davinciapi\case\zz\对比后删除B\farm1_20220819_1445_QXZ.PVD~D:\davinciapi\case\zz\对比后删除A\farm1_20220819_1445_QXZ.PVD~~1~10~4@50@52"/>
+        </case>
+		<case id="027_15" name="文件一致性对比_精确匹配" desc="" faulttype="0" mark="0">
+			<judgestep order="2" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinciapi/wen/a/farm1_20220816_1447_QXZ.PVD~/home/sprixin/davinciapi/wen/b/farm1_20220816_1447_QXZ.PVD"/>
+        </case>
+		<case id="027_0001" name="文件一致性对比_行忽略字段" desc="" faulttype="0" mark="0">
+			<judgestep order="2" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinciapi/wen/a/farm1_20220815_1445_QXZ.PVD~/home/sprixin/davinciapi/wen/b/farm1_20220815_1445_QXZ.PVD~~~~1@21@23"/>
+        </case>
+		<case id="027_0002" name="文件一致性对比_1_5无行忽略字段" desc="" faulttype="0" mark="0">
+			<judgestep order="2" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinciapi/wen/a/farm1_20220815_1445_QXZ.PVD~/home/sprixin/davinciapi/wen/b/farm1_20220815_1445_QXZ.PVD~~1~5"/>
+        </case>
+		<case id="027_0003" name="文件一致性对比_1_5且1行忽略字段" desc="" faulttype="0" mark="0">
+			<judgestep order="2" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinciapi/wen/a/farm1_20220815_1445_QXZ.PVD~/home/sprixin/davinciapi/wen/b/farm1_20220815_1445_QXZ.PVD~~1~5~1@21@23"/>
+        </case>
+		<case id="027_0004" name="文件一致性对比_3_5且1行忽略字段" desc="" faulttype="0" mark="0">
+			<judgestep order="2" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinciapi/wen/a/farm1_20220815_1445_QXZ.PVD~/home/sprixin/davinciapi/wen/b/farm1_20220815_1445_QXZ.PVD~~3~5~1@21@23"/>
+        </case>
+		<case id="027_0005" name="文件一致性对比_3_5无行忽略字段" desc="" faulttype="0" mark="0">
+			<judgestep order="2" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinciapi/wen/a/farm1_20220815_1445_QXZ.PVD~/home/sprixin/davinciapi/wen/b/farm1_20220815_1445_QXZ.PVD~~3~5~"/>
+        </case>
+		<case id="027_0006" name="文件一致性对比_模糊查询_行忽略字段" desc="" faulttype="0" mark="0">
+			<judgestep order="2" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinciapi/wen/a/farm1_20220815_14#*#_QXZ.PVD~/home/sprixin/davinciapi/wen/b/farm1_20220815_1445_QXZ.PVD~~~~1@21@23"/>
+        </case>
+		<case id="027_0007" name="文件一致性对比_模糊查询_3_5无行忽略字段" desc="" faulttype="0" mark="0">
+			<judgestep order="2" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinciapi/wen/a/farm1_20220815_1445_QXZ.PVD~/home/sprixin/davinciapi/wen/b/farm1_20220815_14#*#_QXZ.PVD~~3~5"/>
+        </case>
+		<case id="027_0008" name="文件一致性对比_模糊查询_1_5无行忽略字段" desc="" faulttype="0" mark="0">
+			<judgestep order="2" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinciapi/wen/a/farm1_20220815_14#*#_QXZ.PVD~/home/sprixin/davinciapi/wen/b/farm1_20220815_14#*#_QXZ.PVD~~1~5"/>
+        </case>
+		<case id="027_0009" name="文件一致性对比_模糊查询_1_5且1行忽略字段" desc="" faulttype="0" mark="0">
+			<judgestep order="2" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinciapi/wen/a/farm1_20220815_14#*#_QXZ.PVD~/home/sprixin/davinciapi/wen/b/farm1_20220815_14#*#_QXZ.PVD~~1~5~1@21@23"/>
+        </case>
+		<case id="027_0010" name="文件一致性对比_模糊查询_1_5且1行忽略字段_异常1" desc="" faulttype="0" mark="0">
+			<judgestep order="2" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinciapi/wen/a/farm1_20220815_14#*#_QXZ.PVD~/home/sprixin/davinciapi/wen/b/farm1_20220815_14#*#_QXZ.PVD~~1~5~1@21@"/>
+        </case>
+		<case id="027_0011" name="文件一致性对比_模糊查询_1_5且1行忽略字段_异常2" desc="" faulttype="0" mark="0">
+			<judgestep order="2" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinciapi/wen/a/farm1_20220815_14#*#_QXZ.PVD~/home/sprixin/davinciapi/wen/b/farm1_20220815_14#*#_QXZ.PVD~~1~5~1@@23"/>
+        </case>
+		<case id="027_0012" name="文件一致性对比_模糊查询_1_5且1行忽略字段_异常3" desc="" faulttype="0" mark="0">
+			<judgestep order="2" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinciapi/wen/a/farm1_20220815_14#*#_QXZ.PVD~/home/sprixin/davinciapi/wen/b/farm1_20220815_14#*#_QXZ.PVD~~1~5~@21@23"/>
+        </case>
+		<case id="027_0013" name="文件一致性对比_模糊查询_1_5且1行忽略字段_异常4" desc="" faulttype="0" mark="0">
+			<judgestep order="2" desc="" cmdtype="2001" cmdparas="/home/sprixin/davinciapi/wen/a/farm1_20220815_14#*#_QXZ.PVD~/home/sprixin/davinciapi/wen/b/farm1_20220815_14#*#_QXZ.PVD~~1~5~1@@21"/>
+        </case>
 		
-		-->
+		<case id="197" name="xml取值-无条件-标签属性值" desc="" faulttype="0" mark="0">
+			<step order="10" desc="111" cmdtype="1032" cmdparas="D:\davinciapi\case\zz\对比后删除A\new 2.xml~booklist~~AttrCon@type~"
+            <judgestep order="2" desc="" cmdtype="2010" cmdparas="3~steppara_2_1~['']"/>
+        </case>
+		<case id="197" name="自定义参数化-字符串" desc="" faulttype="0" mark="0">
+			<step order="1" desc="自定义参数化" cmdtype="9009" cmdparas="参数"/>
+			<judgestep order="2" desc="" cmdtype="2010" cmdparas="4~参数~steppara_1_1"/>
+		</case>
+		<case id="198" name="自定义参数化-数字字符串" desc="" faulttype="0" mark="0">
+			<step order="1" desc="自定义参数化" cmdtype="9009" cmdparas="123"/>
+			<judgestep order="2" desc="" cmdtype="2010" cmdparas="4~123~steppara_1_1"/>
+		</case>
+		<case id="199" name="自定义参数化-字母字符串" desc="" faulttype="0" mark="0">
+			<step order="1" desc="自定义参数化" cmdtype="9009" cmdparas="abc"/>
+			<judgestep order="2" desc="" cmdtype="2010" cmdparas="4~abc~steppara_1_1"/>
+		</case>
+		<<case id="200" name="自定义参数化-整数" desc="" faulttype="0" mark="0">
+			<step order="1" desc="自定义参数化" cmdtype="9009" cmdparas="3"/>
+			<judgestep order="2" desc="" cmdtype="2010" cmdparas="1~3~steppara_1_1"/>
+		</case>
+		<case id="201" name="自定义参数化-浮点数" desc="" faulttype="0" mark="0">
+			<step order="1" desc="自定义参数化" cmdtype="9009" cmdparas="3.2"/>
+			<judgestep order="2" desc="" cmdtype="2010" cmdparas="2~3.2~steppara_1_1"/>
+		</case>
+		<case id="202" name="自定义参数化-混合列表" desc="" faulttype="0" mark="0">
+			<step order="1" desc="自定义参数化" cmdtype="9009" cmdparas="['1','3.2','abc',['2','4.3','d']]"/>
+			<judgestep order="2" desc="" cmdtype="2010" cmdparas="3~['1','3.2','abc',['2','4.3','d']]~steppara_1_1"/>
+		</case>
+		<case id="203" name="自定义参数化-单列表" desc="" faulttype="0" mark="0">
+			<step order="1" desc="自定义参数化" cmdtype="9009" cmdparas="['1','3.2','abc']"/>
+			<judgestep order="2" desc="" cmdtype="2010" cmdparas="3~['1','3.2','abc']~steppara_1_1"/>
+		</case>
+		<case id="204" name="返回text_select选中值-应用" desc="" faulttype="0" mark="0">
+			<step order="1" desc="查询气象预报风速数据" cmdtype="4003" cmdparas="http://10.8.8.26:18080/SPPP-web/spfsWeather/windSpeed~id|plantId~text_select@0@text~suitcondpara_1_1~chrome"/>
+			<judgestep order="2" desc="" cmdtype="9001" cmdparas="C:\Users\Administrator\Downloads\$steppara_1_1##_环境监测仪_1_风速_20221226-20221227.xls~~True"/>
+		</case>
+		<case id="205" name="返回text_select选中值-value" desc="" faulttype="0" mark="0">
+			<step order="2" desc="等等待" cmdtype="9003" cmdparas="3"/>
+			<step order="1" desc="查询气象预报风速数据" cmdtype="4003" cmdparas="http://10.8.8.26:18080/SPPP-web/spfsWeather/windSpeed~id|plantId~text_select@0@value~suitcondpara_1_1~chrome"/>
+			<judgestep order="2" desc="" cmdtype="2010" cmdparas="4~115021~steppara_1_1"/>
+		</case>
+		<case id="206" name="返回text_select选中值-text" desc="" faulttype="0" mark="0">
+			<step order="2" desc="等等待" cmdtype="9003" cmdparas="3"/>
+			<step order="1" desc="查询气象预报风速数据" cmdtype="4003" cmdparas="http://10.8.8.26:18080/SPPP-web/spfsWeather/windSpeed~id|plantId~text_select@0@text~suitcondpara_1_1~chrome"/>
+			<judgestep order="2" desc="" cmdtype="2010" cmdparas="4~达梦光伏电厂1~steppara_1_1"/>
+		</case>
+		<case id="207" name="返回text_select选中值-value-异常超出个数" desc="" faulttype="0" mark="0">
+			<step order="2" desc="等等待" cmdtype="9003" cmdparas="3"/>
+			<step order="1" desc="查询气象预报风速数据" cmdtype="4003" cmdparas="http://10.8.8.26:18080/SPPP-web/spfsWeather/windSpeed~id|plantId~text_select@20@value~suitcondpara_1_1~chrome"/>
+			<judgestep order="2" desc="" cmdtype="2010" cmdparas="4~115021~steppara_1_1"/>
+		</case>
+		<case id="208" name="返回text_select选中值-text-异常超出个数" desc="" faulttype="0" mark="0">
+			<step order="2" desc="等等待" cmdtype="9003" cmdparas="3"/>
+			<step order="1" desc="查询气象预报风速数据" cmdtype="4003" cmdparas="http://10.8.8.26:18080/SPPP-web/spfsWeather/windSpeed~id|plantId~text_select@2@text~suitcondpara_1_1~chrome"/>
+			<judgestep order="2" desc="" cmdtype="2010" cmdparas="4~'a'~steppara_1_1"/>
+		</case>
+		<case id="209" name="返回text_select选中值-text-全部的text值" desc="" faulttype="0" mark="0">
+			<step order="2" desc="等等待" cmdtype="9003" cmdparas="3"/>
+			<step order="1" desc="查询气象预报风速数据" cmdtype="4003" cmdparas="http://10.8.8.26:18080/SPPP-web/spfsWeather/windSpeed~id|plantId~text_select@0@textall~suitcondpara_1_1~chrome"/>
+			<judgestep order="2" desc="" cmdtype="2010" cmdparas="3~['达梦光伏电厂1', '达梦光伏电厂2']~steppara_1_1"/>
+		</case>
+		<case id="210" name="返回text_select选中值-Value-全部的Value值" desc="" faulttype="0" mark="0">
+			<step order="2" desc="等等待" cmdtype="9003" cmdparas="3"/>
+			<step order="1" desc="查询气象预报风速数据" cmdtype="4003" cmdparas="http://10.8.8.26:18080/SPPP-web/spfsWeather/windSpeed~id|plantId~text_select@0@Valueall~suitcondpara_1_1~chrome"/>
+			<judgestep order="2" desc="" cmdtype="2010" cmdparas="3~['115021', '115022']~steppara_1_1"/>
+		</case>
+		<case id="211" name="返回text_select选中值-index-异常index不存在" desc="" faulttype="0" mark="0">
+			<step order="1" desc="查询气象预报风速数据" cmdtype="4003" cmdparas="http://10.8.8.26:18080/SPPP-web/spfsWeather/windSpeed~id|plantId~text_select@0@index~suitcondpara_1_1~chrome"/>
+			<judgestep order="2" desc="" cmdtype="2010" cmdparas="4~'a'~steppara_1_1"/>
+		</case>-->
     </suit>
 </test>

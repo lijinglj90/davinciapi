@@ -24,6 +24,8 @@ import copy
 import shutil
 import time
 from calculation import *
+from datetime import datetime, timedelta
+from dateutil.relativedelta import relativedelta
 
 import sys
 # from pluginmanager import PluginManager
@@ -84,6 +86,8 @@ class CmdType():
     wait_timespan = "9003"
     wait_sql = "9007"
     calc_formula = "9008"
+    custom_para = "9009"
+    custom_time_para = "9010"
 
     #在此增加新的函数定义
 
@@ -264,9 +268,10 @@ class StepObj():
         #     paras.append('')
 
         if '#*#' in paras[0]:
-            dir,filename = os.path.split(paras[0])
-            name = filename.split('#*#')[0]
-            fuzzy_find_list = bs.fuzzy_find(dir, name)
+            # dir, filename = os.path.split(paras[0])
+            # name = filename.split('#*#')[0]
+            # fuzzy_find_list = bs.fuzzy_find(dir, name) 需求更改这三行不要了可以删除
+            fuzzy_find_list = bs.fuzzy_find(paras[0])
             if len(fuzzy_find_list) == 1:
                 pc = PandasCfg(fuzzy_find_list[0])
             else:
@@ -443,17 +448,15 @@ class StepObj():
         try:
             if len(paras) < 2:
                 return StepExecResult(False,"参数个数错误",[])
-            elif len(paras) < 5:
-                paras = paras + [''] * (5 - len(paras))
-            # elif len(paras) == 2:
-            #     l = ['', '', '']
-            #     paras.extend(l)
-            # elif len(paras) == 3:
-            #     l = ['', '']
-            #     paras.extend(l)
-            # elif len(paras) == 4:
-            #     paras.append('')
-            status,info = bs.cmp_file(paras[0],paras[1],paras[2],paras[3],paras[4])
+            elif len(paras) < 6:
+                paras = paras + [''] * (6 - len(paras))
+
+            if '#*#' in paras[0] or '#*#' in paras[1]:
+                # print('模糊匹配')
+                status,info = bs.fuzzy_cmp_file(paras[0], paras[1], paras[2], paras[3], paras[4], paras[5])
+            else:
+                # print('精确匹配')
+                status,info = bs.cmp_file(paras[0],paras[1],paras[2],paras[3],paras[4], paras[5])
 
             return StepExecResult(status,info,[])
         except Exception as e:
@@ -544,6 +547,7 @@ class StepObj():
 
     '''文件存在检查接口'''
     def __file_exixts__(self,paras:list):
+        status = ''
         try:
             # print('stepobj::',paras)
             para_count = len(paras)
@@ -557,7 +561,22 @@ class StepObj():
             elif paras[2]=='':
                 paras[2] = 'True'
 
-            status = bs.hasfile(paras[0],paras[1])
+            #增加模糊查询匹配
+            if '#*#' in paras[0]:
+                fuzzy_find_list = bs.fuzzy_find(paras[0])
+                # print('@@@',fuzzy_find_list)
+                if len(fuzzy_find_list) == 1:
+                    info = f'模糊匹配到一个文件，查询结果为：{fuzzy_find_list}'
+                    status = True
+                elif len(fuzzy_find_list) > 1:
+                    info = f'模糊匹配到多个文件，查询结果为：{fuzzy_find_list}'
+                    status = True
+                else:
+                    info = f'没有匹配到对应文件，请手动检，查询结果为：{fuzzy_find_list}'
+                    return StepExecResult(False, info, [])
+            else:
+                status = bs.hasfile(paras[0],paras[1])
+
             if status == eval(paras[2]):
                 return StepExecResult(True,"",[])
             else:
@@ -781,84 +800,84 @@ class StepObj():
             info = '请检查用例'
             data = []
             if paras[0] == 'air_density':
-                if len(paras)==3:
+                if len(paras)>=3:
                     status, info, data = bs.air_density_info(paras[1],paras[2])
                     print(type(data))
                     print('status:',status, 'info:',info, 'data:', data)
                 else:
                     return StepExecResult(False, "空气密度air_density_one需要3个参数，传入参数个数错误", [])
             elif paras[0] == 'Wind_power_density':
-                if len(paras) == 4:
+                if len(paras) >= 4:
                     status, info, data = bs.Wind_power_density_info(paras[1],paras[2],paras[3])
                     print(type(data))
                     print('status:',status, 'info:',info, 'data:', data)
                 else:
                     return StepExecResult(False, "风功率密度Wind_power_density需要4个参数，传入参数个数错误", [])
             elif paras[0] == 'get_average':
-                if len(paras) == 2:
+                if len(paras) >= 2:
                     status, info, data = bs.average_info(paras[1])
                     print(type(data))
                     print('status:',status, 'info:',info, 'data:', data)
                 else:
                     return StepExecResult(False, "算数平均get_average需要2个参数，传入参数个数错误", [])
             elif paras[0] == 'get_average_jing':
-                if len(paras) == 2:
+                if len(paras) >= 2:
                     status, info, data = bs.average_jing_info(paras[1])
                     print(type(data))
                     print('status:',status, 'info:',info, 'data:', data)
                 else:
                     return StepExecResult(False, "算数平均-精度get_average_jing需要2个参数，传入参数个数错误", [])
             elif paras[0] == 'get_sum':
-                if len(paras) == 2:
+                if len(paras) >= 2:
                     status, info, data = bs.get_sum_info(paras[1])
                     print(type(data))
                     print('status:',status, 'info:',info, 'data:', data)
                 else:
                     return StepExecResult(False, "列表求和get_sum需要2个参数，传入参数个数错误", [])
             elif paras[0] == 'get_mse':
-                if len(paras) == 2:
+                if len(paras) >= 2:
                     status, info, data = bs.get_mse_info(paras[1],paras[2])
                     print(type(data))
                     print('status:',status, 'info:',info, 'data:', data)
                 else:
                     return StepExecResult(False, "均方误差get_mse需要3个参数，传入参数个数错误", [])
             elif paras[0] == 'get_rmse':
-                if len(paras) == 2:
+                if len(paras) >= 2:
                     status, info, data = bs.get_rmse_info(paras[1],paras[2],paras[3])
                     print(type(data))
                     print('status:',status, 'info:',info, 'data:', data)
                 else:
                     return StepExecResult(False, "短期均方根误差get_rmse需要4个参数，传入参数个数错误", [])
             elif paras[0] == 'get_mae':
-                if len(paras) == 2:
+                if len(paras) >= 2:
                     status, info, data = bs.get_mae_info(paras[1],paras[2],paras[3])
                     print(type(data))
                     print('status:',status, 'info:',info, 'data:', data)
                 else:
                     return StepExecResult(False, "平均绝对误差get_average需要4个参数，传入参数个数错误", [])
             elif paras[0] == 'get_colrel':
-                if len(paras) == 2:
+                if len(paras) >= 2:
                     status, info, data = bs.get_colrel_info(paras[1],paras[2])
                     print(type(data))
                     print('status:',status, 'info:',info, 'data:', data)
                 else:
                     return StepExecResult(False, "相关性系数get_colrel需要3个参数，传入参数个数错误", [])
             elif paras[0] == 'get_qualify':
-                if len(paras) == 5:
+                if len(paras) >= 5:
                     status, info, data = bs.get_qualify_info(paras[1],paras[2],paras[3],paras[4])
                     print(type(data))
                     print('status:',status, 'info:',info, 'data:', data)
                 else:
                     return StepExecResult(False, "合格率get_qualify需要5个参数，传入参数个数错误", [])
             elif paras[0] == 'get_max_errorlv':
-                if len(paras) == 3:
+                if len(paras) >= 3:
                     status, info, data = bs.get_max_errorlv_info(paras[1],paras[2])
                     print(type(data))
                     print('status:',status, 'info:',info, 'data:', data)
                 else:
                     return StepExecResult(False, "最大误差合格率get_max_errorlv需要3个参数，传入参数个数错误", [])
             elif paras[0] == 'get_er_Harmonic_mean':
-                if len(paras) == 4:
+                if len(paras) >= 4:
                     status, info, data = bs.get_er_Harmonic_mean_info(paras[1],paras[2],paras[3])
                     print(type(data))
                     print('status:',status, 'info:',info, 'data:', data)
@@ -875,6 +894,57 @@ class StepObj():
 
         except Exception as e:
             info = str(e)
+            return StepExecResult(False, info, [])
+
+    # def __custom_para__(self,paras:list):
+    def __custom_para__(self, paras: list):
+        print("__custom_para__输入参数", paras)
+        print(len(paras))
+        newparas = ''
+        try:
+            # if len(paras) == 1:
+            if len(paras)>=1:
+                # newparas = paras[0]
+                newparas = paras
+            else:
+                info = f'输入的参数{paras}有错误，请检查'
+                return StepExecResult(False, info, [])
+        except Exception as e:
+            info = str(e)
+            return StepExecResult(False, info, [])
+        print('@@@@@@@@',newparas)
+        return StepExecResult(True, '', newparas)
+
+
+
+    def __custom_time_para__(self,paras:list):
+        print("__custom_time_para__输入参数", paras)
+        print(len(paras))
+        newparas = []
+        try:
+            now_datetime = datetime.now()
+            if len(paras) == 3:
+                V = int(paras[1])
+                if paras[0] == 'years':
+                    times = now_datetime + relativedelta(years=V)
+                if paras[0] == 'months':
+                    times = now_datetime + relativedelta(months=V)
+                if paras[0] == 'days':
+                    times = now_datetime + relativedelta(days=V)
+                if paras[0] == 'hours':
+                    times = now_datetime + relativedelta(hours=V)
+                if paras[0] == 'minutes':
+                    times = now_datetime + relativedelta(minutes=V)
+                z = times.strftime(paras[2])
+
+                newparas.append(z)
+                print('@@@@@@@@', type(z),newparas)
+                return StepExecResult(True, '', newparas)
+            else:
+                info = f'输入的参数{paras}有错误，请检查'
+                return StepExecResult(False, info, [])
+        except Exception as e:
+            info = '请检查输入的参数是否正确'+ str(e)
             return StepExecResult(False, info, [])
 
 
@@ -951,6 +1021,11 @@ class StepObj():
             return self.__rdb_excute__(self.__paras)
         elif self.__cmdtype == CmdType.calc_formula:    #9008
             return self.__calc_formula__(self.__paras)
+        elif self.__cmdtype == CmdType.custom_para:    #9009
+            return self.__custom_para__(self.__paras)
+        elif self.__cmdtype == CmdType.custom_time_para:    #9010
+            return self.__custom_time_para__(self.__paras)
+
         # else:
         #     PluginManager.LoadAllPlugin();
         #     #遍历所有接入点下的所有插件
@@ -984,3 +1059,9 @@ if __name__ == '__main__':
     # cmdtype = 3001
     # a = ['dir']
     # StepObj(cmdtype, a).__exec_cmd__(a)
+    cmdtype = 9010
+    a = ['years','1','%Y-%m-%d %H:%M:%S']
+    # timedelta(days=1)
+    # # newparas = dt_t.strftime("%Y%m%d")
+    z = StepObj(cmdtype, a).__custom_time_para__(a)
+    print(z)

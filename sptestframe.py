@@ -195,6 +195,29 @@ def run():
     '''发出报告'''
     print(report_info)
 
+    '''生成测试报告'''
+    # emailfilepath = getreportPath()
+    # emailfilepath = '/home/sprixin/davinciapi/Report/report.html'
+    # emailfilepath = r'D:\davinciapi\Report\report.html'
+    CASEPATH = os.getcwd()
+    emailfilepath = rf'{CASEPATH}/Report/report.html'
+    f = open(emailfilepath, 'w', encoding='utf-8')
+    message = """
+    <html>
+    <head></head>
+    <body>
+    <p>Hello,World!</p>
+    <p>demo</p>
+    <p>%s</p>
+    </body>
+    </html>""" %report_info
+
+    f.write(message)
+    f.close()
+
+    # '''发送邮件'''
+    # Send_mail(emailfilepath)
+
 
 
 if __name__ == "__main__":
