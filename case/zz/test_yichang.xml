@@ -3,12 +3,11 @@
     <suit id="001" name="计划开机容量设置页面" desc="">
         <precondition>
 			<step order="1" desc="创建浏览器驱动" cmdtype="4001" cmdparas="chrome"/>
-            <step order="2" desc="登录风电界面" cmdtype="4003" cmdparas="http://10.8.8.26:18080/SPPP-web/login~id|username@@id|password@@id|submit~send_keys@spfs@@send_keys@spfs@@click~suitcondpara_1_1~chrome"/>
-            <!--<step order="1" desc="创建浏览器驱动" cmdtype="4001" cmdparas="chrome"/>
-			<step order="3" desc="登录" cmdtype="4003" cmdparas="http://10.64.14.69:18080/SPPP-web/login~id|username@@id|password@@id|submit~send_keys@spfs@@send_keys@spfs@@click~suitcondpara_1_1"/>
-            
-			<step order="3" desc="登录" cmdtype="4003" cmdparas="http://10.64.14.70:18080/SPPP-web/login~id|username@@id|password@@id|submit~send_keys@wpfs@@send_keys@wpfs@@click~suitcondpara_1_1"/>
-			<step order="2" desc="登录异常" cmdtype="4003" cmdparas="http://10.64.14.70:18080/SPPP-web/login~id|username@@id|password@@id|submit~send_keys@wpfs@@send_keys@wpfs@@click~suitcondpara_1_1"/>-->
+            <!--<step order="2" desc="登录风电界面" cmdtype="4003" cmdparas="http://10.8.8.26:18080/SPPP-web/login~id|username@@id|password@@id|submit~send_keys@spfs@@send_keys@spfs@@click~suitcondpara_1_1~chrome"/>
+            <step order="1" desc="创建浏览器驱动" cmdtype="4001" cmdparas="chrome"/>
+			<step order="3" desc="登录" cmdtype="4003" cmdparas="http://10.64.14.69:18080/SPPP-web/login~id|username@@id|password@@id|submit~send_keys@spfs@@send_keys@spfs@@click~suitcondpara_1_1"/>-->
+			<step order="2" desc="登录" cmdtype="4003" cmdparas="http://10.64.14.70:18080/SPPP-web/login~id|username@@id|password@@id|submit~send_keys@wpfs@@send_keys@wpfs@@click~suitcondpara_1_1"/>
+			<!--<step order="2" desc="登录异常" cmdtype="4003" cmdparas="http://10.64.14.70:18080/SPPP-web/login~id|username@@id|password@@id|submit~send_keys@wpfs@@send_keys@wpfs@@click~suitcondpara_1_1"/>-->
         </precondition>
         <!--<case id="987_1" name="ini读取-通过" desc="" faulttype="0" mark="0">
             <step order="1" desc="ini读取" cmdtype="1002" cmdparas="D:\davinciapi\wen\nrfmEfileToSim.ini~EFILE@@ceshi"/>
@@ -1134,6 +1133,144 @@
 		<case id="211" name="返回text_select选中值-index-异常index不存在" desc="" faulttype="0" mark="0">
 			<step order="1" desc="查询气象预报风速数据" cmdtype="4003" cmdparas="http://10.8.8.26:18080/SPPP-web/spfsWeather/windSpeed~id|plantId~text_select@0@index~suitcondpara_1_1~chrome"/>
 			<judgestep order="2" desc="" cmdtype="2010" cmdparas="4~'a'~steppara_1_1"/>
-		</case>-->
-    </suit>
+		</case>
+		<case id="212_QMYSQL" name="自定义时间参数化-实践" desc="" faulttype="0" mark="0">
+			<step order="1" desc="自定义时间参数化" cmdtype="9010" cmdparas="days~-8~%Y-%m-%d"/>
+			<step order="2" desc="自定义时间参数化" cmdtype="9010" cmdparas="days~-8~%Y%m%d"/>
+            <step order="3" desc="查询数据库" cmdtype="5001" cmdparas="SELECT AVERAGE FROM hdranastat5m$steppara_2_1 h WHERE h.ID = 49 AND h.HDTIME = '$steppara_1_1 00:05:00'~QMYSQL~10.64.14.69@_@davinci@_@_"/>
+            <judgestep order="2" desc="" cmdtype="2010" cmdparas="3~steppara_3_1~['']"/>
+        </case>
+		<case id="212_QDSQL" name="达梦" desc="" faulttype="0" mark="0">
+            <step order="1" desc="查询数据库" cmdtype="5001" cmdparas="SELECT M.ID FROM DAVINCI.measurementtype M WHERE M.NAME = 'UAVG1'~QDSQL~10.8.8.26@5236@_@SYSDBA@SYSDBA"/>
+            <judgestep order="2" desc="" cmdtype="2010" cmdparas="3~steppara_1_1~['']"/>
+        </case>
+		<case id="212_QKSQL" name="金仓" desc="" faulttype="0" mark="0">
+            <step order="1" desc="查询数据库" cmdtype="5001" cmdparas="select * from PUBLIC.test0811~QKSQL~10.8.8.201@54321@test@system@system"/>
+            <judgestep order="2" desc="" cmdtype="2010" cmdparas="3~steppara_1_1~['']"/>
+        </case>
+		<case id="212_QPSQL" name="瀚高" desc="" faulttype="0" mark="0">
+            <step order="1" desc="查询数据库" cmdtype="5001" cmdparas="SELECT M.ID FROM measurementtype M WHERE M.NAME = 'UAVG1'~QPSQL~10.64.14.67@5432@davinci@postgres@postgres"/>
+            <judgestep order="2" desc="" cmdtype="2010" cmdparas="3~steppara_1_1~['']"/>
+        </case>
+		<case id="213_1" name="对比加精确值" desc="" faulttype="0" mark="0">
+            <judgestep order="2" desc="" cmdtype="2010" cmdparas="3~['25.33', '25.33', '25.33', '25.33', '25.333']~['25.33', '25.33', '25.33', '25.33', '25.33']~0.006"/>
+        </case>
+		<case id="213_2" name="对比默认精确值" desc="" faulttype="0" mark="0">
+            <judgestep order="2" desc="" cmdtype="2010" cmdparas="3~['25.33', '25.33', '25.33', '25.33', '25.333']~['25.33', '25.33', '25.33', '25.33', '25.33']"/>
+        </case>
+		<case id="214" name="1条sql其他为空-QDMOCI" desc="" faulttype="0" mark="0">
+            <step order="1" desc="查询数据库" cmdtype="5001" cmdparas="select id from davinci_main_databak.plant~~~3~~"/>
+            <judgestep order="2" desc="" cmdtype="2010" cmdparas="3~steppara_1_1~['']"/>
+        </case>
+		<case id="214_QDSQL" name="达梦" desc="" faulttype="0" mark="0">
+            <step order="1" desc="查询数据库" cmdtype="5001" cmdparas="SELECT M.ID FROM DAVINCI.measurementtype M WHERE M.NAME = 'UAVG1'~QDSQL~10.8.8.26@5236@_@SYSDBA@SYSDBA~3"/>
+            <judgestep order="2" desc="" cmdtype="2010" cmdparas="3~steppara_1_1~['']"/>
+        </case>
+		<case id="214_QDMOCI" name="达梦" desc="" faulttype="0" mark="0">
+            <step order="1" desc="查询数据库" cmdtype="5001" cmdparas="SELECT M.ID FROM DAVINCI.measurementtype M WHERE M.NAME = 'UAVG1'~QDMOCI~10.8.8.26@5236@_@SYSDBA@SYSDBA~3"/>
+            <judgestep order="2" desc="" cmdtype="2010" cmdparas="3~steppara_1_1~['']"/>
+        </case>
+		<case id="214_QDMOCI_1" name="达梦" desc="" faulttype="0" mark="0">
+            <step order="1" desc="查询数据库" cmdtype="5001" cmdparas="select id from davinci_main_databak.plant~QDMOCI~127.0.0.1@5236@_@SYSDBA@SYSDBA~3"/>
+            <judgestep order="2" desc="" cmdtype="2010" cmdparas="3~steppara_1_1~['']"/>
+        </case>
+		<case id="214_QDMOCI_2" name="达梦" desc="" faulttype="0" mark="0">
+            <step order="1" desc="查询数据库" cmdtype="5001" cmdparas="select id from davinci_main_databak.plant~QDMOCI~LOCALHOST@5236@_@SYSDBA@SYSDBA~3"/>
+            <judgestep order="2" desc="" cmdtype="2010" cmdparas="3~steppara_1_1~['']"/>
+        </case>
+		<case id="215" name="1条sql其他为空-QPSQL" desc="" faulttype="0" mark="0">
+            <step order="1" desc="查询数据库" cmdtype="5001" cmdparas="select 1 from information_schema.tables where table_schema='public' and table_name='hdr_analoginput20220830'~~~3"/>
+            <judgestep order="2" desc="" cmdtype="2010" cmdparas="3~steppara_1_1~['']"/>
+        </case>
+		<case id="215_QPSQL" name="瀚高" desc="" faulttype="0" mark="0">
+            <step order="1" desc="查询数据库" cmdtype="5001" cmdparas="SELECT M.ID FROM measurementtype M WHERE M.NAME = 'UAVG1'~QPSQL~10.64.14.67@5432@davinci@postgres@postgres"/>
+            <judgestep order="2" desc="" cmdtype="2010" cmdparas="3~steppara_1_1~['']"/>
+        </case>
+		<case id="215_QPSQL_2" name="瀚高" desc="" faulttype="0" mark="0">
+            <step order="1" desc="查询数据库" cmdtype="5001" cmdparas="SELECT M.ID FROM measurementtype M WHERE M.NAME = 'UAVG1'~QPSQL~LOCALHOST@5432@davinci@postgres@postgres"/>
+            <judgestep order="2" desc="" cmdtype="2010" cmdparas="3~steppara_1_1~['']"/>
+        </case>
+		<case id="215_QPSQL_3" name="瀚高" desc="" faulttype="0" mark="0">
+            <step order="1" desc="查询数据库" cmdtype="5001" cmdparas="SELECT M.ID FROM measurementtype M WHERE M.NAME = 'UAVG1'~QPSQL~127.0.0.1@5432@davinci@postgres@postgres"/>
+            <judgestep order="2" desc="" cmdtype="2010" cmdparas="3~steppara_1_1~['']"/>
+        </case>
+		<case id="215_QPSQL_4" name="瀚高" desc="" faulttype="0" mark="0">
+            <step order="1" desc="查询数据库" cmdtype="5001" cmdparas="select 1 from information_schema.tables where table_schema='public' and table_name='hdr_analoginput20220830'~QPSQL~10.8.8.201@5432@davinci_main_databak@postgres@postgres"/>
+            <judgestep order="2" desc="" cmdtype="2010" cmdparas="3~steppara_1_1~['']"/>
+        </case>
+		<case id="216_QKSQL" name="金仓" desc="" faulttype="0" mark="0">
+            <step order="1" desc="查询数据库" cmdtype="5001" cmdparas="select * from PUBLIC.test0811~QKSQL~10.8.8.201@54321@test@system@system"/>
+            <judgestep order="2" desc="" cmdtype="2010" cmdparas="3~steppara_1_1~['']"/>
+        </case>
+		<case id="216_QKSQL_1" name="金仓" desc="" faulttype="0" mark="0">
+            <step order="1" desc="查询数据库" cmdtype="5001" cmdparas="select * from PUBLIC.test0811~QKSQL~127.0.0.1@54321@test@system@system"/>
+            <judgestep order="2" desc="" cmdtype="2010" cmdparas="3~steppara_1_1~['']"/>
+        </case>
+		<case id="216_QKSQL_2" name="金仓" desc="" faulttype="0" mark="0">
+            <step order="1" desc="查询数据库" cmdtype="5001" cmdparas="select * from PUBLIC.test0811~QKSQL~LOCALHOST@54321@test@system@system"/>
+            <judgestep order="2" desc="" cmdtype="2010" cmdparas="3~steppara_1_1~['']"/>
+        </case>
+		<case id="216_QKSQL_3" name="金仓" desc="" faulttype="0" mark="0">
+            <step order="1" desc="查询数据库" cmdtype="5001" cmdparas="select id from plant~~~3"/>
+            <judgestep order="2" desc="" cmdtype="2010" cmdparas="3~steppara_1_1~['']"/>
+        </case>
+		<case id="216_QKSQL_4" name="核对存储3天数据表-当前日期3天内1分钟瞬时值表存在" desc="" faulttype="0" mark="0">
+			<step order="1" desc="查询当前日期3天内的1分钟瞬时值表" cmdtype="5001" cmdparas="select id from plant~QKSQL~10.8.8.201@54321@davinci_main_databak@davinci_main_databak@davinci"/>
+			<judgestep order="2" desc="核对3天内1分钟瞬时值表存在" cmdtype="2010" cmdparas="3~steppara_1_1~['115020']"/>
+        </case>
+		<case id="216_QKINGBASE" name="核对存储3天数据表-当前日期3天内1分钟瞬时值表存在" desc="" faulttype="0" mark="0">
+			<step order="1" desc="查询当前日期3天内的1分钟瞬时值表" cmdtype="5001" cmdparas="select id from plant~QKINGBASE~10.8.8.201@54321@davinci_main_databak@davinci_main_databak@davinci"/>
+			<judgestep order="2" desc="核对3天内1分钟瞬时值表存在" cmdtype="2010" cmdparas="3~steppara_1_1~['115020']"/>
+        </case>
+		<case id="214" name="用系统环境变量-QDMOCI" desc="" faulttype="0" mark="0">
+            <step order="1" desc="查询数据库" cmdtype="5001" cmdparas="select id from davinci_main_databak.plant~~~~EnvFcst~"/>
+            <judgestep order="2" desc="" cmdtype="2010" cmdparas="3~steppara_1_1~['']"/>
+        </case>
+		<case id="215" name="用系统环境变量-QPSQL" desc="" faulttype="0" mark="0">
+            <step order="1" desc="查询数据库" cmdtype="5001" cmdparas="select 1 from information_schema.tables where table_schema='public' and table_name='hdr_analoginput20220830'~~~~EnvFcst~"/>
+            <judgestep order="2" desc="" cmdtype="2010" cmdparas="3~steppara_1_1~['']"/>
+        </case>
+		<case id="216_QKSQL_3" name="直接用系统环境变量_QKINGBASE" desc="" faulttype="0" mark="0">
+            <step order="1" desc="查询数据库" cmdtype="5001" cmdparas="select id from plant~~~~EnvFcst~"/>
+            <judgestep order="2" desc="" cmdtype="2010" cmdparas="3~steppara_1_1~['']"/>
+        </case>
+		<case id="217" name="获取环境变量" desc="" faulttype="0" mark="0">
+            <step order="1" desc="获取环境变量6001" cmdtype="6001" cmdparas="EnvFcst~DAVINCI"/>
+            <judgestep order="2" desc="" cmdtype="2010" cmdparas="3~steppara_1_1~['']"/>
+        </case>
+		<case id="217_1" name="获取环境变量" desc="" faulttype="0" mark="0">
+            <step order="1" desc="获取环境变量6001" cmdtype="6001" cmdparas="EnvFcst~TEST_DB1_PORT"/>
+            <judgestep order="2" desc="" cmdtype="2010" cmdparas="3~steppara_1_1~['']"/>
+        </case>
+		<case id="217_2" name="获取环境变量_变量名称不存在返回None" desc="" faulttype="0" mark="0">
+            <step order="1" desc="获取环境变量6001" cmdtype="6001" cmdparas="EnvFcst~DB1_PASSWD"/>
+            <judgestep order="2" desc="" cmdtype="2010" cmdparas="3~steppara_1_1~['']"/>
+        </case>
+		<case id="217_3" name="获取环境变量_参数个数不对" desc="" faulttype="0" mark="0">
+            <step order="1" desc="获取环境变量6001" cmdtype="6001" cmdparas="EnvFcst"/>
+            <judgestep order="2" desc="" cmdtype="2010" cmdparas="3~steppara_1_1~['']"/>
+        </case>
+		<case id="217_4" name="获取环境变量_项目名称不对" desc="" faulttype="0" mark="0">
+            <step order="1" desc="获取环境变量6001" cmdtype="6001" cmdparas="envfcst~TEST_DB1_PORT"/>
+            <judgestep order="2" desc="" cmdtype="2010" cmdparas="3~steppara_1_1~['']"/>
+        </case>
+		<case id="218" name="设置环境变量" desc="" faulttype="0" mark="0">
+            <step order="1" desc="获取环境变量6001" cmdtype="6002" cmdparas="EnvFcst"/>
+            <judgestep order="2" desc="" cmdtype="2010" cmdparas="3~steppara_1_1~['']"/>
+        </case>
+		<case id="218_1" name="设置环境变量_参数个数不对" desc="" faulttype="0" mark="0">
+            <step order="1" desc="获取环境变量6001" cmdtype="6002" cmdparas="EnvFcst~TEST_DB1_PORT"/>
+            <judgestep order="2" desc="" cmdtype="2010" cmdparas="3~steppara_1_1~['']"/>
+        </case>
+		<case id="218_2" name="设置环境变量_项目名称不对" desc="" faulttype="0" mark="0">
+            <step order="1" desc="获取环境变量6001" cmdtype="6002" cmdparas="envfcst"/>
+            <judgestep order="2" desc="" cmdtype="2010" cmdparas="3~steppara_1_1~['']"/>
+        </case>
+		<case id="214" name="1条sql其他为空-QDMOCI" desc="" faulttype="0" mark="0">
+            <step order="1" desc="查询数据库" cmdtype="5001" cmdparas="select id from davinci_main_databak.plant~~127.0.0.1@_@_@_@_~3~EnvFcst~ALL@select * from biao_QDMOCI"/>
+            <judgestep order="2" desc="" cmdtype="2010" cmdparas="3~steppara_1_1~['']"/>
+        </case>-->
+	</suit>
 </test>
+
+

@@ -17,7 +17,7 @@ import chardet
 from splitcfg import SplitSymbol
 
 
-def runcmd(command):
+def runcmd(command,encodstr=''):
     '''执行命令功能
     :输入参数：
     - command 命令脚本
@@ -27,13 +27,18 @@ def runcmd(command):
     - info   如果过程执行异常信息
     - result 命令执行标准输出
     '''
+
     plat = platform.system().lower()
-    if plat == 'windows':
-        print('现在使用的是windows系统')
-        encodstr = "gbk"
-    elif plat == 'linux':
-        print('现在使用的是linux系统')
-        encodstr = "utf-8"
+    if not encodstr:
+        if plat == 'windows':
+            print('现在使用的是windows系统')
+            encodstr = "gbk"
+        elif plat == 'linux':
+            print('现在使用的是linux系统')
+            encodstr = "utf-8"
+            # encodstr = "gbk"
+
+    print(command,encodstr)
 
     ret = subprocess.run(command, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, encoding=encodstr,timeout=600)
     if ret.returncode == 0:
@@ -399,7 +404,7 @@ def isinfofile_fuzzy(CheckType,CheckedDataList,key,separate):
     elif CheckType in [4,'4']:   ##4、 被检索值整行的数据，默认返回列表格式      ##暂未实现，后期补充
         pass
 
-def cmp_eq(type:str,v1:str, v2:str):
+def cmp_eq(type:str, v1:str, v2:str, v3:str):
     '''相等比较判断函数
     :输入参数：
     - type 数据类型，1为整数，2为浮点数，....
@@ -409,7 +414,9 @@ def cmp_eq(type:str,v1:str, v2:str):
     :输出参数：
     - status 如果相等返回True，反之返回False
     '''
-    print('cmp_eq:传入参数',v1,v2)
+    print('cmp_eq:传入参数',v1,v2,v3)
+    if not v3:
+        v3 = 0.003
 
     try:
         if type == "1": #整数
@@ -426,7 +433,8 @@ def cmp_eq(type:str,v1:str, v2:str):
         elif type == "2": #浮点数
             value1 = float(v1)
             value2 = float(v2)
-            if math.fabs(value1 - value2) < 0.01 :
+            value3 = float(v3)
+            if math.fabs(value1 - value2) < value3 :  #0.0006
                 return True
             else:
                 return False
@@ -461,7 +469,7 @@ def cmp_eq(type:str,v1:str, v2:str):
                             try:
                                 newi = float(v1[i])
                                 newj = float(v2[j])
-                                if math.isclose(newi, newj, abs_tol=0.01):
+                                if math.isclose(newi, newj, abs_tol=float(v3)):
                                     v2.remove(v2[j])
                                     break
                                 else:
@@ -828,8 +836,8 @@ if __name__ == '__main__':
     # v1 = ['25','25','25','25','29']   #失败
     # v1 = ['25', '25', '25', '25', '25']  #通过
     # v2 = ['25']
-    # v1 = ['25.33', '25.33', '25.33', '25.33', '25.333']  # 失败
-    # v1 = ['25.33', '25.33', '25.33', '25.33', '25.33']  # 通过
+    v1 = ['25.33', '25.33', '25.33', '25.33', '25.333']  # 失败
+    v2 = ['25.33', '25.33', '25.33', '25.33', '25.33']  # 通过
     # v2 = ['25.33']
     # v1 = ['a', 'a', 'a', 'a', 'v']  # 失败
     # v1 = ['a', 'a', 'a', 'a', 'a']   # 通过
@@ -837,8 +845,11 @@ if __name__ == '__main__':
     # v1 = [['a'], ['a'], ['a'], ['a'], ['v']]  # 失败
     # v1 = [['a'], ['a'], ['a'], ['a']]   # 通过
     # v2 = [['a']]
+
     # a = cmp_eq_ManyToOne('3',v1,v2)
-    # print(a)
+    v3 = 0.006
+    a = cmp_eq('3',v1,v2,v3)
+    print(a)
     # c = "{'wen_list':{'sql':'select AVERAGE from hdranastat5m20220925 h WHERE  h.ID = 150 AND hdtime &lt;= 2022-09-25 12:00:00','dbtype':'QMYSQL','concectstr':'10.64.14.70@3306@davinci@_@_','return_type':'3'},'ya_list':{'sql':'select AVERAGE from hdranastat5m20220925 WHERE ID = 152AND hdtime &lt;= 2022-09-25 12:00:00','dbtype':'QMYSQL','concectstr':'10.64.14.70@3306@davinci@_@_','return_type':'3'},'UAVG4_list':{'sql':'select AVERAGE from hdranastat5m20220925 h WHERE  h.ID = 118 AND hdtime &lt;= 2022-09-25 12:00:00','dbtype':'QMYSQL','concectstr':'10.64.14.70@3306@davinci@_@_','return_type':'3'}}"
 
     # c = "{'wen_list':{'sql':'select AVERAGE from hdranastat5m20220925 h WHERE  h.ID = 150 AND hdtime <= \"2022-09-25 12:00:00\"','dbtype':'QMYSQL','concectstr':'10.64.14.70@3306@davinci@_@_','return_type':'3'},'ya_list':{'sql':'select AVERAGE from hdranastat5m20220925 WHERE ID = 152 AND hdtime <= \"2022-09-25 12:00:00\"','dbtype':'QMYSQL','concectstr':'10.64.14.70@3306@davinci@_@_','return_type':'3'},'UAVG4_list':{'sql':'select AVERAGE from hdranastat5m20220925 h WHERE  h.ID = 118 AND hdtime <= \"2022-09-25 12:00:00\"','dbtype':'QMYSQL','concectstr':'10.64.14.70@3306@davinci@_@_','return_type':'3'}}"

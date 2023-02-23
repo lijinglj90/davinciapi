@@ -8,7 +8,7 @@ class RdbBase(metaclass=ABCMeta):
     '''
     def __init__(self):
         '''利用环境变量初始化连接参数'''
-        hostname = os.getenv('TEST_DB1_HOST', 'localhost')
+        hostname = os.getenv('TEST_DB1_HOST', 'LOCALHOST')
         self.host = hostname
         
         port = os.getenv('TEST_DB1_PORT', '3306')
@@ -31,7 +31,7 @@ class RdbBase(metaclass=ABCMeta):
     # def setconnectpara(self,hostname='',port='',database='',username='',passwd=''):
     def setconnectpara(self,concectstr=''):
         data = concectstr.split(SplitSymbol.SYMBOL_BETWEEN_ELEMENTS_IN_CONDITION)
-        print(data)
+        print('setconnectpara被传入的值：',data)
         if len(data) == 5:
             if data[0] not in ['', '_']:
                 self.host = data[0]
@@ -43,9 +43,9 @@ class RdbBase(metaclass=ABCMeta):
                 self.user = data[3]
             if data[4] not in ['', '_']:
                 self.passwd = data[4]
-            print('用户传参', self.host, self.port, self.database, self.user, self.passwd)
+            print('用户传参后', self.host, self.port, self.database, self.user, self.passwd)
         else:
-            print('使用系统默认', self.host, self.port, self.database, self.user, self.passwd)
+            print('concectstr个数不对，使用系统环境变量，如果系统环境变量没有获取到则使用默认值', self.host, self.port, self.database, self.user, self.passwd)
             pass
 
 

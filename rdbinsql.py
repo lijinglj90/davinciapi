@@ -50,8 +50,7 @@ class RdbInSql(RdbBase):
 
     def exec_querry(self, sql: str, return_type: str = '3'):
         # 打开数据库连接，执行sql，有返回值
-        db_clinet = InfluxDBClient(host=self.host, port=int(self.port), username=self.user, password=self.passwd, database=self.database
-                        )
+        db_clinet = InfluxDBClient(host=self.host, port=int(self.port), username=self.user, password=self.passwd, database=self.database)
         ret = True
         info = ""
         data = []
@@ -76,7 +75,8 @@ class RdbInSql(RdbBase):
 
 
         # 根据return_type返回对应的格式
-        # print('@@@@@@@@@@@@@@',results, data)
+        print('@@@@@@@@@@@@@@就是想看看有没有返回值', 'results:', results, 'data:', data, 'return_type:', return_type, 'ret:', ret,
+              'info:', info)
         # 两行两列：sql="SELECT AVERAGE,DTMAXVAL FROM hdranastat5m20220925 WHERE id=49 AND hdtime <= '2022-09-25 00:05:00'"
         if return_type in ['3', 3]:
             """

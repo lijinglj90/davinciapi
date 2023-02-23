@@ -28,7 +28,7 @@ def getoptmain():
     #     -m 用例等级id，长参数为--mark  控制xml文件内，单条case是否运行  目前建议全部写0
     #     -f 单个用例文件，长参数为--file  写具体某一个文件，存储到files变量
     #     -p 用例文件存放路径，长参数为--path  写文件夹，程序活获取次文件夹下所有的xml文件存储到files变量
-    #     -e 环境变量，长参数为--evnbase，为"模块名.类名",如功率预测的为"evnfcst.EnvFcst"
+    #     -b 环境变量，长参数为--evnbase，为"模块名.类名",如功率预测的为"evnfcst.EnvFcst"
     """
 
     try:

@@ -23,10 +23,19 @@ class EnvBase:
 			print("关键词为空")
 			assert False
 		
-		return self.__dict_env.get(keyword,"")
+		return self.__dict_env.get(keyword,"")   #获取传入环境变量的参数值
 	
 	def setenv(self):
-		for keyword,value in self.__dict_env.items():
+		print('@@@@@@@@@@@setenv方法的dict_env值',self.dict_env)
+		# print('@@@@@@@@@@@__dict_env', self.__dict_env)
+		for keyword,value in self.dict_env.items():
 			mykey = "TEST_" + keyword
-			os.environ[mykey] = value
-		os.environ["TEST_BASE"] = "/home/sprixin/autotest"
+			os.environ[mykey] = value   #设置环境变量   其中key和value均为string类型
+		os.environ["TEST_BASE"] = "/home/sprixin/autotest"  #设置环境变量
+
+	def getenv(self,keyword):
+		if (keyword == ""):
+			print("关键词为空")
+			assert False
+		value = os.getenv(keyword)
+		return value # 获取传入环境变量的参数值

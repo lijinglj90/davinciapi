@@ -190,76 +190,98 @@ def __generate_rt_paras__():
 
     paras = {}
     #当前时间
-    paras["RTPARA_TODAY_1"] = datetime.now().strftime("%Y%m%d")
-    paras["RTPARA_TODAY_2"] = datetime.now().strftime("%Y-%m-%d")
-    paras["RTPARA_TODAY_3"] = datetime.now().strftime("%Y/%m/%d")
-    paras["RTPARA_CURRTIME_1"] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    now = datetime.now()
+    paras["RTPARA_TODAY_1"] = now.strftime("%Y%m%d")
+    paras["RTPARA_TODAY_2"] = now.strftime("%Y-%m-%d")
+    paras["RTPARA_TODAY_3"] = now.strftime("%Y/%m/%d")
+    paras["RTPARA_TODAY_4"] = now.strftime('%Y{Y}%m{m}%d{d}').format(Y='年', m='月', d='日')
+    paras["RTPARA_CURRTIME_1"] = now.strftime("%Y-%m-%d %H:%M:%S")
+    paras["RTPARA_CURRTIME_2"] = now.strftime('%Y{Y}%m{m}%d{d}%H{H}%M{H}%S{S}').format(Y='年', m='月', d='日', H='时', M='分', S='秒')
+
     #当前年
-    paras["RTPARA_YEAR_1"] = datetime.now().strftime("%Y")
-    paras["RTPARA_YEAR_2"] = datetime.now().strftime("%y")
+    paras["RTPARA_YEAR_1"] = now.strftime("%Y")
+    paras["RTPARA_YEAR_2"] = now.strftime("%y")
+    paras["RTPARA_YEAR_3"] = now.strftime("%Y{Y}").format(Y='年')
     #当前年月
-    paras["RTPARA_YEARMONTH_1"] = datetime.now().strftime("%Y%m")
-    paras["RTPARA_YEARMONTH_2"] = datetime.now().strftime("%Y-%m")
-    paras["RTPARA_YEARMONTH_3"] = datetime.now().strftime("%Y/%m")
+    paras["RTPARA_YEARMONTH_1"] = now.strftime("%Y%m")
+    paras["RTPARA_YEARMONTH_2"] = now.strftime("%Y-%m")
+    paras["RTPARA_YEARMONTH_3"] = now.strftime("%Y/%m")
+    paras["RTPARA_YEARMONTH_4"] = now.strftime('%Y{Y}%m{m}').format(Y='年', m='月')
     #当前月
-    paras["RTPARA_MONTH_1"] = datetime.now().strftime("%m")
-    paras["RTPARA_MONTH_2"] = datetime.now().month
+    paras["RTPARA_MONTH_1"] = now.strftime("%m")
+    paras["RTPARA_MONTH_2"] = now.month
+    paras["RTPARA_MONTH_3"] = now.strftime('%m{m}').format(m='月')
     #当前日
-    paras["RTPARA_DAY_1"] = datetime.now().strftime("%d")
-    paras["RTPARA_DAY_2"] = datetime.now().day
+    paras["RTPARA_DAY_1"] = now.strftime("%d")
+    paras["RTPARA_DAY_2"] = now.day
+    paras["RTPARA_DAY_3"] = now.strftime('%d{d}').format(d='日')
 
     #昨天
     dt_y = datetime.now() + timedelta(days=-1)
     paras["RTPARA_YESTERDAY_1"] = dt_y.strftime("%Y%m%d")
     paras["RTPARA_YESTERDAY_2"] = dt_y.strftime("%Y-%m-%d")
     paras["RTPARA_YESTERDAY_3"] = dt_y.strftime("%Y/%m/%d")
+    paras["RTPARA_YESTERDAY_4"] = dt_y.strftime('%Y{Y}%m{m}%d{d}').format(Y='年', m='月', d='日')
 
     paras["RTPARA_YESTERDAY_DAY_1"] = dt_y.strftime("%d")
     paras["RTPARA_YESTERDAY_DAY_2"] = dt_y.day
+    paras["RTPARA_YESTERDAY_DAY_3"] = dt_y.strftime('%d{d}').format(d='日')
 
     #前天
     dt_By = datetime.now() + timedelta(days=-2)
     paras["RTPARA_BF_YESTERDAY_1"] = dt_By.strftime("%Y%m%d")
     paras["RTPARA_BF_YESTERDAY_2"] = dt_By.strftime("%Y-%m-%d")
     paras["RTPARA_BF_YESTERDAY_3"] = dt_By.strftime("%Y/%m/%d")
+    paras["RTPARA_BF_YESTERDAY_4"] = dt_By.strftime('%Y{Y}%m{m}%d{d}').format(Y='年', m='月', d='日')
 
     paras["RTPARA_BF_YESTERDAY_DAY_1"] = dt_By.strftime("%d")
     paras["RTPARA_BF_YESTERDAY_DAY_2"] = dt_By.day
+    paras["RTPARA_BF_YESTERDAY_DAY_3"] = dt_By.strftime('%d{d}').format(d='日')
 
     #明天
     dt_t = datetime.now() + timedelta(days=1)
     paras["RTPARA_TOMORROW_1"] = dt_t.strftime("%Y%m%d")
     paras["RTPARA_TOMORROW_2"] = dt_t.strftime("%Y-%m-%d")
     paras["RTPARA_TOMORROW_3"] = dt_t.strftime("%Y/%m/%d")
+    paras["RTPARA_TOMORROW_4"] = dt_t.strftime('%Y{Y}%m{m}%d{d}').format(Y='年', m='月', d='日')
 
     paras["RTPARA_TOMORROW_DAY_1"] = dt_t.strftime("%d")
     paras["RTPARA_TOMORROW_DAY_2"] = dt_t.day
+    paras["RTPARA_TOMORROW_DAY_3"] = dt_t.strftime('%d{d}').format(d='日')
 
     #去年
     dt_lasty = datetime.now().date() - relativedelta(years=1)
     paras["RTPARA_LASTYEAR_1"] = dt_lasty.strftime("%Y")
     paras["RTPARA_LASTYEAR_2"] = dt_lasty.strftime("%y")
+    paras["RTPARA_LASTYEAR_3"] = dt_lasty.strftime("%Y{Y}").format(Y='年')
 
     #明年
     dt_nexty = datetime.now().date() + relativedelta(years=1)
     paras["RTPARA_NEXTYEAR_1"] = dt_nexty.strftime("%Y")
     paras["RTPARA_NEXTYEAR_2"] = dt_nexty.strftime("%y")
+    paras["RTPARA_NEXTYEAR_3"] = dt_nexty.strftime("%Y{Y}").format(Y='年')
 
     #上个月
     dt_lastm = datetime.now().date() - relativedelta(months=1)
     paras["RTPARA_YEAR_LASTMONTH_1"] = dt_lastm.strftime("%Y%m")
     paras["RTPARA_YEAR_LASTMONTH_2"] = dt_lastm.strftime("%Y-%m")
     paras["RTPARA_YEAR_LASTMONTH_3"] = dt_lastm.strftime("%Y/%m")
+    paras["RTPARA_YEAR_LASTMONTH_4"] = dt_lastm.strftime('%Y{Y}%m{m}').format(Y='年', m='月')
+
     paras["RTPARA_LASTMONTH_1"] = dt_lastm.strftime("%m")
     paras["RTPARA_LASTMONTH_2"] = dt_lastm.month
+    paras["RTPARA_LASTMONTH_3"] = dt_lastm.strftime('%m{m}').format(m='月')
 
     #下个月
     dt_nextm = datetime.now().date() + relativedelta(months=1)
     paras["RTPARA_YEAR_NEXTMONTH_1"] = dt_nextm.strftime("%Y%m")
     paras["RTPARA_YEAR_NEXTMONTH_2"] = dt_nextm.strftime("%Y-%m")
     paras["RTPARA_YEAR_NEXTMONTH_3"] = dt_nextm.strftime("%Y/%m")
+    paras["RTPARA_YEAR_NEXTMONTH_4"] = dt_nextm.strftime('%Y{Y}%m{m}').format(Y='年', m='月')
+
     paras["RTPARA_NEXTMONTH_1"] = dt_nextm.strftime("%m")
     paras["RTPARA_NEXTMONTH_2"] = dt_nextm.month
+    paras["RTPARA_NEXTMONTH_3"] = dt_nextm.strftime('%m{m}').format(m='月')
 
     # windows的下载路径：C:\Users\Administrator\Downloads
     # linux-sprixin下载目录：/home/sprixin/下载

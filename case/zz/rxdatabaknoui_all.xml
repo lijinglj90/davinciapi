@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<test>
+    <suit id="case1" name="瀚高测试" desc="">
+        <precondition>
+			<step order="1" desc="关闭程序" cmdtype="3001" cmdparas="rxshut all"/>
+			<step order="2" desc="删除备份数据" cmdtype="3001" cmdparas="rm -rf /home/sprixin/davinci/var/log/*"/>
+			<step order="3" desc="删除备份数据" cmdtype="3001" cmdparas="rm -rf /home/sprixin/davinci_backups_data/rxpp/rxdatabaknoui/"/>
+			<step order="4" desc="删除历史数据1" cmdtype="5002" cmdparas="DROP TABLE IF EXISTS hdr_analoginput20220829~QPSQL~10.8.8.201@5432@davinci_main_databak@davinci@davinci"/>
+			<step order="5" desc="删除历史数据2" cmdtype="5002" cmdparas="DROP TABLE IF EXISTS hdr_analoginput20220830~QPSQL~10.8.8.201@5432@davinci_main_databak@davinci@davinci"/>
+			<step order="4" desc="修改数据库配置文件参数hdrpara.ini中数据库连接类型" cmdtype="1001" cmdparas="/home/sprixin/davinci/usr/subfcst_project/hdr/hdrpara.ini~dbconfig@@database1_type~QPSQL"/>
+			<step order="5" desc="修改数据库配置文件参数hdrpara.ini中ip地址" cmdtype="1001" cmdparas="/home/sprixin/davinci/usr/subfcst_project/hdr/hdrpara.ini~dbconfig@@hd_db1_ip_1~10.8.8.201"/>
+			<step order="6" desc="修改数据库配置文件参数hdrpara.ini中数据库名称" cmdtype="1001" cmdparas="/home/sprixin/davinci/usr/subfcst_project/hdr/hdrpara.ini~dbconfig@@hd_db1_name_1~10.8.8.201@davinci_main_databak"/>
+			<step order="7" desc="修改数据库配置文件参数hdrpara.ini中数据库用户名" cmdtype="1001" cmdparas="/home/sprixin/davinci/usr/subfcst_project/hdr/hdrpara.ini~dbconfig@@hd_db1_user~davinci_main_databak"/>
+			<step order="8" desc="修改数据库配置文件参数hdrpara.ini中数据库密码" cmdtype="1001" cmdparas="/home/sprixin/davinci/usr/subfcst_project/hdr/hdrpara.ini~dbconfig@@hd_db1_passwd~davinci"/>
+			<step order="9" desc="准备环境" cmdtype="3001" cmdparas="cp /home/sprixin/davinciapi/case/SpFcst/service/main_databak/solar/data/subfcst_project/httpserver.json /home/sprixin/davinci/etc/"/>
+			<step order="10" desc="准备环境1" cmdtype="3001" cmdparas="cp -df /home/sprixin/davinci/lib/pgsql/* /home/sprixin/davinci/lib/"/>
+			<step order="11" desc="准备历史数据" cmdtype="3001" cmdparas="sh /home/sprixin/davinciapi/case/SpFcst/service/main_databak/solar/data/sh/sql_databak_pg.sh"/>
+			<step order="12" desc="等待sql运行完毕" cmdtype="9003" cmdparas="80"/>
+			<step order="13" desc="修改系统时间为2022-09-01 12:02:00" cmdtype="3001" cmdparas="echo 'sprixin2012' |sudo -S date -s '2022-09-01 12:02:00'"/>
+			<step order="14" desc="执行prog.sh脚本启动系统程序" cmdtype="3001" cmdparas="sh /home/sprixin/davinciapi/case/SpFcst/service/main_databak/solar/data/sh/prog.sh"/>
+		</precondition>
+		<case id="t1-1" name="核对存储3天数据表-当前日期3天内1分钟瞬时值表存在" desc="" faulttype="0" mark="0">
+			<step order="1" desc="查询当前日期3天内的1分钟瞬时值表" cmdtype="5001" cmdparas="select 1 from information_schema.tables where table_schema='public' and table_name='hdr_analoginput20220830'~QPSQL~10.8.8.201@5432@davinci_main_databak@davinci@davinci"/>
+			<judgestep order="2" desc="核对3天内1分钟瞬时值表存在" cmdtype="2010" cmdparas="3~steppara_1_1~['1']"/>
+        </case>
+		<case id="215_QPSQL_系统环境变量" name="1条sql其他为空-QPSQL" desc="" faulttype="0" mark="0">
+            <step order="1" desc="查询数据库" cmdtype="5001" cmdparas="select 1 from information_schema.tables where table_schema='public' and table_name='hdr_analoginput20220830'~~~3~EnvFcst~"/>
+            <judgestep order="2" desc="" cmdtype="2010" cmdparas="3~steppara_1_1~['']"/>
+        </case>
+		<case id="215_QPSQL" name="瀚高" desc="" faulttype="0" mark="0">
+            <step order="1" desc="查询数据库" cmdtype="5001" cmdparas="SELECT M.ID FROM measurementtype M WHERE M.NAME = 'UAVG1'~QPSQL~10.64.14.67@5432@davinci@postgres@postgres"/>
+            <judgestep order="2" desc="" cmdtype="2010" cmdparas="3~steppara_1_1~['']"/>
+        </case>
+    </suit>
+	<suit id="case2" name="金仓测试" desc="">
+        <precondition>
+			<step order="1" desc="关闭程序" cmdtype="3001" cmdparas="rxshut all"/>
+			<step order="2" desc="删除备份数据" cmdtype="3001" cmdparas="rm -rf /home/sprixin/davinci/var/log/*"/>
+			<step order="3" desc="删除备份数据" cmdtype="3001" cmdparas="rm -rf /home/sprixin/davinci_backups_data/rxpp/rxdatabaknoui/"/>
+			<step order="4" desc="修改数据库配置文件参数hdrpara.ini中数据库连接类型" cmdtype="1001" cmdparas="/home/sprixin/davinci/usr/subfcst_project/hdr/hdrpara.ini~dbconfig@@database1_type~QKINGBASE"/>
+			<step order="5" desc="修改数据库配置文件参数hdrpara.ini中ip地址" cmdtype="1001" cmdparas="/home/sprixin/davinci/usr/subfcst_project/hdr/hdrpara.ini~dbconfig@@hd_db1_ip_1~127.0.0.1"/>
+			<step order="6" desc="修改数据库配置文件参数hdrpara.ini中数据库名称" cmdtype="1001" cmdparas="/home/sprixin/davinci/usr/subfcst_project/hdr/hdrpara.ini~dbconfig@@hd_db1_name_1~127.0.0.1@davinci_main_databak"/>
+			<step order="7" desc="修改数据库配置文件参数hdrpara.ini中数据库用户名" cmdtype="1001" cmdparas="/home/sprixin/davinci/usr/subfcst_project/hdr/hdrpara.ini~dbconfig@@hd_db1_user~davinci_main_databak"/>
+			<step order="8" desc="修改数据库配置文件参数hdrpara.ini中数据库密码" cmdtype="1001" cmdparas="/home/sprixin/davinci/usr/subfcst_project/hdr/hdrpara.ini~dbconfig@@hd_db1_passwd~davinci"/>
+			<step order="9" desc="准备环境1" cmdtype="3001" cmdparas="cp /home/sprixin/davinciapi/case/SpFcst/service/main_databak/solar/data/subfcst_project/httpserver.json /home/sprixin/davinci/etc/"/>
+			<step order="10" desc="准备环境2" cmdtype="3001" cmdparas="cp -df /home/sprixin/davinci/lib/kingbase/* /home/sprixin/davinci/lib/"/>
+			<step order="11" desc="准备环境3" cmdtype="3001" cmdparas="sh /home/sprixin/davinciapi/case/SpFcst/service/main_databak/solar/data/sh/sql_databak_kg.sh"/>
+			<step order="12" desc="等待sql运行完毕" cmdtype="9003" cmdparas="80"/>
+			<step order="13" desc="修改系统时间为2022-09-01 12:02:00" cmdtype="3001" cmdparas="echo 'sprixin2012' |sudo -S date -s '2022-09-01 12:02:00'"/>
+			<step order="14" desc="执行prog.sh脚本启动系统程序" cmdtype="3001" cmdparas="sh /home/sprixin/davinciapi/case/SpFcst/service/main_databak/solar/data/sh/prog.sh"/>
+		</precondition>
+		<case id="216_QPSQL_环境变量" name="金仓" desc="" faulttype="0" mark="0">
+			<step order="1" desc="查询当前日期3天内的1分钟瞬时值表" cmdtype="5001" cmdparas="select id from plant~~~3~EnvFcst~"/>
+			<judgestep order="2" desc="核对3天内1分钟瞬时值表存在" cmdtype="2010" cmdparas="3~steppara_1_1~['115020']"/>
+        </case>
+		<case id="216_QPSQL" name="金仓" desc="" faulttype="0" mark="0">
+			<step order="1" desc="查询当前日期3天内的1分钟瞬时值表" cmdtype="5001" cmdparas="select id from plant~QKSQL~10.8.8.201@54321@davinci_main_databak@davinci_main_databak@davinci"/>
+			<judgestep order="2" desc="核对3天内1分钟瞬时值表存在" cmdtype="2010" cmdparas="3~steppara_1_1~['115020']"/>
+        </case>
+    </suit>
+	<suit id="case3" name="达梦测试" desc="">
+        <precondition>
+			<step order="1" desc="关闭程序" cmdtype="3001" cmdparas="rxshut all"/>
+			<step order="2" desc="删除备份数据" cmdtype="3001" cmdparas="rm -rf /home/sprixin/davinci/var/log/*"/>
+			<step order="3" desc="删除备份数据" cmdtype="3001" cmdparas="rm -rf /home/sprixin/davinci_backups_data/rxpp/rxdatabaknoui/"/>
+			<step order="5" desc="修改数据库配置文件参数hdrpara.ini中数据库连接类型" cmdtype="1001" cmdparas="/home/sprixin/davinci/usr/subfcst_project/hdr/hdrpara.ini~dbconfig@@database1_type~QDMOCI"/>
+			<step order="6" desc="修改数据库配置文件参数hdrpara.ini中ip地址" cmdtype="1001" cmdparas="/home/sprixin/davinci/usr/subfcst_project/hdr/hdrpara.ini~dbconfig@@hd_db1_ip_1~127.0.0.1"/>
+			<step order="7" desc="修改数据库配置文件参数hdrpara.ini中数据库名称" cmdtype="1001" cmdparas="/home/sprixin/davinci/usr/subfcst_project/hdr/hdrpara.ini~dbconfig@@hd_db1_name_1~127.0.0.1@davinci_main_databak"/>
+			<step order="8" desc="修改数据库配置文件参数hdrpara.ini中数据库用户名" cmdtype="1001" cmdparas="/home/sprixin/davinci/usr/subfcst_project/hdr/hdrpara.ini~dbconfig@@hd_db1_user~davinci_main_databak"/>
+			<step order="9" desc="修改数据库配置文件参数hdrpara.ini中数据库密码" cmdtype="1001" cmdparas="/home/sprixin/davinci/usr/subfcst_project/hdr/hdrpara.ini~dbconfig@@hd_db1_passwd~davinci"/>
+			<step order="10" desc="准备环境" cmdtype="3001" cmdparas="cp /home/sprixin/davinciapi/case/SpFcst/service/main_databak/solar/data/subfcst_project/httpserver.json /home/sprixin/davinci/etc/"/>
+			<step order="11" desc="准备环境1" cmdtype="3001" cmdparas="cp -df /home/sprixin/davinci/lib/dameng/* /home/sprixin/davinci/lib/"/>
+			<step order="12" desc="准备历史数据" cmdtype="3001" cmdparas="sh /home/sprixin/davinciapi/case/SpFcst/service/main_databak/solar/data/sh/sql_databak_dm.sh~gbk"/>
+			<step order="14" desc="修改系统时间为2022-09-01 12:02:00" cmdtype="3001" cmdparas="echo 'sprixin2012' |sudo -S date -s '2022-09-01 12:02:00'"/>
+			<step order="15" desc="执行prog.sh脚本启动系统程序" cmdtype="3001" cmdparas="sh /home/sprixin/davinciapi/case/SpFcst/service/main_databak/solar/data/sh/prog.sh"/>
+		</precondition>
+		<case id="t1-1" name="核对存储3天数据表-当前日期3天内1分钟瞬时值表存在" desc="" faulttype="0" mark="0">
+			<step order="1" desc="查询当前日期3天内的1分钟瞬时值表" cmdtype="5001" cmdparas="select id from davinci_main_databak.plant~QDSQL~10.8.8.201@5236@_@SYSDBA@SYSDBA"/>
+			<judgestep order="2" desc="核对3天内1分钟瞬时值表存在" cmdtype="2010" cmdparas="3~steppara_1_1~['115020']"/>
+        </case>
+		<case id="214_达梦环境变量" name="1条sql其他为空-QDMOCI" desc="" faulttype="0" mark="0">
+            <step order="1" desc="查询数据库" cmdtype="5001" cmdparas="select id from davinci_main_databak.plant~~~3~EnvFcst~"/>
+            <judgestep order="2" desc="" cmdtype="2010" cmdparas="3~steppara_1_1~['']"/>
+        </case>
+    </suit>
+</test>

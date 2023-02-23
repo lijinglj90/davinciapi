@@ -77,6 +77,10 @@ class CmdType():
     rdb_read = "5001"
     rdb_write = "5002"
 
+    #环境变量操作
+    get_env = "6001"
+    set_env = "6002"
+
     #杂项操作类型
     file_exists = "9001"
     file_del = "9004"
@@ -391,8 +395,9 @@ class StepObj():
         # print('输入的对比数据为：',paras)
         if len(paras) < 3:
             return StepExecResult(False,"参数个数错误",[])
+        paras = paras + [''] * (4 - len(paras))
         can2 = copy.deepcopy(paras[2])
-        status = bs.cmp_eq(paras[0],paras[1],paras[2])
+        status = bs.cmp_eq(paras[0],paras[1],paras[2],paras[3])
         info = ""
         if status is False:
             info = "判==失败：参数1为[%s],参数2为[%s]" %(paras[1],can2)
@@ -469,7 +474,9 @@ class StepObj():
         try:
             if len(paras) < 1:
                 return StepExecResult(False,"参数个数错误",[])
-            status,info = bs.runcmd(paras[0])
+            elif len(paras) == 1:
+                paras = paras + [''] * (2 - len(paras))
+            status,info = bs.runcmd(paras[0],paras[1])
 
             return StepExecResult(status,info,[])
         except Exception as e:
@@ -544,6 +551,50 @@ class StepObj():
         except Exception as e:
             info = str(e)
             return StepExecResult(False, info, [])
+
+    #获取环境变量
+    def __get_env__(self,paras:list):
+        print("__get_env__输入参数", paras)
+        print(len(paras))
+        data = []
+        datas = []
+        try:
+            if len(paras) == 2 :
+                if paras[0] == 'EnvFcst':
+                    self.__set_env__(['EnvFcst'])
+                    status = True
+                    data.append(os.getenv(paras[1]))
+                    datas.append(data)
+                    return StepExecResult(status, '', datas)
+                else:
+                    return StepExecResult(False,'输入的项目名称不存在，请找开发人员确认',[])
+
+            else:
+                return StepExecResult(False,'需要输入2个参数，项目名称、变量名称',[])
+        except Exception as e:
+            info = str(e)
+            return StepExecResult(False, info, [])
+
+    # 设置环境变量
+    def __set_env__(self,paras:list):
+        import evnobj as eo
+        print("__set_env__输入参数", paras)
+        print(len(paras))
+        data = []
+        try:
+            if len(paras) == 1:
+                if paras[0] == 'EnvFcst':
+                    eo.setevn(paras[0])
+                    return StepExecResult(True, '', [])
+                else:
+                    return StepExecResult(False, '输入的项目名称不存在，请找开发人员确认', [])
+
+            else:
+                return StepExecResult(False,'需要输入1个参数，项目名称', [])
+        except Exception as e:
+            info = str(e)
+            return StepExecResult(False, info, [])
+
 
     '''文件存在检查接口'''
     def __file_exixts__(self,paras:list):
@@ -734,27 +785,42 @@ class StepObj():
         obj = None
         print("__rdb_querry__输入参数",paras)
         print(len(paras))
+        sqldata = {}
+        A = ['QMYSQL', 'QKINGBASE', 'QDMOCI', 'QPSQL', 'QINSQL']
         try:
-            if len(paras) == 4:
-                if paras[2] in ['_', '']:
-                    obj = RdbObj(paras[1])
-                else:
-                    obj = RdbObj(paras[1], paras[2])
-                if paras[3] == '' or paras[3] == '_':
+            if 0 < len(paras) < 7 and paras[0] != '':
+                # sqldata = {}
+                paras = paras + [''] * (6 - len(paras))
+                print('被填充之后的paras值：',paras)
+                obj = RdbObj(paras[1], paras[2], paras[4])
+                if paras[3] in ['_', '']:
                     paras[3] = 3
-                status, info, data = obj.exec_querry(paras[0], paras[3])
-            # print(status, 'info:',info, 'data:', data)
-            elif len(paras) > 0 and len(paras) < 4 and paras[0] != '':
-                if len(paras) == 1:
-                    obj = RdbObj()
-                elif len(paras) == 2:
-                    obj = RdbObj(paras[1])
-                elif len(paras) == 3:
-                    if paras[2] in ['_', '']:
-                        obj = RdbObj(paras[1])
-                    else:
-                        obj = RdbObj(paras[1],paras[2])
-                status, info, data = obj.exec_querry(paras[0])
+
+                print('使用的数据库类型是：', obj.mytype)
+
+                if paras[1] in ['all', 'ALL', '', '_']:
+                    for i in A:
+                        sqldata[i] = paras[0]
+                    if paras[5]:
+                        # print('不为空')
+                        l = paras[5].split('@@')
+                        for j in l:
+                            z = j.split('@')
+                            sqldata[z[0]] = z[1]
+                elif paras[5]:
+                    # print('不为空')
+                    sqldata[paras[1]] = paras[0]
+                    l = paras[5].split('@@')
+                    for j in l:
+                        z = j.split('@')
+                        sqldata[z[0]] = z[1]
+                else:
+                    sqldata[paras[1]] = paras[0]
+
+                print('生成数据库类型与sql语句对应的字典sqldata：',sqldata)
+                sql_V = sqldata[obj.mytype]
+                print('通过数据库类型获取本次实际执行的sql_V语句：',sql_V)
+                status, info, data = obj.exec_querry(sql_V, paras[3])
             else:
                 return StepExecResult(False, "参数个数错误", [])
         except Exception as e:
@@ -768,26 +834,71 @@ class StepObj():
         return StepExecResult(status, info,ls)
 
     def __rdb_excute__(self, paras: list):
+        # try:
+        #     obj = None
+        #     if len(paras) < 1:
+        #         return StepExecResult(False, "参数个数错误", [])
+        #     elif len(paras) == 1:
+        #         obj = RdbObj()
+        #     elif len(paras) == 2:
+        #         obj = RdbObj(paras[1])
+        #     else:
+        #         if paras[2] == '_':
+        #             obj = RdbObj(paras[1])
+        #         else:
+        #             obj = RdbObj(paras[1], paras[2])
+        #
+        #     status, info, _ = obj.exec_sql(paras[0])
+        #
+        #     return StepExecResult(status, info, [])
+        #
+        # except Exception as e:
+        #     return StepExecResult(False, e, [])
+        obj = None
+        print("__rdb_excute__输入参数", paras)
+        print(len(paras))
+        sqldata = {}
+        A = ['QMYSQL', 'QKINGBASE', 'QDMOCI', 'QPSQL', 'QINSQL']
         try:
-            obj = None
-            if len(paras) < 1:
-                return StepExecResult(False, "参数个数错误", [])
-            elif len(paras) == 1:
-                obj = RdbObj()
-            elif len(paras) == 2:
-                obj = RdbObj(paras[1])
-            else:
-                if paras[2] == '_':
-                    obj = RdbObj(paras[1])
+            if 0 < len(paras) < 7 and paras[0] != '':
+                # sqldata = {}
+                paras = paras + [''] * (6 - len(paras))
+                print('被填充之后的paras值：', paras)
+                obj = RdbObj(paras[1], paras[2], paras[4])
+
+                print('使用的数据库类型是：', obj.mytype)
+
+                if paras[1] in ['all', 'ALL', '', '_']:
+                    for i in A:
+                        sqldata[i] = paras[0]
+                    if paras[5]:
+                        # print('不为空')
+                        l = paras[5].split('@@')
+                        for j in l:
+                            z = j.split('@')
+                            sqldata[z[0]] = z[1]
+                elif paras[5]:
+                    # print('不为空')
+                    sqldata[paras[1]] = paras[0]
+                    l = paras[5].split('@@')
+                    for j in l:
+                        z = j.split('@')
+                        sqldata[z[0]] = z[1]
                 else:
-                    obj = RdbObj(paras[1], paras[2])
+                    sqldata[paras[1]] = paras[0]
 
-            status, info, _ = obj.exec_sql(paras[0])
-
-            return StepExecResult(status, info, [])
-
+                print('生成数据库类型与sql语句对应的字典sqldata：', sqldata)
+                sql_V = sqldata[obj.mytype]
+                print('通过数据库类型获取本次实际执行的sql_V语句：', sql_V)
+                # status, info, _ = obj.exec_querry(sql_V, paras[3])
+                status, info, _ = obj.exec_sql(sql_V)
+            else:
+                return StepExecResult(False, "参数个数错误", [])
         except Exception as e:
-            return StepExecResult(False, e, [])
+            info = str(e)
+            return StepExecResult(False, info, [])
+
+        return StepExecResult(status, info, [])
 
     def __calc_formula__(self,paras:list):
         obj = None
@@ -896,7 +1007,6 @@ class StepObj():
             info = str(e)
             return StepExecResult(False, info, [])
 
-    # def __custom_para__(self,paras:list):
     def __custom_para__(self, paras: list):
         print("__custom_para__输入参数", paras)
         print(len(paras))
@@ -993,6 +1103,10 @@ class StepObj():
             return self.__cmp_data_ne__(self.__paras)
         elif self.__cmdtype == CmdType.cmp_data_ManyToOne:
             return self.__cmp_data_ManyToOne__(self.__paras)
+        elif self.__cmdtype == CmdType.get_env:    #6001
+            return self.__get_env__(self.__paras)
+        elif self.__cmdtype == CmdType.set_env:    #6002
+            return self.__set_env__(self.__paras)
         elif self.__cmdtype == CmdType.file_exists:    #9001
             return self.__file_exixts__(self.__paras)
         elif self.__cmdtype == CmdType.file_del:    #9004
@@ -1041,9 +1155,9 @@ class StepObj():
         #         return StepExecResult(False,"命令类型不支持",[])
 
 if __name__ == '__main__':
-    cmdtype="2001"
-    paras = [r'D:\davinciapi\case\zz\对比后删除A\farm1_20220816_0000_DQ.wpd',r'D:\davinciapi\case\zz\对比后删除B\farm1_20220816_0000_DQ.wpd','gb2312']
-    StepObj(cmdtype,paras).__cmp_file_eq__(paras)
+    # cmdtype="2001"
+    # paras = [r'D:\davinciapi\case\zz\对比后删除A\farm1_20220816_0000_DQ.wpd',r'D:\davinciapi\case\zz\对比后删除B\farm1_20220816_0000_DQ.wpd','gb2312']
+    # StepObj(cmdtype,paras).__cmp_file_eq__(paras)
     import filecmp
     # print(filecmp.cmp(paras[0], paras[1]))
     # cmdtype = 5001
@@ -1056,12 +1170,13 @@ if __name__ == '__main__':
     # a = [r'D:\davinciapi\wen\a - 副本\rxefilecreate.log','[U-17]','_']
     # StepObj(cmdtype,a).__isinfo_file__(a)
 
-    # cmdtype = 3001
-    # a = ['dir']
-    # StepObj(cmdtype, a).__exec_cmd__(a)
-    cmdtype = 9010
-    a = ['years','1','%Y-%m-%d %H:%M:%S']
-    # timedelta(days=1)
-    # # newparas = dt_t.strftime("%Y%m%d")
-    z = StepObj(cmdtype, a).__custom_time_para__(a)
-    print(z)
+    cmdtype = 3001
+    # a = ['dir','gbk']
+    a = ['sh /home/sprixin/davinciapi/case/SpFcst/service/main_databak/solar/data/sh/sql_databak_dm.sh','gbk']
+    z = StepObj(cmdtype, a).__exec_cmd__(a)
+    # status, info = bs.runcmd(a[0], a[1])
+    # cmdtype = 9010
+    # a = ['years','1','%Y-%m-%d %H:%M:%S']
+    # # timedelta(days=1)
+    # # # newparas = dt_t.strftime("%Y%m%d")
+    # z = StepObj(cmdtype, a).__custom_time_para__(a)

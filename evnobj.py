@@ -15,7 +15,9 @@ def setevn(classname):
         myeb= ef.EnvFcst()
         if not myeb is None:
             myeb.setenv()
+
     else:
+        print('数据不对')
         pass
         # PluginManager.LoadAllPlugin();
         # #遍历所有接入点下的所有插件

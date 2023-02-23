@@ -4,32 +4,44 @@ from rdbdisql import RdbDSql
 from rdbking import RdbKing
 from rdbpsql import RdbPSql
 from rdbinsql import RdbInSql
+import evnobj as eo
 
 class RdbObj():
-    def __init__(self, dbtype:str = "",concectstr:str = ""):
+    def __init__(self, dbtype:str = "",concectstr:str = "",baseevn:str = ""):
+        '''设置基本环境变量'''
+        print('用户传入的数据类型为：', dbtype)
+        print('@@@@RdbObj()的baseevn值', baseevn)
+        if len(baseevn) > 0:
+            eo.setevn(baseevn)
+
         '''利用环境变量初始化连接参数'''
         mytype = ""
-        if dbtype == "":
+        # if dbtype == "":
+        if dbtype in ["","_","ALL","all"]:
             mytype = os.getenv('TEST_DB1_TYPE', 'QMYSQL')
+            print('环境变量获取的数据类型为：', mytype)
         else :
             mytype = dbtype
 
-        if mytype == "QMYSQL":
+
+        if mytype == "QMYSQL":   #mysql数据库QMYSQL
             self.dbobj = RdbMysql()
-        elif mytype == "QKSQL":
+        elif mytype in ["QKSQL","QKINGBASE"]:   #金仓数据库QKSQL
             self.dbobj = RdbKing()
-        elif mytype == "QDSQL":
+        elif mytype in ["QDSQL","QDMOCI"]:   #达梦数据库QDMOCI
             self.dbobj = RdbDSql()
-        elif mytype == "QPSQL":
+        elif mytype == "QPSQL":   #瀚高数据库QPSQL
             self.dbobj = RdbPSql()
         elif mytype == "QINSQL":
-            self.dbobj = RdbInSql()
+            self.dbobj = RdbInSql()  #influxdb数据库
         else:
             self.dbobj = None
 
         self.dbobj.setconnectpara(concectstr)
         # self.dbobj.setconnectpara(hostname, port, database, username, passwd)
         # self.dbobj.setconnectpara("10.8.8.21","3306","DAVINCI","sa","cast1234")
+        self.mytype = mytype
+        # print('最后使用的数据类型为：', self.mytype)
 
     def exec_sql_bycmd(self,para:str,exec_type:int = 1):
         if self.dbobj is None:
@@ -89,7 +101,13 @@ if __name__ == '__main__':
     # c = RdbObj('QMYSQL', '10.64.14.69@_@DAVINCI@_@').exec_querry(aql, return_type='3')
     # print(c)
 
-    qq = "select * from testing"
-    c = RdbObj('QMYSQL', '10.8.8.200@8086@test@admin@123456').exec_querry(qq, return_type='3')
+    # qq = "select * from testing"
+    # c = RdbObj('QMYSQL', '10.8.8.200@8086@test@admin@123456').exec_querry(qq, return_type='3')
+    # print(c)
+    # print(len(c[-1]))
+
+    qq = "select * from davinci_main_databak.hdr_analoginput20220829"
+    c = RdbObj('QDSQL', '10.8.8.201@5236@_@SYSDBA@SYSDBA').exec_querry(qq, return_type='3')
     print(c)
     # print(len(c[-1]))
+
